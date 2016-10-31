@@ -1,4 +1,6 @@
-# [Ateliers: Technologies des Données Massives](https://github.com/wikistat/Ateliers-Big-Data) avec [R](https://cran.r-project.org/), [Python](https://www.python.org/) et / ou [Spark](href="http://spark.apache.org/)
+###[**INSA de Toulouse**](http://www.insa-toulouse.fr/fr/index.html), [*Mathématiques Appliquées*](http://www.math.insa-toulouse.fr/fr/index.html), [`Science des données`](http://www.math.insa-toulouse.fr/fr/enseignement.html) 
+
+## [Ateliers: Technologies des Données Massives](https://github.com/wikistat/Ateliers-Big-Data) avec [R](https://cran.r-project.org/), [Python](https://www.python.org/) et / ou [Spark](href="http://spark.apache.org/)
 
 L'objectifs de ces ateliers ou tutoriels sous forme de calepins ([*jupyter notebooks*](http://jupyter.org/)) est d'introduire le **passage à l'échelle Volume** des méthodes d'apprentissage; **processus qui transforme un statisticien en *Data Scientist*.** 
 
