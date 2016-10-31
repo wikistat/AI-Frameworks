@@ -3,25 +3,25 @@
 L'objectifs de ces ateliers ou tutoriels sous forme de calepins ([*jupyter notebooks*](http://jupyter.org/)) est d'introduire le **passage à l'échelle Volume** des méthodes d'apprentissage; **processus qui transforme un statisticien en *Data Scientist*.** 
 
 
-# Recommandation de Films par Filtrage Collaboratif: [R](https://cran.r-project.org/) (softImpute) *vs.* [Spark](href="http://spark.apache.org/) (Mllib)
+# Recommandation de Films par Filtrage Collaboratif: [R](https://cran.r-project.org/) ([softImpute](https://cran.r-project.org/web/packages/softImpute/index.html)) *vs.* [Spark](href="http://spark.apache.org/) ([MLlib](http://spark.apache.org/mllib/))
 
 **Résumé** 
 Les calepins traitent d'un problème classique de recommandation par filtrage collaboratif pour le commerce en ligne. L'objectif est de comparer les ressources de la librairie [MLlib de Spark]([http://spark.apache.org/docs/latest/api/python/pyspark.mllib.html#pyspark.mllib.recommendation.ALS) avec l'algorithme de complétionl de grande matrice creuse implémenté dans la librairie [softImpute de R](https://cran.r-project.org/web/packages/softImpute/index.html). Ces outils sont appliqués aux données publiques du site [GroupLens](http://grouplens.org/datasets/movielens/). L'objectif est donc de tester les méthodes et la procédure d'optimisation sur le plus petit jeu de données composé de 100k notes  de 943 clients sur 1682 films où chaque client a au moins noté 20 films. Le plus gros jeux de données  (20M notes) est utilisé pour **passer à l'échelle volume**. 
 
 La synthèse des résultats obtenus est développée par [Besse et al. 2016](https://hal.archives-ouvertes.fr/hal-01350099).
 
-## 1 Systèmes de Recommandation
-Les principes des systèmes de recommandation sont exposés en détail dans une [vignette](). En voici une brève présentation.
+## Introduction aux [Systèmes de Recommandation](http://wikistat.fr/pdf/st-m-datSc3-colFil.pdf)
+Les principes des systèmes de recommandation sont exposés plus en détail dans une [vignette](http://wikistat.fr/pdf/st-m-datSc3-colFil.pdf). En voici une brève présentation.
 
-### 1.1 Gestion de la relation client
+### Gestion de la relation client
 La rapide expansion des sites de commerce en ligne a pour conséquence une explosion des besoins en marketing et *gestion de la relation client* (GRC ou CRM: *client relationship management*) spécifiques à ce type de média. C'est même le domaine qui est le principal fournisseur de données massives ou tout du moins la partie la plus visible de l'iceberg.
 
 La GRC en marketing quantitatif traditionnel est principalement basée sur la construction de modèles de scores: d'appétence pour un produit, d'attrition (*churn*) ou risque de rompre un contrat. Voir à ce propos les scénarios d'appétence pour la [carte Visa Premier](http://wikistat.fr/pdf/st-scenar-app-visa.pdf) ou celui concernant un produit d'[assurance vie](http://wikistat.fr/pdf/st-scenar-app-patrimoine.pdf) à partir de l'enquête INSEE sur le patrimoine des français.
 
-### 1.2 Commerce en ligne
+### Commerce en ligne
 Le commerce en ligne introduit de nouveaux enjeux avec la construction d'algorithmes de *filtrage* : sélection et recommandation automatique d'articles, appelés encore *systèmes de recommandation*. Certains concernent des méthodes *adaptatives* qui suivent la navigation de l'internaute, son flux de clics, jusqu'à l'achat ou non. Ces approches sont basées sur des algorithmes de bandits manchots et ne font pas l'objet de cet atelier. D'autres stratégies sont définies à partir d'un historique des comportements des clients, d'informations complémentaires sur leur profil, elles rejoignent les méthodes traditionnelles de marketing quantitatif. D'autres enfin sont basées sur la seule connaissance des interactions clients X produits à savoir la présence / absence d'achats ou un ensemble d'avis recueillis sous la forme de notes d'appréciation de chaque produit consommé. On parle alors de filtrage collaboratif (*collaborative filtering*).
 
-### 1.3 Filtrage collaboratif
+### Filtrage collaboratif
 Ce dernier cas a largement été popularisé par le concours [Netflix](http://www.netflixprize.com/) où il s'agit de proposer un film à un client en considérant seulement la matrice très creuse: clients X films, des notes sur une échelle de 1 à 5.  L'objectif est donc de prévoir le goût, la note, ou l'appétence d'un client pour un produit (livre, film...), qu'il n'a pas acheté, afin de lui proposer celui le plus susceptible de répondre à ses attentes. Tous les sites marchands: Amazon, Fnac, Netflix... implémentent de tels algorithmes.
 
 Le filtrage collaboratif basé sur les seules interactions client X produits: présence / absence d'achat ou note d'appréciation  fait généralement appel à deux grandes familles de méthodes:
@@ -37,9 +37,22 @@ La littérature est très abondante sur le sujet qui soulève plusieurs problèm
 
 
 
-Par ailleurs, Des systèmes hybrides intègrent ces donnés d'interaction avec d'autres informations sur le profil des clients (variables âge, sexe, prénom...) ou encore sur  sur la typologie des produits (variables genre, année...).
+Par ailleurs, des systèmes hybrides intègrent ces donnés d'interaction avec d'autres informations sur le profil des clients (variables âge, sexe, prénom...) ou encore sur  sur la typologie des produits (variables genre, année...).
 
-\subsection{Modèles à facteurs latents}
-La recherche de facteurs latents est basée sur la \href{http://wikistat.fr/pdf/st-m-explo-alglin.pdf}{décomposition en valeurs singulière} d'une matrice (SVD) ou la \href{http://wikistat.fr/pdf/st-m-explo-nmf.pdf}{factorisation d'une matrice non négative} plus adaptée à des notes d'appréciation. Ces matrices sont généralement très creuses, souvent à peine 2\% de valeurs connues sont renseignées et les autres qui ne peuvent être mises à zéro, sont donc des valeurs \emph{manquantes}.  il s'agit alors d'un problème de complétion de matrice\footnote{Le \href{https://sites.google.com/site/igorcarron2/matrixfactorizations}{site d'Igor Carron} donne un aperçu assez réaliste de la complexité et du foisonnement de la recherche sur ce thème.}.
+### Modèles à facteurs latents
+La recherche de facteurs latents est basée sur la [décomposition en valeurs singulière](http://wikistat.fr/pdf/st-m-explo-alglin.pdf) d'une matrice (SVD) ou la [factorisation d'une matrice non négative](http://wikistat.fr/pdf/st-m-explo-nmf.pdf) plus adaptée à des notes d'appréciation ou des effectifs de vente. Ces matrices sont généralement **très creuses**, souvent à peine 2% de valeurs connues sont renseignées et les autres, qui ne peuvent être mises à zéro, sont donc des valeurs *manquantes*.  il s'agit alors d'un problème de *complétion de matrice*.
 
-Le scénario de présentation des méthodes de \href{http://wikistat.fr/pdf/st-scenar-explo7-nmf.pdf}{factorisation de matrices (SVD, NMF) et complétion} introduit ce type d'approche sur un exemple "jouet" à partir d'une matrice de dénombrements de ventes. La prise en compte d'une matrice de notes avec des "0" correspondant à des données manquantes limite les possibilités.
+## Données [MovieLens](http://grouplens.org/datasets/movielens/)
+Des données réalistes croisant plusieurs milliers de clients et films, sont accessibles en ligne. Il s’agit d’une extraction du site [MovieLens](http://grouplens.org/datasets/movielens/) qui vous "aide" à choisir un film. Entre autres, quatre tailles de matrices creuses sont proposées:
+
+- `100k` 100 000 évaluations de 1000 utilisateurs de 1700 films.
+- `1M` Un million d’évaluations par 6000 utilisateurs sur 4000 films.
+- `10M` Dix millions d’évaluation par 72 000 utilisateurs sur 10 000 fims.
+- `20M` Vingt millions d’évaluations par 138 000 utilisateurs sur 27 000 films.
+
+## Tutoriels
+- Un premier [scénario](http://wikistat.fr/pdf/st-scenar-explo7-nmf.pdf) en R propose une comparaison élémentaire des méthodes de factorisation (SVD, NMF) et complétion de matrices sur un exemple "jouet" de dénombrements de ventes. La prise en compte d'une matrice de notes avec des "0", correspondant à des données manquantes, réduit les possibilités.
+- [`Atelier-MovieLens-softImpute`](https://github.com/wikistat/Ateliers-Big-Data/blob/master/3-MovieLens/Atelier-MovieLens-softImpute.ipynb): calepin en R  qui développe l'utilisation de la librairie [softImpute]()  de complétion de matrice pour construire des recommandations à partir des données [MovieLens](http://grouplens.org/datasets/movielens/)
+- [`Atelier-MovieLens-pyspark`](https://github.com/wikistat/Ateliers-Big-Data/blob/master/3-MovieLens/Atelier-MovieLens-pyspark.ipynb):Le même objectif (recommandation MovieLens) est atteint dans un calepin en PySpark qui utilise la factorisation par [NMF de MLlib](http://spark.apache.org/docs/latest/mllib-collaborative-filtering.html). 
+
+**Attetnion**. La librairie [Scikit-learn](http://scikit-learn.org/stable/modules/decomposition.html#nmf) propose bien une version de NMF mais pas adpatée à l'objectif de complétion: les "0" ne correspondent pas des données manquantes. Il faudrait sans doute utiliser la librairie [nonnegfac](https://github.com/kimjingu/nonnegfac-python) en Python  de [Kim et al. (2014)](http://link.springer.com/content/pdf/10.1007%2Fs10898-013-0035-4.pdf); **à tester**!

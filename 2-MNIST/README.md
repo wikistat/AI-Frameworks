@@ -3,7 +3,7 @@
 L'objectifs de ces ateliers ou tutoriels sous forme de calepins ([*jupyter notebooks*](http://jupyter.org/)) est d'introduire le **passage à l'échelle Volume** des méthodes d'apprentissage; **processus qui transforme un statisticien en *Data Scientist*.** 
 
 
-# Reconnaissance de caractères manuscrits ([MNIST](http://yann.lecun.com/exdb/mnist/)) 
+# Reconnaissance de caractères  ([MNIST](http://yann.lecun.com/exdb/mnist/)) 
 
 
 **Résumé** Présentation du problème de reconnaissance de caractères manuscrits ([MNIST DataBase](http://yann.lecun.com/exdb/mnist/)) à partir d’images numérisées. L’objectif
@@ -23,12 +23,14 @@ De façon très schématique, plusieurs stratégies sont développées dans une 
 
 L'objectif de cet atelier n'est pas de concurrencer les meilleurs prévisions mais de comparer sur des données relativement volumineuses les performances de différents environnements technologiques et librairies.  Une dernière question est abordée, elle concerne l'influence de la taille de l'échantillon d'apprentissage sur le temps d'exécution ainsi que sur la qualité des prévisions.
 
+## Tutoriels
+
 Trois environnements sont testés, chacun dans un calepin.
 
-- R classique disponible sur le site du [CRAN](https://cran.r-project.org/).
-- Python en utilisant la librairie [scikit-learn](http://scikit-learn.org/stable/)
-- Enfin la librairie [MLlib](http://spark.apache.org/mllib/) de [Spark](http://spark.apache.org) à l'aide de l'API `pyspark` et donc finalement en langage python.
+- [`Atelier-MNIST-R`](https://github.com/wikistat/Ateliers-Big-Data/blob/master/2-MNIST/Atelier-MNIST-R.ipynb) en [R](https://cran.r-project.org/).
+- [`Atelier-MNIST-python`](https://github.com/wikistat/Ateliers-Big-Data/blob/master/2-MNIST/Atelier-MNIST-python.ipynb) en Python avec la librairie [scikit-learn](http://scikit-learn.org/stable/)
+- [`Atelier-MNIST-python`](https://github.com/wikistat/Ateliers-Big-Data/blob/master/2-MNIST/Atelier-MNIST-pyspark.ipynb) utilise la librairie [MLlib](http://spark.apache.org/mllib/) de [Spark](http://spark.apache.org) à l'aide de l'API `pyspark` et donc finalement en langage Python.
 
-*Remarque importante*, les meilleures résultats actuellement obtenus font appel à des modèles invariants par transformation: *scattering* ou apprentissage profond avec réseaux de neurones  *convolutionnels* dont de nombreuses librairies proposent des implémentations : keras, theano, lasagne, tensorflow, torch... mais nécessitant des moyens techniques (cluster, cartes GPU) conséquents.
+**Remarque**, les meilleures résultats actuellement obtenus font appel à des modèles invariants par transformation: *scattering* ou apprentissage profond avec réseaux de neurones  *convolutionnels* dont de nombreuses librairies proposent des implémentations : keras, theano, lasagne, tensorflow, torch... mais nécessitant des moyens techniques (cluster, cartes GPU) conséquents.
 
 

@@ -4,6 +4,10 @@ L'objectifs de ces ateliers ou tutoriels sous forme de calepins ([*jupyter noteb
 
 **Remarques importantes**: si les données ne sont pas *grosses* à devoir être *distribuées*, un usage classique de Python voire R s'avère plus efficace pour une *phase d'aprpentissage*. En revanche, la phase de préparation des données (*data munging*), en flux ou pas, gagne à être opérée dans un environnement distribué (cf. [Besse et al. 2016](https://hal.archives-ouvertes.fr/hal-01350099)). D'où l'importance pour le statisticien à se former à ces technologies.
 
+# Introduction à [Spark](href="http://spark.apache.org/) avec ([`PySpark`](http://spark.apache.org/docs/latest/api/python/)) 
+
+
+
 ## Présentation de [Spark](href="http://spark.apache.org/)
 Des données réellement massives sont systématiquement associées à une architecture distribuées de type *Hadoop*. Dans cet environnement spécifique, *Spark* occupe une place prépondérante. 
 
@@ -18,11 +22,11 @@ En plein développement, cet environnement comporte (version 1.6 2.0) des incoh�
 *MLlib* qui va progressivement être remplacée par *SparkML* dans les versions à venir...
 
 
-## Initiation à [Spark](href="http://spark.apache.org/) avec [`PySpark`](http://spark.apache.org/docs/latest/api/python/)
+## Tutoriels d'nitiation à [Spark](href="http://spark.apache.org/) avec [`PySpark`](http://spark.apache.org/docs/latest/api/python/)
 L'objectif de ces tutoriels est d'introduire les objets de la technologie [Spark](https://spark.apache.org/) et leur utilisation à l'aide de commandes en Python, plus précisément en utilisant l'API  [`PySpark`](http://spark.apache.org/docs/latest/api/python/). 
 
 - [`Cal1-PySpark-munging`](https://github.com/wikistat/Ateliers-Big-Data/blob/master/1-Intro-PySpark/Cal1-PySpark-munging.ipynb) justifie l'utilisation de cet environnement qui distribue automatiquement les données sur un cluster et parallélise les tâches; description des principaux types de données et du concept de *Resilient Distributed Datasets* (RDD): toute tâche en *Spark* s'exprime comme la création, la transformation de RDDs ou le lancement d'actions sur des RDDs. Ce sont les outils de préparation des données.
 
 - [`Cal2-PySpark-statelem`](https://github.com/wikistat/Ateliers-Big-Data/blob/master/1-Intro-PySpark/Cal2-PySpark-statelem.ipynb): Statistiques élémentaires et modélisaiton par régression logistique avec [MLlib](https://spark.apache.org/mllib/).
-- [`Cal3-PySpark-SQL`](https://github.com/wikistat/Ateliers-Big-Data/blob/master/1-Intro-PySpark/Cal3-PySpark-SQL.ipynb): 
+- [`Cal3-PySpark-SQL`](https://github.com/wikistat/Ateliers-Big-Data/blob/master/1-Intro-PySpark/Cal3-PySpark-SQL.ipynb): Introduction à la gestion de *Data Frame* avec [SparkSQL](http://spark.apache.org/sql/). Requêtage, filtrage, exploratio élémentaire.
 

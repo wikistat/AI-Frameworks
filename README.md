@@ -5,6 +5,8 @@ L'objectifs de ces ateliers ou tutoriels sous forme de calepins ([*jupyter noteb
 **Remarques importantes**: si les données ne sont pas *grosses* à devoir être *distribuées*, un usage classique de Python voire R s'avère plus efficace pour une *phase d'aprpentissage*. En revanche, la phase de préparation des données (*data munging*), en flux ou pas, gagne à être opérée dans un environnement distribué (cf. [Besse et al. 2016](https://hal.archives-ouvertes.fr/hal-01350099)). D'où l'importance pour le statisticien à se former à ces technologies.
 
 
+# Introduction aux technologies pour données massives
+
 ## De [Hadoop](http://hadoop.apache.org/) à [Spark](http://spark.apache.org/)
 
 Un [rapport](https://hal.archives-ouvertes.fr/file/index/docid/995801/filename/st-stat-bigdata-clones.pdf) introduit aux technologies adaptées à des données massives donc *distribuées*, principalement à l'environnement **Hadoop** et aux fonctionnalités *MapReduce*.
@@ -52,7 +54,11 @@ Un premier groupe (dossier [1-Intro-Spark](https://github.com/wikistat/Ateliers-
 ## [Cas d'usage](https://hal.archives-ouvertes.fr/hal-01350099)
 Chacun des autres dossiers concerne un jeu de données et contient un ou des calepins (*notebooks*) au format .ipynb codés en R, Python ou PySpark à télécharger et ouvrir dans *Jupyter*. L'objectif est de comparer les performances des principaux environnements plus ou moins bien adaptés à l'analyse de données massives en fonction du but visé.
 
-Il est question de [reconnaissance de caractères](http://localhost:8888/tree/Ateliers-Big-Data/2-MNIST) (MNIST), de [recommandation de films](http://localhost:8888/tree/Ateliers-Big-Data/3-MovieLens) (MovieLens) et de [catégorisation de produits](http://localhost:8888/tree/Ateliers-Big-Data/4-Cdiscount) (*text mining*).
+Il est question de 
+
+- [reconnaissance de caractères](http://localhost:8888/tree/Ateliers-Big-Data/2-MNIST) (MNIST), 
+- [recommandation de films](http://localhost:8888/tree/Ateliers-Big-Data/3-MovieLens) (MovieLens)
+- [catégorisation de produits](http://localhost:8888/tree/Ateliers-Big-Data/4-Cdiscount) (*text mining*).
 
 La synthèse des résultats obtenus est développée par [Besse et al. 2016](https://hal.archives-ouvertes.fr/hal-01350099).
 
