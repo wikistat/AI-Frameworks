@@ -14,9 +14,9 @@ Chacun des autres dossiers concerne un jeu de données et contient un ou des cal
 Il est question de 
 
 - [`1-Intro-Spark`](https://github.com/wikistat/Ateliers-Big-Data/tree/master/1-Intro-PySpark) Tutoriels d'initiation à Spark en Python (PySpark)
-- [`2-MNIST`](http://localhost:8888/tree/Ateliers-Big-Data/2-MNIST) reconnaissance de caractères (MNIST), 
-- [`3-MovieLens`](http://localhost:8888/tree/Ateliers-Big-Data/3-MovieLens) recommandation de films (MovieLens)
-- [`4-Cdiscount`](http://localhost:8888/tree/Ateliers-Big-Data/4-Cdiscount) catégorisation de produits (*text mining*).
+- [`2-MNIST`](https://github.com/wikistat/Ateliers-Big-Data/tree/master/2-MNIST) reconnaissance de caractères (MNIST), 
+- [`3-MovieLens`](https://github.com/wikistat/Ateliers-Big-Data/tree/master/3-MovieLens) recommandation de films (MovieLens)
+- [`4-Cdiscount`](https://github.com/wikistat/Ateliers-Big-Data/tree/master/4-Cdiscount) catégorisation de produits (*text mining*).
 
 La synthèse des résultats obtenus est développée par [Besse et al. 2016](https://hal.archives-ouvertes.fr/hal-01350099).
 
