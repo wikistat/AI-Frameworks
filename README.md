@@ -8,6 +8,17 @@ L'objectifs de ces ateliers ou tutoriels sous forme de calepins ([*jupyter noteb
 
 
 # Introduction aux technologies pour données massives
+## [Cas d'usage](https://hal.archives-ouvertes.fr/hal-01350099)
+Chacun des autres dossiers concerne un jeu de données et contient un ou des calepins (*notebooks*) au format .ipynb codés en R, Python ou PySpark à télécharger et ouvrir dans *Jupyter*. L'objectif est de comparer les performances des principaux environnements plus ou moins bien adaptés à l'analyse de données massives en fonction du but visé.
+
+Il est question de 
+
+- [`1-Intro-Spark`](https://github.com/wikistat/Ateliers-Big-Data/tree/master/1-Intro-PySpark) Tutoriels d'initiation à Spark en Python (PySpark)
+- [`2-MNIST`](http://localhost:8888/tree/Ateliers-Big-Data/2-MNIST) reconnaissance de caractères (MNIST), 
+- [`3-MovieLens`](http://localhost:8888/tree/Ateliers-Big-Data/3-MovieLens) recommandation de films (MovieLens)
+- [`4-Cdiscount`](http://localhost:8888/tree/Ateliers-Big-Data/4-Cdiscount) catégorisation de produits (*text mining*).
+
+La synthèse des résultats obtenus est développée par [Besse et al. 2016](https://hal.archives-ouvertes.fr/hal-01350099).
 
 ## De [Hadoop](http://hadoop.apache.org/) à [Spark](http://spark.apache.org/)
 
@@ -26,7 +37,7 @@ d’ordinateurs, le résultat est un ensemble de couples : une clef (le mot, l�
 Dans cette architecture, les algorithmes sont dits *échelonnables* de l’anglais **scalable** si  le  temps  d’exécution  décroît  linéairement  avec  le  nombre  d’exécuteurs dédiés au calcul. C’est immédiat pour des dénombrements, des calculs de
 moyennes, ce n’est pas nécessairement le cas pour des algorithmes itératifs complexes. 
 
-### Pourquoi [Spark](http://spark.apache.org/)
+### Pourquoi [Spark](http://spark.apache.org/)?
 Les algorihtmes de certains méthodes s'adaptent facilement aux contraintes de *MapReduce* d'autres pas et cela opère une *sélection naturelle* des méthodes qui passent facilement à l'échelle volume. Anisi, la méthode des *k-plus proches voisins* n’est pas échelonnable au contraire des algorithmes de classification non-supervisée par réallocation dynamique (e.g.Forgy, *k-means*) qui peuvent opérer par itérations d’étapes *MapReduce*.
 
 Mais, même *scalable* ou *échelonnable*, les méthodes itératives soulèvent d'autres problèmes. L’exemple de l’algorithme de Forgy (1965) est très révélateur.
@@ -45,22 +56,12 @@ les nouveaux barycentres, moyennes des valeurs des variables des individus parta
 
 C'est une des principales motivations la mise en place de la technologie **Spark** (Zaharia et al.[2012]). L'autre est la capacité de cet environnement à lire, gérer, tout type de fichier ou d'architecture de données distribuées ou pas.
 
-Cette couche logicielle au-dessus de systèmes de gestion de fichiers comme Hadoop introduit la notion de **base de données résiliente** (*
-resilient distributed dataset* ou **RDD**) dont chaque partition reste, si nécessaire, présente en mémoire entre deux itérations pour éviter réécriture et relecture. Cela répond bien aux principales contraintes: *des données massives ne doivent pas être déplacées* et un résultat doit être obtenu par *une seule opération de lecture sur disque*.
+Cette couche logicielle au-dessus de systèmes de gestion de fichiers comme Hadoop introduit la notion de **base de données résiliente** (*resilient distributed dataset* ou **RDD**) dont chaque partition reste, si nécessaire, présente en mémoire entre deux itérations pour éviter réécriture et relecture. Cela répond bien aux principales contraintes: *des données massives ne doivent pas être déplacées* et un résultat doit être obtenu par *une seule opération de lecture sur disque*.
 
 
 ## Mise en oeuvre de [Spark](http://spark.apache.org/)
  
 Un premier groupe (dossier [1-Intro-Spark](https://github.com/wikistat/Ateliers-Big-Data/tree/master/1-Intro-PySpark)) de tutoriels, propose une initiation à l'utilisation en Python de l'environnement (*framework*) [*Spark*](http://spark.apache.org/) devenu une référence pour la gestion et l'analyse de données distribuées (*e.g* sous *Hadoop*). L'accent est mis sur la gestion des RDDs (*resilient distributed datasets*) et leur analyse à l'aide des librairies *Mllib* et *SparkML*.
 
-## [Cas d'usage](https://hal.archives-ouvertes.fr/hal-01350099)
-Chacun des autres dossiers concerne un jeu de données et contient un ou des calepins (*notebooks*) au format .ipynb codés en R, Python ou PySpark à télécharger et ouvrir dans *Jupyter*. L'objectif est de comparer les performances des principaux environnements plus ou moins bien adaptés à l'analyse de données massives en fonction du but visé.
 
-Il est question de 
-
-- [reconnaissance de caractères](http://localhost:8888/tree/Ateliers-Big-Data/2-MNIST) (MNIST), 
-- [recommandation de films](http://localhost:8888/tree/Ateliers-Big-Data/3-MovieLens) (MovieLens)
-- [catégorisation de produits](http://localhost:8888/tree/Ateliers-Big-Data/4-Cdiscount) (*text mining*).
-
-La synthèse des résultats obtenus est développée par [Besse et al. 2016](https://hal.archives-ouvertes.fr/hal-01350099).
 
