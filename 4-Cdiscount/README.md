@@ -14,6 +14,11 @@ Le jeux de données complet (15M produits) permet un test en vrai grandeur du **
 
 La synthèse des résultats obtenus est développée par [Besse et al. 2016](https://hal.archives-ouvertes.fr/hal-01350099) (section 5).
 
+## Tutoriels
+- [Atelier-Cdiscount-Python](https://github.com/wikistat/Ateliers-Big-Data/blob/master/4-Cdiscount/Atelier-Cdiscount-Python.ipynb). Version en Ptyhon ([scikit-learn](http://scikit-learn.org/stable/)) de préparation (*munging*), vectorisation (hashage, TF-IDF) de données textuelles, modélisation par régression logistique (un modèle par classe).
+- [Atelier-Cdiscount-pyspark](https://github.com/wikistat/Ateliers-Big-Data/blob/master/4-Cdiscount/Atelier-Cdiscount-pyspark.ipynb). Version en PySpark ([MLlib](http://spark.apache.org/mllib/)) de préparation (*munging*), vectorisation (hashage, TF-IDF) de données textuelles, modélisation par régression logistique (un modèle par classe).
+- R n'est pas adapté au traitement de données aussi volumineuses sur un simple poste de travail. 
+
 ## Présentation
 ### Objectif en fouille de texte
 Il s'agit d'un  problème récurrent du commerce en ligne qui se présente sous la forme suivante. Un commerçant partenaire d'un site en ligne souhaite proposer l'ensemble d'un catalogue d'articles à la vente, chacun décrit par un court texte en langage naturel. Pour assurer le maximum de visibilité des produits, ce site doit assurer une catégorisation homogène des produits malgré leurs origines très variées: les commerçants partenaires. A partir de la liste des articles déjà présents sur le site (base d'apprentissage), il s'agit de déterminer la catégorie d'un nouvel article, c'est-à-dire permettre de l'introduire dans l'arborescence des catégories et sous-catégories du site ; c'est donc encore d'un problème de discrimination  ou classification supervisée mais appliquée à de la fouille de textes.
@@ -46,7 +51,4 @@ Les données se présentent sous la forme d'un fichier texte de 3.5 Go. Il compo
 R, peu adapté à une fouille de textes d'un tel volume, n'a pas été testé, seules sont comparées deux séquences d'analyses identiques réalisées avec Python   (*Scikit-learn*) et Spark (*Mllib*).
 
 
-## Tutoriels
-- [Atelier-Cdiscount-Python](https://github.com/wikistat/Ateliers-Big-Data/blob/master/4-Cdiscount/Atelier-Cdiscount-Python.ipynb). Version en Ptyhon ([scikit-learn](http://scikit-learn.org/stable/)) de préparation (*munging*), vectorisation (hashage, TF-IDF) de données textuelles, modélisation par régression logistique (un modèle par classe).
-- [Atelier-Cdiscount-pyspark](https://github.com/wikistat/Ateliers-Big-Data/blob/master/4-Cdiscount/Atelier-Cdiscount-pyspark.ipynb). Version en PySpark ([MLlib](http://spark.apache.org/mllib/)) de préparation (*munging*), vectorisation (hashage, TF-IDF) de données textuelles, modélisation par régression logistique (un modèle par classe).
-- R n'est pas adapté au traitement de données aussi volumineuses sur un simple poste de travail. 
+
