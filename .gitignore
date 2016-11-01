@@ -7,3 +7,6 @@ Cdiscount/Deprecated.ipynb
 Cdiscount/Simple Dropdown Menu.ipynb
 Cdiscount/test_visu/
 Cdiscount/.ipynb_checkpoints/
+*.gz
+**/.ipynb_checkpoints/
+.ipynb_checkpoints/
