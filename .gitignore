@@ -12,3 +12,10 @@ Cdiscount/.ipynb_checkpoints/
 .ipynb_checkpoints/
 .gitignore
 2-MNIST/Atelier-MNIST-pyspark_old.ipynb
+2-MNIST/derby.log
+2-MNIST/metastore_db/
+3-MovieLens/Atelier-MovieLens-pyspark_old.ipynb
+3-MovieLens/derby.log
+3-MovieLens/metastore_db/
+3-MovieLens/ml-ratings20M.csv
+3-MovieLens/ml-ratings20M.zip
