@@ -10,3 +10,5 @@ Cdiscount/.ipynb_checkpoints/
 *.gz
 **/.ipynb_checkpoints/
 .ipynb_checkpoints/
+.gitignore
+2-MNIST/Atelier-MNIST-pyspark_old.ipynb
