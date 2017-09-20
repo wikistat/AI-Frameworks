@@ -1,28 +1,50 @@
-###<a href="http://www.insa-toulouse.fr/" ><img src="http://www.math.univ-toulouse.fr/~besse/Wikistat/Images/Logo_INSAvilletoulouse-RVB.png" style="float:left; max-width: 80px; display: inline" alt="INSA"/> |  [*Mathématiques Appliquées*](http://www.math.insa-toulouse.fr/fr/index.html), [`Science des Données`](http://www.math.insa-toulouse.fr/fr/enseignement.html) 
+## <a href="http://www.insa-toulouse.fr/" ><img src="http://www.math.univ-toulouse.fr/~besse/Wikistat/Images/Logo_INSAvilletoulouse-RVB.png" style="float:left; max-width: 80px; display: inline" alt="INSA"/> |  [*Mathématiques Appliquées*](http://www.math.insa-toulouse.fr/fr/index.html), [`Science des Données`](http://www.math.insa-toulouse.fr/fr/enseignement.html) 
 
-## [Ateliers: Technologies des Données Massives](https://github.com/wikistat/Ateliers-Big-Data) avec [R](https://cran.r-project.org/), [Python](https://www.python.org/) et / ou [Spark](href="http://spark.apache.org/)
+# Science des Données & Statistique
 
-L'objectifs de ces ateliers ou tutoriels sous forme de calepins ([*jupyter notebooks*](http://jupyter.org/)) est d'introduire le **passage à l'échelle Volume** des méthodes d'apprentissage; **processus qui transforme un statisticien en *Data Scientist*.** 
+### [Lire plus...](http://www.math.univ-toulouse.fr/~besse/Wikistat/pdf/st-lm-Intro-Stat_SD.pdf)
 
-**Remarques importantes**: si les données ne sont pas *grosses* à devoir être *distribuées*, un usage classique de Python voire R s'avère plus efficace pour une *phase d'aprpentissage*. En revanche, la phase de préparation des données (*data munging*), en flux ou pas, gagne à être opérée dans un environnement distribué (cf. [Besse et al. 2016](https://hal.archives-ouvertes.fr/hal-01350099)). D'où l'importance pour le statisticien à se former à ces technologies.
+Schématiquement, la **Science des Données** est définie autour d'une *agrégation de compétences* en Informatique (langage comme [R](href="https://cran.r-project.org/) et [Python](https://www.python.org/) , gestion des données, calcul parallèle...), Statistique (exploration, estimation test, modélisation, prévision) Apprentissage Machine (prévision), Mathématiques (probabilités, optimisation, analyse fonctionnelle, graphes...). 
 
+Son **apprentissage** est acquis par l'intermédiaire de scénarios d'analyse de données réelles, ou *tutoriel*, présentés sous forme de *calepins* ([*jupyter notebooks*](http://jupyter.org/)) en [R](href="https://cran.r-project.org/) ou [Python](https://www.python.org/). Voir à ce sujet le [livre de référence](https://www.inferentialthinking.com/) du cours [*Fondations of Data Science*](http://data8.org/) de l'UC Berkley.
 
-# Introduction aux technologies pour données massives
-## [Cas d'usage](https://hal.archives-ouvertes.fr/hal-01350099)
-Chacun des autres dossiers concerne un jeu de données et contient un ou des calepins (*notebooks*) au format .ipynb codés en R, Python ou PySpark à télécharger et ouvrir dans *Jupyter*. L'objectif est de comparer les performances des principaux environnements plus ou moins bien adaptés à l'analyse de données massives en fonction du but visé.
+Cette **pratique** est **indispensable** mais masque les *aspects théoriques* (mathématiques, statistiques): une *formule* est remplacée par un commande ou fonction en Python ou R, une *démonstration* par l'exécution d'exemples dans un calepin.
 
-Il est question de 
+Pour offrir de la *profondeur*, plus de compréhension, à cette (auto)-formation, les calepins renvoient (liens hypertextes) systématiquement à des **vignettes "théoriques"**  du site [wikistat.fr](http://wikistat.fr/) exposant en détail (cours) les méthodes et algorithmes concernés.
 
-- [`1-Intro-Spark`](https://github.com/wikistat/Ateliers-Big-Data/tree/master/1-Intro-PySpark) Tutoriels d'initiation à Spark en Python (PySpark)
-- [`2-MNIST`](https://github.com/wikistat/Ateliers-Big-Data/tree/master/2-MNIST) reconnaissance de caractères (MNIST), 
-- [`3-MovieLens`](https://github.com/wikistat/Ateliers-Big-Data/tree/master/3-MovieLens) recommandation de films (MovieLens)
-- [`4-Cdiscount`](https://github.com/wikistat/Ateliers-Big-Data/tree/master/4-Cdiscount) catégorisation de produits (*text mining*).
+Il ne s'agit pas simplement de pouvoir exécuter une méthode, un algorithme, il est important d'en **comprendre les propriétés**, conditions d'utilisation et limites.
+
+# Saison 4 [*Technologies des Grosses Data*](https://github.com/wikistat/Ateliers-Big-Data) 
+
+### [Introduction plus détaillée](http://www.math.univ-toulouse.fr/~besse/Wikistat/pdf/st-m-Intro-AtelierGD.pdf)
+
+**Remarques importantes**: si les données ne sont pas *grosses* à devoir être *distribuées*, un usage classique de Python voire R s'avère plus efficace pour une *phase d'apprentissage*. En revanche, la phase de préparation des données (*data munging*), en flux ou pas, gagne à être opérée dans un environnement distribué (cf. [Besse et al. 2016](https://hal.archives-ouvertes.fr/hal-01350099)). D'où l'importance pour le statisticien à se former aux technologies afférentes.
+
+## Objectifs
+
+Cette saison est consacrée au **passage à l'échelle** pour l'analyse de *grosses* *data* donc distribuées sur plusieurs machines (**Hadoop**). L'objectif est de comparer les performances des principaux environnements ou architectures plus ou moins bien adaptées à l'analyse de données massives en fonction du but visé: préparation des donnés, exploration, prévision.
+
+## Prérequis
+Avoir acquis les compétences des saisons précédentes ou y revenir:
+
+- [Initiation à R](https://github.com/wikistat/Intro-R)
+- [Initiation à Python](https://github.com/wikistat/Intro-Python)
+- Formation aux [outils Statistiques de base](https://github.com/wikistat/StatElem)
+- [Exploration Statistique pour la Science des Données](https://github.com/wikistat/Exploration). Cete saison intègre les algorithmes d'apprentissage non-supervisé (*clustering*).
+- [Apprentissage Machine / Statistique](https://github.com/wikistat/Apprentissage)
+
+## Épisodes
+
+- Épisode 1 [`Intro-Spark`](https://github.com/wikistat/Ateliers-Big-Data/tree/master/1-Intro-PySpark) Tutoriels d'initiation à Spark en Python (PySpark)
+- Épisode 2 [`MNIST`](https://github.com/wikistat/Ateliers-Big-Data/tree/master/2-MNIST) reconnaissance de caractères (MNIST), 
+- Épisode 3 [`MovieLens`](https://github.com/wikistat/Ateliers-Big-Data/tree/master/3-MovieLens) recommandation de films (MovieLens)
+- Épisode 4 [`Cdiscount`](https://github.com/wikistat/Ateliers-Big-Data/tree/master/4-Cdiscount) catégorisation de produits (*text mining*).
 
 La synthèse des résultats obtenus est développée par [Besse et al. 2016](https://hal.archives-ouvertes.fr/hal-01350099).
 
-## De [Hadoop](http://hadoop.apache.org/) à [Spark](http://spark.apache.org/)
+- d'autres épisodes à venir.
 
-Un [rapport](https://hal.archives-ouvertes.fr/file/index/docid/995801/filename/st-stat-bigdata-clones.pdf) introduit aux technologies adaptées à des données massives donc *distribuées*, principalement à l'environnement **Hadoop** et aux fonctionnalités *MapReduce*.
+## De [Hadoop](http://hadoop.apache.org/) à [Spark](http://spark.apache.org/)
 
 ### Introduction à [Hadoop](http://hadoop.apache.org/)
 
@@ -52,9 +74,9 @@ de même *clef* à la même étape *Reduce* suivante.
  - Pour chaque *clef* désignant un groupe, une étape **Reduce** calcule
 les nouveaux barycentres, moyennes des valeurs des variables des individus partageant la même classe, c’est-à-dire la même valeur de *clef*.
 
-**Principal problème** de cette implémentation, le temps d’exécution économisé par la parallélisation des calculs est fortement pénalisé par la nécessité d’écrire et relire toutes les données entre deux itérations.
+**Problème** de cette implémentation, le temps d’exécution économisé par la parallélisation des calculs est fortement pénalisé par la nécessité d’écrire et relire toutes les données entre deux itérations.
 
-C'est une des principales motivations la mise en place de la technologie **Spark** (Zaharia et al.[2012]). L'autre est la capacité de cet environnement à lire, gérer, tout type de fichier ou d'architecture de données distribuées ou pas.
+C'est une des principales motivations la mise en place de la technologie **Spark** (Zaharia et al.[2012]). L'autre est la **capacité** de cet environnement à lire, gérer, tout type de fichier ou d'architecture de données distribuées ou pas.
 
 Cette couche logicielle au-dessus de systèmes de gestion de fichiers comme Hadoop introduit la notion de **base de données résiliente** (*resilient distributed dataset* ou **RDD**) dont chaque partition reste, si nécessaire, présente en mémoire entre deux itérations pour éviter réécriture et relecture. Cela répond bien aux principales contraintes: *des données massives ne doivent pas être déplacées* et un résultat doit être obtenu par *une seule opération de lecture sur disque*.
 
