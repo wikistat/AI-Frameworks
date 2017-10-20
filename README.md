@@ -18,11 +18,13 @@ Il ne s'agit pas simplement de pouvoir exécuter une méthode, un algorithme, il
 
 ### [Introduction plus détaillée](http://www.math.univ-toulouse.fr/~besse/Wikistat/pdf/st-m-Intro-AtelierGD.pdf)
 
-**Remarques importantes**: si les données ne sont pas *grosses* à devoir être *distribuées*, un usage classique de Python voire R s'avère plus efficace pour une *phase d'apprentissage*. En revanche, la phase de préparation des données (*data munging*), en flux ou pas, gagne à être opérée dans un environnement distribué (cf. [Besse et al. 2016](https://hal.archives-ouvertes.fr/hal-01350099)). D'où l'importance pour le statisticien à se former aux technologies afférentes.
+Si les données ne sont pas *grosses* à devoir être *distribuées*, un usage classique de Python voire R s'avère plus efficace pour une *phase d'apprentissage*. En revanche, la phase de préparation des données (*data munging*), en flux ou pas, gagne à être opérée dans un environnement distribué (*Hadoop*) dans l'environnement *Spark*, notamment *via* l'API `PySpark` (cf. [Besse et al. 2016](https://hal.archives-ouvertes.fr/hal-01350099)). 
+
+Dans tous les cas, l'apprentissage de modèles complexes (*deep learning* et `keras`, `XGBoost`...) nécessite des moyens de calcul massivement parallèles (*e.g. GPU*). D'où l'importance pour le statisticien / *data scientist* à se former aux technologies afférentes.
 
 ## Objectifs
 
-Cette saison est consacrée au **passage à l'échelle** pour l'analyse de *grosses* *data* donc distribuées sur plusieurs machines (**Hadoop**). L'objectif est de comparer les performances des principaux environnements ou architectures plus ou moins bien adaptées à l'analyse de données massives en fonction du but visé: préparation des donnés, exploration, prévision.
+Cette saison est consacrée au **passage à l'échelle** pour l'analyse de *grosses* *data*, donc distribuées sur plusieurs machines (*Hadoop*) ou de données en grande dimension. L'objectif est de comparer les performances des principaux environnements ou architectures plus ou moins bien adaptées à l'analyse de données massives en fonction du but visé: préparation des donnés, exploration, apprentissage, prévision.
 
 ## Prérequis
 Avoir acquis les compétences des saisons précédentes ou y revenir:
@@ -40,9 +42,15 @@ Avoir acquis les compétences des saisons précédentes ou y revenir:
 - Épisode 3 [`MovieLens`](https://github.com/wikistat/Ateliers-Big-Data/tree/master/3-MovieLens) recommandation de films (MovieLens)
 - Épisode 4 [`Cdiscount`](https://github.com/wikistat/Ateliers-Big-Data/tree/master/4-Cdiscount) catégorisation de produits (*text mining*).
 
-La synthèse des résultats obtenus est développée par [Besse et al. 2016](https://hal.archives-ouvertes.fr/hal-01350099).
+**En travaux:**
 
-- d'autres épisodes à venir.
+- Épisode 5 [`Human Activity Recognition`]() utilisation de `XGBoost.
+- Episode 6 [`Cats vs. Dogs`]() utilisation de `Keras`.
+- Episode 7 [`Curves anomalies`]()
+
+Une synthèse des résultats obtenus dnas les 3 cas d'usage (MNIST, MovieLens, Cdiscount) est développée par [Besse et al. 2016](https://hal.archives-ouvertes.fr/hal-01350099).
+
+Chaque année, l'**évaluation** des compétences acquises est basée sur la participation (résultats et soutenance orale) des étudiants à un [défi grosses data](https://defibigdata2018.insa-toulouse.fr/) dont l'objet est la construction d'une meilleure prévision par apprentissage sur un jeu complexe de données.
 
 ## De [Hadoop](http://hadoop.apache.org/) à [Spark](http://spark.apache.org/)
 
