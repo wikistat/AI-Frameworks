@@ -18,9 +18,9 @@ Il ne s'agit pas simplement de pouvoir exécuter une méthode, un algorithme, il
 
 ### [Introduction plus détaillée](http://www.math.univ-toulouse.fr/~besse/Wikistat/pdf/st-m-Intro-AtelierGD.pdf)
 
-Si les données ne sont pas *grosses* à devoir être *distribuées*, un usage classique de Python voire R s'avère plus efficace pour une *phase d'apprentissage*. En revanche, la phase de préparation des données (*data munging*), en flux ou pas, gagne à être opérée dans un environnement distribué (*Hadoop*) dans l'environnement *Spark*, notamment *via* l'API `PySpark` (cf. [Besse et al. 2016](https://hal.archives-ouvertes.fr/hal-01350099)). 
+Si les données ne sont pas *grosses* à devoir être *distribuées*, un usage classique de Python voire R s'avère plus efficace pour une *phase d'apprentissage*. En revanche, la phase de préparation de données massives (*data munging*), en flux ou pas, gagne beaucoup à être opérée dans un environnement distribué (*Hadoop*) utilisant *Spark*, notamment *via* l'API `PySpark` (cf. [Besse et al. 2016](https://hal.archives-ouvertes.fr/hal-01350099)). 
 
-Dans tous les cas, l'apprentissage de modèles complexes (*deep learning* et `keras`, `XGBoost`...) nécessite des moyens de calcul massivement parallèles (*e.g. GPU*). D'où l'importance pour le statisticien / *data scientist* à se former aux technologies afférentes.
+Dans tous les cas, l'apprentissage de modèles complexes (*deep learning* et `keras`, `XGBoost`...) nécessite des moyens de calcul massivement parallèles (*e.g. GPU, cloud*). D'où l'importance pour le statisticien / *data scientist* à se former aux technologies afférentes.
 
 ## Objectifs
 
@@ -35,17 +35,17 @@ Avoir acquis les compétences des saisons précédentes ou y revenir:
 - [Exploration Statistique pour la Science des Données](https://github.com/wikistat/Exploration). Cete saison intègre les algorithmes d'apprentissage non-supervisé (*clustering*).
 - [Apprentissage Machine / Statistique](https://github.com/wikistat/Apprentissage)
 
-## Épisodes
+## Épisodes ou cas d'usage
 
 - Épisode 1 [`Intro-Spark`](https://github.com/wikistat/Ateliers-Big-Data/tree/master/1-Intro-PySpark) Tutoriels d'initiation à Spark en Python (PySpark)
-- Épisode 2 [`MNIST`](https://github.com/wikistat/Ateliers-Big-Data/tree/master/2-MNIST) reconnaissance de caractères (MNIST), 
-- Épisode 3 [`MovieLens`](https://github.com/wikistat/Ateliers-Big-Data/tree/master/3-MovieLens) recommandation de films (MovieLens)
+- Épisode 2 [`MNIST`](https://github.com/wikistat/Ateliers-Big-Data/tree/master/2-MNIST) reconnaissance de caractères manuscrits, 
+- Épisode 3 [`MovieLens`](https://github.com/wikistat/Ateliers-Big-Data/tree/master/3-MovieLens) recommandation de films 
 - Épisode 4 [`Cdiscount`](https://github.com/wikistat/Ateliers-Big-Data/tree/master/4-Cdiscount) catégorisation de produits (*text mining*).
 
 **En travaux:**
 
-- Épisode 5 [`Human Activity Recognition`]() utilisation de `XGBoost.
-- Episode 6 [`Cats vs. Dogs`]() utilisation de `Keras`.
+- Épisode 5 [`Human Activity Recognition`]() (HAR) et utilisation de `XGBoost`.
+- Episode 6 [`Cats vs. Dogs`]() apprentissage profond avec `Keras` (*TensorFlow*).
 - Episode 7 [`Curves anomalies`]()
 
 Une synthèse des résultats obtenus dnas les 3 cas d'usage (MNIST, MovieLens, Cdiscount) est développée par [Besse et al. 2016](https://hal.archives-ouvertes.fr/hal-01350099).
