@@ -44,8 +44,8 @@ Avoir acquis les compétences des saisons précédentes ou y revenir:
 
 **En travaux:**
 
-- Épisode 5 [`Human Activity Recognition`]() (HAR) et utilisation de `XGBoost`.
-- Episode 6 [`Cats vs. Dogs`]() apprentissage profond avec `Keras` (*TensorFlow*).
+- Épisode 5 [`Human Activity Recognition`](https://github.com/wikistat/Ateliers-Big-Data/tree/master/5-HumanActivityRecognition) (HAR) et utilisation de `XGBoost`, LSTM avec`Keras` (*TensorFlow*).
+- Episode 6 [`Cats vs. Dogs`]() apprentissage profond (réseau convolutionnel) avec `Keras` (*TensorFlow*).
 - Episode 7 [`Curves anomalies`]()
 
 Une synthèse des résultats obtenus dnas les 3 cas d'usage (MNIST, MovieLens, Cdiscount) est développée par [Besse et al. 2016](https://hal.archives-ouvertes.fr/hal-01350099).
