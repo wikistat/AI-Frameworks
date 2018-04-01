@@ -1,16 +1,22 @@
-###<a href="http://www.insa-toulouse.fr/" ><img src="http://www.math.univ-toulouse.fr/~besse/Wikistat/Images/Logo_INSAvilletoulouse-RVB.png" style="float:left; max-width: 80px; display: inline" alt="INSA"/> |  [*Mathématiques Appliquées*](http://www.math.insa-toulouse.fr/fr/index.html), [`Science des Données`](http://www.math.insa-toulouse.fr/fr/enseignement.html)
+## <a href="http://www.insa-toulouse.fr/" ><img src="http://www.math.univ-toulouse.fr/~besse/Wikistat/Images/Logo_INSAvilletoulouse-RVB.png" style="float:left; max-width: 80px; display: inline" alt="INSA"/> |  [*Mathématiques Appliquées*](http://www.math.insa-toulouse.fr/fr/index.html), [`Science des Données`](http://www.math.insa-toulouse.fr/fr/enseignement.html) 
 
 ## [Ateliers: Technologies des Données Massives](https://github.com/wikistat/Ateliers-Big-Data) avec [R](https://cran.r-project.org/), [Python](https://www.python.org/) et / ou [Spark](href="http://spark.apache.org/)
 
 L'objectifs de ces ateliers ou tutoriels sous forme de calepins ([*jupyter notebooks*](http://jupyter.org/)) est d'introduire le **passage à l'échelle Volume** des méthodes d'apprentissage; **processus qui transforme un statisticien en *Data Scientist*.** 
 
 
-# Recommandation de Films par Filtrage Collaboratif: [R](https://cran.r-project.org/) ([softImpute](https://cran.r-project.org/web/packages/softImpute/index.html)) *vs.* [Spark](href="http://spark.apache.org/) ([MLlib](http://spark.apache.org/mllib/))
+# Recommandation de Films par Filtrage Collaboratif: [R](https://cran.r-project.org/) ([`softImpute`](https://cran.r-project.org/web/packages/softImpute/index.html)) *vs.* [Spark](href="http://spark.apache.org/) ([`MLlib`](http://spark.apache.org/mllib/))
 
 **Résumé** 
-Les calepins traitent d'un problème classique de recommandation par filtrage collaboratif pour le commerce en ligne. L'objectif est de comparer les ressources de la librairie [MLlib de Spark]([http://spark.apache.org/docs/latest/api/python/pyspark.mllib.html#pyspark.mllib.recommendation.ALS) avec l'algorithme de complétion de grande matrice creuse implémenté dans la librairie [`softImpute` de R](https://cran.r-project.org/web/packages/softImpute/index.html). Ces outils sont appliqués aux données publiques du site [GroupLens](http://grouplens.org/datasets/movielens/). L'objectif est donc de tester les méthodes et la procédure d'optimisation sur le plus petit jeu de données composé de 100k notes  de 943 clients sur 1682 films où chaque client a au moins noté 20 films. Le plus gros jeux de données  (20M notes) est utilisé pour **passer à l'échelle volume**. 
+Les calepins traitent d'un problème classique de recommandation par filtrage collaboratif pour le commerce en ligne. L'objectif est de comparer les ressources de la librairie [MLlib de Spark]([http://spark.apache.org/docs/latest/api/python/pyspark.mllib.html#pyspark.mllib.recommendation.ALS) avec l'algorithme de complétion de grande matrice creuse implémenté dans la librairie [`softImpute`](https://cran.r-project.org/web/packages/softImpute/index.html)  de R [(Mazmunder et al. 2010)](http://web.stanford.edu/~hastie/Papers/mazumder10a.pdf). Ces outils sont appliqués aux données publiques du site [GroupLens](http://grouplens.org/datasets/movielens/). L'objectif est donc de tester les méthodes et la procédure d'optimisation sur le plus petit jeu de données composé de 100k notes  de 943 clients sur 1682 films où chaque client a au moins noté 20 films. Le plus gros jeux de données  (20M notes) est utilisé pour **passer à l'échelle volume**. 
 
 La synthèse des résultats obtenus est développée par [Besse et al. 2016](https://hal.archives-ouvertes.fr/hal-01350099).
+
+## Tutoriels
+- [`Atelier-R-MovieLens`](https://github.com/wikistat/Ateliers-Big-Data/blob/master/MovieLens/Atelier-R-MovieLens.ipynb): un calepin en R propose une comparaison élémentaire des méthodes de factorisation (SVD, NMF) et complétion de matrices sur un exemple "jouet" de dénombrements de ventes. La librairie [softImpute](https://web.stanford.edu/~hastie/swData/softImpute/vignette.html) de complétion de matrice est ensuite utilisée pour construire des recommandations à partir des données [MovieLens](http://grouplens.org/datasets/movielens/)
+- [`Atelier-pyspark-MovieLens`](hhttps://github.com/wikistat/Ateliers-Big-Data/blob/master/MovieLens/Atelier-pyspark-MovieLens.ipynb):Le même objectif (recommandation MovieLens) est atteint dans un calepin en PySpark qui utilise la factorisation par [NMF de MLlib](http://spark.apache.org/docs/latest/mllib-collaborative-filtering.html). 
+
+**Attention**. La librairie [Scikit-learn](http://scikit-learn.org/stable/modules/decomposition.html#nmf) propose bien une version de NMF mais pas adpatée à l'objectif de complétion: les "0" de la matrices creuses sont des "0", pas des données manquantes. 
 
 ## Introduction aux [Systèmes de Recommandation](http://wikistat.fr/pdf/st-m-datSc3-colFil.pdf)
 Les principes des systèmes de recommandation sont exposés plus en détail dans une [vignette](http://wikistat.fr/pdf/st-m-datSc3-colFil.pdf). En voici une brève présentation.
@@ -52,8 +58,3 @@ Des données réalistes croisant plusieurs milliers de clients et films, sont ac
 - `10M` Dix millions d’évaluation par 72 000 utilisateurs sur 10 000 fims.
 - `20M` Vingt millions d’évaluations par 138 000 utilisateurs sur 27 000 films.
 
-## Tutoriels
-- [`Atelier-MovieLens-R`](https://github.com/wikistat/Ateliers-Big-Data/blob/master/3-MovieLens/Atelier-MovieLens-softImpute.ipynb): un calepin en R propose une comparaison élémentaire des méthodes de factorisation (SVD, NMF) et complétion de matrices sur un exemple "jouet" de dénombrements de ventes. La librairie [softImpute]() de complétion de matrice est ensuite utilisée pour construire des recommandations à partir des données [MovieLens](http://grouplens.org/datasets/movielens/)
-- [`Atelier-MovieLens-pyspark`](https://github.com/wikistat/Ateliers-Big-Data/blob/master/3-MovieLens/Atelier-MovieLens-pyspark.ipynb):Le même objectif (recommandation MovieLens) est atteint dans un calepin en PySpark qui utilise la factorisation par [NMF de MLlib](http://spark.apache.org/docs/latest/mllib-collaborative-filtering.html). 
-
-**Attention**. La librairie [Scikit-learn](http://scikit-learn.org/stable/modules/decomposition.html#nmf) propose bien une version de NMF mais pas adpatée à l'objectif de complétion: les "0" ne peuvent correspondre à des données manquantes. 

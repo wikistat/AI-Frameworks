@@ -1,4 +1,4 @@
-###<a href="http://www.insa-toulouse.fr/" ><img src="http://www.math.univ-toulouse.fr/~besse/Wikistat/Images/Logo_INSAvilletoulouse-RVB.png" style="float:left; max-width: 80px; display: inline" alt="INSA"/> |  [*Mathématiques Appliquées*](http://www.math.insa-toulouse.fr/fr/index.html), [`Science des Données`](http://www.math.insa-toulouse.fr/fr/enseignement.html) 
+## <a href="http://www.insa-toulouse.fr/" ><img src="http://www.math.univ-toulouse.fr/~besse/Wikistat/Images/Logo_INSAvilletoulouse-RVB.png" style="float:left; max-width: 80px; display: inline" alt="INSA"/> |  [*Mathématiques Appliquées*](http://www.math.insa-toulouse.fr/fr/index.html), [`Science des Données`](http://www.math.insa-toulouse.fr/fr/enseignement.html) 
 
 ## [Ateliers: Technologies des Données Massives](https://github.com/wikistat/Ateliers-Big-Data) avec [R](https://cran.r-project.org/), [Python](https://www.python.org/) et / ou [Spark](href="http://spark.apache.org/)
 
@@ -15,8 +15,10 @@ Le jeux de données complet (15M produits) permet un test en vrai grandeur du **
 La synthèse des résultats obtenus est développée par [Besse et al. 2016](https://hal.archives-ouvertes.fr/hal-01350099) (section 5).
 
 ## Tutoriels
-- [Atelier-Cdiscount-Python](https://github.com/wikistat/Ateliers-Big-Data/blob/master/4-Cdiscount/Atelier-Cdiscount-Python.ipynb). Version en Ptyhon ([scikit-learn](http://scikit-learn.org/stable/)) de préparation (*munging*), vectorisation (hashage, TF-IDF) de données textuelles, modélisation par régression logistique (un modèle par classe).
-- [Atelier-Cdiscount-pyspark](https://github.com/wikistat/Ateliers-Big-Data/blob/master/4-Cdiscount/Atelier-Cdiscount-pyspark.ipynb). Version en PySpark ([MLlib](http://spark.apache.org/mllib/)) de préparation (*munging*), vectorisation (hashage, TF-IDF) de données textuelles, modélisation par régression logistique (un modèle par classe).
+Plusieurs versions sont disponibles; exécuter les celles principales.
+
+- [Atelier-Python3-Cdiscount-](https://github.com/wikistat/Ateliers-Big-Data/blob/master/Cdiscount/Atelier-Python-3-Cdiscount.ipynb). Version en Python 3 avec [scikit-learn](http://scikit-learn.org/stable/) de préparation (*munging*), vectorisation (hashage, TF-IDF) de données textuelles, modélisation par régression logistique (un modèle par classe).
+- [Atelier-pyspark-Cdiscount](https://github.com/wikistat/Ateliers-Big-Data/blob/master/Cdiscount/Atelier-pyspark-Cdiscount.ipynb). Version en PySpark avec [MLlib](http://spark.apache.org/mllib/)) de préparation (*munging*), vectorisation (hashage, TF-IDF) de données textuelles, modélisation par régression logistique (un modèle par classe). Une [autre version](https://github.com/wikistat/Ateliers-Big-Data/blob/master/Cdiscount/Atelier-pyspark_pipeline-Cdiscount.ipynb) construit des *pipelines*.
 - R n'est pas adapté au traitement de données aussi volumineuses sur un simple poste de travail. 
 
 ## Présentation
