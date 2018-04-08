@@ -12,12 +12,12 @@ MovieLens/Atelier-MovieLens-pyspark_old.ipynb
 MovieLens/derby.log
 MovieLens/metastore_db/
 MovieLens/ml-ratings20M.csv
+MovieLens/ratings20M.csv
 MovieLens/ml-ratings20M.zip
 Cdiscount/Atelier-Cdiscount-pyspark-old.ipynb
 Cdiscount/derby.log
 Cdiscount/metastore_db/
 Cdiscount/Atelier-Cdiscount-pyspark.pdf
 old_Cdiscount/
-CatsVSDogs/subsample_200N_train_80_N_val/CPU*.*
-CatsVSDogs/subsample_200N_train_80_N_val/GPU*.*
-CatsVSDogs/subsample_200N_train_80_N_val/preprocessing_example
+CatsVSDogs/subsample_200N_train_80_N_val/
+CatsVSDogs/subsample_2000N_train_800_N_val/

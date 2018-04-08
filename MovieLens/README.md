@@ -1,11 +1,14 @@
 ## <a href="http://www.insa-toulouse.fr/" ><img src="http://www.math.univ-toulouse.fr/~besse/Wikistat/Images/Logo_INSAvilletoulouse-RVB.png" style="float:left; max-width: 80px; display: inline" alt="INSA"/> |  [*Mathématiques Appliquées*](http://www.math.insa-toulouse.fr/fr/index.html), [`Science des Données`](http://www.math.insa-toulouse.fr/fr/enseignement.html) 
 
-## [Ateliers: Technologies des Données Massives](https://github.com/wikistat/Ateliers-Big-Data) avec [R](https://cran.r-project.org/), [Python](https://www.python.org/) et / ou [Spark](href="http://spark.apache.org/)
+## [Ateliers: Technologies des Données Massives](https://github.com/wikistat/Ateliers-Big-Data) 
+
+
+<a href="https://www.python.org/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Python_logo_and_wordmark.svg/390px-Python_logo_and_wordmark.svg.png" style="max-width: 120px; display: inline" alt="Python"/></a> <a href="http://spark.apache.org/"><img src="http://spark.apache.org/images/spark-logo-trademark.png" style="max-width: 80px; display: inline" alt="Spark"/> </a> <a href="https://www.tensorflow.org/"><img src="https://avatars0.githubusercontent.com/u/15658638?s=200&v=4" style="max-width: 40px; display: inline" alt="TensorFlow"/></a>  <a href="https://keras.io/"><img src="https://s3.amazonaws.com/keras.io/img/keras-logo-2018-large-1200.png" style="max-width: 100px; display: inline" alt="Keras"/></a>
 
 L'objectifs de ces ateliers ou tutoriels sous forme de calepins ([*jupyter notebooks*](http://jupyter.org/)) est d'introduire le **passage à l'échelle Volume** des méthodes d'apprentissage; **processus qui transforme un statisticien en *Data Scientist*.** 
 
 
-# Recommandation de Films par Filtrage Collaboratif: [R](https://cran.r-project.org/) ([`softImpute`](https://cran.r-project.org/web/packages/softImpute/index.html)) *vs.* [Spark](href="http://spark.apache.org/) ([`MLlib`](http://spark.apache.org/mllib/))
+# Recommandation de Films (movieLens) par Filtrage Collaboratif
 
 **Résumé** 
 Les calepins traitent d'un problème classique de recommandation par filtrage collaboratif pour le commerce en ligne. L'objectif est de comparer les ressources de la librairie [MLlib de Spark]([http://spark.apache.org/docs/latest/api/python/pyspark.mllib.html#pyspark.mllib.recommendation.ALS) avec l'algorithme de complétion de grande matrice creuse implémenté dans la librairie [`softImpute`](https://cran.r-project.org/web/packages/softImpute/index.html)  de R [(Mazmunder et al. 2010)](http://web.stanford.edu/~hastie/Papers/mazumder10a.pdf). Ces outils sont appliqués aux données publiques du site [GroupLens](http://grouplens.org/datasets/movielens/). L'objectif est donc de tester les méthodes et la procédure d'optimisation sur le plus petit jeu de données composé de 100k notes  de 943 clients sur 1682 films où chaque client a au moins noté 20 films. Le plus gros jeux de données  (20M notes) est utilisé pour **passer à l'échelle volume**. 
