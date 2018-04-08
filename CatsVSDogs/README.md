@@ -13,7 +13,7 @@ Le transfert d'apprentissage est une stratégie qui vise à réduire les temps c
 
 
 ## Tutoriel
-[Cats vs. Dogs](https://github.com/wikistat/Ateliers-Big-Data/tree/master/CatsVSDogs) utilisaiton de Keras et tensorflow pour comparer les performances: temps d'apprentissage et précision, d'un réseau original avec un réseau transféré.
+[Cats vs. Dogs](https://github.com/wikistat/Ateliers-Big-Data/tree/master/CatsVSDogs) utilisation de Keras et tensorflow pour comparer les performances: temps d'apprentissage et précision, d'un réseau original avec un réseau transféré. ne carte GPU est nécessaire.
 
 
 

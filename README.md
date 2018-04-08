@@ -35,7 +35,7 @@ Avoir acquis les compétences des saisons précédentes ou y revenir:
 - [Exploration Statistique pour la Science des Données](https://github.com/wikistat/Exploration). Cete saison intègre les algorithmes d'apprentissage non-supervisé (*clustering*).
 - [Apprentissage Automatique / Statistique](https://github.com/wikistat/Apprentissage)
 
-## Séquençage
+## Déroulement de l'UF: Technologies pour l'analyse de données massives
 L'apprentissag est divisée en 5 ateliers ciblant des technologies et/ou des types de données particuliers.
 
 - **Épisode 1** *Spark*: [Complément](https://github.com/wikistat/Intro-Python/blob/master/Cal4-PythonProg.ipynb) de programmation en Python puis [Initiation](https://github.com/wikistat/Intro-PySpark) à Spark *via* l'API `PySpark`.
@@ -43,8 +43,8 @@ L'apprentissag est divisée en 5 ateliers ciblant des technologies et/ou des typ
    - [`MNIST`](https://github.com/wikistat/Ateliers-Big-Data/tree/master/MNIST) reconnaissance de caractères manuscrits avec R, `Scikit-learn` et MLlib. Laisser la version avec `keras` pour l'épisode 4.
    - [`MovieLens`](https://github.com/wikistat/Ateliers-Big-Data/tree/master/MovieLens) Système de recommandation de films avec R (`softImpute`) et MLlib (*non negative matrix factorisation*).
 - **Épisode 3** [`Cdiscount`](https://github.com/wikistat/Ateliers-Big-Data/tree/master/Cdiscount) catégorisation de produits (*text mining*): Scikit-learn vs. MLlib.
-- **Épisode 4** *Reconnaissance d'images*; apprentissage épais avec `TensorFlow` utilisé *via* `Keras`. Deux cas d'usage: [`MNIST`](https://github.com/wikistat/Ateliers-Big-Data/tree/master/MNIST) et [cats *vs.* dogs](https://github.com/wikistat/Ateliers-Big-Data/tree/master/CatsVSDogs) pour développer un réseau pré-appris (`inception`) de Google. 
-- **Épisode 5** [*Cloud computing*]() **en chantier** accéder à AWS pour passer à l'échelle; installer un container, transférer un code de calcul, l'exécuter.
+- **Épisode 4** *Reconnaissance d'images*; apprentissage épais avec `TensorFlow` utilisé *via* `Keras`. Deux cas d'usage: [`MNIST`](https://github.com/wikistat/Ateliers-Big-Data/tree/master/MNIST) et [cats *vs.* dogs](https://github.com/wikistat/Ateliers-Big-Data/tree/master/CatsVSDogs) avec transfert de l'apprentissage du  réseau `inception` de Google. 
+- **Épisode 5 en chantier** [*Cloud computing*]() accéder à AWS pour passer à l'échelle; installer un container, transférer un code de calcul, l'exécuter.
 
 Une synthèse des résultats obtenus dnas les 3 cas d'usage (MNIST, MovieLens, Cdiscount) est développée par [Besse et al. 2016](https://hal.archives-ouvertes.fr/hal-01350099).
 
@@ -89,7 +89,7 @@ Cette couche logicielle au-dessus de systèmes de gestion de fichiers comme Hado
 
 ## Mise en oeuvre de [Spark](http://spark.apache.org/)
  
-Un premier groupe (dépôt[Intro-Spark](https://github.com/wikistat/Intro-PySpark)) de tutoriels, propose une initiation à l'utilisation en Python de l'environnement (*framework*) [*Spark*](http://spark.apache.org/) devenu une référence pour la gestion et l'analyse de données distribuées (*e.g* sous *Hadoop*). L'accent est mis sur la gestion des RDDs (*resilient distributed datasets*) et *Data Frame* et leur analyse à l'aide de a librairie *Mllib*.
+Un  [dépôt](https://github.com/wikistat/Intro-PySpark)) de tutoriels, propose une initiation à l'utilisation en Python de l'environnement (*framework*) [*Spark*](http://spark.apache.org/) devenu une référence pour la gestion et l'analyse de données distribuées (*e.g* sous *Hadoop*). L'accent est mis sur la gestion des RDDs (*resilient distributed datasets*) et *Data Frame* et leur analyse à l'aide de la librairie *Mllib*.
 
 
 
