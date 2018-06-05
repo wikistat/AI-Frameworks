@@ -1,3 +1,10 @@
+Sentiment Analysis/
+Cdiscount/data/cdiscount_test.csv
+Cdiscount/data/cdiscount_train.csv
+Cdiscount/data/Cdiscount_original.csv
+Cdiscount/preprocessing_addColumnName.ipynb
+Cdiscount/data/rayon.csv
+Cdiscount/data/Categorie_reduit_number.csv
 Cdiscount/pwc/
 .DS_Store
 *.gz
