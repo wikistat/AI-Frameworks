@@ -1,3 +1,9 @@
+Cdiscount/data/cdiscount_train_clean.csv
+Cdiscount/data/cdiscount_train_clean_stem.csv
+Cdiscount/data/cdiscount_train_subset.csv
+Cdiscount/data/cdiscount_valid.csv
+Cdiscount/data/cdiscount_valid_clean.csv
+Cdiscount/data/cdiscount_valid_clean_stem.csv
 Sentiment Analysis/
 Cdiscount/data/cdiscount_test.csv
 Cdiscount/data/cdiscount_train.csv
