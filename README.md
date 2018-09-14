@@ -14,11 +14,15 @@ Pour offrir de la *profondeur*, plus de compréhension, à cette (auto)-formatio
 
 Il ne s'agit pas simplement de pouvoir exécuter une méthode, un algorithme, il est important d'en **comprendre les propriétés**, conditions d'utilisation et limites.
 
-# Saison 4 [*Technologies des Grosses Data*](https://github.com/wikistat/Ateliers-Big-Data) 
+# Saison 4 [*Technologies de l'IA*](https://github.com/wikistat/AI-Frameworks) 
 #<a href="https://www.python.org/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Python_logo_and_wordmark.svg/390px-Python_logo_and_wordmark.svg.png" style="max-width: 120px; display: inline" alt="Python"/></a> <a href="http://spark.apache.org/"><img src="http://spark.apache.org/images/spark-logo-trademark.png" style="max-width: 80px; display: inline" alt="Spark"/> </a> <a href="https://www.tensorflow.org/"><img src="https://avatars0.githubusercontent.com/u/15658638?s=200&v=4" style="max-width: 40px; display: inline" alt="TensorFlow"/></a>  <a href="https://keras.io/"><img src="https://www.infiniteloop.co.jp/blog/wp-content/uploads/2018/01/kerasio.png" style="max-width: 100px; display: inline" alt="Keras"/></a>
 
 ### [Introduction plus détaillée...](http://www.math.univ-toulouse.fr/~besse/Wikistat/pdf/st-m-Intro-AtelierGD.pdf)
 
+Un *buzz word*: *big data*, *data science*, *machine learning* en chasse un autre et les battages médiatiques se succèdent jusqu'au dernier en date: **intelligence artificielle** (IA). Appellation ancienne remise au premier plan par les succès d'AlphaGo, des véhicules autonomes et aussi, surtout, de la rencontre de la croissance exponentielle des masses de données avec les algorihtmes d'apprentissage statistique, dont le *deep learning*, pour les exploiter, les valoriser. 
+
+Cette saison est consacrée aux technologies permettant de gérer, traiter, apprendre ces grandes masses de données, distribuées ou pas, en vie d'aide à a décision ou de décision automatique.
+ 
 Si les données ne sont pas *grosses* à devoir être *distribuées*, un usage classique de Python voire R s'avère plus efficace pour une *phase d'apprentissage*. En revanche, la phase de préparation de données massives (*data munging*), en flux ou pas, gagne beaucoup à être opérée dans un environnement distribué (*Hadoop*) utilisant *Spark*, notamment *via* l'API `PySpark` (cf. [Besse et al. 2016](https://hal.archives-ouvertes.fr/hal-01350099)). 
 
 Dans tous les cas, l'apprentissage de modèles complexes (apprentissage épais ou *deep learning* avec `keras- tensorFlow`, `XGBoost`...) nécessite des moyens de calcul massivement parallèles (*e.g. GPU, cloud*). D'où l'importance pour le statisticien / *data scientist* de se former aux technologies afférentes.
@@ -45,11 +49,11 @@ L'apprentissag est divisée en 5 ateliers ciblant des technologies et/ou des typ
    - [`MovieLens`](https://github.com/wikistat/Ateliers-Big-Data/tree/master/MovieLens) Système de recommandation de films avec R (`softImpute`) et MLlib (*non negative matrix factorisation*).
 - **Épisode 3** [`Cdiscount`](https://github.com/wikistat/Ateliers-Big-Data/tree/master/Cdiscount) catégorisation de produits (*text mining*): Scikit-learn vs. MLlib.
 - **Épisode 4** *Reconnaissance d'images*; apprentissage épais avec `TensorFlow` utilisé *via* `Keras`. Deux cas d'usage: [`MNIST`](https://github.com/wikistat/Ateliers-Big-Data/tree/master/MNIST) et [cats *vs.* dogs](https://github.com/wikistat/Ateliers-Big-Data/tree/master/CatsVSDogs) avec transfert de l'apprentissage du  réseau `inception` de Google. 
-- **Épisode 5 en chantier** [*Cloud computing*]() accéder à AWS pour passer à l'échelle; installer un container, transférer un code de calcul, l'exécuter.
+- **Épisode 5 en chantier** [*Cloud computing*]() accéder à *Google Cloud* pour passer à l'échelle; transférer un code de calcul, l'exécuter.
 
-Une synthèse des résultats obtenus dnas les 3 cas d'usage (MNIST, MovieLens, Cdiscount) est développée par [Besse et al. 2016](https://hal.archives-ouvertes.fr/hal-01350099).
+Une synthèse des résultats obtenus dans les 3 cas d'usage (MNIST, MovieLens, Cdiscount) est développée par [Besse et al. 2016](https://hal.archives-ouvertes.fr/hal-01350099).
 
-Chaque année, l'**évaluation** des compétences acquises est basée sur la participation (résultats et soutenance orale) des étudiants à un [défi grosses data](https://defibigdata2019.insa-toulouse.fr/) dont l'objet est la construction d'une meilleure prévision par apprentissage sur un jeu complexe de données.
+Chaque année, l'**évaluation** des compétences acquises est basée sur la participation (résultats et soutenance orale) des étudiants à un [défi IA](https://defi-ia.insa-toulouse.fr/) dont l'objet est la construction d'une meilleure prévision par apprentissage sur un jeu complexe de données.
 
 
 
