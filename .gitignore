@@ -1,5 +1,6 @@
 Cdiscount/data/features/
 Cdiscount/data/cdiscount_train_clean.csv
+Note.md
 Cdiscount/data/cdiscount_train_clean_stem.csv
 Cdiscount/data/cdiscount_train_subset.csv
 Cdiscount/data/cdiscount_valid.csv
@@ -37,3 +38,5 @@ CatsVSDogs/subsample_200N_train_80_N_val/
 CatsVSDogs/subsample_2000N_train_800_N_val/
 Cdiscount/HIDDEN-AIF-PythonNltkGensim-FeatureExtraction-CdiscountBis.ipynb
 Cdiscount/data/fr/
+Sentiment Analysis.zip
+notebook_for_slide/
