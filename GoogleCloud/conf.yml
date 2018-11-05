@@ -1,0 +1,22 @@
+project_id: CatsVsDogs
+# Local variables
+local_data: /Users/bguillouet/Insa/TP_Insa/dev/IA-Frameworks/tp_google_cloud/data/
+local_code: /Users/bguillouet/Insa/TP_Insa/dev/IA-Frameworks/tp_google_cloud/script
+local_results: /Users/bguillouet/Insa/TP_Insa/dev/IA-Frameworks/tp_google_cloud/metadata
+
+# Remote variables
+remote_folder: ~/CatsVsDogs/
+remote_data: ~/CatsVsDogs/data
+remote_code: ~/CatsVsDogs/script
+remote_model: ~/CatsVsDogs/model
+remote_results: ~/CatsVsDogs/metadata
+
+# Container variables
+container_folder: /root/CatsVsDogs/
+container_data: /root/CatsVsDogs/data
+container_code: /root/CatsVsDogs/script
+container_model: /root/CatsVsDogs/model
+container_results: /root/CatsVsDogs/metadata
+
+# Main script
+main_script: main.py
