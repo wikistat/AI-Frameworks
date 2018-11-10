@@ -23,8 +23,8 @@ parser.add_argument('--batch_size', type=int, default=20)
 
 parser.add_argument('--data_dir', type=str,
                     default="/Users/bguillouet/Insa/TP_Insa/dev/IA-Frameworks/tp_google_cloud/data")
-parser.add_argument('--metadata_dir', type=str,
-                    default="/Users/bguillouet/Insa/TP_Insa/dev/IA-Frameworks/tp_google_cloud/metadata")
+parser.add_argument('--results_dir', type=str,
+                    default="/Users/bguillouet/Insa/TP_Insa/dev/IA-Frameworks/tp_google_cloud/results")
 parser.add_argument('--model_dir', type=str,
                     default="/Users/bguillouet/Insa/TP_Insa/dev/IA-Frameworks/tp_google_cloud/model")
 
@@ -69,4 +69,4 @@ classes = [int(t>0.5) for t in test_prediction]
 
 array = np.vstack((images_test, test_prediction[:,0], classes)).T
 df = pd.DataFrame(array, columns=["filename","probabilities","classes"])
-df.to_csv(args.metadata_dir+"/prediction_"+id_str+".csv", index=False)
+df.to_csv(args.results_dir+"/prediction_"+id_str+".csv", index=False)

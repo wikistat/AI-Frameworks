@@ -26,7 +26,7 @@ parser = argparse.ArgumentParser()
 
 parser.add_argument('--data_dir', type=str, default="")
 parser.add_argument('--model_dir', type=str, default="")
-parser.add_argument('--metadata_dir', type=str, default="")
+parser.add_argument('--results_dir', type=str, default="")
 
 
 args = parser.parse_args()
@@ -88,12 +88,12 @@ model_conv.save(args.model_dir + "/" + id_str + ".h5")
 
 ## Save Metadata
 
-print("Save Metadata")
-metadata = vars(args)
-metadata.update({"t_learning": t_learning, "t_prediction": t_prediction, "accuracy_train": score_train,
+print("Save results")
+results = vars(args)
+results.update({"t_learning": t_learning, "t_prediction": t_prediction, "accuracy_train": score_train,
                  "accuracy_val": score_val})
 
-print(metadata)
-pickle.dump(metadata, open(args.metadata_dir + "/" + id_str + ".pkl", "wb"))
+print(results)
+pickle.dump(results, open(args.results_dir + "/" + id_str + ".pkl", "wb"))
 
 # TODO

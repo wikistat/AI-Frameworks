@@ -22,8 +22,8 @@ parser.add_argument('--batch_size', type=int, default=20)
 
 parser.add_argument('--data_dir', type=str,
                     default="/Users/bguillouet/Insa/TP_Insa/dev/IA-Frameworks/tp_google_cloud/data")
-parser.add_argument('--metadata_dir', type=str,
-                    default="/Users/bguillouet/Insa/TP_Insa/dev/IA-Frameworks/tp_google_cloud/metadata")
+parser.add_argument('--results_dir', type=str,
+                    default="/Users/bguillouet/Insa/TP_Insa/dev/IA-Frameworks/tp_google_cloud/results")
 parser.add_argument('--model_dir', type=str,
                     default="/Users/bguillouet/Insa/TP_Insa/dev/IA-Frameworks/tp_google_cloud/model")
 
@@ -114,13 +114,13 @@ print(args_str)
 print(id_str)
 model_conv.save(args.model_dir + "/" + id_str + ".h5")
 
-## Save Metadata
+## Save results
 
 
-print("Save Metadata")
-metadata = vars(args)
-metadata.update({"t_learning": t_learning, "t_prediction": t_prediction, "accuracy_train": score_train,
+print("Save results")
+results = vars(args)
+results.update({"t_learning": t_learning, "t_prediction": t_prediction, "accuracy_train": score_train,
                  "accuracy_val": score_val})
 
-print(metadata)
-pickle.dump(metadata, open(args.metadata_dir + "/" + id_str + ".pkl", "wb"))
+print(results)
+pickle.dump(results, open(args.results_dir + "/" + id_str + ".pkl", "wb"))
