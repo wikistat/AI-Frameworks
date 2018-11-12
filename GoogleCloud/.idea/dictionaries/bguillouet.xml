@@ -275,6 +275,7 @@
       <w>MDSplot</w>
       <w>MSEP</w>
       <w>MatrixModels</w>
+      <w>ModelMetrics</w>
       <w>NMF</w>
       <w>NMFSeed</w>
       <w>NMFStop</w>
@@ -873,6 +874,7 @@
       <w>attenu</w>
       <w>attitude</w>
       <w>attr_getter</w>
+      <w>auc</w>
       <w>auglag</w>
       <w>austres</w>
       <w>auto_browse</w>
@@ -975,6 +977,7 @@
       <w>brewer.pal</w>
       <w>brewer.pal.info</w>
       <w>brewer_pal</w>
+      <w>brier</w>
       <w>bs</w>
       <w>bterms</w>
       <w>budworm</w>
@@ -1003,6 +1006,7 @@
       <w>cbind.xts</w>
       <w>cbind.zoo</w>
       <w>cbreaks</w>
+      <w>ce</w>
       <w>censor</w>
       <w>centers</w>
       <w>centers.bclust</w>
@@ -1103,6 +1107,7 @@
       <w>condense</w>
       <w>config</w>
       <w>confint</w>
+      <w>confusionMatrix</w>
       <w>connectivity</w>
       <w>consensus</w>
       <w>consensushc</w>
@@ -1403,6 +1408,8 @@
       <w>extractPath</w>
       <w>extract_</w>
       <w>extract_numeric</w>
+      <w>f1Score</w>
+      <w>fScore</w>
       <w>f_capture</w>
       <w>f_env</w>
       <w>f_eval</w>
@@ -1944,6 +1951,7 @@
       <w>jsonlite</w>
       <w>jupyter_option_defaults</w>
       <w>kPCA</w>
+      <w>kappa</w>
       <w>kcall</w>
       <w>kcca</w>
       <w>kcor</w>
@@ -2052,6 +2060,7 @@
       <w>log1p_trans</w>
       <w>log2_trans</w>
       <w>logLik</w>
+      <w>logLoss</w>
       <w>log_breaks</w>
       <w>log_debug</w>
       <w>log_error</w>
@@ -2083,6 +2092,7 @@
       <w>lvqtest</w>
       <w>lynx</w>
       <w>m_ply</w>
+      <w>mae</w>
       <w>magenta</w>
       <w>magic</w>
       <w>magic.2np1</w>
@@ -2156,6 +2166,7 @@
       <w>matches</w>
       <w>math_format</w>
       <w>matplotlib</w>
+      <w>mauc</w>
       <w>maxdrawdown</w>
       <w>maximize_correlation</w>
       <w>maxresiduals</w>
@@ -2163,6 +2174,7 @@
       <w>mc.reset.stream</w>
       <w>mcMap</w>
       <w>mcaffinity</w>
+      <w>mcc</w>
       <w>mccollect</w>
       <w>mclapply</w>
       <w>mcmapply</w>
@@ -2200,6 +2212,7 @@
       <w>mkRespMod</w>
       <w>mle</w>
       <w>mlike</w>
+      <w>mlogLoss</w>
       <w>mlply</w>
       <w>mlsl</w>
       <w>mma</w>
@@ -2225,6 +2238,8 @@
       <w>morley</w>
       <w>mpower</w>
       <w>msc</w>
+      <w>mse</w>
+      <w>msle</w>
       <w>mtcars</w>
       <w>multi_add</w>
       <w>multi_cancel</w>
@@ -2377,6 +2392,7 @@
       <w>notmagic.2n</w>
       <w>nottem</w>
       <w>npk</w>
+      <w>npv</w>
       <w>nquarters</w>
       <w>nrow</w>
       <w>nrun</w>
@@ -2612,8 +2628,10 @@
       <w>ppinit</w>
       <w>pplik</w>
       <w>ppregion</w>
+      <w>ppv</w>
       <w>prcomp_irlba</w>
       <w>precip</w>
+      <w>precision</w>
       <w>predgain</w>
       <w>predict</w>
       <w>predict.LogitBoost</w>
@@ -2765,6 +2783,7 @@
       <w>readhex</w>
       <w>rebuild.cov</w>
       <w>rebuild.invcov</w>
+      <w>recall</w>
       <w>recast</w>
       <w>reciprocal_trans</w>
       <w>reclass</w>
@@ -2859,6 +2878,8 @@
       <w>rm_file</w>
       <w>rmatrix</w>
       <w>rms</w>
+      <w>rmse</w>
+      <w>rmsle</w>
       <w>rnmf</w>
       <w>rock</w>
       <w>roll_max</w>
@@ -2979,6 +3000,7 @@
       <w>semat</w>
       <w>semi_join</w>
       <w>sendToConsole</w>
+      <w>sensitivity</w>
       <w>sentences</w>
       <w>separate</w>
       <w>separate_</w>
@@ -3071,6 +3093,7 @@
       <w>spatial</w>
       <w>spca</w>
       <w>specc</w>
+      <w>specificity</w>
       <w>specplot</w>
       <w>sphercov</w>
       <w>spirals</w>
@@ -3469,6 +3492,7 @@
       <w>terminalSend</w>
       <w>terminalVisible</w>
       <w>terrain_hcl</w>
+      <w>testDF</w>
       <w>testSequence</w>
       <w>text_colour</w>
       <w>thayer</w>
@@ -3491,6 +3515,7 @@
       <w>tips</w>
       <w>tmd</w>
       <w>tnewton</w>
+      <w>tnr</w>
       <w>to.daily</w>
       <w>to.hourly</w>
       <w>to.minutes</w>
@@ -3511,6 +3536,7 @@
       <w>tokenize_string</w>
       <w>top_n</w>
       <w>total_correlation</w>
+      <w>tpr</w>
       <w>trackError</w>
       <w>train_continuous</w>
       <w>train_discrete</w>

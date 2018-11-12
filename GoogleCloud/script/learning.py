@@ -5,8 +5,7 @@ import time
 import pickle
 import hashlib
 import argparse
-
-
+import os
 import keras.preprocessing.image as kpi
 import keras.layers as kl
 import keras.models as km
@@ -18,15 +17,21 @@ print(MODE)
 
 ## Argument
 
-# TODO ajouter ici les différents arguments que vous manipulerez lors de vos différents tests
 
 
 parser = argparse.ArgumentParser()
 
+# TODO Les paramètres de l'environnement sont défini ici. Ajoutez les directions de vos dossier en local par défault.
 
 parser.add_argument('--data_dir', type=str, default="")
 parser.add_argument('--model_dir', type=str, default="")
 parser.add_argument('--results_dir', type=str, default="")
+
+# TODO ajoutez ici les différents paramètres du modèle que vous souhaitez pour manipuler en entré de script
+
+parser.add_argument('--', type=str, default="")
+
+
 
 
 args = parser.parse_args()
@@ -35,10 +40,15 @@ args = parser.parse_args()
 
 img_width = 150
 img_height = 150
+# TODO Stockez dans des variable 'N_train' et 'N_val' les tailles des echantillons d'apprentissage et de validation de l'échantillon
+N_train =
+N_val =
+
+
 
 ## Data Generator
 
-# TODO définissez ici les différents "generator" qui vous permettront de lire les données
+# TODO définissez ici les différents "generator" qui vous permettront de lire les données et généraler les batchs
 
 train_datagen = kpi.ImageDataGenerator()
 
@@ -51,7 +61,7 @@ validation_generator = valid_datagen.flow_from_directory()
 
 ## Définition du modèle
 
-# TODO Définit un premier modèle simple à l'aide de Keras
+# TODO Définissez un premier modèle simple à l'aide de Keras
 
 model_conv = km.Sequential()
 
@@ -63,12 +73,25 @@ model_conv.compile(loss=,
 
 ## Learning
 
-# TODO
+print("Start Learning")
+ts = time.time()
+model_conv.fit_generator(train_generator, steps_per_epoch=N_train // args.batch_size, epochs=args.epochs,
+                         validation_data=validation_generator, validation_steps=N_val // args.batch_size)
+te = time.time()
+t_learning = te - ts
 
 
 ## Test
 
-# TODO Définit un premier modèle simple à l'aide de Keras
+# TODO Calculez l'accuracy de votre modèle sur le jeu d'apprentissage et sur le jeu de validation.
+# Stockez le résultat dans des variables ainsi que le temps d'execution de ces opérations.
+
+print("Start predicting")
+ts = time.time()
+score_train = model_conv.evaluate_generator(train_generator, N_train / args.batch_size, verbose=1)
+score_val = model_conv.evaluate_generator(validation_generator, N_val / args.batch_size, verbose=1)
+te = time.time()
+t_prediction = te - ts
 
 
 ## Save Model
@@ -77,13 +100,7 @@ model_conv.compile(loss=,
 args_str = "_".join([k + ":" + str(v) for k, v in vars(args).items()])
 id_str = hashlib.md5(args_str.encode("utf8")).hexdigest()
 
-# TODO
-
-## Save Model
-
-# TODO
-
-model_conv.save(args.model_dir + "/" + id_str + ".h5")
+# TODO Sauvez le modèle dans le dossier model_dir
 
 
 ## Save Metadata
@@ -96,4 +113,3 @@ results.update({"t_learning": t_learning, "t_prediction": t_prediction, "accurac
 print(results)
 pickle.dump(results, open(args.results_dir + "/" + id_str + ".pkl", "wb"))
 
-# TODO

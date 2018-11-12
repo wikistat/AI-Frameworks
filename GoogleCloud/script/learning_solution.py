@@ -109,9 +109,6 @@ t_prediction = te - ts
 ### Creer un identifiant unique a partir des parametres du script
 args_str = "_".join([k + ":" + str(v) for k, v in sorted(vars(args).items(), key=lambda x : x[0])])
 id_str = hashlib.md5(args_str.encode("utf8")).hexdigest()
-print("AAAAAAAAAAA")
-print(args_str)
-print(id_str)
 model_conv.save(args.model_dir + "/" + id_str + ".h5")
 
 ## Save results

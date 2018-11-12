@@ -1,6 +1,7 @@
 .gitignoretmp
 .ipynb_checkpoints/
 GoogleCloud/.idea/
+GoogleCloud/.idea
 CatsVSDogs/.ipynb_checkpoints/	
 Cdiscount/.ipynb_checkpoints/
 Cdiscount/HIDDEN-AIF-PythonNltkGensim-FeatureExtraction-CdiscountBis.ipynb
