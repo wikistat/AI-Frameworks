@@ -1,22 +1,22 @@
 project_id: CatsVsDogs
 # Local variables
-local_data: /Users/bguillouet/Insa/TP_Insa/dev/IA-Frameworks/tp_google_cloud/data/
-local_code: /Users/bguillouet/Insa/TP_Insa/dev/IA-Frameworks/tp_google_cloud/script
-local_results: /Users/bguillouet/Insa/TP_Insa/dev/IA-Frameworks/tp_google_cloud/results
+local_data: ACOMPLETER/data/
+local_code: ACOMPLETER/script
+local_results: ACOMPLETER/results
 
 # Remote variables
-remote_folder: ~/CatsVsDogs/
-remote_data: ~/CatsVsDogs/data
-remote_code: ~/CatsVsDogs/script
-remote_model: ~/CatsVsDogs/model
-remote_results: ~/CatsVsDogs/results
+remote_folder: ACOMPLETER
+remote_data: ACOMPLETER/data
+remote_code: ACOMPLETER/script
+remote_model: ACOMPLETER/model
+remote_results: ACOMPLETER/results
 
 # Container variables
-container_folder: /root/CatsVsDogs/
-container_data: /root/CatsVsDogs/data
-container_code: /root/CatsVsDogs/script
-container_model: /root/CatsVsDogs/model
-container_results: /root/CatsVsDogs/results
+container_folder: ACOMPLETER
+container_data: ACOMPLETER/data
+container_code: ACOMPLETER/script
+container_model: ACOMPLETER/model
+container_results: ACOMPLETER/results
 
 # Main script
 main_script: main.py

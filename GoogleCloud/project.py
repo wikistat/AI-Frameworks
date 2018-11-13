@@ -59,6 +59,15 @@ class ProjectManager:
 
         self.instance.instance_name = instance_name
 
+    def set_ssh_key_file(self, ssh_key_file):
+        """
+
+        :param instance_name:
+        :return:
+        """
+
+        self.instance.ssh_key_file = ssh_key_file
+
     def instance_init(self):
         """
 

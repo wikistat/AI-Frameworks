@@ -90,7 +90,7 @@ model_conv.compile(loss='binary_crossentropy',
 
 print("Start Learning")
 ts = time.time()
-model_conv.fit_generator(train_generator, steps_per_epoch=N_train // args.batch_size, epochs=args.epochs,
+history = model_conv.fit_generator(train_generator, steps_per_epoch=N_train // args.batch_size, epochs=args.epochs,
                          validation_data=validation_generator, validation_steps=N_val // args.batch_size)
 te = time.time()
 t_learning = te - ts
@@ -117,7 +117,7 @@ model_conv.save(args.model_dir + "/" + id_str + ".h5")
 print("Save results")
 results = vars(args)
 results.update({"t_learning": t_learning, "t_prediction": t_prediction, "accuracy_train": score_train,
-                 "accuracy_val": score_val})
+                 "accuracy_val": score_val, "history" : history.history})
 
 print(results)
 pickle.dump(results, open(args.results_dir + "/" + id_str + ".pkl", "wb"))

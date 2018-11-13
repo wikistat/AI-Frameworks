@@ -1,16 +1,17 @@
 # coding: utf-8
 
 import project
-import itertools
 
 ## Create Project Manager
 projectManager = project.ProjectManager()
 
 ## Set up project variables
-projectManager.load_yaml('/Users/bguillouet/Insa/TP_Insa/dev/IA-Frameworks/tp_google_cloud/conf.yml')
+projectManager.load_yaml('ACOMPLETER/conf.yml')
 
 ## Initialize instance
-projectManager.set_instance_name('instance-2')
+projectManager.set_instance_name('ACOMPLETER')
+projectManager.set_ssh_key_file('ACOMPLETER')
+
 projectManager.instance_init()
 
 
@@ -42,4 +43,4 @@ projectManager.execute_python_script("prediction_solution.py", "sample_2", args 
 projectManager.collect_results()
 
 ## Finalize instance
-#projectManager.instance_end()
+projectManager.instance_end()

@@ -23,6 +23,7 @@ Sentiment Analysis.zip
 Sentiment Analysis/
 notebook_for_slide/
 old_Cdiscount/
-GoogleCloud/data/*
+GoogleCloud/data/sample.zip
+GoogleCloud/data/all.zip
 GoogleCloud/model/*
 GoogleCloud/metadata/*

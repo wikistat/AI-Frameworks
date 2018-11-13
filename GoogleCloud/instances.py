@@ -27,7 +27,7 @@ class InstancesManager:
     instance_name = 'undefined'
     status = 'UNDEFINED'
 
-    ssh_key_file = '/Users/bguillouet/.ssh/google_compute_engine'
+    ssh_key_file = 'undefined'
 
     # Function that lists instances in given project
     def list(self):
