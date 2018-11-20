@@ -6,19 +6,22 @@ import itertools
 ## Create Project Manager
 projectManager = project.ProjectManager()
 ## Set up project variables
-projectManager.load_yaml('/Users/bguillouet/Insa/TP_Insa/dev/IA-Frameworks/tp_google_cloud/conf.yml')
+projectManager.load_yaml('ACOMPLETER/conf.yml')
 
 ## Initialize instance
-projectManager.set_instance_name('instance-2')
+projectManager.set_instance_name('ACOMPLETER')
+projectManager.set_ssh_key_file('ACOMPLETER')
+
 projectManager.instance_init()
 
 ## Update data
 projectManager.execute_code_ssh("'mkdir " + projectManager.remote_folder+ "'")
 projectManager.execute_code_ssh("'mkdir " + projectManager.remote_data+ "'")
 projectManager.execute_code_ssh("'mkdir " + projectManager.remote_results+ "'")
+projectManager.execute_code_ssh("'mkdir " + projectManager.remote_model+ "'")
 projectManager.execute_code_ssh("'mkdir " + projectManager.remote_code+ "'")
 
-#projectManager.update_data("sample_2.zip")
+projectManager.update_data("sample_2.zip")
 
 ## Update last version of code
 projectManager.update_code()
