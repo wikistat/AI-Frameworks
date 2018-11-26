@@ -27,3 +27,7 @@ GoogleCloud/data/sample.zip
 GoogleCloud/data/all.zip
 GoogleCloud/model/*
 GoogleCloud/metadata/*
+GoogleCloud/__pycache__/
+GoogleCloud/instances.pyc
+GoogleCloud/project.pyc
+GoogleCloud/results/

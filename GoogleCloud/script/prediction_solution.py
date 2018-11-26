@@ -51,9 +51,6 @@ test_generator = test_datagen.flow_from_directory(
 ## Telechargement du modele
 args_str = "_".join([k + ":" + str(v) for k, v in sorted(vars(args).items(), key=lambda x : x[0])])
 id_str = hashlib.md5(args_str.encode("utf8")).hexdigest()
-print("AAAAAAAAAAA")
-print(args_str)
-print(id_str)
 model_conv = km.load_model(args.model_dir + "/" + id_str + ".h5")
 
 
@@ -64,7 +61,7 @@ test_prediction = model_conv.predict_generator(test_generator, N_test // args.ba
 
 ## Save prediction in csv
 
-images_test = [k for k in os.listdir(data_dir_test+"/test")]
+images_test = test_generator.filenames
 classes = [int(t>0.5) for t in test_prediction]
 
 array = np.vstack((images_test, test_prediction[:,0], classes)).T

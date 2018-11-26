@@ -118,6 +118,4 @@ print("Save results")
 results = vars(args)
 results.update({"t_learning": t_learning, "t_prediction": t_prediction, "accuracy_train": score_train,
                  "accuracy_val": score_val, "history" : history.history})
-
-print(results)
 pickle.dump(results, open(args.results_dir + "/" + id_str + ".pkl", "wb"))
