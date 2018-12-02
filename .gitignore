@@ -31,3 +31,6 @@ GoogleCloud/__pycache__/
 GoogleCloud/instances.pyc
 GoogleCloud/project.pyc
 GoogleCloud/results/
+GoogleCloud/data/sample_2/
+GoogleCloud/myconf.yml
+GoogleCloud/mymain.py

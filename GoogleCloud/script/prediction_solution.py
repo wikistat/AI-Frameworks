@@ -22,11 +22,11 @@ parser.add_argument('--epochs', type=int, default=10)
 parser.add_argument('--batch_size', type=int, default=20)
 
 parser.add_argument('--data_dir', type=str,
-                    default="/Users/bguillouet/Insa/TP_Insa/dev/IA-Frameworks/tp_google_cloud/data")
+                    default="/Users/bguillouet/Insa/TP_Insa/dev/IA-Frameworks/GoogleCloud/data/sample_2/")
 parser.add_argument('--results_dir', type=str,
-                    default="/Users/bguillouet/Insa/TP_Insa/dev/IA-Frameworks/tp_google_cloud/results")
+                    default="/Users/bguillouet/Insa/TP_Insa/dev/IA-Frameworks/GoogleCloud/results/")
 parser.add_argument('--model_dir', type=str,
-                    default="/Users/bguillouet/Insa/TP_Insa/dev/IA-Frameworks/tp_google_cloud/model")
+                    default="/Users/bguillouet/Insa/TP_Insa/dev/IA-Frameworks/GoogleCloud/model/")
 
 args = parser.parse_args()
 

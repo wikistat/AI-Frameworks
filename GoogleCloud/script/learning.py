@@ -84,12 +84,11 @@ t_learning = te - ts
 ## Test
 
 # TODO Calculez l'accuracy de votre modèle sur le jeu d'apprentissage et sur le jeu de validation.
-# Stockez le résultat dans des variables ainsi que le temps d'execution de ces opérations.
 
 print("Start predicting")
 ts = time.time()
-score_train = model_conv.evaluate_generator(train_generator, N_train / args.batch_size, verbose=1)
-score_val = model_conv.evaluate_generator(validation_generator, N_val / args.batch_size, verbose=1)
+score_train =
+score_val =
 te = time.time()
 t_prediction = te - ts
 
@@ -103,7 +102,8 @@ id_str = hashlib.md5(args_str.encode("utf8")).hexdigest()
 # TODO Sauvez le modèle dans le dossier model_dir
 
 
-## Save Metadata
+## TODO   Stockez les resultat dans des variables ainsi que le temps d'execution de ces opérations dans le dossier results_dir
+
 
 print("Save results")
 results = vars(args)
