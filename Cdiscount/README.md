@@ -7,6 +7,7 @@
 
 L'objectifs de ces ateliers ou tutoriels sous forme de calepins ([*jupyter notebooks*](http://jupyter.org/)) est d'introduire le **passage à l'échelle Volume** des méthodes d'apprentissage; **processus qui transforme un statisticien en *Data Scientist*.** 
 
+# Traitement Naturel du language (*ou NLP*).
 
 # Catégorisation de Produits Cdiscount
 

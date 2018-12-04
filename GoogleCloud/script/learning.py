@@ -75,7 +75,7 @@ model_conv.compile(loss=,
 
 print("Start Learning")
 ts = time.time()
-model_conv.fit_generator(train_generator, steps_per_epoch=N_train // args.batch_size, epochs=args.epochs,
+model_conv.fit_generator(train_generator,± steps_per_epoch=N_train // args.batch_size, epochs=args.epochs,
                          validation_data=validation_generator, validation_steps=N_val // args.batch_size)
 te = time.time()
 t_learning = te - ts
@@ -96,7 +96,7 @@ t_prediction = te - ts
 ## Save Model
 
 ### Créer un identifiant unique à partir des paramètres du script
-args_str = "_".join([k + ":" + str(v) for k, v in vars(args).items()])
+args_str = "_".join([k + ":" + str(v) for k, v in sorted(vars(args).items(), key=lambda x : x[0])])
 id_str = hashlib.md5(args_str.encode("utf8")).hexdigest()
 
 # TODO Sauvez le modèle dans le dossier model_dir
