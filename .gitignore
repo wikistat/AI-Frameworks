@@ -15,7 +15,18 @@ Cdiscount/data/cdiscount_valid_clean_stem.csv
 Cdiscount/data/features/
 Cdiscount/data/fr/
 Cdiscount/data/rayon.csv
+Cdiscount/preprocessing_addColumnName.ipyn
+Cdiscount/6 -  Generate text.ipynb
+Cdiscount/derby.log
+Cdiscount/HIDDEN-Generate_DATA_RNN.ipynb
+Cdiscount/data/Coque_description_all_char_197.npy
+Cdiscount/data/Coque_description_char_reduit_197.npy
+Cdiscount/data/all_char_list
+Cdiscount/data/cdiscount_train.csv
+Cdiscount/data/char_reduit_list
+Cdiscount/metastore_db/
 Cdiscount/preprocessing_addColumnName.ipynb
+Cdiscount/data/description_coque.npy
 MNIST/.ipynb_checkpoints/
 MovieLens/.ipynb_checkpoints/
 MovieLens/derby.log
