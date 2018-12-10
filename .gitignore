@@ -18,6 +18,7 @@ Cdiscount/data/rayon.csv
 Cdiscount/preprocessing_addColumnName.ipynb
 MNIST/.ipynb_checkpoints/
 MovieLens/.ipynb_checkpoints/
+MovieLens/derby.log
 Note.md
 Sentiment Analysis.zip
 Sentiment Analysis/
