@@ -1,43 +1,28 @@
 ## <a href="http://www.insa-toulouse.fr/" ><img src="http://www.math.univ-toulouse.fr/~besse/Wikistat/Images/Logo_INSAvilletoulouse-RVB.png" style="float:left; max-width: 80px; display: inline" alt="INSA"/> |  [*Mathématiques Appliquées*](http://www.math.insa-toulouse.fr/fr/index.html), [`Science des Données`](http://www.math.insa-toulouse.fr/fr/enseignement.html) 
 
-# Science des Données, Apprentissage Statistique & IA
-Un *buzz word*: *big data*, *data science*, *machine learning* en chasse un autre et les battages médiatiques se succèdent jusqu'au dernier en date: **intelligence artificielle** (IA). Appellation ancienne remise au premier plan par les succès d'AlphaGo, des véhicules autonomes et aussi, surtout, de la rencontre de la croissance exponentielle des masses de données avec les algorihtmes d'apprentissage statistique, dont le *deep learning*, pour les exploiter, les valoriser. 
+# Artificial Intelligence Frameworks
 
-### [Lire plus...](http://www.math.univ-toulouse.fr/~besse/Wikistat/pdf/st-lm-Intro-Stat_SD.pdf)
+This course follows the [Machine Learning](https://github.com/wikistat/Apprentissage) and the [High Dimensional & Deep Learning](https://github.com/wikistat/High-Dimensional-Deep-Learning). In theses courses, you have acquired knowledge in machine and deep learning algoritms and their application on various type of data. This knowledge is primordial to become a DataScientist. 
 
-Schématiquement, la **Science des Données** est définie autour d'une *agrégation de compétences* en Informatique (langage comme [R](href="https://cran.r-project.org/) et [Python](https://www.python.org/) , gestion des données, calcul parallèle, *cloud*,...), Statistique (exploration, estimation test, modélisation, prévision) , apprentissage automatique (prévision), Mathématiques (probabilités, optimisation, analyse fonctionnelle, graphes...). 
+But as a DataScientist, you will also need to know the tool that wil allow you to perform these algorithms efficiently.
+The main goal of this course is to have an overview of this tools and also mor algorithms...
 
-Son **apprentissage** est acquis par l'intermédiaire de scénarios d'analyse de données réelles, ou *tutoriel*, présentés sous forme de *calepins* ([*jupyter notebooks*](http://jupyter.org/)) en [R](href="https://cran.r-project.org/) ou [Python](https://www.python.org/). Voir à ce sujet le [livre de référence](https://www.inferentialthinking.com/) du cours [*Fondations of Data Science*](http://data8.org/) de l'UC Berkley.
+<a href="https://www.python.org/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Python_logo_and_wordmark.svg/390px-Python_logo_and_wordmark.svg.png" style="max-width: 120px; display: inline" alt="Python"/></a> 
+<a href="http://spark.apache.org/"><img src="https://spark.apache.org/images/spark-logo-trademark.png" style="max-width: 80px; display: inline" alt="Spark"/> </a> 
+<a href="https://www.tensorflow.org/"><img src="https://avatars0.githubusercontent.com/u/15658638?s=200&v=4" style="max-width: 40px; display: inline" alt="TensorFlow"/></a>  
+<a href="https://cloud.google.com/gcp/?utm_source=google&utm_medium=cpc&utm_campaign=emea-fr-all-en-dr-bkws-all-all-trial-e-gcp-1003963&utm_content=text-ad-none-any-DEV_c-CRE_167374210213-ADGP_Hybrid%20%7C%20AW%20SEM%20%7C%20BKWS%20~%20EXA_1:1_FR_EN_General_Cloud_TOP_google%20cloud%20platform-KWID_43700016295756942-kwd-26415313501-userloc_9055236&utm_term=KW_google%20cloud%20platform-ST_google%20cloud%20platform&ds_rl=1242853&ds_rl=1245734&ds_rl=1245734&gclid=EAIaIQobChMIvaa_9OmL4gIVFeaaCh3jnQIfEAAYASAAEgJyp_D_BwE"><img src="https://cloud.google.com/_static/38e39c36bd/images/cloud/cloud-logo.svg" style="max-width: 40px; display: inline" alt="Googe Cloud"/></a>  
+<a href="https://www.docker.com"><img src="https://cloud.google.com/_static/38e39c36bd/images/cloud/cloud-logo.svg" style="max-width: 40px; display: inline" alt="Docker"/></a>  
 
-Cette **pratique** est **indispensable** mais masque les *aspects théoriques* (mathématiques, statistique, probabilités, optmisation): une *formule* est remplacée par un commande ou fonction en Python ou R, une *démonstration* par l'exécution d'exemples dans un calepin.
 
-Pour offrir de la *profondeur*, plus de compréhension, à cette (auto)-formation, les calepins renvoient (liens hypertextes) systématiquement à des **vignettes "théoriques"**  du site [wikistat.fr](http://wikistat.fr/) exposant en détail (cours) les méthodes et algorithmes concernés.
+## Knowledge requirements
 
-Il ne s'agit pas simplement de pouvoir exécuter une méthode, un algorithme, il est important d'en **comprendre les propriétés**, conditions d'utilisation et limites.
+- [R Tutorial](https://github.com/wikistat/Intro-R)
+- [Python Tutorial](https://github.com/wikistat/Intro-Python)
+- [Elementary statistic tools](https://github.com/wikistat/StatElem)
+- [Data Exploration and Clustering](https://github.com/wikistat/Exploration). 
+- [Machine Learning](https://github.com/wikistat/Apprentissage)
+- [High Dimensional & Deep Learning](https://github.com/wikistat/High-Dimensional-Deep-Learning)
 
-# Saison 4 [*Technologies de l'IA*](https://github.com/wikistat/AI-Frameworks) 
-#<a href="https://www.python.org/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Python_logo_and_wordmark.svg/390px-Python_logo_and_wordmark.svg.png" style="max-width: 120px; display: inline" alt="Python"/></a> <a href="http://spark.apache.org/"><img src="http://spark.apache.org/images/spark-logo-trademark.png" style="max-width: 80px; display: inline" alt="Spark"/> </a> <a href="https://www.tensorflow.org/"><img src="https://avatars0.githubusercontent.com/u/15658638?s=200&v=4" style="max-width: 40px; display: inline" alt="TensorFlow"/></a>  <a href="https://keras.io/"><img src="https://www.infiniteloop.co.jp/blog/wp-content/uploads/2018/01/kerasio.png" style="max-width: 100px; display: inline" alt="Keras"/></a>
-
-### [Introduction plus détaillée...](http://www.math.univ-toulouse.fr/~besse/Wikistat/pdf/st-m-Intro-AtelierGD.pdf)
-
-Cette saison est consacrée aux technologies permettant de gérer, traiter, apprendre ces grandes masses de données, distribuées ou pas, en vie d'aide à a décision ou de décision automatique.
- 
-Si les données ne sont pas *grosses* à devoir être *distribuées*, un usage classique de Python voire R s'avère plus efficace pour une *phase d'apprentissage*. En revanche, la phase de préparation de données massives (*data munging*), en flux ou pas, gagne beaucoup à être opérée dans un environnement distribué (*Hadoop*) utilisant *Spark*, notamment *via* l'API `PySpark` (cf. [Besse et al. 2016](https://hal.archives-ouvertes.fr/hal-01350099)). 
-
-Dans tous les cas, l'apprentissage de modèles complexes (apprentissage épais ou *deep learning* avec `keras- tensorFlow`, `XGBoost`...) nécessite des moyens de calcul massivement parallèles (*e.g. GPU, cloud*). D'où l'importance pour le statisticien / *data scientist* de se former aux technologies afférentes.
-
-## Objectifs
-
-Cette saison est consacrée au **passage à l'échelle** pour l'analyse de *grosses* *data*, donc distribuées sur plusieurs machines (*Hadoop*) ou de données en *grande dimension* (signaux, images). L'objectif est de comparer les performances des principaux environnements ou architectures plus ou moins bien adaptées à l'analyse de données massives en fonction du but visé: préparation des donnés, exploration, apprentissage, prévision.
-
-## Prérequis
-Avoir acquis les compétences des saisons précédentes ou y revenir:
-
-- [Initiation à R](https://github.com/wikistat/Intro-R)
-- [Initiation à Python](https://github.com/wikistat/Intro-Python)
-- Formation aux [outils Statistiques de base](https://github.com/wikistat/StatElem)
-- [Exploration Statistique pour la Science des Données](https://github.com/wikistat/Exploration). Cete saison intègre les algorithmes d'apprentissage non-supervisé (*clustering*).
-- [Apprentissage Automatique / Statistique](https://github.com/wikistat/Apprentissage)
 
 ## Déroulement de l'UF: Technologies pour l'analyse de données massives
 L'apprentissag est divisée en 5 ateliers ciblant des technologies et/ou des types de données particuliers.
