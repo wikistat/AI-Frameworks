@@ -4,9 +4,14 @@
 
 This course follows the [Machine Learning](https://github.com/wikistat/Apprentissage) and the [High Dimensional & Deep Learning](https://github.com/wikistat/High-Dimensional-Deep-Learning). In theses courses, you have acquired knowledge in machine and deep learning algoritms and their application on various type of data. This knowledge is primordial to become a DataScientist. 
 
-But as a DataScientist, you will also need to know the tool that wil allow you to perform these algorithms efficiently.
+As a DataScientist, you will also need to know the tool that wil allow you to perform these algorithms efficiently.
+The two main goal of this course are : 
+   * Discover this different tools:
+      * Spark Language for distributed computation.
+      * Cloud computing with Google cloud.
+      * Container with docker.
+   * Use this tools on real dataset and with usefull learning librairy
 The main goal of this course is to have an overview of this tools and also mor algorithms...
-
 
 
 
@@ -27,16 +32,17 @@ The main goal of this course is to have an overview of this tools and also mor a
 - [High Dimensional & Deep Learning](https://github.com/wikistat/High-Dimensional-Deep-Learning)
 
 
-## Déroulement de l'UF: Technologies pour l'analyse de données massives
-L'apprentissag est divisée en 5 ateliers ciblant des technologies et/ou des types de données particuliers.
+## Schedule
 
-- **Épisode 1** *Spark*: [Complément](https://github.com/wikistat/Intro-Python/blob/master/Cal4-PythonProg.ipynb) de programmation en Python puis [Initiation](https://github.com/wikistat/Intro-PySpark) à Spark *via* l'API `PySpark`.
-- **Épisode 2** *Reconnaissance d'images*; apprentissage profond avec `TensorFlow` utilisé *via* `Keras`. Deux cas d'usage: [`MNIST`](https://github.com/wikistat/Ateliers-Big-Data/tree/master/MNIST) et [cats *vs.* dogs](https://github.com/wikistat/Ateliers-Big-Data/tree/master/CatsVSDogs) avec transfert de l'apprentissage du  réseau `inception` de Google. 
-- **Épisode 3** *en chantier* [*Cloud computing*]() accéder à *Google Cloud* pour passer à l'échelle; transférer un code de calcul, l'exécuter.
-- **Épisode 4** *MLlib*: pratique de la librairie MLlib de Spark pour l'apprentissage sur données distribuées. Comparaison des performances en R, Python et MlLib sur des cas d'usage
+The course is divided in 5 sessions.
+
+- **Session 1** *Spark*: [Complément](https://github.com/wikistat/Intro-Python/blob/master/Cal4-PythonProg.ipynb) de programmation en Python puis [Initiation](https://github.com/wikistat/Intro-PySpark) à Spark *via* l'API `PySpark`.
+- **Session 2** *Reconnaissance d'images*; apprentissage profond avec `TensorFlow` utilisé *via* `Keras`. Deux cas d'usage: [`MNIST`](https://github.com/wikistat/Ateliers-Big-Data/tree/master/MNIST) et [cats *vs.* dogs](https://github.com/wikistat/Ateliers-Big-Data/tree/master/CatsVSDogs) avec transfert de l'apprentissage du  réseau `inception` de Google. 
+- **Session 3** *en chantier* [*Cloud computing*]() accéder à *Google Cloud* pour passer à l'échelle; transférer un code de calcul, l'exécuter.
+- **Session 4** *MLlib*: pratique de la librairie MLlib de Spark pour l'apprentissage sur données distribuées. Comparaison des performances en R, Python et MlLib sur des cas d'usage
    - [`MNIST`](https://github.com/wikistat/Ateliers-Big-Data/tree/master/MNIST) reconnaissance de caractères manuscrits avec R, `Scikit-learn` et MLlib. Laisser la version avec `keras` est traité dans l'épisode 2.
    - [`MovieLens`](https://github.com/wikistat/Ateliers-Big-Data/tree/master/MovieLens) Système de recommandation de films avec R (`softImpute`) et MLlib (*non negative matrix factorisation*).
-- **Épisode 5** *NLP (Natural Language Processing)*
+- **Session 5** *NLP (Natural Language Processing)*
    - *sentiment analysis*
    - [`Cdiscount`](https://github.com/wikistat/Ateliers-Big-Data/tree/master/Cdiscount) catégorisation de produits (*text mining*): Scikit-learn *vs.* MLlib.
    - *word embedding*
