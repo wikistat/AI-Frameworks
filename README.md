@@ -7,13 +7,15 @@ This course follows the [Machine Learning](https://github.com/wikistat/Apprentis
 As a DataScientist, you will also need to know the tool that wil allow you to perform these algorithms efficiently.
 The two main goal of this course are : 
    * Discover this different tools:
-      * Distributed computation with `Spark`.
-      * Cloud computing with 'Google Cloud'.
-      * Container with 'Docker`.
+      * Distributed computation with [Spark](https://spark.apache.org/images/spark-logo-trademark.png).
+      * Cloud computing with [Google Cloud](https://cloud.google.com/gcp/?utm_source=google&utm_medium=cpc&utm_campaign=emea-fr-all-en-dr-bkws-all-all-trial-e-gcp-1003963&utm_content=text-ad-none-any-DEV_c-CRE_167374210213-ADGP_Hybrid%20%7C%20AW%20SEM%20%7C%20BKWS%20~%20EXA_1:1_FR_EN_General_Cloud_TOP_google%20cloud%20platform-KWID_43700016295756942-kwd-26415313501-userloc_9055236&utm_term=KW_google%20cloud%20platform-ST_google%20cloud%20platform&ds_rl=1242853&ds_rl=1245734&ds_rl=1245734&gclid=EAIaIQobChMIvaa_9OmL4gIVFeaaCh3jnQIfEAAYASAAEgJyp_D_BwE).
+      * Container with [Docker](https://www.docker.com).
    * Use this tools on various domain of learning with real dataset and with usefull learning librairy.
-      * Natural language processing with gensim
-The main goal of this course is to have an overview of this tools and also mor algorithms...
+      * Natural language processing with Nltk, Scikit-Learn and [Gensim](https://gym.openai.com/)
+      * Recommendation system.
+      * Reinforcment Learning with [Gym Open AI](https://gym.openai.com/)
 
+We will view Introduction to this different technology.
 
 
 
@@ -37,20 +39,24 @@ The main goal of this course is to have an overview of this tools and also mor a
 
 The course is divided in 5 sessions.
 
-- **Session 1** *Spark*: [Complément](https://github.com/wikistat/Intro-Python/blob/master/Cal4-PythonProg.ipynb) de programmation en Python puis [Initiation](https://github.com/wikistat/Intro-PySpark) à Spark *via* l'API `PySpark`.
-- **Session 2** *Reconnaissance d'images*; apprentissage profond avec `TensorFlow` utilisé *via* `Keras`. Deux cas d'usage: [`MNIST`](https://github.com/wikistat/Ateliers-Big-Data/tree/master/MNIST) et [cats *vs.* dogs](https://github.com/wikistat/Ateliers-Big-Data/tree/master/CatsVSDogs) avec transfert de l'apprentissage du  réseau `inception` de Google. 
-- **Session 3** *en chantier* [*Cloud computing*]() accéder à *Google Cloud* pour passer à l'échelle; transférer un code de calcul, l'exécuter.
-- **Session 4** *MLlib*: pratique de la librairie MLlib de Spark pour l'apprentissage sur données distribuées. Comparaison des performances en R, Python et MlLib sur des cas d'usage
-   - [`MNIST`](https://github.com/wikistat/Ateliers-Big-Data/tree/master/MNIST) reconnaissance de caractères manuscrits avec R, `Scikit-learn` et MLlib. Laisser la version avec `keras` est traité dans l'épisode 2.
-   - [`MovieLens`](https://github.com/wikistat/Ateliers-Big-Data/tree/master/MovieLens) Système de recommandation de films avec R (`softImpute`) et MLlib (*non negative matrix factorisation*).
-- **Session 5** *NLP (Natural Language Processing)*
-   - *sentiment analysis*
-   - [`Cdiscount`](https://github.com/wikistat/Ateliers-Big-Data/tree/master/Cdiscount) catégorisation de produits (*text mining*): Scikit-learn *vs.* MLlib.
-   - *word embedding*
+- **[Session 1](https://github.com/wikistat/AI-Frameworks/tree/RewriteAllReadme/PySpark)** Spark
+   - Python [complement](https://github.com/wikistat/Intro-Python/blob/master/Cal4-PythonProg.ipynb)
+   - Introduction to Spark *via* API `PySpark` API.
+- **[Session 2](https://github.com/wikistat/AI-Frameworks/tree/RewriteAllReadme/NatualLangageProcessing)** NLP (Natural Language Processing)
+   - *Cdiscount dataset* : Classification of product description 
+   - Text cleaning, Vectorization, Words Embedding, Supervised classification, RNN.
+- **[Session 3](https://github.com/wikistat/AI-Frameworks/tree/RewriteAllReadme/CloudComputing)** Cloud computing and containerization.
+   - Configure and start an Google Cloud instance. 
+   - Build Docker Image and run container.
+- **[Session 4](https://github.com/wikistat/AI-Frameworks/tree/RewriteAllReadme/ReinforcmentLearning)** Reinforcment Learning
+   - Use open AI environment
+   - Policy gradient, Q-Learning.
+- **[Session 5](https://github.com/wikistat/AI-Frameworks/tree/RewriteAllReadme/RecomendationSystem)**  Recomentdation System
+   - *MovieLens* dataset. 
 
-Une synthèse des résultats obtenus dans les 3 cas d'usage (MNIST, MovieLens, Cdiscount) est développée par [Besse et al. 2016](https://hal.archives-ouvertes.fr/hal-01350099).
-
-Chaque année, l'**évaluation** des compétences acquises est basée sur la participation (résultats et soutenance orale) des étudiants à un [défi IA](https://defi-ia.insa-toulouse.fr/) dont l'objet est la construction d'une meilleure prévision par apprentissage sur un jeu complexe de données.
+## Evaluation
+   1. [défi IA](https://defi-ia.insa-toulouse.fr/) 
+   2. Project
 
 
 
