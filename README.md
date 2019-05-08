@@ -7,10 +7,11 @@ This course follows the [Machine Learning](https://github.com/wikistat/Apprentis
 As a DataScientist, you will also need to know the tool that wil allow you to perform these algorithms efficiently.
 The two main goal of this course are : 
    * Discover this different tools:
-      * Spark Language for distributed computation.
-      * Cloud computing with Google cloud.
-      * Container with docker.
-   * Use this tools on real dataset and with usefull learning librairy
+      * Distributed computation with `Spark`.
+      * Cloud computing with 'Google Cloud'.
+      * Container with 'Docker`.
+   * Use this tools on various domain of learning with real dataset and with usefull learning librairy.
+      * Natural language processing with gensim
 The main goal of this course is to have an overview of this tools and also mor algorithms...
 
 
