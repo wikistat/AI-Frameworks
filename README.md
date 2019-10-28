@@ -5,19 +5,17 @@
 This course follows the [Machine Learning](https://github.com/wikistat/Apprentissage) and the [High Dimensional & Deep Learning](https://github.com/wikistat/High-Dimensional-Deep-Learning). In theses courses, you have acquired knowledge in machine and deep learning algoritms and their application on various type of data. This knowledge is primordial to become a DataScientist. 
 
 As a DataScientist, you will also need to know the tool that wil allow you to perform these algorithms efficiently.
-The two main goal of this course are : 
-   * Discover this different tools:
+The two main goals of this course are : 
+   * Discover these different tools:
       * Distributed computation with [Spark](https://spark.apache.org/images/spark-logo-trademark.png).
       * Cloud computing with [Google Cloud](https://cloud.google.com/gcp/?utm_source=google&utm_medium=cpc&utm_campaign=emea-fr-all-en-dr-bkws-all-all-trial-e-gcp-1003963&utm_content=text-ad-none-any-DEV_c-CRE_167374210213-ADGP_Hybrid%20%7C%20AW%20SEM%20%7C%20BKWS%20~%20EXA_1:1_FR_EN_General_Cloud_TOP_google%20cloud%20platform-KWID_43700016295756942-kwd-26415313501-userloc_9055236&utm_term=KW_google%20cloud%20platform-ST_google%20cloud%20platform&ds_rl=1242853&ds_rl=1245734&ds_rl=1245734&gclid=EAIaIQobChMIvaa_9OmL4gIVFeaaCh3jnQIfEAAYASAAEgJyp_D_BwE).
       * Container with [Docker](https://www.docker.com).
    * Use this tools on various domain of learning with real dataset and with usefull learning librairy.
       * Natural language processing with Nltk, Scikit-Learn and [Gensim](https://gym.openai.com/)
       * Recommendation system.
-      * Reinforcment Learning with [Gym Open AI](https://gym.openai.com/)
+      * Reinforcement Learning with [Gym Open AI](https://gym.openai.com/)
 
-We will view Introduction to this different technology.
-
-
+You will follow introduction to these different technologies.
 
 
 
@@ -39,24 +37,41 @@ We will view Introduction to this different technology.
 
 The course is divided in 5 sessions.
 
-- **[Session 1](https://github.com/wikistat/AI-Frameworks/tree/RewriteAllReadme/PySpark)** Spark
+- **[Session 1 - 04-11-19](https://github.com/wikistat/AI-Frameworks/tree/master/PySpark)** Spark
    - Python [complement](https://github.com/wikistat/Intro-Python/blob/master/Cal4-PythonProg.ipynb)
    - Introduction to Spark *via* API `PySpark` API.
-- **[Session 2](https://github.com/wikistat/AI-Frameworks/tree/RewriteAllReadme/NatualLangageProcessing)** NLP (Natural Language Processing)
-   - *Cdiscount dataset* : Classification of product description 
-   - Text cleaning, Vectorization, Words Embedding, Supervised classification, RNN.
-- **[Session 3](https://github.com/wikistat/AI-Frameworks/tree/RewriteAllReadme/CloudComputing)** Cloud computing and containerization.
+- **[Session 2 - 25-11-19 ](https://github.com/wikistat/AI-Frameworks/tree/master/CloudComputing)** Cloud computing and containerization.
    - Configure and start an Google Cloud instance. 
    - Build Docker Image and run container.
-- **[Session 4](https://github.com/wikistat/AI-Frameworks/tree/RewriteAllReadme/ReinforcmentLearning)** Reinforcment Learning
+- **[Session 3 - 02-12-19 ](https://github.com/wikistat/AI-Frameworks/tree/master/NatualLangageProcessing)** NLP (Natural Language Processing)
+   - *Cdiscount dataset* : Classification of product description 
+   - Text cleaning, Vectorization, Words Embedding, Supervised classification, RNN.
+- **[Session 4 - 16-12-19](https://github.com/wikistat/AI-Frameworks/tree/RewriteAllReadme/ReinforcmentLearning)** Reinforcment Learning
    - Use open AI environment
    - Policy gradient, Q-Learning.
-- **[Session 5](https://github.com/wikistat/AI-Frameworks/tree/RewriteAllReadme/RecomendationSystem)**  Recomentdation System
+- **[Session 5](RecomendationSystem)**  Recomentdation System
    - *MovieLens* dataset. 
 
 ## Evaluation
-   1. [défi IA](https://defi-ia.insa-toulouse.fr/) 
-   2. Project
+    
+You will be evaluated on your capacity of acting like a ***Data Scientist***, i.e. 
+* Choose an algorithm you haven't seen during course understand it.
+* Make it run on an dataset to evaluate its performances.
+* Make it run on the appropriate tools (SPark? Cloud? GPu?) 
+* Share it and make your results easily reproducible (Git -  docker? , conda environment?).
+
+Examen 
+
+1. You will furnish a Git repository where
+    * All code will be available to easily reproduce your result
+    * Instruction will be clear
+    * **Deadline** :  January 11th, 2019. 
+2. Oral presntation
+    * In-Deep explanation of the chosen algorithm.
+    * Comment results (with critical mind)
+    * Choice of the tools-infrastructure used.
+    * Difficulty you've met.
+    * **Date** : January 14th, 2019. 
 
 
 
