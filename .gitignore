@@ -1,3 +1,7 @@
+*/__pycache__/*
+ReinforcementLearning/model_keras.json
+ReinforcementLearning/tmp_notebook/*
+ReinforcementLearning/models/*
 *.DS_Store
 .gitignoretmp
 .ipynb_checkpoints/
