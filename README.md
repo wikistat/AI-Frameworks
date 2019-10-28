@@ -62,11 +62,11 @@ You will be evaluated on your capacity of acting like a ***Data Scientist***, i.
 
 Examen 
 
-1. You will furnish a Git repository where
+1. Project - (50%): A Git repository where
     * All code will be available to easily reproduce your result
     * Instruction will be clear
     * **Deadline** :  January 11th, 2019. 
-2. Oral presntation
+2. Oral presentation - (50%):
     * In-Deep explanation of the chosen algorithm.
     * Comment results (with critical mind)
     * Choice of the tools-infrastructure used.
