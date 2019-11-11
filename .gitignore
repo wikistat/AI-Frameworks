@@ -7,6 +7,4 @@ ReinforcementLearning/models/*
 CloudComputing/model/*
 CloudComputing/results/*
 CloudComputing/data/sample_2/*
-CloudComputing/script/learning_brendan.py
-CloudComputing/script/prediction_brendan.py
-
+*_brendan*
