@@ -169,17 +169,17 @@ class ProjectManager:
 
         self.instance.ssh_command_container(ssh_command, container_id)
 
-    def manage_container(self, action, image_name, container_name, docker_dir ="/root/vm_dir/"):
+    def manage_container(self, action, image_name, container_name):
         """
 
         :return:
         """
         if action =="run":
-            command = "'sudo nvidia-docker run -t -d --name "+container_name+" -v " + self.remote_folder +":"+docker_dir +" " + image_name +"'"
+            command = "'sudo docker run -t -d --gpus all --name "+container_name+" -v " + self.remote_folder +":"+self.container_folder +" " + image_name +"'"
         elif action == "stop":
-            command = "'sudo nvidia-docker stop "+ container_name +"'"
+            command = "'sudo docker stop "+ container_name +"'"
         elif action == "remove":
-            command = "'sudo nvidia-docker rm "+ container_name +"'"
+            command = "'sudo docker rm "+ container_name +"'"
 
         else:
             raise ValueError("'action' parameter should be 'run', 'stop' or 'remove' ")

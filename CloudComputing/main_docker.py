@@ -28,7 +28,7 @@ projectManager.update_code()
 
 
 ## Start container
-projectManager.manage_container("run", "tfimg", "container_background",  docker_dir="/root/CatsVsDogs")
+projectManager.manage_container("run", "image_name", "container_name")
 
 
 ## Execute Job
@@ -37,15 +37,15 @@ projectManager.manage_container("run", "tfimg", "container_background",  docker_
 args = [["epochs", "10"], ["batch_size", "100"]]
 
 
-projectManager.execute_python_script_container("learning_solution.py", "sample_2", "container_background", args = args)
-projectManager.execute_python_script_container("prediction_solution.py", "sample_2", "container_background", args = args)
+projectManager.execute_python_script_container("learning_solution.py", "sample_2", "container_name", args = args)
+projectManager.execute_python_script_container("prediction_solution.py", "sample_2", "container_name", args = args)
 
 
 
 
 ## stop and remove container
-projectManager.manage_container("stop", "tfimg", "container_background", docker_dir ="/root/vm_dir/")
-projectManager.manage_container("remove", "tfimg", "container_background", docker_dir ="/root/vm_dir/")
+projectManager.manage_container("stop", "image_name", "container_name")
+projectManager.manage_container("remove", "image_name", "container_name")
 
 
 ## Collect job output
