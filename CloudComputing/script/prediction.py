@@ -41,7 +41,7 @@ img_height = 150
 N_test =
 
 test_datagen = kpi.ImageDataGenerator()
-test_generator = test_datagen.flow_from_directory(e)
+test_generator = test_datagen.flow_from_directory()
 
 
 ## Telechargement du modele
