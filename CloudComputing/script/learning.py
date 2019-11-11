@@ -1,20 +1,17 @@
 # Librairies
 print("Load Libraries")
-
 import time
 import pickle
 import hashlib
-import argparse
 import os
-import keras.preprocessing.image as kpi
-import keras.layers as kl
-import keras.models as km
+import tensorflow.keras.preprocessing.image as kpi
+import tensorflow.keras.layers as kl
+import tensorflow.keras.models as km
 
 from tensorflow.python.client import device_lib
 
 MODE = "GPU" if "GPU" in [k.device_type for k in device_lib.list_local_devices()] else "CPU"
 print(MODE)
-
 ## Argument
 
 
@@ -75,7 +72,7 @@ model_conv.compile(loss=,
 
 print("Start Learning")
 ts = time.time()
-model_conv.fit_generator(train_generator,± steps_per_epoch=N_train // args.batch_size, epochs=args.epochs,
+history = model_conv.fit_generator(train_generator, steps_per_epoch=N_train // args.batch_size, epochs=args.epochs,
                          validation_data=validation_generator, validation_steps=N_val // args.batch_size)
 te = time.time()
 t_learning = te - ts
@@ -95,7 +92,7 @@ t_prediction = te - ts
 
 ## Save Model
 
-### Créer un identifiant unique à partir des paramètres du script
+### Creer un identifiant unique a partir des parametres du script
 args_str = "_".join([k + ":" + str(v) for k, v in sorted(vars(args).items(), key=lambda x : x[0])])
 id_str = hashlib.md5(args_str.encode("utf8")).hexdigest()
 
@@ -108,8 +105,6 @@ id_str = hashlib.md5(args_str.encode("utf8")).hexdigest()
 print("Save results")
 results = vars(args)
 results.update({"t_learning": t_learning, "t_prediction": t_prediction, "accuracy_train": score_train,
-                 "accuracy_val": score_val})
-
-print(results)
+                 "accuracy_val": score_val, "history" : history.history})
 pickle.dump(results, open(args.results_dir + "/" + id_str + ".pkl", "wb"))
 

@@ -16,16 +16,17 @@ print(MODE)
 ## Argument
 import argparse
 
+DATA_DIR = ""
 parser = argparse.ArgumentParser()
 parser.add_argument('--epochs', type=int, default=10)
 parser.add_argument('--batch_size', type=int, default=20)
 
 parser.add_argument('--data_dir', type=str,
-                    default="/Users/bguillouet/Insa/TP_Insa/dev/IA-Frameworks/GoogleCloud/data/sample_2/")
+                    default=DATA_DIR+"/data/sample_2/")
 parser.add_argument('--results_dir', type=str,
-                    default="/Users/bguillouet/Insa/TP_Insa/dev/IA-Frameworks/GoogleCloud/results/")
+                    default=DATA_DIR+"/results/")
 parser.add_argument('--model_dir', type=str,
-                    default="/Users/bguillouet/Insa/TP_Insa/dev/IA-Frameworks/GoogleCloud/model/")
+                    default=DATA_DIR+"/model/")
 
 args = parser.parse_args()
 
@@ -60,7 +61,7 @@ validation_generator = valid_datagen.flow_from_directory(
     batch_size=args.batch_size,
     class_mode='binary')
 
-## Definition du modEle
+## Definition du modele
 
 model_conv = km.Sequential()
 model_conv.add(kl.Conv2D(32, (3, 3), input_shape=(img_width, img_height, 3), data_format="channels_last"))
