@@ -2,6 +2,7 @@ import numpy as np
 import random
 import itertools
 import scipy.misc
+from PIL import Image
 import matplotlib.pyplot as plt
 
 
@@ -110,9 +111,9 @@ class gameEnv():
                 hero = item
         if self.partial == True:
             a = a[hero.y:hero.y+3,hero.x:hero.x+3,:]
-        b = scipy.misc.imresize(a[:,:,0],[84,84,1],interp='nearest')
-        c = scipy.misc.imresize(a[:,:,1],[84,84,1],interp='nearest')
-        d = scipy.misc.imresize(a[:,:,2],[84,84,1],interp='nearest')
+        b = Image.fromarray(np.uint8(a[:,:,0]*255), mode="L").resize((84,84), resample=Image.NEAREST)
+        c = Image.fromarray(np.uint8(a[:,:,1]*255), mode="L").resize((84,84), resample=Image.NEAREST)
+        d = Image.fromarray(np.uint8(a[:,:,2]*255), mode="L").resize((84,84), resample=Image.NEAREST)
         a = np.stack([b,c,d],axis=2)
         return a
 
