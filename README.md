@@ -1,27 +1,32 @@
-## <a href="http://www.insa-toulouse.fr/" ><img src="http://www.math.univ-toulouse.fr/~besse/Wikistat/Images/Logo_INSAvilletoulouse-RVB.png" style="float:left; max-width: 80px; display: inline" alt="INSA"/> |  [*Mathématiques Appliquées*](http://www.math.insa-toulouse.fr/fr/index.html), [`Science des Données`](http://www.math.insa-toulouse.fr/fr/enseignement.html) 
+## <a href="http://www.insa-toulouse.fr/" ><img src="http://www.math.univ-toulouse.fr/~besse/Wikistat/Images/Logo_INSAvilletoulouse-RVB.png" style="float:left; max-width: 80px; display: inline" alt="INSA"/> |  [*Applied mathematics*](http://www.math.insa-toulouse.fr/fr/index.html), [`Data Science`](http://www.math.insa-toulouse.fr/fr/enseignement.html) 
 
 # Artificial Intelligence Frameworks
 
-This course follows the [Machine Learning](https://github.com/wikistat/Apprentissage) and the [High Dimensional & Deep Learning](https://github.com/wikistat/High-Dimensional-Deep-Learning). In theses courses, you have acquired knowledge in machine and deep learning algoritms and their application on various type of data. This knowledge is primordial to become a DataScientist. 
+This course follows the [Machine Learning](https://github.com/wikistat/Apprentissage) and the [High Dimensional & Deep Learning](https://github.com/wikistat/High-Dimensional-Deep-Learning) courses.
+ In theses courses, you have acquired knowledge in machine and deep learning algoritms and their application on various type of data. This knowledge is primordial to become a DataScientist. 
 
-As a DataScientist, you will also need to know the tool that wil allow you to perform these algorithms efficiently.
-The two main goals of this course are : 
-   * Discover these different tools:
-      * Distributed computation with [Spark](https://spark.apache.org/images/spark-logo-trademark.png).
-      * Cloud computing with [Google Cloud](https://cloud.google.com/gcp/?utm_source=google&utm_medium=cpc&utm_campaign=emea-fr-all-en-dr-bkws-all-all-trial-e-gcp-1003963&utm_content=text-ad-none-any-DEV_c-CRE_167374210213-ADGP_Hybrid%20%7C%20AW%20SEM%20%7C%20BKWS%20~%20EXA_1:1_FR_EN_General_Cloud_TOP_google%20cloud%20platform-KWID_43700016295756942-kwd-26415313501-userloc_9055236&utm_term=KW_google%20cloud%20platform-ST_google%20cloud%20platform&ds_rl=1242853&ds_rl=1245734&ds_rl=1245734&gclid=EAIaIQobChMIvaa_9OmL4gIVFeaaCh3jnQIfEAAYASAAEgJyp_D_BwE).
-      * Container with [Docker](https://www.docker.com).
-   * Use this tools on various domain of learning with real dataset and with usefull learning librairy.
-      * Natural language processing with Nltk, Scikit-Learn and [Gensim](https://gym.openai.com/)
-      * Recommendation system.
-      * Reinforcement Learning with [Gym Open AI](https://gym.openai.com/)
+This course has three main objectives. You will 
 
-You will follow introduction to these different technologies.
+1. learn how to apply efficiently these algorithms using
+    * Cloud computing with [Google Cloud](https://cloud.google.com/gcp/?utm_source=google&utm_medium=cpc&utm_campaign=emea-fr-all-en-dr-bkws-all-all-trial-e-gcp-1003963&utm_content=text-ad-none-any-DEV_c-CRE_167374210213-ADGP_Hybrid%20%7C%20AW%20SEM%20%7C%20BKWS%20~%20EXA_1:1_FR_EN_General_Cloud_TOP_google%20cloud%20platform-KWID_43700016295756942-kwd-26415313501-userloc_9055236&utm_term=KW_google%20cloud%20platform-ST_google%20cloud%20platform&ds_rl=1242853&ds_rl=1245734&ds_rl=1245734&gclid=EAIaIQobChMIvaa_9OmL4gIVFeaaCh3jnQIfEAAYASAAEgJyp_D_BwE),
+    * Container with [Docker](https://www.docker.com),
 
+2. discover new field of artificial intelligence applied on (real) datasets that require specific algorithms to be handled:
+    * **Natural language processing**.
+        * <ins>Algorithms</ins>: Text processing, Vectorizer, Words Embedding, RNN
+        * *Libraries :  [Nltk](https://www.nltk.org/), [Scikit-Learn](https://www.tensorflow.org/), [Gensim](https://gym.openai.com/)*
+    * **Video Game**
+        * <ins>Algorithms</ins>: Reinforcement learning, (Policy Gradient algorithm, Q-Learning, Deep Q-learning)
+        * *Libraries :  [AI Gym](https://gym.openai.com/), [Tensorflow](https://www.tensorflow.org/).
+    * **Movies Notations**
+        * <ins>Algorithms</ins>: Recommendation system, (User/User and Item/Item filters, NMF, Neural recomendation system)
+        * *Libraries :  [Surprise](https://surprise.readthedocs.io/en/stable/index.html), [Tensorflow](https://www.tensorflow.org/).
 
+3. how to efficiently share reproducible code. 
+    * Build a Github repository.
 
-<a href="https://www.python.org/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Python_logo_and_wordmark.svg/390px-Python_logo_and_wordmark.svg.png" height="75" alt="Python"/></a> <a href="https://cloud.google.com/gcp/?utm_source=google&utm_medium=cpc&utm_campaign=emea-fr-all-en-dr-bkws-all-all-trial-e-gcp-1003963&utm_content=text-ad-none-any-DEV_c-CRE_167374210213-ADGP_Hybrid%20%7C%20AW%20SEM%20%7C%20BKWS%20~%20EXA_1:1_FR_EN_General_Cloud_TOP_google%20cloud%20platform-KWID_43700016295756942-kwd-26415313501-userloc_9055236&utm_term=KW_google%20cloud%20platform-ST_google%20cloud%20platform&ds_rl=1242853&ds_rl=1245734&ds_rl=1245734&gclid=EAIaIQobChMIvaa_9OmL4gIVFeaaCh3jnQIfEAAYASAAEgJyp_D_BwE"><img src="https://cloud.google.com/_static/38e39c36bd/images/cloud/cloud-logo.svg" height="75" alt="Googe Cloud"/></a> 
+**NB**: Some contents from previous years are still available on the repository (like **Spark**) but are not covered during theses courses anymore. 
 
- <a href="https://radimrehurek.com/gensim/"><img src="https://radimrehurek.com/gensim/_static/images/gensim.png" height="75" alt=Gensim/></a>    <a href="https://gym.openai.com/"><img src="https://gym.openai.com/assets/dist/home/header/home-icon-54c30e2345.svg" height="75" alt="Gym Open AI"/> </a> <a href="https://www.tensorflow.org/"><img src="https://avatars0.githubusercontent.com/u/15658638?s=200&v=4" height="75" alt="TensorFlow"/></a>   <a href="https://www.docker.com"><img src="https://www.docker.com/sites/default/files/social/docker_facebook_share.png" height="75" alt="Docker"/></a>    <a href="http://spark.apache.org/"><img src="https://spark.apache.org/images/spark-logo-trademark.png" height="75" alt="Spark"/> </a> 
 
 ## Knowledge requirements
 
@@ -35,43 +40,71 @@ You will follow introduction to these different technologies.
 
 ## Schedule
 
+* Lectures : 10 hours
+* Practical Works : 30 hours.
+
 The course is divided in 5 sessions.
 
-- **[Session 1 - 04-11-19](https://github.com/wikistat/AI-Frameworks/tree/master/PySpark)** Spark
-   - Python [complement](https://github.com/wikistat/Intro-Python/blob/master/Cal4-PythonProg.ipynb)
-   - Introduction to Spark *via* API `PySpark` API.
-- **[Session 2 - 25-11-19 ](https://github.com/wikistat/AI-Frameworks/tree/master/CloudComputing)** Cloud computing and containerization.
-   - Configure and start an Google Cloud instance. 
-   - Build Docker Image and run container.
-- **[Session 3 - 02-12-19 ](https://github.com/wikistat/AI-Frameworks/tree/master/NatualLangageProcessing)** NLP (Natural Language Processing)
-   - *Cdiscount dataset* : Classification of product description 
-   - Text cleaning, Vectorization, Words Embedding, Supervised classification, RNN.
-- **[Session 4 - 16-12-19](https://github.com/wikistat/AI-Frameworks/tree/RewriteAllReadme/ReinforcmentLearning)** Reinforcment Learning
-   - Use open AI environment
-   - Policy gradient, Q-Learning.
-- **[Session 5](RecomendationSystem)**  Recomentdation System
-   - *MovieLens* dataset. 
+- **Session 1 - ??-??-20**
+   - Python environment + Github Repo + Python Script.
+        * [TP]()
+   - Introduction to Google Cloud Computing.
+        * [TP]()
+- **Session 2 - ??-??-20**
+   - Docker
+        * [TP]()
+   - Natural language processing: Text Cleaning + Text Vectorization
+        * [TP]()
+- **Session 3 - ??-??-20**
+   - Natural language processing: Words Embedding. 
+        * [TP]()
+   - Natural language processing: Recurrent Network
+        * [TP]()
+- **Session 4 - ??-??-20**
+   - Reinforcement learning: PG Gradient
+        * [TP]()
+   - Reinforcement learning: Deep Q-learning
+        * [TP]()
+- **Session 5 ??-??-20**
+   - Recommendation System. 
+        * [TP]()
+   - ??
+        * [TP]()
+- **Session 6 ??-??-20**
+   - Free time on project.
+
+   
+All labs are not mandatory. 
 
 ## Evaluation
     
 You will be evaluated on your capacity of acting like a ***Data Scientist***, i.e. 
-* Choose an algorithm you haven't seen during course understand it.
+* Understand an algorithm you haven't seen during course.
+* Being able to explain it clearly.
 * Make it run on an dataset to evaluate its performances.
 * Make it run on the appropriate tools (SPark? Cloud? GPu?) 
-* Share it and make your results easily reproducible (Git -  docker? , conda environment?).
+* Share it and make your results easily reproducible (Git -  docker, conda environment.).
 
 Examen 
 
-1. Project - (50%): A Git repository where
-    * All code will be available to easily reproduce your result
-    * Instruction will be clear
-    * **Deadline** :  January 11th, 2019. 
-2. Oral presentation - (50%):
-    * In-Deep explanation of the chosen algorithm.
-    * Comment results (with critical mind)
-    * Choice of the tools-infrastructure used.
-    * Difficulty you've met.
-    * **Date** : January 14th, 2019. 
-
-
+1. Project - (**60%**): a Git repository.
+    * The git should contain a clear markdown Readme, which describes  (**33%**)
+        * Which result you achieved? In which computation time? On which engine?
+        * What do I have to install to be able to reproduce the code? 
+        * Which command do I have to run to reproduce the results?
+    * The code has to be easily reproducible.  (**33%**)
+        * Packages required has to be well described.
+         (a **requirements.txt** files is the best)
+        * Conda command or docker command can be furnish 
+    * The code should be clear and easily readable.
+        * Final results can be run in a script and not a notebook.
+        * Only final code can be found in this script. 
+    * **Deadline** :  January ?? 2020.
+    
+2. Oral presentation - (**40%**):
+    * Quality of the presentation. **25%**
+    * In-Deep explanation of the chosen algorithm. **25%**
+    * Choice of the tools-infrastructure used. **25%**
+    * Results you obtained. **25%**
+    * **Date** : January ??, 2020. 
 
