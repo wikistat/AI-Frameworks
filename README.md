@@ -11,7 +11,7 @@ This course has three main objectives. You will
     * Cloud computing with [Google Cloud](https://cloud.google.com/gcp/?utm_source=google&utm_medium=cpc&utm_campaign=emea-fr-all-en-dr-bkws-all-all-trial-e-gcp-1003963&utm_content=text-ad-none-any-DEV_c-CRE_167374210213-ADGP_Hybrid%20%7C%20AW%20SEM%20%7C%20BKWS%20~%20EXA_1:1_FR_EN_General_Cloud_TOP_google%20cloud%20platform-KWID_43700016295756942-kwd-26415313501-userloc_9055236&utm_term=KW_google%20cloud%20platform-ST_google%20cloud%20platform&ds_rl=1242853&ds_rl=1245734&ds_rl=1245734&gclid=EAIaIQobChMIvaa_9OmL4gIVFeaaCh3jnQIfEAAYASAAEgJyp_D_BwE),
     * Container with [Docker](https://www.docker.com),
 
-2. discover new field of artificial intelligence applied on (real) datasets that require specific algorithms to be handled:
+2. discover new field of artificial intelligence applied on (real) datasets that require specific algorithms:
     * **Natural language processing**.
         * <ins>Algorithms</ins>: Text processing, Vectorizer, Words Embedding, RNN
         * *Libraries :  [Nltk](https://www.nltk.org/), [Scikit-Learn](https://www.tensorflow.org/), [Gensim](https://gym.openai.com/)*
@@ -77,6 +77,8 @@ The course is divided in 5 sessions.
 All labs are not mandatory. 
 
 ## Evaluation
+
+### Objective
     
 You will be evaluated on your capacity of acting like a ***Data Scientist***, i.e. 
 * Understand an algorithm you haven't seen during course.
@@ -85,7 +87,7 @@ You will be evaluated on your capacity of acting like a ***Data Scientist***, i.
 * Make it run on the appropriate tools (SPark? Cloud? GPu?) 
 * Share it and make your results easily reproducible (Git -  docker, conda environment.).
 
-Examen 
+### Notations
 
 1. Project - (**60%**): a Git repository.
     * The git should contain a clear markdown Readme, which describes  (**33%**)
@@ -96,7 +98,7 @@ Examen
         * Packages required has to be well described.
          (a **requirements.txt** files is the best)
         * Conda command or docker command can be furnish 
-    * The code should be clear and easily readable.
+    * The code should be clear and easily readable. (**33%**)
         * Final results can be run in a script and not a notebook.
         * Only final code can be found in this script. 
     * **Deadline** :  January ?? 2020.
@@ -108,3 +110,6 @@ Examen
     * Results you obtained. **25%**
     * **Date** : January ??, 2020. 
 
+### Other details
+
+ * Group of 4 to 5 people. (Deadline for group December ?? 2020)
