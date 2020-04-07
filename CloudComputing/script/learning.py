@@ -2,7 +2,6 @@
 print("Load Libraries")
 import time
 import pickle
-import hashlib
 import os
 import tensorflow.keras.preprocessing.image as kpi
 import tensorflow.keras.layers as kl
@@ -12,41 +11,26 @@ from tensorflow.python.client import device_lib
 
 MODE = "GPU" if "GPU" in [k.device_type for k in device_lib.list_local_devices()] else "CPU"
 print(MODE)
+
 ## Argument
+import argparse
 
-
-
+# TODO Write here the parameters that can be given as inputs to the algorithm.
 parser = argparse.ArgumentParser()
-
-# TODO Les paramètres de l'environnement sont défini ici. Ajoutez les directions de vos dossier en local par défault.
-
-parser.add_argument('--data_dir', type=str, default="")
-parser.add_argument('--model_dir', type=str, default="")
-parser.add_argument('--results_dir', type=str, default="")
-
-# TODO ajoutez ici les différents paramètres du modèle que vous souhaitez pour manipuler en entré de script
-
-parser.add_argument('--', type=str, default="")
-
-
-
-
+parser.add_argument('--data_dir', type=str, default=)
 args = parser.parse_args()
-
-## Définition des variables
-
-img_width = 150
-img_height = 150
-# TODO Stockez dans des variable 'N_train' et 'N_val' les tailles des echantillons d'apprentissage et de validation de l'échantillon
-N_train =
-N_val =
-
 
 
 ## Data Generator
 
-# TODO définissez ici les différents "generator" qui vous permettront de lire les données et généraler les batchs
+img_width = 150
+img_height = 150
 
+N_train = len(os.listdir(args.data_dir+"/train/cats/")) + len(os.listdir(args.data_dir+"/train/dogs/"))
+N_val = len(os.listdir(args.data_dir+"/validation/cats/")) + len(os.listdir(args.data_dir+"/validation/dogs/"))
+print("%d   %d"%(N_train, N_val))
+
+# TODO Write here code to generate obh train and validation generator
 train_datagen = kpi.ImageDataGenerator()
 
 train_generator = train_datagen.flow_from_directory()
@@ -55,18 +39,11 @@ valid_datagen = kpi.ImageDataGenerator()
 
 validation_generator = valid_datagen.flow_from_directory()
 
-
-## Définition du modèle
-
-# TODO Définissez un premier modèle simple à l'aide de Keras
-
-model_conv = km.Sequential()
+## Model
+# TODO Write a simple convolutional neural network
 
 
-model_conv.compile(loss=,
-                   optimizer=,
-                   metrics=)
-
+model_conv =
 
 ## Learning
 
@@ -77,9 +54,7 @@ history = model_conv.fit_generator(train_generator, steps_per_epoch=N_train // a
 te = time.time()
 t_learning = te - ts
 
-
 ## Test
-
 # TODO Calculez l'accuracy de votre modèle sur le jeu d'apprentissage et sur le jeu de validation.
 
 print("Start predicting")
@@ -90,21 +65,34 @@ te = time.time()
 t_prediction = te - ts
 
 
+
+args_str = "epochs_%d_batch_size_%d" %(args.epochs, args.batch_size)
+
 ## Save Model
 
-### Creer un identifiant unique a partir des parametres du script
-args_str = "_".join([k + ":" + str(v) for k, v in sorted(vars(args).items(), key=lambda x : x[0])])
-id_str = hashlib.md5(args_str.encode("utf8")).hexdigest()
-
-# TODO Sauvez le modèle dans le dossier model_dir
+# TODO Save model in model folder
 
 
-## TODO   Stockez les resultat dans des variables ainsi que le temps d'execution de ces opérations dans le dossier results_dir
+## Save results
+
+## TODO Save results (learning time, prediction time, train and test accuracy, history.history object) in result folder
 
 
-print("Save results")
-results = vars(args)
-results.update({"t_learning": t_learning, "t_prediction": t_prediction, "accuracy_train": score_train,
-                 "accuracy_val": score_val, "history" : history.history})
-pickle.dump(results, open(args.results_dir + "/" + id_str + ".pkl", "wb"))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

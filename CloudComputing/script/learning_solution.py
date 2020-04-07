@@ -2,7 +2,6 @@
 print("Load Libraries")
 import time
 import pickle
-import hashlib
 import os
 import tensorflow.keras.preprocessing.image as kpi
 import tensorflow.keras.layers as kl
@@ -16,13 +15,13 @@ print(MODE)
 ## Argument
 import argparse
 
-DATA_DIR = ""
+DATA_DIR = "PATH_TO/CloudComputing"
 parser = argparse.ArgumentParser()
-parser.add_argument('--epochs', type=int, default=10)
+parser.add_argument('--epochs', type=int, default=2)
 parser.add_argument('--batch_size', type=int, default=20)
 
 parser.add_argument('--data_dir', type=str,
-                    default=DATA_DIR+"/data/sample_2/")
+                    default=DATA_DIR+"/data/")
 parser.add_argument('--results_dir', type=str,
                     default=DATA_DIR+"/results/")
 parser.add_argument('--model_dir', type=str,
@@ -61,7 +60,7 @@ validation_generator = valid_datagen.flow_from_directory(
     batch_size=args.batch_size,
     class_mode='binary')
 
-## Definition du modele
+## Definition du modEle
 
 model_conv = km.Sequential()
 model_conv.add(kl.Conv2D(32, (3, 3), input_shape=(img_width, img_height, 3), data_format="channels_last"))
@@ -108,9 +107,8 @@ t_prediction = te - ts
 ## Save Model
 
 ### Creer un identifiant unique a partir des parametres du script
-args_str = "_".join([k + ":" + str(v) for k, v in sorted(vars(args).items(), key=lambda x : x[0])])
-id_str = hashlib.md5(args_str.encode("utf8")).hexdigest()
-model_conv.save(args.model_dir + "/" + id_str + ".h5")
+args_str = "epochs_%d_batch_size_%d" %(args.epochs, args.batch_size)
+model_conv.save(args.model_dir + "/" + args_str + ".h5")
 
 ## Save results
 
@@ -119,4 +117,4 @@ print("Save results")
 results = vars(args)
 results.update({"t_learning": t_learning, "t_prediction": t_prediction, "accuracy_train": score_train,
                  "accuracy_val": score_val, "history" : history.history})
-pickle.dump(results, open(args.results_dir + "/" + id_str + ".pkl", "wb"))
+pickle.dump(results, open(args.results_dir + "/" + args_str  + ".pkl", "wb"))

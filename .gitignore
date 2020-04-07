@@ -6,7 +6,7 @@ ReinforcementLearning/models/*
 .ipynb_checkpoints/
 CloudComputing/model/*
 CloudComputing/results/*
-CloudComputing/data/sample_2/*
+CloudComputing/data/*
 *_brendan*
 NatualLangageProcessing/data/
 RecomendationSystem/ml-25/*

@@ -1,7 +1,6 @@
 # Librairies
 print("Load Libraries")
 import os
-import hashlib
 
 import numpy as np
 import pandas as pd
@@ -18,12 +17,12 @@ print(MODE)
 import argparse
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--epochs', type=int, default=10)
+parser.add_argument('--epochs', type=int, default=2)
 parser.add_argument('--batch_size', type=int, default=20)
 
-DATA_DIR = ""
+DATA_DIR = "PATH_TO/CloudComputing" #TODO
 parser.add_argument('--data_dir', type=str,
-                    default=DATA_DIR+"/data/sample_2/")
+                    default=DATA_DIR+"/data/")
 parser.add_argument('--results_dir', type=str,
                     default=DATA_DIR+"/results/")
 parser.add_argument('--model_dir', type=str,
@@ -50,10 +49,8 @@ test_generator = test_datagen.flow_from_directory(
     shuffle=False)
 
 ## Telechargement du modele
-args_str = "_".join([k + ":" + str(v) for k, v in sorted(vars(args).items(), key=lambda x : x[0])])
-id_str = hashlib.md5(args_str.encode("utf8")).hexdigest()
-model_conv = km.load_model(args.model_dir + "/" + id_str + ".h5")
-
+args_str = "epochs_%d_batch_size_%d" %(args.epochs, args.batch_size)
+model_conv = km.load_model(args.model_dir + "/" + args_str + ".h5")
 
 
 ## Prediction
@@ -67,4 +64,4 @@ classes = [int(t>0.5) for t in test_prediction]
 
 array = np.vstack((images_test, test_prediction[:,0], classes)).T
 df = pd.DataFrame(array, columns=["filename","probabilities","classes"])
-df.to_csv(args.results_dir+"/prediction_"+id_str+".csv", index=False)
+df.to_csv(args.results_dir+"/prediction_"+args_str+".csv", index=False)

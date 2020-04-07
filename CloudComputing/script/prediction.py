@@ -1,7 +1,6 @@
 # Librairies
 print("Load Libraries")
 import os
-import hashlib
 
 import numpy as np
 import pandas as pd
@@ -16,45 +15,44 @@ print(MODE)
 
 ## Argument
 import argparse
-
+# TODO Write here the parameters that can be given as inputs to the algorithm.
 parser = argparse.ArgumentParser()
-# TODO Les paramètres de l'environnement sont défini ici. Ajoutez les directions de vos dossier en local par défault.
-
-
-parser.add_argument('--data_dir', type=str, default="")
-parser.add_argument('--results_dir', type=str,  default="")
-parser.add_argument('--model_dir', type=str, default="")
-
-# TODO ajoutez ici les différents paramètres du modèle que vous souhaitez pour manipuler en entré de script
-parser.add_argument('--', type=str, default="")
-
+parser.add_argument('--data_dir', type=str, default=)
 args = parser.parse_args()
 
-## Definition des variables
 
+
+# TODO Define generator.
+
+
+## Data Generator
 img_width = 150
 img_height = 150
 
-## Data Generator
 
-# TODO définissez ici le différents "generator" qui vous permettra de lire les données et généraler les batchs
-N_test =
+data_dir_test = args.data_dir+'/test'
+N_test = len(os.listdir(data_dir_test+"/test"))
 
 test_datagen = kpi.ImageDataGenerator()
 test_generator = test_datagen.flow_from_directory()
 
 
-## Telechargement du modele
-args_str = "_".join([k + ":" + str(v) for k, v in sorted(vars(args).items(), key=lambda x : x[0])])
-id_str = hashlib.md5(args_str.encode("utf8")).hexdigest()
-model_conv = km.load_model(args.model_dir + "/" + id_str + ".h5")
-
+## Download model
+# Todo Download model saved in learning script.
+args_str = "epochs_%d_batch_size_%d" %(args.epochs, args.batch_size)
 
 
 ## Prediction
-# TODO Effectuez la prédiction
-
-test_prediction = model_conv.predict_generator()
+# Todo Generate prediction.
 
 ## Save prediction in csv
-# TODO Sauvegarder vos résultats dans le dossier results_dir sous forme d'un fichier csv.
+# TODO Save the results in a csv file.
+
+
+
+
+
+
+
+
+
