@@ -4,50 +4,34 @@ import os
 import subprocess
 
 
-def command_application(command, command_only):
-    """
 
-    :param command:
-    :param command_only:
-    :return:
-    """
-
-    if command_only:
-        print(command)
-    else:
-        os.system(command)
 
 
 class InstancesManager:
 
-    zone = 'europe-west1-b'
-    command_only = False
-    instance_template = 'ref-dev-dl-k80-template'
+    def __init__(self):
 
-    instance_name = 'undefined'
-    status = 'UNDEFINED'
+        self.zone = '' # TODO
+        self.print_command = True
+        self.execute_command = False
+        self.instance_name = '' # TODO
+        self.status = 'UNDEFINED'
 
-    ssh_key_file = 'undefined'
+        self.ssh_key_file = '' # TODO
 
-    # Function that lists instances in given project
-    def list(self):
+    def command_application(self, command):
         """
 
-        :return:
-        """
-        command = 'gcloud compute instances list'
-
-        command_application(command, self.command_only)
-
-    # Set instance name
-    def set_instance(self, instance_name):
-        """
-
-        :param instance_name:
+        :param command:
+        :param command_only:
         :return:
         """
 
-        self.instance_name = instance_name
+        if self.print_command:
+            print(command)
+        if self.execute_command:
+            os.system(command)
+
 
     # Check instance state : TERMINATED, STOPPING, STAGING, RUNNING
     def check_state(self):
@@ -90,32 +74,6 @@ class InstancesManager:
         if self.status is "RUNNING":
             self.stop()
 
-    # Function that creates new GPU instance from  instance template
-    def create(self, instance_name):
-        """
-
-        :param instance_name:
-        :return:
-        """
-
-        self.set_instance(instance_name)
-
-        command = 'gcloud compute instances create ' + \
-                  self.instance_name #TODO: complete command with instance template
-
-        command_application(command, self.command_only)
-
-    def delete(self):
-        """
-
-        :return:
-        """
-
-        command = 'gcloud compute instances delete ' + \
-                  self.instance_name + ' --zone ' + self.zone
-
-        command_application(command, self.command_only)
-
     def start(self):
         """
 
@@ -124,7 +82,7 @@ class InstancesManager:
 
         command = 'gcloud compute instances start ' + self.instance_name + ' --zone ' + self.zone
 
-        command_application(command, self.command_only)
+        self.command_application(command)
 
     def stop(self):
         """
@@ -134,7 +92,7 @@ class InstancesManager:
 
         command = 'gcloud compute instances stop ' + self.instance_name + ' --zone ' + self.zone
 
-        command_application(command, self.command_only)
+        self.command_application(command)
 
     def ssh_command(self, ssh_command):
         """
@@ -148,9 +106,7 @@ class InstancesManager:
                   + ' --command ' + ssh_command \
                   + ' --ssh-key-file ' + self.ssh_key_file
 
-        print(command)
-
-        command_application(command, self.command_only)
+        self.command_application(command)
 
     def ssh_command_container(self, ssh_command, container_id):
         """
@@ -165,9 +121,7 @@ class InstancesManager:
                   + ' --ssh-key-file ' + self.ssh_key_file \
                   + ' --container ' + container_id
 
-        print(command)
-
-        command_application(command, self.command_only)
+        self.command_application(command)
 
     def scp(self, direction, src_folder, dst_folder, recurse=True, python_filter=True, pickle_filter=False, csv_filter=False):
         """
@@ -210,6 +164,4 @@ class InstancesManager:
 
         command = command + ' --ssh-key-file ' + self.ssh_key_file
 
-        print(command)
-
-        command_application(command, self.command_only)
+        self.command_application(command)

@@ -7,66 +7,27 @@ from yaml import load
 
 class ProjectManager:
 
-    # Local variables
-    local_data = ''
-    local_code = ''
-    local_results = ''
+    def __init__(self):
 
-    # Remote variables
-    remote_data = ''
-    remote_code = ''
-    remote_results = ''
+        self.instance = instances.InstancesManager()
 
-    # Main script
-    main_script = ''
 
-    # Instance
-    instance = instances.InstancesManager()
+        self.local_folder = "" #TODO
+        self.local_data = self.local_folder + "/data"
+        self.local_code = self.local_folder + "/script"
+        self.local_results = self.local_folder + "/results"
 
-    def load_yaml(self, GCP_conf_file):
-        """
+        self.remote_folder = "" #TODO
+        self.remote_data = self.remote_folder + "/data"
+        self.remote_code = self.remote_folder + "/script"
+        self.remote_model = self.remote_folder + "/model"
+        self.remote_results = self.remote_folder + "/results"
 
-        :param GCP_conf_file:
-        :return:
-        """
-        stream = open(GCP_conf_file, 'r')
-        data = load(stream)
-
-        self.local_data = data['local_data']
-        self.local_code = data['local_code']
-        self.local_results = data['local_results']
-
-        self.remote_folder = data['remote_folder']
-        self.remote_data = data['remote_data']
-        self.remote_code = data['remote_code']
-        self.remote_model = data['remote_model']
-        self.remote_results = data['remote_results']
-
-        self.container_folder = data['container_folder']
-        self.container_data = data['container_data']
-        self.container_code = data['container_code']
-        self.container_model = data['container_model']
-        self.container_results = data['container_results']
-
-        self.main_script = data['main_script']
-
-    def set_instance_name(self, instance_name):
-        """
-
-        :param instance_name:
-        :return:
-        """
-
-        self.instance.instance_name = instance_name
-
-    def set_ssh_key_file(self, ssh_key_file):
-        """
-
-        :param instance_name:
-        :return:
-        """
-
-        self.instance.ssh_key_file = ssh_key_file
+        self.container_folder = "" # TODO
+        self.container_data = self.container_folder + "/data"
+        self.container_code = self.container_folder + "/script"
+        self.container_model = self.container_folder + "/model"
+        self.container_results = self.container_folder + "/results"
 
     def instance_init(self):
         """
@@ -83,20 +44,11 @@ class ProjectManager:
         :return:
         """
 
-        self.instance.scp(direction='up',src_folder=self.local_data+"/"+zip_file, dst_folder=self.remote_data,
+        self.instance.scp(direction='up',src_folder=self.local_folder+"/"+zip_file, dst_folder=self.remote_folder,
                           recurse=False, python_filter=False)
         # projectManager.update_data()
-        self.instance.ssh_command("'unzip -o "+self.remote_data+"/"+zip_file+" -d "+self.remote_data+" | pv -l >/dev/null'")
+        self.instance.ssh_command("'unzip -o "+self.remote_folder+"/"+zip_file+" -d "+self.remote_folder+" | pv -l >/dev/null'")
 
-
-    def refresh_data(self):
-        """
-
-        :return:
-        """
-
-        #TODO:data refresh
-        return 0
 
     def update_code(self):
         """
@@ -132,14 +84,14 @@ class ProjectManager:
 
 
 
-    def execute_python_script(self, script_name, sample_dir, args=None):
+    def execute_python_script(self, script_name, args=None):
         """
 
         :return:
         """
 
         command = "'python3 " + self.remote_code + "/" + script_name + " --data_dir " \
-                  + self.remote_data+"/"+sample_dir + " --results_dir " + self.remote_results + " --model_dir " + self.remote_model
+                  + self.remote_data + " --results_dir " + self.remote_results + " --model_dir " + self.remote_model
 
         if not(args is None):
             for k,v in args:
