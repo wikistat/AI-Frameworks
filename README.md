@@ -45,43 +45,43 @@ This course has three main objectives. You will
 
 The course is divided in 5 sessions.
 
-- **Session 1 - ??-??-20**
-   - Python environment + Github Repo + Python Script.
-        * [TP]()
-   - Introduction to Google Cloud Computing.
-        * [TP]()
-- **Session 2 - ??-??-20**
-   - Docker
-        * [TP]()
+- **Session 1 - 02-11-20**
    - Natural language processing: Text Cleaning + Text Vectorization
-        * [TP]()
-- **Session 3 - ??-??-20**
-   - Natural language processing: Words Embedding. 
-        * [TP]()
+        * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/IA_Frameworks_NLP_RNN.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/CloudComputing)
+   - Natural language processing: Words Embedding.
+        * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/IA_Frameworks_NLP_RNN.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/CloudComputing)
+- **Session 2 - 16-11-20**
    - Natural language processing: Recurrent Network
-        * [TP]()
-- **Session 4 - ??-??-20**
+        * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/IA_Frameworks_NLP_RNN.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/CloudComputing)
+   - Python environment + Github Repo + Python Script.
+        * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/IA_Frameworks_GCE.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/CloudComputing)
+- **Session 3 - 30-11-20**
+   - Introduction to Google Cloud Computing.
+        * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/IA_Frameworks_GCE.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/CloudComputing)
+   - Docker
+        * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/IA_Frameworks_GCE.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/CloudComputing)
+- **Session 4 - 07-12-20**
    - Reinforcement learning: PG Gradient
-        * [TP]()
+        * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/IA_Frameworks_RL.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/ReinforcementLearning)
    - Reinforcement learning: Deep Q-learning
-        * [TP]()
-- **Session 5 ??-??-20**
+        * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/IA_Frameworks_RL.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/ReinforcementLearning)
+- **Session 5 14-12-20**
    - Recommendation System. 
-        * [TP]()
+        * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/IA_Framework_RS.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/RecomendationSystem)
    - ??
-        * [TP]()
-- **Session 6 ??-??-20**
+        * [Slides]() / [TP]()
+- **Session 6 04-01-20**
    - Free time on project.
 
    
-All labs are not mandatory. 
-
 ## Evaluation
+
+The evaluation is associated to the [DEFI-IA](https://defi-ia.insa-toulouse.fr/)
 
 ### Objective
     
 You will be evaluated on your capacity of acting like a ***Data Scientist***, i.e. 
-* Understand an algorithm you haven't seen during course.
+* Understand algorithm you haven't seen during course.
 * Being able to explain it clearly.
 * Make it run on an dataset to evaluate its performances.
 * Make it run on the appropriate tools (SPark? Cloud? GPu?) 
