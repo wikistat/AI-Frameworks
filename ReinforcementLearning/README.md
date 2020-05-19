@@ -2,4 +2,4 @@
 
 # Artificial Intelligence Frameworks
 
-## Natural Language Processing
+## Reinforcement Learning
