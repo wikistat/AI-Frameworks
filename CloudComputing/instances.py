@@ -9,15 +9,19 @@ import subprocess
 
 class InstancesManager:
 
-    def __init__(self):
+    def __init__(self, print_command = True, execute_command=False):
 
-        self.zone = '' # TODO
-        self.print_command = True
-        self.execute_command = False
-        self.instance_name = '' # TODO
+        # VM arguments
+        self.zone = 'us-west1-b' # TODO
+        self.instance_name = 'tensorflow-2-vm'  # TODO
+        self.ssh_key_file = '/Users/brendanguillouet/.ssh/google_compute_engine'  # TODO
+
+        # Action arguments
+        self.print_command = print_command
+        self.execute_command = execute_command
+
         self.status = 'UNDEFINED'
 
-        self.ssh_key_file = '' # TODO
 
     def command_application(self, command):
         """

@@ -7,23 +7,23 @@ from yaml import load
 
 class ProjectManager:
 
-    def __init__(self):
+    def __init__(self, print_command = True, execute_command=False):
 
-        self.instance = instances.InstancesManager()
+        self.instance = instances.InstancesManager(print_command = print_command, execute_command=execute_command)
 
 
-        self.local_folder = "" #TODO
+        self.local_folder = "/Users/brendanguillouet/INSA/AI-Frameworks/CloudComputing" #TODO
         self.local_data = self.local_folder + "/data"
         self.local_code = self.local_folder + "/script"
         self.local_results = self.local_folder + "/results"
 
-        self.remote_folder = "" #TODO
+        self.remote_folder = "/home/brendanguillouet/TP" #TODO
         self.remote_data = self.remote_folder + "/data"
         self.remote_code = self.remote_folder + "/script"
         self.remote_model = self.remote_folder + "/model"
         self.remote_results = self.remote_folder + "/results"
 
-        self.container_folder = "" # TODO
+        self.container_folder = "/tmp/TP" # TODO
         self.container_data = self.container_folder + "/data"
         self.container_code = self.container_folder + "/script"
         self.container_model = self.container_folder + "/model"
