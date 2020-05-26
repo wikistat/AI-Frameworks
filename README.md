@@ -81,10 +81,12 @@ The evaluation is associated to the [DEFI-IA](https://defi-ia.insa-toulouse.fr/)
 ### Objective
     
 You will be evaluated on your capacity of acting like a ***Data Scientist***, i.e. 
-* Understand algorithm you haven't seen during course.
-* Being able to explain it clearly.
-* Make it run on an dataset to evaluate its performances.
-* Make it run on the appropriate tools (SPark? Cloud? GPu?) 
+
+* Handle a new dataset and explore it.
+* Find a solution to address the defi's problem with a high score (above baseline).
+* Explain the choosen algorithm.
+* Write a complete pipeline to easily reproduce the results.
+* Justify the choice of the algorithms and the environment (CPU/GPU, Cloud etc..).
 * Share it and make your results easily reproducible (Git -  docker, conda environment.).
 
 ### Notations
