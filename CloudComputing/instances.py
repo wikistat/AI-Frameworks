@@ -12,8 +12,8 @@ class InstancesManager:
     def __init__(self, print_command = True, execute_command=False):
 
         # VM arguments
-        self.zone = 'us-west1-b' # TODO
-        self.instance_name = 'tensorflow-2-vm'  # TODO
+        self.zone = 'europe-west2-a' # TODO
+        self.instance_name = 'tensorflow-3-vm'  # TODO
         self.ssh_key_file = '/Users/brendanguillouet/.ssh/google_compute_engine'  # TODO
 
         # Action arguments

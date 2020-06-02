@@ -90,7 +90,7 @@ class ProjectManager:
         :return:
         """
 
-        command = "'python3 " + self.remote_code + "/" + script_name + " --data_dir " \
+        command = "'/opt/conda/bin/python " + self.remote_code + "/" + script_name + " --data_dir " \
                   + self.remote_data + " --results_dir " + self.remote_results + " --model_dir " + self.remote_model
 
         if not(args is None):
@@ -109,7 +109,7 @@ class ProjectManager:
         :return:
         """
 
-        command = "'python3 " + self.container_code + "/" + script_name + " --data_dir " \
+        command = "'/opt/conda/bin/python " + self.container_code + "/" + script_name + " --data_dir " \
                   + self.container_data+"/"+sample_dir + " --results_dir " + self.container_results + " --model_dir " + self.container_model
 
         if not(args is None):
