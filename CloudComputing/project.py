@@ -38,7 +38,7 @@ class ProjectManager:
         self.instance.instance_init()
 
 
-    def update_data(self, zip_file):
+    def update_data(self, zip_file, container=None):
         """
 
         :return:
@@ -46,8 +46,13 @@ class ProjectManager:
 
         self.instance.scp(direction='up',src_folder=self.local_folder+"/"+zip_file, dst_folder=self.remote_folder,
                           recurse=False, python_filter=False)
-        # projectManager.update_data()
-        self.instance.ssh_command("'unzip -o "+self.remote_folder+"/"+zip_file+" -d "+self.remote_folder+" | pv -l >/dev/null'")
+
+        if container is not None:
+            command = "'unzip -o " + self.container_folder + "/" + zip_file + " -d " + self.container_folder + "'"
+            self.execute_code_ssh_container(command, container)
+        else:
+            command = "'unzip -o " + self.remote_folder + "/" + zip_file + " -d " + self.remote_folder + " | pv -l >/dev/null'"
+            self.instance.ssh_command(command)
 
 
     def update_code(self):
@@ -103,14 +108,14 @@ class ProjectManager:
         self.instance.ssh_command(ssh_command)
 
 
-    def execute_python_script_container(self, script_name, sample_dir, container_id, args=None):
+    def execute_python_script_container(self, script_name, container_id, args=None):
         """
 
         :return:
         """
 
-        command = "'/opt/conda/bin/python " + self.container_code + "/" + script_name + " --data_dir " \
-                  + self.container_data+"/"+sample_dir + " --results_dir " + self.container_results + " --model_dir " + self.container_model
+        command = "'python " + self.container_code + "/" + script_name + " --data_dir " \
+                  + self.container_data + " --results_dir " + self.container_results + " --model_dir " + self.container_model
 
         if not(args is None):
             for k,v in args:

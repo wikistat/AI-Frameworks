@@ -11,7 +11,7 @@ plt.rcParams['axes.labelsize'] = 14
 plt.rcParams['xtick.labelsize'] = 12
 plt.rcParams['ytick.labelsize'] = 12
 
-#Tensorflow/Keras utils
+#Tensorflow/Keras docker
 import tensorflow.keras.models as km
 import tensorflow.keras.layers as kl
 import tensorflow.keras.initializers as ki
