@@ -45,6 +45,10 @@ This course has three main objectives. You will
 
 The course is divided in 5 sessions.
 
+Course introduction: [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/Course%20Introduction.pdf) <br>
+Github Reminder: [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/Github%20-%20Reminder.pdf)
+
+
 - **Session 1 - 02-11-20**
    - Natural language processing: Text Cleaning + Text Vectorization
         * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/IA_Frameworks_NLP_RNN.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/CloudComputing)
@@ -54,10 +58,10 @@ The course is divided in 5 sessions.
    - Natural language processing: Recurrent Network
         * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/IA_Frameworks_NLP_RNN.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/CloudComputing)
    - Python environment + Github Repo + Python Script.
-        * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/IA_Frameworks_GCE.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/CloudComputing)
+        * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/Python%20-%20Script.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/CloudComputing)
 - **Session 3 - 30-11-20**
    - Introduction to Google Cloud Computing.
-        * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/IA_Frameworks_GCE.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/CloudComputing)
+        * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/Google%20cloud.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/CloudComputing)
    - Docker
         * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/IA_Frameworks_GCE.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/CloudComputing)
 - **Session 4 - 07-12-20**
