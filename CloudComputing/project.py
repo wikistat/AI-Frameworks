@@ -29,6 +29,11 @@ class ProjectManager:
         self.container_model = self.container_folder + "/model"
         self.container_results = self.container_folder + "/results"
 
+
+    def set_image_container_names(self, image_name, container_name):
+        self.image_name = image_name
+        self.container_name = container_name
+
     def instance_init(self):
         """
 
@@ -49,7 +54,7 @@ class ProjectManager:
 
         if container is not None:
             command = "'unzip -o " + self.container_folder + "/" + zip_file + " -d " + self.container_folder + "'"
-            self.execute_code_ssh_container(command, container)
+            self.execute_code_ssh_container(command)
         else:
             command = "'unzip -o " + self.remote_folder + "/" + zip_file + " -d " + self.remote_folder + " | pv -l >/dev/null'"
             self.instance.ssh_command(command)
@@ -77,7 +82,7 @@ class ProjectManager:
 
         self.instance.ssh_command(ssh_command)
 
-    def execute_code_ssh_container(self, command, container_id):
+    def execute_code_ssh_container(self, command):
         """
 
         :return:
@@ -85,7 +90,7 @@ class ProjectManager:
 
         ssh_command = command
 
-        self.instance.ssh_command_container(ssh_command, container_id)
+        self.instance.ssh_command_container(ssh_command, self.container_name)
 
 
 
@@ -108,7 +113,7 @@ class ProjectManager:
         self.instance.ssh_command(ssh_command)
 
 
-    def execute_python_script_container(self, script_name, container_id, args=None):
+    def execute_python_script_container(self, script_name, args=None):
         """
 
         :return:
@@ -124,19 +129,19 @@ class ProjectManager:
         ssh_command = command
 
 
-        self.instance.ssh_command_container(ssh_command, container_id)
+        self.instance.ssh_command_container(ssh_command, self.container_name)
 
-    def manage_container(self, action, image_name, container_name):
+    def manage_container(self, action):
         """
 
         :return:
         """
         if action =="run":
-            command = "'sudo docker run -t -d --gpus all --name "+container_name+" -v " + self.remote_folder +":"+self.container_folder +" " + image_name +"'"
+            command = "'sudo docker run -t -d --gpus all --name "+self.container_name+" -v " + self.remote_folder +":"+self.container_folder +" " + self.image_name +"'"
         elif action == "stop":
-            command = "'sudo docker stop "+ container_name +"'"
+            command = "'sudo docker stop "+ self.container_name +"'"
         elif action == "remove":
-            command = "'sudo docker rm "+ container_name +"'"
+            command = "'sudo docker rm "+ self.container_name +"'"
 
         else:
             raise ValueError("'action' parameter should be 'run', 'stop' or 'remove' ")
