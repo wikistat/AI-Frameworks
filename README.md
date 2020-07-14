@@ -51,7 +51,7 @@ Github Reminder: [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/
 
 - **Session 1 - 02-11-20**
    - Natural language processing: Text Cleaning + Text Vectorization
-        * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/IA_Frameworks_NLP_RNN.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/CloudComputing)
+        * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/IA_Frameworks_NLP_RNN.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/blob/master/NatualLangageProcessing/1_cleaning_vectorizationn.ipynb)
    - Natural language processing: Words Embedding.
         * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/IA_Frameworks_NLP_RNN.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/CloudComputing)
 - **Session 2 - 16-11-20**

@@ -1,0 +1,8 @@
+concatenate_text = " ".join(data["Description"].values)
+list_of_word = concatenate_text.split(" ")
+N = len(set(list_of_word))
+print("Number of vocabulary before cleaning %d" %N)
+concatenate_text = " ".join(data["Description_cleaned"].values)
+list_of_word = concatenate_text.split(" ")
+N = len(set(list_of_word))
+print("Number of vocabulary after cleaning %d" %N)
