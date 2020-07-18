@@ -51,12 +51,12 @@ Github Reminder: [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/
 
 - **Session 1 - 02-11-20**
    - Natural language processing: Text Cleaning + Text Vectorization
-        * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/IA_Frameworks_NLP_RNN.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/blob/master/NatualLangageProcessing/1_cleaning_vectorizationn.ipynb)
+        * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/IA_Frameworks_NLP_RNN.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/blob/master/NatualLangageProcessing/1_cleaning_vectorization.ipynb)
    - Natural language processing: Words Embedding.
-        * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/IA_Frameworks_NLP_RNN.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/CloudComputing)
+        * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/IA_Frameworks_NLP_RNN.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/blob/master/NatualLangageProcessing/2_words_embedding.ipynb)
 - **Session 2 - 16-11-20**
    - Natural language processing: Recurrent Network
-        * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/IA_Frameworks_NLP_RNN.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/CloudComputing)
+        * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/IA_Frameworks_NLP_RNN.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/blob/master/NatualLangageProcessing/3_recurrent_neural_network.ipynb)
    - Python environment + Github Repo + Python Script.
         * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/Python%20-%20Script.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/CloudComputing)
 - **Session 3 - 30-11-20**

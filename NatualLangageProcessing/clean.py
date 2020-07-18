@@ -1,7 +1,6 @@
 import re
 import unicodedata
 import nltk
-from tqdm import tqdm
 from string import digits
 from bs4 import BeautifulSoup #Nettoyage d'HTML
 
@@ -9,13 +8,6 @@ digits_list = digits
 
 
 class CleanText:
-
-    # basic_cleaning = True or False
-    # punctuation = "replace" or "same"
-    # digits = either 'replace', 'whitelist' or "same"
-    # stopwords = either 'common' or 'None'
-    # accronym = True or False
-    # sword = True or False
 
     def __init__(self):
 

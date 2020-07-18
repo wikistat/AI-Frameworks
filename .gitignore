@@ -9,6 +9,7 @@ CloudComputing/results/*
 CloudComputing/data/*
 *_brendan*
 NatualLangageProcessing/data/
+NatualLangageProcessing/solution/__pycache__/*
 RecomendationSystem/ml-25/*
 slides/images/*
 slides/2*
