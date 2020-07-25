@@ -12,7 +12,7 @@ This course has three main objectives. You will
     * Container with [Docker](https://www.docker.com),
 
 2. discover new field of artificial intelligence applied on (real) datasets that require specific algorithms:
-    * **Natural language processing**.
+    * **Text**.
         * <ins>Algorithms</ins>: Text processing, Vectorizer, Words Embedding, RNN
         * *Libraries :  [Nltk](https://www.nltk.org/), [Scikit-Learn](https://www.tensorflow.org/), [Gensim](https://gym.openai.com/)*
     * **Video Game**
@@ -50,12 +50,12 @@ Github Reminder: [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/
 
 
 - **Session 1 - 02-11-20**
-   - Natural language processing: Text Cleaning + Text Vectorization
+   - Text: Text Cleaning + Text Vectorization
         * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/IA_Frameworks_NLP_RNN.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/blob/master/NatualLangageProcessing/1_cleaning_vectorization.ipynb)
-   - Natural language processing: Words Embedding.
+   - Text: Words Embedding.
         * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/IA_Frameworks_NLP_RNN.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/blob/master/NatualLangageProcessing/2_words_embedding.ipynb)
 - **Session 2 - 16-11-20**
-   - Natural language processing: Recurrent Network
+   - Text: Recurrent Network
         * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/IA_Frameworks_NLP_RNN.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/blob/master/NatualLangageProcessing/3_recurrent_neural_network.ipynb)
    - Python environment + Github Repo + Python Script.
         * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/Python%20-%20Script.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/CloudComputing)
