@@ -10,12 +10,15 @@ digits_list = digits
 
 class CleanText:
 
-    def __init__(self):
+    def __init__(self, apply_stemming=True):
 
         french_stopwords = nltk.corpus.stopwords.words('french')
         self.stopwords = [self.remove_accent(sw) for sw in french_stopwords]
 
         self.stemmer = nltk.stem.SnowballStemmer('french')
+
+        self.apply_stemming = apply_stemming
+
 
     @staticmethod
     def remove_html_code(txt):
@@ -41,13 +44,14 @@ class CleanText:
         return [self.stemmer.stem(token) for token in tokens]
 
     def apply_all_transformation(self, txt):
-        txt = self.remove_html_code(txt)
+        #txt = self.remove_html_code(txt)
         txt = self.convert_text_to_lower_case(txt)
         txt = self.remove_accent(txt)
         txt = self.remove_non_letters(txt)
         tokens = self.remove_stopwords(txt)
-        tokens_stem = self.get_stem(tokens)
-        return tokens_stem
+        if self.apply_stemming:
+            tokens = self.get_stem(tokens)
+        return tokens
 
     def clean_df_column(self, df, column_name, clean_column_name):
         nb_line = df.shape[0]

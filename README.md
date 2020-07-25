@@ -63,7 +63,7 @@ Github Reminder: [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/
    - Introduction to Google Cloud Computing.
         * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/Google%20cloud.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/CloudComputing)
    - Docker
-        * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/IA_Frameworks_GCE.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/CloudComputing)
+        * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/Docker.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/CloudComputing)
 - **Session 4 - 07-12-20**
    - Reinforcement learning: PG Gradient
         * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/IA_Frameworks_RL.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/ReinforcementLearning)
