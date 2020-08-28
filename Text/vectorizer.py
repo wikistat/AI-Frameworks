@@ -63,3 +63,4 @@ class Vectorizer:
         return sparse.load_npz(
             "data/vec_%s_nb_hash_%s_vectorizer_%s.npz" % (name, str(self.nb_hash), str(self.vectorizer_type)))
 
+
