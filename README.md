@@ -51,27 +51,27 @@ Github Reminder: [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/
 
 - **Session 1 - 02-11-20**
    - Text: Text Cleaning + Text Vectorization
-        * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/Text_Cleaning_Vectorisation.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/blob/master/Text/1_cleaning_vectorization.ipynb)
+        * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/Text_Cleaning_Vectorisation.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/blob/master/Text/1_cleaning_vectorization.ipynb) / [Video]()
    - Text: Words Embedding.
-        * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/IA_Frameworks_NLP_RNN.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/blob/master/Text/2_words_embedding.ipynb)
+        * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/Text_Word_Embedding.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/blob/master/Text/2_words_embedding.ipynb) / [Video]()
 - **Session 2 - 16-11-20**
    - Text: Recurrent Network
-        * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/IA_Frameworks_NLP_RNN.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/blob/master/Text/3_recurrent_neural_network.ipynb)
+        * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/IA_Frameworks_NLP_RNN.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/blob/master/Text/3_recurrent_neural_network.ipynb) / [Video]()
    - Python environment + Github Repo + Python Script.
-        * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/Python%20-%20Script.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/CloudComputing)
+        * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/Python%20-%20Script.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/CloudComputing) / [Video]()
 - **Session 3 - 30-11-20**
    - Introduction to Google Cloud Computing.
-        * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/Google%20cloud.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/CloudComputing)
+        * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/Google%20cloud.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/CloudComputing) / [Video]()
    - Docker
-        * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/Docker.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/CloudComputing)
+        * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/Docker.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/CloudComputing) / [Video]()
 - **Session 4 - 07-12-20**
    - Reinforcement learning: PG Gradient
-        * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/IA_Frameworks_RL.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/ReinforcementLearning)
+        * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/IA_Frameworks_RL.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/ReinforcementLearning) / [Video]()
    - Reinforcement learning: Deep Q-learning
-        * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/IA_Frameworks_RL.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/ReinforcementLearning)
+        * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/IA_Frameworks_RL.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/ReinforcementLearning) / [Video]()
 - **Session 5 14-12-20**
    - Recommendation System. 
-        * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/IA_Framework_RS.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/RecomendationSystem)
+        * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/IA_Framework_RS.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/RecomendationSystem) / [Video]()
    - ??
         * [Slides]() / [TP]()
 - **Session 6 04-01-20**
