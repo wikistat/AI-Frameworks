@@ -43,34 +43,34 @@ This course has three main objectives. You will
 * Lectures : 10 hours
 * Practical Works : 30 hours.
 
-The course is divided in 5 sessions.
+The course is divided in 5 topics (of various lentgh) over 5 days.
 
 Course introduction: [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/Course%20Introduction.pdf) <br>
 Github Reminder: [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/Github%20-%20Reminder.pdf)
 
 
 - **Session 1 - 02-11-20**
-   - Text: Text Cleaning + Text Vectorization
-        * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/Text_Cleaning_Vectorisation.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/blob/master/Text/1_cleaning_vectorization.ipynb) / [Video]()
-   - Text: Words Embedding.
-        * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/Text_Word_Embedding.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/blob/master/Text/2_words_embedding.ipynb) / [Video]()
+   - **Text**: Text Cleaning + Text Vectorization
+        * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/Text_Cleaning_Vectorisation.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/blob/master/Text/1_cleaning_vectorization.ipynb) / [Video](https://www.youtube.com/watch?v=z1svuMQ5iVU)
+   - **Text**: Words Embedding.
+        * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/Text_Word_Embedding.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/blob/master/Text/2_words_embedding.ipynb) / [Video](https://youtu.be/mB7Q-LC_vFU)
 - **Session 2 - 16-11-20**
-   - Text: Recurrent Network
-        * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/IA_Frameworks_NLP_RNN.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/blob/master/Text/3_recurrent_neural_network.ipynb) / [Video]()
-   - Python environment + Github Repo + Python Script.
+   - **Text**: Recurrent Network
+        * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/Text_Word_Embedding.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/blob/master/Text/3_recurrent_neural_network.ipynb) / [Video](https://youtu.be/l4_52JCPupI)
+   - **Development for Data Scientist**: Python environment + Github Repo + Python Script.
         * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/Python%20-%20Script.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/CloudComputing) / [Video]()
 - **Session 3 - 30-11-20**
-   - Introduction to Google Cloud Computing.
+   - **Development for Data Scientist**: Introduction to Google Cloud Computing.
         * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/Google%20cloud.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/CloudComputing) / [Video]()
-   - Docker
+   - **Development for Data Scientist**: Docker
         * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/Docker.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/CloudComputing) / [Video]()
 - **Session 4 - 07-12-20**
-   - Reinforcement learning: PG Gradient
+   - **Reinforcement learning**: PG Gradient
         * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/IA_Frameworks_RL.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/ReinforcementLearning) / [Video]()
-   - Reinforcement learning: Deep Q-learning
+   - **Reinforcement learning**: Deep Q-learning
         * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/IA_Frameworks_RL.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/ReinforcementLearning) / [Video]()
 - **Session 5 14-12-20**
-   - Recommendation System. 
+   - **Recommendation System**. 
         * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/IA_Framework_RS.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/RecomendationSystem) / [Video]()
    - ??
         * [Slides]() / [TP]()
