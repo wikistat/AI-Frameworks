@@ -58,12 +58,12 @@ Github Reminder: [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/
    - **Text**: Recurrent Network
         * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/Text_Recurent_Neural_Network.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/blob/master/Text/3_recurrent_neural_network.ipynb) / [Video](https://youtu.be/l4_52JCPupI)
    - **Development for Data Scientist**: Python environment + Github Repo + Python Script.
-        * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/Python%20-%20Script.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/CloudComputing) / [Video]()
+        * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/Python%20-%20Script.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/CodeDevelopment/TP.pdf) / [Video]()
 - **Session 3 - 30-11-20**
    - **Development for Data Scientist**: Introduction to Google Cloud Computing.
-        * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/Google%20cloud.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/CloudComputing) / [Video]()
+        * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/Google%20cloud.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/CodeDevelopment/TP.pdf) / [Video]()
    - **Development for Data Scientist**: Docker
-        * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/Docker.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/CloudComputing) / [Video]()
+        * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/Docker.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/CodeDevelopment/TP.pdf) / [Video]()
 - **Session 4 - 07-12-20**
    - **Reinforcement learning**: PG Gradient
         * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/IA_Frameworks_RL.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/ReinforcementLearning) / [Video]()

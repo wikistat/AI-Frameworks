@@ -4,12 +4,13 @@ ReinforcementLearning/tmp_notebook/*
 ReinforcementLearning/models/*
 *.DS_Store
 .ipynb_checkpoints/
-CloudComputing/model/*
-CloudComputing/results/*
-CloudComputing/data/*
+CodeDevelopment/model/*
+CodeDevelopment/results/*
+CodeDevelopment/data/*
 *_brendan*
 Text/data/
 Text/solution/__pycache__/*
 RecomendationSystem/ml-25/*
 slides/images/*
 slides/2019_2020/*
+video/*
