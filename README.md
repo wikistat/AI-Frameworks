@@ -56,7 +56,7 @@ Github Reminder: [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/
         * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/Text_Word_Embedding.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/blob/master/Text/2_words_embedding.ipynb) / [Video](https://youtu.be/mB7Q-LC_vFU)
 - **Session 2 - 16-11-20**
    - **Text**: Recurrent Network
-        * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/Text_Word_Embedding.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/blob/master/Text/3_recurrent_neural_network.ipynb) / [Video](https://youtu.be/l4_52JCPupI)
+        * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/Text_Recurent_Neural_Network.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/blob/master/Text/3_recurrent_neural_network.ipynb) / [Video](https://youtu.be/l4_52JCPupI)
    - **Development for Data Scientist**: Python environment + Github Repo + Python Script.
         * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/Python%20-%20Script.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/CloudComputing) / [Video]()
 - **Session 3 - 30-11-20**
