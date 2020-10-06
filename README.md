@@ -107,15 +107,15 @@ You will be evaluated on your capacity of acting like a ***Data Scientist***, i.
     * The code should be clear and easily readable. (**33%**)
         * Final results can be run in a script and not a notebook.
         * Only final code can be found in this script. 
-    * **Deadline** :  January ?? 2020.
+    * **Deadline** :  January 29 2021.
     
-2. Oral presentation - (**40%**):
+2. Rapport - (**40%**) 10 pages maximum:
     * Quality of the presentation. **25%**
     * In-Deep explanation of the chosen algorithm. **25%**
     * Choice of the tools-infrastructure used. **25%**
     * Results you obtained. **25%**
-    * **Date** : January ??, 2020. 
+    * **Date** : January 29, 2021. 
 
 ### Other details
 
- * Group of 4 to 5 people. (Deadline for group December ?? 2020)
+ * Group of 4 to 5 people (DEFI IA's team).
