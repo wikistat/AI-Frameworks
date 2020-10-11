@@ -45,7 +45,7 @@ This course has three main objectives. You will
 
 The course is divided in 5 topics (of various lentgh) over 5 days.
 
-Course introduction + Github Reminder: [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/Course%20Introduction.pdf) <br>
+Course introduction + Github Reminder: [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/Course_Introduction.pdf) <br>
 
 
 - **Session 1 - 02-11-20**
@@ -57,22 +57,22 @@ Course introduction + Github Reminder: [Slides](https://github.com/wikistat/AI-F
    - **Text**: Recurrent Network
         * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/Text_Recurent_Neural_Network.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/blob/master/Text/3_recurrent_neural_network.ipynb) / [Video](https://youtu.be/l4_52JCPupI)
    - **Development for Data Scientist**: Python environment + Github Repo + Python Script.
-        * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/Python%20-%20Script.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/CodeDevelopment/TP.pdf) / [Video]()
+        * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/Code_Development_Python.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/CodeDevelopment/TP.pdf) / [Video](https://youtu.be/gZLeTHQzloE)
 - **Session 3 - 30-11-20**
    - **Development for Data Scientist**: Introduction to Google Cloud Computing.
-        * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/Google%20cloud.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/CodeDevelopment/TP.pdf) / [Video]()
+        * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/Code_Development_Google_Cloud.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/CodeDevelopment/TP.pdf) / [Video](https://youtu.be/FOsGsMrDJE8)
    - **Development for Data Scientist**: Docker
-        * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/Docker.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/CodeDevelopment/TP.pdf) / [Video]()
+        * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/Code_Development_Docker.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/CodeDevelopment/TP.pdf) / [Video](https://youtu.be/loMf5bFyzY4)
 - **Session 4 - 07-12-20**
-   - **Reinforcement learning**: PG Gradient
+   - **Reinforcement learning**: PG Gradient (COMING SOON)
         * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/IA_Frameworks_RL.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/ReinforcementLearning) / [Video]()
-   - **Reinforcement learning**: Deep Q-learning
+   - **Reinforcement learning**: Deep Q-learning (COMING SOON)
         * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/IA_Frameworks_RL.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/ReinforcementLearning) / [Video]()
 - **Session 5 14-12-20**
-   - **Recommendation System**. 
+   - **Recommendation System**.  (COMING SOON)
         * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/IA_Framework_RS.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/RecomendationSystem) / [Video]()
-   - ??
-        * [Slides]() / [TP]()
+   - **Introduction to data vizualization** (COMING SOON)
+        * [Slides]() / [TP]() / [Video]()
 - **Session 6 04-01-20**
    - Free time on project.
 
