@@ -45,7 +45,7 @@ This course has three main objectives. You will
 
 The course is divided in 5 topics (of various lentgh) over 5 days.
 
-Course introduction + Github Reminder: [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/Course_Introduction.pdf) <br>
+Course introduction + Github Reminder: [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/Course_Introduction.pdf)/[Video](https://youtu.be/PMwIehZd8Yg) <br>
 
 
 - **Session 1 - 02-11-20**
