@@ -84,7 +84,7 @@ class DQN:
         self.max_num_step = 50  # Maximum allowed episode length
         self.goal = 15
 
-        # Reset everything
+        # Reset everything from keras session
         K.clear_session()
 
         # Setup our Q-networks
@@ -100,13 +100,12 @@ class DQN:
 
     def run_one_episode(self, num_episode, prob_random):
         # Create an experience replay for the current episode.
-        episode_buffer = ExperienceReplay()
+        experiences_episode = []
 
         # Get the game state from the environment
         state = env.reset()
 
         done = False  # Game is complete
-        sum_rewards = 0  # Running sum of rewards in episode
         cur_step = 0  # Running sum of number of steps taken in episode
 
         while cur_step < self.max_num_step and not done:
@@ -124,34 +123,26 @@ class DQN:
             next_state, reward, done = env.step(action)
 
             # Setup the experience to be stored in the episode buffer
-            experience = np.array([[state], action, reward, [next_state], done])
-            experience = experience.reshape(1, -1)
+            experience = [state, action, reward, next_state, done]
 
             # Store the experience in the episode buffer
-            episode_buffer.add(experience)
-
-            # Update the running rewards
-            sum_rewards += reward
+            experiences_episode.append(experience)
 
             # Update the state
             state = next_state
 
-        return episode_buffer, sum_rewards, cur_step
+        return experiences_episode
 
     def train_one_step(self):
         # Train batch is [[state,action,reward,next_state,done],...]
         train_batch = self.experience_replay.sample(self.batch_size)
 
-        # Separate the batch into its components
-        train_state, train_action, train_reward, \
-        train_next_state, train_done = train_batch.T
-
-        # Convert the action array into an array of ints so they can be used for indexing
-        train_action = train_action.astype(np.int)
-
-        # Stack the train_state and train_next_state for learning
-        train_state = np.vstack(train_state)
-        train_next_state = np.vstack(train_next_state)
+        # Separate the batch into numpy array for each compents
+        train_state = np.array([x[0] for x in train_batch])
+        train_action = np.array([x[1] for x in train_batch])
+        train_reward = np.array([x[2] for x in train_batch])
+        train_next_state = np.array([x[3] for x in train_batch])
+        train_done = np.array([x[4] for x in train_batch])
 
         # Our predictions (actions to take) from the main Q network
         target_q = self.main_qn.model.predict(train_state)
@@ -192,8 +183,8 @@ class DQN:
 
         while num_episode < self.num_episodes:
 
-            episode_buffer, sum_rewards, cur_step = self.run_one_episode(num_episode, prob_random)
-            self.experience_replay.add(episode_buffer.buffer)
+            experiences_episode = self.run_one_episode(num_episode, prob_random)
+            self.experience_replay.add(experiences_episode)
 
             if num_episode > self.min_pre_train_episodes:
                 # Training the network
@@ -212,8 +203,8 @@ class DQN:
 
             # Increment the episode
             num_episode += 1
-            num_steps.append(cur_step)
-            rewards.append(sum_rewards)
+            num_steps.append(len(experiences_episode))
+            rewards.append(sum([e[2] for e in experiences_episode]))
 
             if num_episode % print_every == 0:
                 # Print progress
@@ -226,6 +217,23 @@ class DQN:
                     break
 
 
+##### TEST 1
+dqn = DQN()
+for target_layer_weight, main_layer_weight in zip(dqn.target_qn.model.get_weights(), dqn.main_qn.model.get_weights()):
+    if len(target_layer_weight.shape)>1:
+        print(target_layer_weight.shape)
+        assert not(np.all(target_layer_weight == main_layer_weight))
 
+dqn.update_target_graph()
+for target_layer_weight, main_layer_weight in zip(dqn.target_qn.model.get_weights(), dqn.main_qn.model.get_weights()):
+    if len(target_layer_weight.shape)>1:
+        print(target_layer_weight.shape)
+        assert np.all(target_layer_weight == main_layer_weight)
+
+
+#### TEST 2
+
+
+### Final RUn
 dqn = DQN()
 dqn.train()
