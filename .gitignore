@@ -1,7 +1,8 @@
 */__pycache__/*
-ReinforcementLearning/model_keras.json
-ReinforcementLearning/tmp_notebook/*
-ReinforcementLearning/models/*
+IntroductionDeepReinforcementLearning/model_keras.json
+IntroductionDeepReinforcementLearning/tmp_notebook/*
+IntroductionDeepReinforcementLearning/models/*
+IntroductionDeepReinforcementLearning/RLclass/*
 *.DS_Store
 .ipynb_checkpoints/
 CodeDevelopment/model/*

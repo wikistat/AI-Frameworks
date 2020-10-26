@@ -24,8 +24,8 @@ class InstancesManager:
 
 
     def command_application(self, command):
-        """
 
+        """
         :param command:
         :param command_only:
         :return:

@@ -64,15 +64,15 @@ Course introduction + Github Reminder: [Slides](https://github.com/wikistat/AI-F
    - **Development for Data Scientist**: Docker
         * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/Code_Development_Docker.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/CodeDevelopment/TP.pdf) / [Video](https://youtu.be/loMf5bFyzY4)
 - **Session 4 - 07-12-20**
-   - **Reinforcement learning**: PG Gradient (COMING SOON)
-        * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/IA_Frameworks_RL.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/ReinforcementLearning) / [Video]()
-   - **Reinforcement learning**: Deep Q-learning (COMING SOON)
-        * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/IA_Frameworks_RL.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/ReinforcementLearning) / [Video]()
+   - **Introduction to deep Reinforcement learning**: Q-learning 
+        * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/IA_Frameworks_RL.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/IntroductionDeepReinforcementLearning/Q_Learning.ipynb) / [Video]()
+   - **Introduction to  Reinforcement learning**: Deep Q-learning (COMING SOON)
+        * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/IA_Frameworks_RL.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/IntroductionDeepReinforcementLearning/Deep_Q_Learning.ipynb) / [Video]()
 - **Session 5 14-12-20**
-   - **Recommendation System**.  (COMING SOON)
+    - **Introduction to deep Reinforcement learning**: PG Gradient (COMING SOON)
+        * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/IA_Frameworks_RL.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/IntroductionDeepReinforcementLearning/Policy_Gradient.ipynb) / [Video]()  
+    - **Recommendation System**.  (COMING SOON)
         * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/IA_Framework_RS.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/RecomendationSystem) / [Video]()
-   - **Introduction to data vizualization** (COMING SOON)
-        * [Slides]() / [TP]() / [Video]()
 - **Session 6 04-01-20**
    - Free time on project.
 
