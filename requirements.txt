@@ -1,0 +1,12 @@
+pandas==1.0.5
+numpy==1.18.5
+nltk==3.5
+plotly==4.12.0
+scikit-learn==0.23.1
+matplotlib==3.3.2
+seaborn==0.10.1
+BeautifulSoup4==4.9.1
+wordcloud
+jupyterlab==2.1.5
+gensim==3.8.3
+ipywidgets>=7.5
