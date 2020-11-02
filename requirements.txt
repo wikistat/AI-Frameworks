@@ -10,3 +10,4 @@ wordcloud
 jupyterlab==2.1.5
 gensim==3.8.3
 ipywidgets>=7.5
+gdown 3.12.2
