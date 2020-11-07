@@ -1,3 +1,4 @@
+*.pyc
 */__pycache__/*
 IntroductionDeepReinforcementLearning/model_keras.json
 IntroductionDeepReinforcementLearning/tmp_notebook/*
@@ -27,3 +28,4 @@ RecomendationSystem/ml-25/*
 slides/images/*
 slides/2019_2020/*
 video/*
+TP-MAPI3/
