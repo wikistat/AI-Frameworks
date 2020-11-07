@@ -1,74 +1,3 @@
-from datetime import datetime
-import numpy as np
-import tensorflow.keras.models as km
-import tensorflow.keras.layers as kl
-import tensorflow.keras.backend as K
-from gridworld import gameEnv
-
-
-class ExperienceReplay:
-    def __init__(self, buffer_size=50000):
-        """ Data structure used to hold game experiences """
-        # Buffer will contain [state,action,reward,next_state,done]
-        self.buffer = []
-        self.buffer_size = buffer_size
-
-    def add(self, experience):
-        """ Adds list of experiences to the buffer """
-        # Extend the stored experiences
-        self.buffer.extend(experience)
-        # Keep the last buffer_size number of experiences
-        self.buffer = self.buffer[-self.buffer_size:]
-
-    def sample(self, size):
-        """ Returns a sample of experiences from the buffer """
-        sample_idxs = np.random.randint(len(self.buffer), size=size)
-        sample_output = [self.buffer[idx] for idx in sample_idxs]
-        sample_output = np.reshape(sample_output, (size, -1))
-        return sample_output
-
-
-class Qnetwork:
-    def __init__(self):
-        self.inputs = kl.Input(shape=??, name="main_input")
-
-        self.model = kl.Conv2D(
-            filters=32,
-            kernel_size=[8, 8],
-            strides=[4, 4],
-            activation="relu",
-            padding="valid",
-            name="conv1")(self.inputs)
-        self.model = kl.Conv2D(
-            filters=64,
-            kernel_size=[4, 4],
-            strides=[2, 2],
-            activation="relu",
-            padding="valid",
-            name="conv2")(self.model)
-        self.model = kl.Conv2D(
-            filters=64,
-            kernel_size=[3, 3],
-            strides=[1, 1],
-            activation="relu",
-            padding="valid",
-            name="conv3")(self.model)
-        self.model = kl.Conv2D(
-            filters=512,
-            kernel_size=[7, 7],
-            strides=[1, 1],
-            activation="relu",
-            padding="valid",
-            name="conv4")(self.model)
-
-        self.model = kl.Flatten()(self.model)
-        self.model = kl.Dense(256, activation="relu")(self.model)
-        self.model = kl.Dense(??, activation=??)(self.model)
-        self.model = km.Model(self.inputs, self.model)
-        self.model.compile("adam", "mse")
-        self.model.optimizer.lr = 0.0001
-
-
 class DQN:
     def __init__(self):
         self.batch_size = 64  # How many experiences to use for each training step
@@ -97,18 +26,70 @@ class DQN:
         self.experience_replay = ExperienceReplay()
 
     def update_target_graph(self):
-        #TODO
+        updated_weights = np.array(self.main_qn.model.get_weights())
+        self.target_qn.model.set_weights(updated_weights)
 
     def choose_action(self, state, prob_random, num_episode):
-        # TODO
+        if np.random.rand() < prob_random or \
+                num_episode < self.min_pre_train_episodes:
+            # Act randomly based on prob_random or if we
+            # have not accumulated enough pre_train episodes
+            action = np.random.randint(self.env.actions)
+        else:
+            # Decide what action to take from the Q network
+            # First add one dimension to the netword to fit expected dimension of the network
+            state = np.expand_dims(state, axis=0)
+            action = np.argmax(self.main_qn.model.predict(state))
         return action
 
     def run_one_episode(self, num_episode, prob_random):
-        # TODO
+        # Create an experience replay for the current episode.
+        experiences_episode = []
+
+        # Get the game state from the environment
+        state = self.env.reset()
+
+        done = False  # Game is complete
+        cur_step = 0  # Running sum of number of steps taken in episode
+
+        while cur_step < self.max_num_step and not done:
+            cur_step += 1
+            action = self.choose_action(
+                state=state,
+                prob_random=prob_random,
+                num_episode=num_episode
+            )
+
+            # Take the action and retrieve the next state, reward and done
+            next_state, reward, done = self.env.step(action)
+
+            # Setup the experience to be stored in the episode buffer
+            experience = [state, action, reward, next_state, done]
+
+            # Store the experience in the episode buffer
+            experiences_episode.append(experience)
+
+            # Update the state
+            state = next_state
+
         return experiences_episode
 
     def generate_target_q(self, train_state, train_action, train_reward, train_next_state, train_done):
-        # TODO
+        # Our predictions (actions to take) from the main Q network
+        target_q = self.main_qn.model.predict(train_state)
+
+        # Tells us whether game over or not
+        # We will multiply our rewards by this value
+        # to ensure we don't train on the last move
+        train_gameover = train_done == 0
+
+        # Q value of the next state based on action
+        target_q_next_state = self.target_qn.model.predict(train_next_state)
+        train_next_state_values = np.max(target_q_next_state[range(self.batch_size)], axis=1)
+
+        # Reward from the action chosen in the train batch
+        actual_reward = train_reward + (self.y * train_next_state_values * train_gameover)
+        target_q[range(self.batch_size), train_action] = actual_reward
         return target_q
 
     def train_one_step(self):
@@ -202,8 +183,3 @@ class DQN:
             if num_episode > self.max_num_episodes:
                 print("Training Stop because we reached max num of episodes")
                 break
-
-
-### Final RUn
-dqn = DQN()
-#dqn.train()

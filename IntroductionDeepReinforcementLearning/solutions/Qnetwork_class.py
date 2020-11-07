@@ -1,4 +1,4 @@
-class Qnetwork():
+class Qnetwork:
     def __init__(self):
         self.inputs = kl.Input(shape=[84, 84, 3], name="main_input")
 
@@ -33,7 +33,7 @@ class Qnetwork():
 
         self.model = kl.Flatten()(self.model)
         self.model = kl.Dense(256, activation="relu")(self.model)
-        self.model = kl.Dense(4, activation = "linear")(self.model)
+        self.model = kl.Dense(4, activation="linear")(self.model)
         self.model = km.Model(self.inputs, self.model)
         self.model.compile("adam", "mse")
         self.model.optimizer.lr = 0.0001

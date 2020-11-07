@@ -1,10 +1,9 @@
+from datetime import datetime
 import numpy as np
 import tensorflow.keras.models as km
 import tensorflow.keras.layers as kl
 import tensorflow.keras.backend as K
 from gridworld import gameEnv
-
-env = gameEnv(partial=False, size=5)
 
 
 class ExperienceReplay:
@@ -29,7 +28,7 @@ class ExperienceReplay:
         return sample_output
 
 
-class Qnetwork():
+class Qnetwork:
     def __init__(self):
         self.inputs = kl.Input(shape=[84, 84, 3], name="main_input")
 
@@ -79,12 +78,15 @@ class DQN:
         self.prob_random_start = 0.6  # Starting chance of random action
         self.prob_random_end = 0.1  # Ending chance of random action
         self.annealing_steps = 1000.  # Steps of training to reduce from start_e -> end_e
-        self.num_episodes = 10000  # How many episodes of game environment to train
+        self.max_num_episodes = 10000  # How many episodes of game environment to train
         self.min_pre_train_episodes = 100  # Number of episodes of random actions
         self.max_num_step = 50  # Maximum allowed episode length
         self.goal = 15
 
-        # Reset everything
+        # Set env
+        self.env = gameEnv(partial=False, size=5)
+
+        # Reset everything from keras session
         K.clear_session()
 
         # Setup our Q-networks
@@ -98,61 +100,52 @@ class DQN:
         updated_weights = np.array(self.main_qn.model.get_weights())
         self.target_qn.model.set_weights(updated_weights)
 
+    def choose_action(self, state, prob_random, num_episode):
+        if np.random.rand() < prob_random or \
+                num_episode < self.min_pre_train_episodes:
+            # Act randomly based on prob_random or if we
+            # have not accumulated enough pre_train episodes
+            action = np.random.randint(self.env.actions)
+        else:
+            # Decide what action to take from the Q network
+            # First add one dimension to the netword to fit expected dimension of the network
+            state = np.expand_dims(state, axis=0)
+            action = np.argmax(self.main_qn.model.predict(state))
+        return action
+
     def run_one_episode(self, num_episode, prob_random):
         # Create an experience replay for the current episode.
-        episode_buffer = ExperienceReplay()
+        experiences_episode = []
 
         # Get the game state from the environment
-        state = env.reset()
+        state = self.env.reset()
 
         done = False  # Game is complete
-        sum_rewards = 0  # Running sum of rewards in episode
         cur_step = 0  # Running sum of number of steps taken in episode
 
         while cur_step < self.max_num_step and not done:
             cur_step += 1
-            if np.random.rand() < prob_random or \
-                    num_episode < self.min_pre_train_episodes:
-                # Act randomly based on prob_random or if we
-                # have not accumulated enough pre_train episodes
-                action = np.random.randint(env.actions)
-            else:
-                # Decide what action to take from the Q network
-                action = np.argmax(self.main_qn.model.predict(np.array([state])))
+            action = self.choose_action(
+                state=state,
+                prob_random=prob_random,
+                num_episode=num_episode
+            )
 
             # Take the action and retrieve the next state, reward and done
-            next_state, reward, done = env.step(action)
+            next_state, reward, done = self.env.step(action)
 
             # Setup the experience to be stored in the episode buffer
-            experience = np.array([[state], action, reward, [next_state], done])
-            experience = experience.reshape(1, -1)
+            experience = [state, action, reward, next_state, done]
 
             # Store the experience in the episode buffer
-            episode_buffer.add(experience)
-
-            # Update the running rewards
-            sum_rewards += reward
+            experiences_episode.append(experience)
 
             # Update the state
             state = next_state
 
-        return episode_buffer, sum_rewards, cur_step
+        return experiences_episode
 
-    def train_one_step(self):
-        # Train batch is [[state,action,reward,next_state,done],...]
-        train_batch = self.experience_replay.sample(self.batch_size)
-
-        # Separate the batch into its components
-        train_state, train_action, train_reward, \
-        train_next_state, train_done = train_batch.T
-
-        # Convert the action array into an array of ints so they can be used for indexing
-        train_action = train_action.astype(np.int)
-
-        # Stack the train_state and train_next_state for learning
-        train_state = np.vstack(train_state)
-        train_next_state = np.vstack(train_next_state)
-
+    def generate_target_q(self, train_state, train_action, train_reward, train_next_state, train_done):
         # Our predictions (actions to take) from the main Q network
         target_q = self.main_qn.model.predict(train_state)
 
@@ -168,6 +161,27 @@ class DQN:
         # Reward from the action chosen in the train batch
         actual_reward = train_reward + (self.y * train_next_state_values * train_gameover)
         target_q[range(self.batch_size), train_action] = actual_reward
+        return target_q
+
+    def train_one_step(self):
+        # Train batch is [[state,action,reward,next_state,done],...]
+        train_batch = self.experience_replay.sample(self.batch_size)
+
+        # Separate the batch into numpy array for each compents
+        train_state = np.array([x[0] for x in train_batch])
+        train_action = np.array([x[1] for x in train_batch])
+        train_reward = np.array([x[2] for x in train_batch])
+        train_next_state = np.array([x[3] for x in train_batch])
+        train_done = np.array([x[4] for x in train_batch])
+
+        # Generate target Q
+        target_q = self.generate_target_q(
+            train_state=train_state,
+            train_action=train_action,
+            train_reward=train_reward,
+            train_next_state=train_next_state,
+            train_done=train_done
+        )
 
         # Train the main model
         loss = self.main_qn.model.train_on_batch(train_state, target_q)
@@ -184,24 +198,28 @@ class DQN:
         prob_random = self.prob_random_start
         prob_random_drop = (self.prob_random_start - self.prob_random_end) / self.annealing_steps
 
+        # Init variable
         num_steps = []  # Tracks number of steps per episode
         rewards = []  # Tracks rewards per episode
         print_every = 50  # How often to print status
         losses = [0]  # Tracking training losses
         num_episode = 0
 
-        while num_episode < self.num_episodes:
+        while True:
+            # Run one episode
+            experiences_episode = self.run_one_episode(num_episode, prob_random)
 
-            episode_buffer, sum_rewards, cur_step = self.run_one_episode(num_episode, prob_random)
-            self.experience_replay.add(episode_buffer.buffer)
+            # Save the episode in the replay buffer
+            self.experience_replay.add(experiences_episode)
 
+            # If we have play enoug episode. Start the training
             if num_episode > self.min_pre_train_episodes:
-                # Training the network
 
+                # Drop the probability of a random action if wi didn't reach the prob_random_end value
                 if prob_random > self.prob_random_end:
-                    # Drop the probability of a random action
                     prob_random -= prob_random_drop
 
+                # Every train_frequency iteration, train the model
                 if num_episode % self.train_frequency == 0:
                     for num_epoch in range(self.num_epochs):
                         loss = self.train_one_step()
@@ -212,20 +230,32 @@ class DQN:
 
             # Increment the episode
             num_episode += 1
-            num_steps.append(cur_step)
-            rewards.append(sum_rewards)
+            num_steps.append(len(experiences_episode))
+            rewards.append(sum([e[2] for e in experiences_episode]))
 
+            # Print Info
             if num_episode % print_every == 0:
-                # Print progress
+                # datetime object containing current date and time
+                now = datetime.now()
+                dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
                 mean_loss = np.mean(losses[-(print_every * self.num_epochs):])
+                print("{} - Num episode: {} Mean reward: {:0.4f} Prob random: {:0.4f}, Loss: {:0.04f}".format(
+                    dt_string, num_episode, np.mean(rewards[-print_every:]), prob_random, mean_loss))
 
-                print("Num episode: {} Mean reward: {:0.4f} Prob random: {:0.4f}, Loss: {:0.04f}".format(
-                    num_episode, np.mean(rewards[-print_every:]), prob_random, mean_loss))
-                if np.mean(rewards[-print_every:]) >= self.goal:
-                    print("Training complete!")
-                    break
+            # Stop Condition
+            if np.mean(rewards[-print_every:]) >= self.goal:
+                now = datetime.now()
+                dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
+                mean_loss = np.mean(losses[-(print_every * self.num_epochs):])
+                print("{} - Num episode: {} Mean reward: {:0.4f} Prob random: {:0.4f}, Loss: {:0.04f}".format(
+                    dt_string, num_episode, np.mean(rewards[-print_every:]), prob_random, mean_loss))
+                print("Training complete because we reached goal rewards.")
+                break
+            if num_episode > self.max_num_episodes:
+                print("Training Stop because we reached max num of episodes")
+                break
 
 
-
+### Final RUn
 dqn = DQN()
-dqn.train()
+#dqn.train()
