@@ -1,16 +1,16 @@
 class DQN:
     def __init__(self):
         self.batch_size = 64  # How many experiences to use for each training step
-        self.num_epochs = 20  # How many epochs to train
         self.train_frequency = 5  # How often you update the network
+        self.num_epochs = 20  # How many epochs to train when updating the network
         self.y = 0.99  # Discount factor
         self.prob_random_start = 0.6  # Starting chance of random action
         self.prob_random_end = 0.1  # Ending chance of random action
         self.annealing_steps = 1000.  # Steps of training to reduce from start_e -> end_e
-        self.max_num_episodes = 10000  # How many episodes of game environment to train
-        self.min_pre_train_episodes = 100  # Number of episodes of random actions
+        self.max_num_episodes = 10000  # Max number of episodes you are allowes to played to train the game
+        self.min_pre_train_episodes = 100  # Number of episodes played with random actions before to start training.
         self.max_num_step = 50  # Maximum allowed episode length
-        self.goal = 15
+        self.goal = 15 # Number of rewards we want to achieve while playing a game.
 
         # Set env
         self.env = gameEnv(partial=False, size=5)

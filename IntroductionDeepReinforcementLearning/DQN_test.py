@@ -1,4 +1,4 @@
-from DQN_solution import DQN
+from DQN import DQN
 import numpy as np
 import collections
 
@@ -39,9 +39,13 @@ actions = [dqn.choose_action(state=state,num_episode=101, prob_random=0) for _ i
 count_action = collections.Counter(actions)
 print(count_action)
 assert(len(set(actions)))==1
+main_action = list(set(actions))[0]
 
 actions = [dqn.choose_action(state=state,num_episode=101, prob_random=0.5) for _ in range(100)]
 count_action = collections.Counter(actions)
+assert(len(set(actions)))==4
+print(count_action)
+assert sorted(count_action.items(), key=lambda x : x[1])[-1][0]==main_action
 
 
 #Test 3 Run episode generate episode in good format (state, action, reward, next_state, done)
@@ -57,6 +61,7 @@ for experience in experiences_episode:
     assert type(reward) is float
     assert next_state.shape == (84, 84, 3)
     assert type(done) is bool
+assert len(experiences_episode)<=dqn.max_num_step
 
 # Test 4
 dqn = DQN()
