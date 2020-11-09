@@ -1,4 +1,4 @@
-from DQN import DQN
+from DQN_gridworld_solution import DQN
 import numpy as np
 import collections
 

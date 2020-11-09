@@ -64,10 +64,12 @@ Course introduction + Github Reminder: [Slides](https://github.com/wikistat/AI-F
    - **Development for Data Scientist**: Docker
         * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/Code_Development_Docker.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/CodeDevelopment/TP.pdf) / [Video](https://youtu.be/loMf5bFyzY4)
 - **Session 4 - 07-12-20**
-   - **Introduction to deep Reinforcement learning**: Q-learning 
-        * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/IA_Frameworks_RL.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/IntroductionDeepReinforcementLearning/Q_Learning.ipynb) / [Video]()
-   - **Introduction to  Reinforcement learning**: Deep Q-learning (COMING SOON)
-        * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/IA_Frameworks_RL.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/IntroductionDeepReinforcementLearning/Deep_Q_Learning.ipynb) / [Video]()
+   * Introduction to deep Reinforcement learning: Deep Q-learning 
+       - [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/IA_Frameworks_RL.pdf) / [Video]()
+       - **Q Learning reminder**: [TP](https://github.com/wikistat/AI-Frameworks/tree/master/IntroductionDeepReinforcementLearning/Q_Learning.ipynb) 
+       - **Deep Q Learning on cartpole**: [TP](https://github.com/wikistat/AI-Frameworks/tree/master/IntroductionDeepReinforcementLearning/Deep_Q_Learning_CartPole.ipynb) 
+       - **Deep Q Learning on Gridworld**: [TP](https://github.com/wikistat/AI-Frameworks/tree/master/IntroductionDeepReinforcementLearning/Deep_Q_Learning_GridWorld.ipynb) 
+
 - **Session 5 14-12-20**
     - **Introduction to deep Reinforcement learning**: PG Gradient (COMING SOON)
         * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/IA_Frameworks_RL.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/IntroductionDeepReinforcementLearning/Policy_Gradient.ipynb) / [Video]()  
