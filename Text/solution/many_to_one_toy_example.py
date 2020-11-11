@@ -1,0 +1,8 @@
+X = np.arange(300).reshape(100,3,1)
+print("Dimensions of input sequences: %d, Timestep: %d, Number of features: %d" %X.shape)
+Y = X.sum(1).reshape(100,1,1)
+print("Dimensions of output sequences: %d, Timestep: %d, Number of features: %d" %Y.shape)
+print("Input Example")
+print(X[0])
+print("Output Example")
+print(Y[0])
