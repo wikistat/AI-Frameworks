@@ -9,4 +9,4 @@ model.summary()
 epochs = 500
 batch_size=256
 history = model.compile(loss="sparse_categorical_crossentropy", optimizer="adam", metrics=["accuracy"])
-model.fit(X_train, Y_train_int, epochs=epochs, batch_size=batch_size, verbose=1, validation_data=[X_valid, Y_valid_int])
+model.fit(X_train, Y_train, epochs=epochs, batch_size=batch_size, verbose=1, validation_data=[X_valid, Y_valid])
