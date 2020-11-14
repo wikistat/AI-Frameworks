@@ -3,6 +3,7 @@
 IntroductionDeepReinforcementLearning/model_keras.json
 IntroductionDeepReinforcementLearning/tmp_notebook/*
 IntroductionDeepReinforcementLearning/models/*
+IntroductionDeepReinforcementLearning/script/*
 IntroductionDeepReinforcementLearning/RLclass/
 *.DS_Store
 .ipynb_checkpoints/
