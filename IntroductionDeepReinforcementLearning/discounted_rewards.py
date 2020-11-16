@@ -1,3 +1,4 @@
+import math
 def discount_rewards(rewards, gamma=0.99):
     """Takes 1d float array of rewards and computes discounted reward
     e.g. f([1, 1, 1], 0.99) -> [2.9701, 1.99, 1]

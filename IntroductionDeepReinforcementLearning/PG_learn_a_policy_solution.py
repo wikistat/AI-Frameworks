@@ -24,11 +24,18 @@ class PG:
         policy_network = km.Sequential()
         policy_network.add(kl.Dense(9, input_shape=(self.dim_input,), activation="relu"))
         policy_network.add(kl.Dense(1, activation="sigmoid"))
-        policy_network.compile(loss=??, optimizer=ko.Adam(), metrics=['accuracy'])
+        policy_network.compile(loss='binary_crossentropy', optimizer=ko.Adam(), metrics=['accuracy'])
         return policy_network
 
     def play_one_episode(self):
-        # TODO
+        train_data = []
+        observation = self.env.reset()
+        action = 0 if observation[2] < 0 else 1
+        done = False
+        while not done:
+            observation, reward, done, _ = self.env.step(action)
+            action = 0 if observation[2] < 0 else 1
+            train_data.append([observation, action])
         return train_data
 
     def train(self):

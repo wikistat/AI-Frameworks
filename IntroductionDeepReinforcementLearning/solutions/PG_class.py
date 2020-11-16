@@ -1,15 +1,6 @@
-import numpy as np
-import random
-import gym
-
 import tensorflow as tf
-
 tf.config.experimental_run_functions_eagerly(True)
 tf.keras.backend.set_floatx('float64')
-from keras_model import kerasModel
-from discounted_rewards import discount_rewards
-
-
 class PG:
 
     def __init__(self, gamma=.99, batch_size=50, num_episodes=10000, goal=190, n_test=10, print_every=100):
@@ -35,15 +26,60 @@ class PG:
         self.losses = []
 
     def choose_action(self, state):
-        #TODO
+        predict = self.model.predict(state)[0]
+        action = 1 if random.uniform(0, 1) < predict else 0
         return action
 
     def run_one_episode(self):
-        #TODO
+        done = False
+        observation = self.env.reset()
+        states = []
+        actions = []
+        rewards = []
+        while not (done):
+            # Generate state and action for the current iteration
+            state = np.reshape(observation, [1, self.dim_input])
+            action = self.choose_action(state)
+
+            # Determine the outcome of the action generated
+            observation, reward, done, _ = self.env.step(action)
+
+            # Store experiences values
+            states.append(state)
+            actions.append(action)
+            rewards.append(reward)
+
+        # Computed the discounted rewards for this episode
+        discounted_rewards = discount_rewards(rewards, self.gamma)
+        discounted_rewards -= np.mean(discounted_rewards)
+        discounted_rewards /= np.std(discounted_rewards)
+
+        # Append the discounted rewards for learning
+        for state, action, dreward in zip(states, actions, discounted_rewards):
+            self.experiences.append([state, action, dreward])
+
+        # return score of the episode
+        score = sum(rewards)
         return score
 
     def run_one_batch_train(self):
-        # TODO
+
+        n_experiences = len(self.experiences)
+        states = np.squeeze(np.array([x[0] for x in self.experiences]))
+        actions = np.array([x[1] for x in self.experiences]).reshape((n_experiences, 1))
+        discounted_rewards = np.array([x[2] for x in self.experiences]).reshape((n_experiences, 1))
+
+        # Normalize the discounted rewards
+        loss = self.model.train_step(
+            x=states,
+            labels=actions,
+            adv=discounted_rewards)
+        # Output of this function is a tensorflow type, force it to be a float
+        loss = float(loss)
+
+        # Clear out game variables
+        self.experiences = []
+
         return loss
 
     def score_model(self, model, num_tests, dimen, ):
@@ -88,7 +124,3 @@ class PG:
                 if test_score >= self.goal:
                     print("Solved in {} episodes!".format(num_episode))
                     break
-
-
-pg = PG()
-pg.train()

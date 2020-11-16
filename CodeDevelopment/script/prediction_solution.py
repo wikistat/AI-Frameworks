@@ -20,7 +20,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument('--epochs', type=int, default=2)
 parser.add_argument('--batch_size', type=int, default=20)
 
-DATA_DIR = "PATH_TO/CodeDevelopment" 
+DATA_DIR = "PATH_TO/CodeDevelopment"
 parser.add_argument('--data_dir', type=str,
                     default=DATA_DIR+"/data/")
 parser.add_argument('--results_dir', type=str,

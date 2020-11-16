@@ -5,8 +5,9 @@ class PG:
         self.env = gym.make("CartPole-v0")
         self.dim_input = self.env.observation_space.shape[0]
 
-        # Parameters
+        # Model
         self.model = self.init_model()
+        self.n_episode_max = 1000
 
     def init_model(self):
 
@@ -29,8 +30,8 @@ class PG:
         return train_data
 
     def train(self):
-        n_episode = 1000
-        for iteration in tqdm(range(n_episode)):
+
+        for iteration in tqdm(range(self.n_episode_max)):
             train_data = self.play_one_episode()
             n_step = len(train_data)
             target = np.array([x[1] for x in train_data]).reshape((n_step, 1))
