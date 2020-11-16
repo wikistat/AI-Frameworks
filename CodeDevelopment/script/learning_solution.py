@@ -15,7 +15,7 @@ print(MODE)
 ## Argument
 import argparse
 
-DATA_DIR = "PATH_TO/CloudComputing"
+DATA_DIR = "PATH_TO/CodeDevelopment"
 parser = argparse.ArgumentParser()
 parser.add_argument('--epochs', type=int, default=2)
 parser.add_argument('--batch_size', type=int, default=20)
