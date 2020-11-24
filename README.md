@@ -71,8 +71,8 @@ Course introduction + Github Reminder: [Slides](https://github.com/wikistat/AI-F
        - **Deep Q Learning on Gridworld**: [TP](https://github.com/wikistat/AI-Frameworks/tree/master/IntroductionDeepReinforcementLearning/Deep_Q_Learning_GridWorld.ipynb) 
 
 - **Session 5 14-12-20**
-    - **Introduction to deep Reinforcement learning**: PG Gradient (COMING SOON)
-        * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/IA_Frameworks_RL.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/IntroductionDeepReinforcementLearning/Policy_Gradient.ipynb) / [Video]()  
+    - **Introduction to deep Reinforcement learning**: PG Gradient
+        * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/IA_Frameworks_RL.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/IntroductionDeepReinforcementLearning/Policy_Gradient.ipynb) / [Video](https://youtu.be/1Ad0u0J3erw)  
     - **Recommendation System**.  (COMING SOON)
         * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/IA_Framework_RS.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/RecomendationSystem) / [Video]()
 - **Session 6 04-01-20**
