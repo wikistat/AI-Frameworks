@@ -108,6 +108,8 @@ class PG:
         return np.mean(scores)
 
     def train(self):
+        metadata = []
+        i_batch = 0
         # Number of episode and total score
         num_episode = 0
         train_score_sum = 0
@@ -118,8 +120,10 @@ class PG:
             num_episode += 1
 
             if num_episode % self.batch_size == 0:
+                i_batch += 1
                 loss = self.run_one_batch_train()
                 self.losses.append(loss)
+                metadata.append([i_batch, self.score_model(self.model, self.n_test, self.dim_input)])
 
             # Print results periodically
             if num_episode % self.print_every == 0:
@@ -133,6 +137,7 @@ class PG:
                 if test_score >= self.goal:
                     print("Solved in {} episodes!".format(num_episode))
                     break
+        return metadata
 
 
 pg = PG()
