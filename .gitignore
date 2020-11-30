@@ -24,7 +24,7 @@ Text/data/metadata/metadata_2bis_backup.pkl
 Text/data/metadata/metadata_lr.pkl
 Text/data/metadata/metadata_mlp.pkl
 Text/data/metadata/metadata_rf.pkl
-RecomendationSystem/ml-25/*
+RecomendationSystem/ml-25m/*
 slides/images/*
 slides/2019_2020/*
 video/*

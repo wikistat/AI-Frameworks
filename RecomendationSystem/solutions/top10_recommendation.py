@@ -1,5 +1,6 @@
+seen_movie = list(rating_train.rating.values) + list(rating_test.rating.values)
 #Run prediction for all movies
-prediction = model.predict([[user_id for _ in range(max_item_id)], [x for x in range(max_item_id)]])
+prediction = model.predict([np.expand_dims([user_id for _ in range(max_item_id)],axis=1), np.expand_dims([x for x in range(max_item_id)], axis=1)])
 #Concatenate results with id of the movie
 prediction_with_id = zip(prediction, [x for x in range(max_item_id)])
 # Filter on unseen movie, get the title and sort the results according to predicted rate

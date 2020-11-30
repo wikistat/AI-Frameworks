@@ -73,8 +73,8 @@ Course introduction + Github Reminder: [Slides](https://github.com/wikistat/AI-F
 - **Session 5 14-12-20**
     - **Introduction to deep Reinforcement learning**: PG Gradient
         * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/Introduction_DRL_PG.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/IntroductionDeepReinforcementLearning/Policy_Gradient.ipynb) / [Video](https://www.youtube.com/watch?v=xadl6kfM5Bk)  
-    - **Recommendation System**.  (COMING SOON)
-        * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/IA_Framework_RS.pdf) / [TP](https://github.com/wikistat/AI-Frameworks/tree/master/RecomendationSystem) / [Video]()
+    - **Recommendation System**. 
+        * [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/slides/Recommendation_System.pdf) / [TP1](https://github.com/wikistat/AI-Frameworks/tree/master/RecomendationSystem/surprise.ipynb) & [TP2](https://github.com/wikistat/AI-Frameworks/tree/master/RecomendationSystem/tensorflow.ipyb) / [Video]()
 - **Session 6 04-01-20**
    - Free time on project.
 
