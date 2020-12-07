@@ -22,9 +22,9 @@ class discountedLoss(klo.Loss):
                  name='discountedLoss'):
         super().__init__(reduction=reduction, name=name)
 
-    def call(self, y_true, y_pred, adv):
+    def call(self, y_true, y_pred, disc_r):
         log_lik = - (y_true * K.log(y_pred) + (1 - y_true) * K.log(1 - y_pred))
-        loss = K.mean(log_lik * adv, keepdims=True)
+        loss = K.mean(log_lik * disc_r, keepdims=True)
         return loss
 
 
@@ -61,7 +61,7 @@ class kerasModel(km.Model):
         self.predict = predict
 
         @tf.function()
-        def train_step(x, labels, adv):
+        def train_step(x, labels, disc_r):
             """
                 This is a TensorFlow function, run once for each epoch for the
                 whole input. We move forward first, then calculate gradients with
@@ -72,7 +72,7 @@ class kerasModel(km.Model):
                 loss = self.loss.call(
                     y_true=labels,
                     y_pred = predictions,
-                    adv = adv)
+                    disc_r = disc_r)
             gradients = tape.gradient(loss, self.trainable_variables)
             self.optimizer.apply_gradients(zip(gradients, self.trainable_variables))
             self.train_loss(loss)

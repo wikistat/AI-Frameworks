@@ -73,7 +73,7 @@ class PG:
         loss = self.model.train_step(
             x=states,
             labels=actions,
-            adv=discounted_rewards)
+            disc_r=discounted_rewards)
         # Output of this function is a tensorflow type, force it to be a float
         loss = float(loss)
 
