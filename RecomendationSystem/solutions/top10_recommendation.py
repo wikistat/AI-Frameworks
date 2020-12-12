@@ -1,4 +1,4 @@
-seen_movie = list(rating_train.rating.values) + list(rating_test.rating.values)
+seen_movie = list(rating_user.movieId.values)
 #Run prediction for all movies
 prediction = model.predict([np.expand_dims([user_id for _ in range(max_item_id)],axis=1), np.expand_dims([x for x in range(max_item_id)], axis=1)])
 #Concatenate results with id of the movie
