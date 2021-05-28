@@ -11,7 +11,7 @@ jupyterlab==2.1.5
 gensim==3.8.3
 ipywidgets>=7.5
 gdown==3.12.2
-tensorflow==2.4.0
+tensorflow==2.4.2
 box2d-py==2.3.8
 gym[atari]==0.17.3
 gym[box2d]==0.17.3
