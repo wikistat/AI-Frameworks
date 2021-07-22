@@ -21,6 +21,7 @@ nav:
     - Recommender systems: rec_sys.md
   - Schedule: schedule.md
   - Evaluation: evaluation.md
+  - Github repository: https://github.com/wikistat/AI-Frameworks
 #theme: slate
 theme:
   name: 'spacelab'
