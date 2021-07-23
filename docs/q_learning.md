@@ -8,5 +8,8 @@
 **Practical sessions:**
 
 *   [Q Learning reminder](https://github.com/wikistat/AI-Frameworks/tree/master/IntroductionDeepReinforcementLearning/Q_Learning.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/wikistat/AI-Frameworks/blob/master/IntroductionDeepReinforcementLearning/Q_Learning.ipynb)
 *   [Deep Q Learning on cartpole](https://github.com/wikistat/AI-Frameworks/tree/master/IntroductionDeepReinforcementLearning/Deep_Q_Learning_CartPole.ipynb)
-*   [Deep Q Learning on Gridworld](https://github.com/wikistat/AI-Frameworks/tree/master/IntroductionDeepReinforcementLearning/Deep_Q_Learning_CartPole.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/wikistat/AI-Frameworks/blob/master/IntroductionDeepReinforcementLearning/Deep_Q_Learning_CartPole.ipynb)
+*   [Deep Q Learning on Gridworld](https://github.com/wikistat/AI-Frameworks/blob/master/IntroductionDeepReinforcementLearning/Deep_Q_Learning_GridWorld.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/wikistat/AI-Frameworks/blob/master/IntroductionDeepReinforcementLearning/Deep_Q_Learning_GridWorld.ipynb)

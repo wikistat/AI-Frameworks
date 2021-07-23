@@ -1,4 +1,6 @@
 [![INSA](img/logo-insa.jpg)](https://www.insa-toulouse.fr/fr/index.html)
+[<img src="img/IMT.jpg" alt="drawing" height="120"/>](https://www.math.univ-toulouse.fr/)
+[<img src="img/wikistat.jpg" alt="drawing" height="50"/>](https://github.com/wikistat)
 [`Data Science`](http://www.math.insa-toulouse.fr/fr/enseignement.html) 
 
 # Artificial Intelligence Frameworks
@@ -8,7 +10,7 @@ While these courses focused on machine learning and deep learning theory and met
 
 During this course you will:  
 
-- Learn to use cloud computing to train your models efficiently
+- Learn to use cloud computing to train your models efficiently and monitor their trainings
 - Learn about code versioning and containers to share your code and produce reproducible results
 -   Learn to process text data for natural language processing tasks
 -   Learn to train autonomous agents to play video games using Reinforcement Learning

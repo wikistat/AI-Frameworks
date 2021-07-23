@@ -4,3 +4,4 @@
 
 *   [Slides](slides/Text_Recurent_Neural_Network.pdf)
 *   [Practical session](https://github.com/wikistat/AI-Frameworks/blob/master/Text/3_recurrent_neural_network.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/wikistat/AI-Frameworks/blob/master/Text/3_recurrent_neural_network.ipynb)

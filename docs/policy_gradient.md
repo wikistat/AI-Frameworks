@@ -5,3 +5,4 @@
 
 *   [Slides](slides/Introduction_DRL_PG.pdf)
 *   [Practical session](https://github.com/wikistat/AI-Frameworks/tree/master/IntroductionDeepReinforcementLearning/Policy_Gradient.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/wikistat/AI-Frameworks/blob/master/IntroductionDeepReinforcementLearning/Policy_Gradient.ipynb)
