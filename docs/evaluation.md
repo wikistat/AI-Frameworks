@@ -40,15 +40,3 @@ You will be evaluated on your capacity of acting like a ***Data Scientist***, i.
 
  * Group of 4 to 5 people (DEFI IA's team).
  
- ## Technical requirements. 
- 
- All the libraries required for these modules are listed in the `requirements.txt` (IN CONSTRUCTION/ ONLY SESSION 1 IS OK)
- 
- To build a functional environment in pandas execute the following lines:
- 
- ```
-conda create -n AIF python=3.8
-conda activate AIF
-pip install -r requirements.txt 
-jupyter labextension install jupyterlab-plotly@4.12.0
-```
