@@ -16,7 +16,8 @@ from models import Net
 # import tensorboard as tb
 # tf.io.gfile = tb.compat.tensorflow_stub.io.gfile
 
-
+ # setting device on GPU if available, else CPU
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 def train(net, optimizer, loader, epochs=10, writer=None):
     criterion = nn.CrossEntropyLoss()
@@ -48,7 +49,7 @@ def test(model, dataloader):
     return test_corrects / total
 
 if __name__=='__main__':
-
+#TODO remove exp_name and add batch_size
   parser = argparse.ArgumentParser()
   parser.add_argument('--exp_name', type=str, default = 'MNIST', help='experiment name')
   parser.add_argument('--batch_size', type=int, default = int(64), help='batch_size')
@@ -59,8 +60,7 @@ if __name__=='__main__':
   batch_size = args.batch_size
   lr = args.lr
 
-  # setting device on GPU if available, else CPU
-  device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+ 
 
   # transforms
   transform = transforms.Compose(
@@ -83,6 +83,7 @@ if __name__=='__main__':
 
   train(net, optimizer, trainloader, 10, writer)
   test_acc = test(net, testloader)
+  # for experiment management
   writer.add_hparams({'lr': lr, 'bsize': batch_size}, {'hparam/accuracy': test_acc}, run_name='MNIST')
 
 

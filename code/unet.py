@@ -1,79 +1,88 @@
-import argparse
-from statistics import mean
-
 import torch
-import torch.optim as optim
-from torch.utils.tensorboard import SummaryWriter
-import torch
-import torchvision
-from tqdm import tqdm
-
-from data_utils import get_colorized_dataset_loader
-from models import UNet
-# setting device on GPU if available, else CPU
-device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-
-def train(net, optimizer, loader, epochs=5, writer=None):
-    criterion = torch.nn.MSELoss()
-    for epoch in range(epochs):
-        running_loss = []
-        t = tqdm(loader)
-        for x, y in t:
-            x, y = x.to(device), y.to(device)
-            outputs = net(x)
-            loss = criterion(outputs, y)
-            running_loss.append(loss.item())
-            optimizer.zero_grad()
-            loss.backward()
-            optimizer.step()
-            t.set_description(f'training loss: {mean(running_loss)}')
-        if writer is not None:
-            writer.add_scalar('training loss', mean(running_loss), epoch)
-            img_grid = torchvision.utils.make_grid(outputs[:16].detach().cpu())
-            writer.add_image('colorized', img_grid, epoch)
-            img_grid = torchvision.utils.make_grid(y[:16].detach().cpu())
-            writer.add_image('original', img_grid, epoch)
-    return mean(running_loss)
+import torch.nn as nn
+import torch.nn.functional as F
 
 
+def double_conv(in_channels, out_channels):
+    # returns a block compsed of two Convolution layers with ReLU activation function
+    return nn.Sequential(
+        nn.Conv2d(in_channels, out_channels, 3, padding=1),
+        nn.ReLU(),
+        nn.Conv2d(out_channels, out_channels, 3, padding=1),
+        nn.ReLU()
+    )   
+
+class DownSampleBlock(nn.Module):
+
+    def __init__(self, in_channels, out_channels):
+        super().__init__()
+        self.conv_block = double_conv(in_channels, out_channels)
+        self.maxpool = nn.MaxPool2d(2) 
+
+    def forward(self, x):
+        x_skip = self.conv_block(x)
+        x = self.maxpool(x_skip)
+
+        return x , x_skip
+
+class UpSampleBlock(nn.Module):
+
+    def __init__(self, in_channels, out_channels):
+        super().__init__()
+        self.conv_block = double_conv(in_channels, out_channels)
+        self.upsample = nn.Upsample(scale_factor=2, mode='bilinear', align_corners=True)
+
+    def forward(self, x, x_skip):
+        x = self.upsample(x)
+        x = torch.cat([x, x_skip], dim=1)
+        x = self.conv_block(x)
+        
+        return x
+    
+
+class UNet(nn.Module):
+
+    def __init__(self):
+        super().__init__()
+                
+        self.downsample_block_1 = DownSampleBlock(1, 32)
+        self.downsample_block_2 = DownSampleBlock(32, 64)
+        self.downsample_block_3 = DownSampleBlock(64, 128)
+        self.middle_conv_block = double_conv(128, 256)        
+
+            
+        self.upsample_block_3 = UpSampleBlock(128 + 256, 128)
+        self.upsample_block_2 = UpSampleBlock(128 + 64, 64)
+        self.upsample_block_1 = UpSampleBlock(64 + 32, 32)
+        
+        self.last_conv = nn.Conv2d(32, 3, 1)
+        
+        
+    def forward(self, x):
+        x, x_skip1 = self.downsample_block_1(x)
+        x, x_skip2 = self.downsample_block_2(x)
+        x, x_skip3 = self.downsample_block_3(x) 
+        
+        x = self.middle_conv_block(x)
+        
+        x = self.upsample_block_3(x, x_skip3) 
+        x = self.upsample_block_2(x, x_skip2)
+        x = self.upsample_block_1(x, x_skip1)       
+        
+        out = self.last_conv(x)
+        
+        return out
+
+    def get_features(self, x):
+        x, _ = self.downsample_block_1(x)
+        x, _ = self.downsample_block_2(x)
+        x, _ = self.downsample_block_3(x)
+        return x
+        
+        
 if __name__=='__main__':
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--data_path', type=str, default = 'data/landscapes', help='dataset path')
-    parser.add_argument('--batch_size', type=int, default = int(32), help='batch_size')
-    parser.add_argument('--lr', type=float, default = float(1e-3), help='learning rate')
-
-    args = parser.parse_args()
-    data_path = args.data_path
-    batch_size = args.batch_size
-    lr = args.lr
-    unet = UNet().cuda()
-    loader = get_colorized_dataset_loader(path=data_path, 
-                                        batch_size=batch_size, 
-                                        shuffle=True, 
-                                        num_workers=4)
-
-
-    optimizer = optim.Adam(unet.parameters(), lr=lr)
-    writer = SummaryWriter('runs/UNet')
-    loss = train(unet, optimizer, loader, epochs=10, writer=writer)
-
-    x, y = next(iter(loader))
-
-    with torch.no_grad():
-        all_embeddings = []
-        all_labels = []
-        for x, y in loader:
-            x , y = x.to(device), y.to(device)
-            embeddings = unet.get_features(x).view(-1, 256*28*28)
-            all_embeddings.append(embeddings)
-            all_labels.append(y)
-            if len(all_embeddings)>6:
-                break
-        embeddings = torch.cat(all_embeddings)
-        labels = torch.cat(all_labels)
-        writer.add_embedding(embeddings, label_img=labels, global_step=1)
-        writer.add_graph(unet, x.to(device))
-    writer.add_hparams({'lr': lr, 'bsize': batch_size}, {'hparam/loss': loss}, run_name='UNet')
-
-    # Save model weights
-    torch.save(unet.state_dict(), 'unet.pth')
+    x = torch.rand(16,1,224,224)
+    net = UNet()
+    y = net(x)
+    assert y.shape == (16,3,224,224)
+    net.get_features(x)
