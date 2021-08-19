@@ -33,3 +33,4 @@ site
 code/data/
 runs
 code/unet.pth
+code/imagenette2/*
