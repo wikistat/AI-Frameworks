@@ -15,8 +15,8 @@ nav:
       - Virtual environments, Github Repositories and Scripts: dev.md
       - Introduction to GCloud: gcloud.md
       - Introduction to Docker: docker.md
-    - Introduction to Deep Reinforcement Learning:
-      - Q-learning: q_learning.md
+    - Introduction to Reinforcement Learning:
+      - From Policy Iteration to Deep Q-learning: q_learning.md
       - Policy Gradient: policy_gradient.md
     - Recommender systems: rec_sys.md
   - Schedule: schedule.md
