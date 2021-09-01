@@ -9,17 +9,23 @@
 
 # Practical session
 
-For this session, you will have to write a script to train a small neural network on the MNIST using pytorch. During training, you will use tensorboard to monitor your network accross epochs, to manage your experiments and hyper-parameters and provide some vizualisations.
+For this session, you will have to write a script to train a small neural network on the MNIST dataset using Pytorch.  
+During training, you will use tensorboard to:
+
+- monitor your network across epochs
+- manage your experiments and hyper-parameters  
+- provide some vizualisations.
 
 ## The network class:
 
-First create a file ``models.py`` that will contain our models classes.  
-To create your model's class, fill the following code such that:  
-* The method ``__init__()`` should instanciate all the layers that will be used by the network.
-* The method ``forward()`` describes the forward graph of your network. All the pooling operations and activation functions are realized in this method. Do not forget to change the shape of your input before the first linear layer using ``torch.flatten(...)`` or ``x.view(...)``.
+First create a file ``models.py`` that will contain our model's classe.  
 
-The forward method 
-Try to fill it such that your networks behaves as the one in 
+![](img/Mnist_net.png)
+
+Using the figure above, fill in the following code to create the network class:  
+
+* The method ``__init__()`` should instantiate all the layers that the network will use.
+* The method ``forward()`` describes the forward graph of your network. All the pooling operations and activation functions are realized in this method. Do not forget to change the shape of your input before the first linear layer using ``torch.flatten(...)`` or ``x.view(...)``.
 
 ```python
 import torch
@@ -31,7 +37,7 @@ class MNISTNet(nn.Module):
         super(Net, self).__init__()
         self.conv1 = nn.Conv2d(...)
         self.conv2 = nn.Conv2d(...)
-        #self.pool = nn.MaxPool2d(...)
+        self.pool = nn.MaxPool2d(...)
         self.fc1 = nn.Linear(...)
         self.fc2 = nn.Linear(...)
         self.fc3 = nn.Linear(...)
@@ -94,7 +100,8 @@ def test(model, dataloader):
     return test_corrects / total
 ```
 You will now implement the ``main`` method that will be called every time the python script is executed.  
-First, add a parser to add 3 possible arguments provided when executing the script:
+First, add a parser to add three possible arguments provided when executing the script:
+
 * The batch size
 * The learning rate
 * The number of training epochs
@@ -114,7 +121,7 @@ if __name__=='__main__':
   lr = ...
 ```
 
-The following code instanciate two dataloaders: one loading data from the training set, the other one from the test set.
+he following code instantiates two [data loaders](https://pytorch.org/tutorials/beginner/basics/data_tutorial.html): one loading data from the training set, the other one from the test set.
 
 ```python
 # transforms
@@ -131,7 +138,7 @@ The following code instanciate two dataloaders: one loading data from the traini
   testloader = torch.utils.data.DataLoader(testset, batch_size=batch_size, shuffle=False, num_workers=2)
 ```
 
-Instanciate a MNISTNet and a SGD optimizer using the learning rate provided in the scipt arguments.
+Instantiate a MNISTNet and a [SGD optimizer](https://pytorch.org/docs/stable/generated/torch.optim.SGD.html) using the learning rate provided in the script arguments.
 Use the train method to train your network and the test method to compute the test accuracy. 
 
 ```python
@@ -152,15 +159,15 @@ python train_mnist.py --epochs=5 --lr=1e-3 --batch_size=64
 
 ## Monitoring and experiment management
 Training our model on MNIST is pretty fast.
-Nonentheless, in most cases, training a network may be very long.
-For such cases, it is important to log partial results during training to be sure that everything is behaving as expected.  
+Nonetheless, in most cases, training a network may be very long.
+For such cases, it is essential to log partial results during training to ensure that everything is behaving as expected.  
 A very famous tool to monitor your experiments in deep learning is Tensorboard.  
 The main object used by Tensorboard is a ``SummaryWriter``.  
 Add the following import:
 ```python
 from torch.utils.tensorboard import SummaryWriter
 ```
-and modify the train method so it takes a ``SummaryWriter`` as an additional argument and use its ``add_scalar`` method to log the training loss for every epoch.
+and modify the train method to take an additional argument named ``SummaryWriter`` and use its ``add_scalar`` method to log the training loss for every epoch.
 
 ```python
 def train(net, optimizer, loader, writer, epochs=10):
@@ -179,13 +186,17 @@ def train(net, optimizer, loader, writer, epochs=10):
             t.set_description(f'training loss: {mean(running_loss)}')
         writer.add_scalar('training loss', mean(running_loss), epoch)
 ```
-
-Re-run your scipt and check your tensorboard logs using:
+Instantiate a ``SummaryWriter`` with 
+```python
+writer = SummaryWriter(f'runs/MNIST')
+```
+ in your main and pass it as an argument to the ``train`` method.  
+Re-run your scipt and check your tensorboard logs using in a separate terminal:
 ```
 tensorboard --logdir runs
 ```
 
-You can use tensorboard to logs many different things such as your network computational graph, images, samples from your dataset, embedings or even use it for experiment management.
+You can use tensorboard to log many different things such as your network computational graph, images, samples from your dataset, embeddings, or even use it for experiment management.
 Add the following code to the end of your main function.
 
 ```python
