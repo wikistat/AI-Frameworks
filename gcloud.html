@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <title>Introduction to GCloud - AI Frameworks</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/purebasic.min.css">
+
+        <script src="js/jquery-1.10.2.min.js" defer></script>
+        <script src="js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">AI Frameworks</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="index.html" class="nav-link">Home</a>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Courses <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="introduction.html" class="dropdown-item">Course Introduction</a>
+</li>
+                                    
+<li>
+    <a href="git_intro.html" class="dropdown-item">Introduction to Git</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Text</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="text1.html" class="dropdown-item">Text Cleaning and Vectorization</a>
+</li>
+            
+<li>
+    <a href="text2.html" class="dropdown-item">Words embedding</a>
+</li>
+            
+<li>
+    <a href="text3.html" class="dropdown-item">Recurrent Network</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Development tools for Data Scientist</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="dev.html" class="dropdown-item">Virtual environments, Github Repositories and Scripts</a>
+</li>
+            
+<li>
+    <a href="gcloud.html" class="dropdown-item active">Introduction to GCloud</a>
+</li>
+            
+<li>
+    <a href="docker.html" class="dropdown-item">Introduction to Docker</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Introduction to Reinforcement Learning</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="q_learning.html" class="dropdown-item">From Policy Iteration to Deep Q-learning</a>
+</li>
+            
+<li>
+    <a href="policy_gradient.html" class="dropdown-item">Policy Gradient</a>
+</li>
+    </ul>
+  </li>
+                                    
+<li>
+    <a href="rec_sys.html" class="dropdown-item">Recommender systems</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="schedule.html" class="nav-link">Schedule</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="evaluation.html" class="nav-link">Evaluation</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="https://github.com/wikistat/AI-Frameworks" class="nav-link">Github repository</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="dev.html" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="docker.html" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#development-for-data-scientist" class="nav-link">Development for Data Scientist:</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#introduction-to-google-cloud-computing" class="nav-link">Introduction to Google Cloud Computing</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#practical-session" class="nav-link">Practical Session</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#set-up-your-virtual-machine" class="nav-link">Set up your virtual machine</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#the-python-script" class="nav-link">The python script</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#training-script" class="nav-link">Training script</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#training-on-gcloud" class="nav-link">Training on GCloud</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="development-for-data-scientist">Development for Data Scientist:</h1>
+<h2 id="introduction-to-google-cloud-computing">Introduction to Google Cloud Computing</h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/FOsGsMrDJE8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<ul>
+<li><a href="https://github.com/wikistat/AI-Frameworks/blob/master/CodeDevelopment/TP.pdf">Slides</a></li>
+</ul>
+<!-- *   [Practical session](https://github.com/wikistat/AI-Frameworks/blob/master/CodeDevelopment/TP.pdf) -->
+
+<h1 id="practical-session">Practical Session</h1>
+<p>In this session, you will train a neural network to colorize black and white images using virtual machines on <a href="https://cloud.google.com/">Google Cloud</a>.<br />
+<img alt="" src="img/gcloud_b%26w.png" /> <img alt="" src="img/gcloud_color.png" />  </p>
+<p>You will have to:</p>
+<ul>
+<li>Set up a new GCloud instance with GPU capacities</li>
+<li>Write your Python scripts on your local machine</li>
+<li>Send your code to your GCloud Instance</li>
+<li>Run your code on the cloud virtual machine </li>
+<li>Monitor your code running on the virtual machine</li>
+<li>Get your results and send them to your local machine </li>
+</ul>
+<h2 id="set-up-your-virtual-machine">Set up your virtual machine</h2>
+<p>To be completed</p>
+<h2 id="the-python-script">The python script</h2>
+<p>Cloud providers charge by the hour, so cloud computing can quickly get expensive.
+A good practice consists of doing most of the code development on your local hardware before sending it to your cloud instances.<br />
+That is what you are going to do in this practical session.<br />
+You will run one small iteration of your code on your local machine to test your code and then send it to your virtual machine.</p>
+<p>We will be working with the <a href="https://github.com/ml5js/ml5-data-and-models/tree/master/datasets/images/landscapes">Landscapes dataset</a> composed of 4000 images in seven categories of landscapes (city, road, mountain, lake, ocean, field, and forest).
+Instead of using it to train a classifier, we will use it to train a neural network to colorize black and white images.</p>
+<p>The following <a href="../code/download_landscapes.sh">script changer le lien du script</a> will download and extract the datset for you.</p>
+<p>We will use a particular category of neural networks to perform the colorization operation: <a href="https://arxiv.org/abs/1505.04597">Unets</a>.
+Initially designed for Biomedical Image Segmentation, Unets offer state-of-the-art performances in many segmentation tasks. These performances are mainly due to the skip connections used in UNets architectures.
+Indeed, Unets are a particular form of Auto-Encoders using skip connections between corresponding layers of the encoder and the decoder.
+<img alt="" src="img/AU_UNet.png" />  </p>
+<p>Create a new file named <code>unet.py</code> where you will define the following Unet network:<br />
+<img alt="" src="img/Unet.png" /></p>
+<p>Help yourself with the above image to implement a Unet network using the following template:</p>
+<pre><code class="language-python">import torch
+import torch.nn as nn
+import torch.nn.functional as F
+
+def double_conv(in_channels, out_channels):
+    # returns a block compsed of two Convolution layers with ReLU activation function
+    return nn.Sequential(
+        nn.Conv2d(in_channels, out_channels, 3, padding=1),
+        nn.ReLU(),
+        nn.Conv2d(out_channels, out_channels, 3, padding=1),
+        nn.ReLU()
+    )   
+
+class DownSampleBlock(nn.Module):
+
+    def __init__(self, in_channels, out_channels):
+        super().__init__()
+        self.conv_block = ...
+        self.maxpool = ...
+
+    def forward(self, x):
+        x_skip = ...
+        out = ... 
+
+        return out , x_skip
+
+class UpSampleBlock(nn.Module):
+
+    def __init__(self, in_channels, out_channels):
+        super().__init__()
+        self.conv_block = ...
+        self.upsample = ... # use nn.Upsample
+
+    def forward(self, x, x_skip):
+        x = self.upsample(x)
+        x = torch.cat([x, x_skip], dim=1) # concatenates x and x_skip
+        x = self.conv_block(x)
+
+        return x
+
+
+class UNet(nn.Module):
+
+    def __init__(self):
+        super().__init__()
+
+        self.downsample_block_1 = ...
+        self.downsample_block_2 = ...
+        self.downsample_block_3 = ...
+        self.middle_conv_block = double_conv(128, 256)        
+
+
+        self.upsample_block_3 = ...
+        self.upsample_block_2 = ...
+        self.upsample_block_1 = ...
+
+        self.last_conv = nn.Conv2d(32, 3, 1)
+
+
+    def forward(self, x):
+        x, x_skip1 = ...
+        x, x_skip2 = ...
+        x, x_skip3 = ... 
+
+        x = self.middle_conv_block(x)
+
+        x = #use upsampleblock_3 and x_skip3
+        x = #use upsampleblock_2 and x_skip2
+        x = #use upsampleblock_1 and x_skip1       
+
+        out = self.(x)
+
+        return out
+
+
+if __name__=='__main__':
+    x = torch.rand(16,1,224,224)
+    net = UNet()
+    y = net(x)
+    assert y.shape == (16,3,224,224)
+    print('Shapes OK')
+
+</code></pre>
+<p>Check that your network is producing correct outputs by running your file with:</p>
+<pre><code>python unet.py
+</code></pre>
+<p>The</p>
+<h2 id="training-script">Training script</h2>
+<p>You will now implement the training procedure.  </p>
+<p>Training a network to colorize images is a supervised regression problem. 
+Consider $x$ a grayscaled image and $y$ its corresponding colored image.
+Training a parametrized network $f_\theta$ to predict colorized images $ŷ$ amounts to minimizing the distance between the prediction $ŷ$ and the actual $y$.<br />
+That is to say minimizing $MSE(y, f_\theta(x))$.</p>
+<p>Create a new file <code>colorize.py</code> and fill the <code>train</code> method in the following canvas (you can inspire yourself from the one in the MNIST example. Be careful, however, in your criterion choice):  </p>
+<pre><code class="language-python">import argparse # to parse script arguments
+from statistics import mean # to compute the mean of a list
+from tqdm import tqdm #used to generate progress bar during training
+
+import torch
+import torch.optim as optim 
+from torch.utils.tensorboard import SummaryWriter
+from  torchvision.utils import make_grid #to generate image grids, will be used in tensorboard 
+
+from data_utils import get_colorized_dataset_loader # dataloarder
+from unet import UNet
+
+# setting device on GPU if available, else CPU
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+
+def train(net, optimizer, loader, epochs=5, writer=None):
+    criterion = ...
+    for epoch in range(epochs):
+        running_loss = []
+        t = tqdm(loader)
+        for x, y in t: # x: black and white image, y: colored image 
+            ...
+            ...
+            ...
+            ...
+            ...
+            ...
+            ...
+            ...
+        if writer is not None:
+            #Logging loss in tensorboard
+            writer.add_scalar('training loss', mean(running_loss), epoch)
+            # Logging a sample of inputs in tensorboard
+            input_grid = make_grid(x[:16].detach().cpu())
+            writer.add_image('Input', input_grid, epoch)
+            # Logging a sample of predicted outputs in tensorboard
+            colorized_grid = make_grid(outputs[:16].detach().cpu())
+            writer.add_image('Predicted', colorized_grid, epoch)
+            # Logging a sample of ground truth in tensorboard
+            original_grid = make_grid(y[:16].detach().cpu())
+            writer.add_image('Ground truth', original_grid, epoch)
+    return mean(running_loss)
+
+
+
+if __name__=='__main__':
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--data_path', type=str, default = 'data/landscapes', help='dataset path')
+    parser.add_argument('--batch_size', type=int, default = int(32), help='batch_size')
+    parser.add_argument('--epochs', type=int, default = int(10), help='number of epochs')
+    parser.add_argument('--lr', type=float, default = float(1e-3), help='learning rate')
+
+    args = parser.parse_args()
+    data_path = args.data_path
+    batch_size = args.batch_size
+    epochs = args.epochs
+    lr = args.lr
+    unet = UNet().cuda()
+    loader = get_colorized_dataset_loader(path=data_path, 
+                                        batch_size=batch_size, 
+                                        shuffle=True, 
+                                        num_workers=4)
+
+
+    optimizer = optim.Adam(unet.parameters(), lr=lr)
+    writer = SummaryWriter('runs/UNet')
+    train(unet, optimizer, loader, epochs=epochs, writer=writer)
+    writer.add_graph(unet)
+
+    # Save model weights
+    torch.save(unet.state_dict(), 'unet.pth')
+</code></pre>
+<h2 id="training-on-gcloud">Training on GCloud</h2>
+<p>You now have everything to run your code on GCloud.<br />
+Fire up your GCloud instance:
+<img alt="" src="img/gcloud1.png" /></p>
+<p>On a terminal, connect to your instance using the following command (replace the zone and instance name with yours):</p>
+<pre><code>gcloud compute ssh --zone &quot;europe-west1-d&quot; &quot;your_instance_name&quot;
+</code></pre>
+<p>Create a folder <code>Workspace</code> on your virtual machine:</p>
+<pre><code>mkdir Workspace
+</code></pre>
+<p>You can copy a file from your local machine to the virtual machine using the following command on your local terminal:</p>
+<pre><code>gcloud compute scp [your_file_path] your_instance_name:Workspace/ --zone &quot;europe-west1-d&quot;
+</code></pre>
+<p>Conversly, you can copy a from your virtual machine to your local machine the following command on your local terminal:</p>
+<pre><code>gcloud compute scp bsf.pth your_instance_name:Workspace/ --zone &quot;europe-west1-d&quot;
+</code></pre>
+<p>Add the <code>--recurse</code> argument to your command if you want to copy a folder.</p>
+<p>Copy the folder containing all your code into your virtual machine's Workspace folder.
+Also, copy the <code>download_landscapes.sh</code> file into your VM and execute it.</p>
+<p>You should now be able to run your python script and thus learn to colorize images.
+Run your script for one entire epoch to check that everything is working fine.</p>
+<p>We will now run our script for a few more epochs, but before that, we will create an ssh tunnel between our local machine and the virtual machine.<br />
+Run the following command on your local machine with the correct name for your virtual machine (use your correct zone).</p>
+<pre><code>gcloud compute  ssh --ssh-flag=&quot;-L 8898:localhost:8898&quot;  --zone &quot;us-central1-b&quot; &quot;example_instance_name&quot;
+</code></pre>
+<p>This command connects you to your virtual machine and forwards its port 8898 to your local machine's port 8898 (you can change the port value if needed).
+Thanks to that, you will get access to the tensorboard interface running on the virtual machine through your local machine.</p>
+<p>Now on this terminal window, run the following command:</p>
+<pre><code>tensorboard --logdir runs --port 8898
+</code></pre>
+<p>On another terminal, connect to your virtual machine and run your script with a few more epochs (like 10 for instance).</p>
+<p>On your web browser, go to the following adress: http://localhost:8898/</p>
+<p>You should be able to access tensorboard.<br />
+Check on your network graph. You should see the U shape of your Unet.
+<img alt="" src="img/unet_tb.png" /></p>
+<p>You can now visualize the progression of your network while it is training in the images tab.
+<img alt="" src="img/tb_images.png" /></p>
+<h3 id="bonus-synchronize-with-rsync">Bonus synchronize with Rsync</h3>
+<p>An easy way to synchronize your code with your VM is to use rsync</p>
+<p>Install rsync <strong>on your virtual machine</strong>:</p>
+<pre><code>sudo apt-get install rsync
+</code></pre>
+<p>Add the public key you’re going to use to connect to the VM  to the VM’s ~/.ssh/authorized_keys</p>
+<p>On the virtual machine:</p>
+<pre><code>touch ~/.ssh/authorized_keys
+nano ~/.ssh/authorized_keys
+</code></pre>
+<p>Copy the content of your public key (It is usually located in ~/.ssh/id_rsa.pub on your local machine) in the opened file.
+Press <code>ctrl+x</code> then <code>y</code> then <code>enter</code> to save.</p>
+<p>Now to synchronize a folder, find the IP of your virtual machine in the GCloud interface:
+<img alt="" src="img/IP.png" /></p>
+<p>To synchronize your folder on your local machine (for instance, named <code>test_gcloud</code>) with a distant folder on the virtual machine (located, for example, in Workspace/test_gcloud):</p>
+<pre><code>rsync -r  [VM_IP_ADRESS]:Workspace/test_gcloud/ test_gcloud/
+</code></pre>
+<p>To synchronize a distant folder on the virtual machine with a folder on your local machine :</p>
+<pre><code>rsync -r  test_gcloud/ [VM_IP_ADRESS]:Workspace/test_gcloud/ 
+</code></pre>
+<p>You can find more information on the rsync command <a href="https://doc.ubuntu-fr.org/rsync">here (in french)</a></p>
+<p>You can stop your VM using the GCloud interface or just by running the following command:</p>
+<pre><code>sudo shutdown -h now
+</code></pre></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = ".",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="js/base.js" defer></script>
+        <script src="search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

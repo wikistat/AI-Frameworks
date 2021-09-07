@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <title>Virtual environments, Github Repositories and Scripts - AI Frameworks</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/purebasic.min.css">
+
+        <script src="js/jquery-1.10.2.min.js" defer></script>
+        <script src="js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">AI Frameworks</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href="index.html" class="nav-link">Home</a>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Courses <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="introduction.html" class="dropdown-item">Course Introduction</a>
+</li>
+                                    
+<li>
+    <a href="git_intro.html" class="dropdown-item">Introduction to Git</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Text</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="text1.html" class="dropdown-item">Text Cleaning and Vectorization</a>
+</li>
+            
+<li>
+    <a href="text2.html" class="dropdown-item">Words embedding</a>
+</li>
+            
+<li>
+    <a href="text3.html" class="dropdown-item">Recurrent Network</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Development tools for Data Scientist</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="dev.html" class="dropdown-item active">Virtual environments, Github Repositories and Scripts</a>
+</li>
+            
+<li>
+    <a href="gcloud.html" class="dropdown-item">Introduction to GCloud</a>
+</li>
+            
+<li>
+    <a href="docker.html" class="dropdown-item">Introduction to Docker</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Introduction to Reinforcement Learning</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="q_learning.html" class="dropdown-item">From Policy Iteration to Deep Q-learning</a>
+</li>
+            
+<li>
+    <a href="policy_gradient.html" class="dropdown-item">Policy Gradient</a>
+</li>
+    </ul>
+  </li>
+                                    
+<li>
+    <a href="rec_sys.html" class="dropdown-item">Recommender systems</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="schedule.html" class="nav-link">Schedule</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="evaluation.html" class="nav-link">Evaluation</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="https://github.com/wikistat/AI-Frameworks" class="nav-link">Github repository</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="text3.html" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="gcloud.html" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#development-for-data-scientist" class="nav-link">Development for Data Scientist:</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#python-environment-github-repo-and-python-script" class="nav-link">(Python environment, Github Repo and Python Script)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#practical-session" class="nav-link">Practical session</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#the-network-class" class="nav-link">The network class:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#the-training-script" class="nav-link">The training script</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#monitoring-and-experiment-management" class="nav-link">Monitoring and experiment management</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="development-for-data-scientist">Development for Data Scientist:</h1>
+<h2 id="python-environment-github-repo-and-python-script">(Python environment, Github Repo and Python Script)</h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/gZLeTHQzloE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<ul>
+<li><a href="https://github.com/wikistat/AI-Frameworks/raw/master/slides/Code_Development_Python.pdf">Slides</a></li>
+</ul>
+<!-- *   [Practical session](https://github.com/wikistat/AI-Frameworks/blob/master/CodeDevelopment/TP.pdf) -->
+
+<h1 id="practical-session">Practical session</h1>
+<p>For this session, you will have to write a script to train a small neural network on the MNIST dataset using Pytorch.<br />
+During training, you will use tensorboard to:</p>
+<ul>
+<li>monitor your network across epochs</li>
+<li>manage your experiments and hyper-parameters  </li>
+<li>provide some vizualisations.</li>
+</ul>
+<h2 id="the-network-class">The network class:</h2>
+<p>First create a file <code>models.py</code> that will contain our model's classe.  </p>
+<p><img alt="" src="img/Mnist_net.png" /></p>
+<p>Using the figure above, fill in the following code to create the network class:  </p>
+<ul>
+<li>The method <code>__init__()</code> should instantiate all the layers that the network will use.</li>
+<li>The method <code>forward()</code> describes the forward graph of your network. All the pooling operations and activation functions are realized in this method. Do not forget to change the shape of your input before the first linear layer using <code>torch.flatten(...)</code> or <code>x.view(...)</code>.</li>
+</ul>
+<pre><code class="language-python">import torch
+import torch.nn as nn
+import torch.nn.functional as F
+
+class MNISTNet(nn.Module):
+    def __init__(self):
+        super(Net, self).__init__()
+        self.conv1 = nn.Conv2d(...)
+        self.conv2 = nn.Conv2d(...)
+        self.pool = nn.MaxPool2d(...)
+        self.fc1 = nn.Linear(...)
+        self.fc2 = nn.Linear(...)
+        self.fc3 = nn.Linear(...)
+
+    def forward(self, x):
+        x = F.relu(self.conv1(x))       # First convolution followed by
+        x = self.pool(x)                # a relu activation and a max pooling#
+        x = ...
+        ...
+        x = self.fc3(x)
+        return x
+</code></pre>
+<h2 id="the-training-script">The training script</h2>
+<p>You will now create a file <code>train_mnist.py</code>.
+This file will be used as a python script to train a neural network on the MNIST Dataset.<br />
+Let's first create the <code>train()</code> and <code>test()</code> methods.</p>
+<pre><code class="language-python">import argparse
+from statistics import mean
+
+import torch
+import torchvision
+import torchvision.transforms as transforms
+import torch.nn as nn
+import torch.nn.functional as F
+import torch.optim as optim
+from tqdm import tqdm
+
+from models import Net
+
+ # setting device on GPU if available, else CPU
+  device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+
+def train(net, optimizer, loader, epochs=10):
+    criterion = nn.CrossEntropyLoss()
+    for epoch in range(epochs):
+        running_loss = []
+        t = tqdm(loader)
+        for x, y in t:
+            x, y = x.to(device), y.to(device)
+            outputs = net(x)
+            loss = criterion(outputs, y)
+            running_loss.append(loss.item())
+            optimizer.zero_grad()
+            loss.backward()
+            optimizer.step()
+            t.set_description(f'training loss: {mean(running_loss)}')
+
+def test(model, dataloader):
+    test_corrects = 0
+    total = 0
+    with torch.no_grad():
+        for x, y in dataloader:
+            x = x.to(device)
+            y = y.to(device)
+            y_hat = model(x).argmax(1)
+            test_corrects += y_hat.eq(y).sum().item()
+            total += y.size(0)
+    return test_corrects / total
+</code></pre>
+<p>You will now implement the <code>main</code> method that will be called every time the python script is executed.<br />
+First, add a parser to add three possible arguments provided when executing the script:</p>
+<ul>
+<li>The batch size</li>
+<li>The learning rate</li>
+<li>The number of training epochs</li>
+</ul>
+<pre><code class="language-python">if __name__=='__main__':
+
+  parser = argparse.ArgumentParser()
+
+  parser.add_argument(...)
+  parser.add_argument(...)
+  parser.add_argument(...)
+
+  args = parser.parse_args()
+  epochs = ...
+  batch_size = ...
+  lr = ...
+</code></pre>
+<p>he following code instantiates two <a href="https://pytorch.org/tutorials/beginner/basics/data_tutorial.html">data loaders</a>: one loading data from the training set, the other one from the test set.</p>
+<pre><code class="language-python"># transforms
+  transform = transforms.Compose(
+      [transforms.ToTensor(),
+      transforms.Normalize((0.5,), (0.5,))])
+
+  # datasets
+  trainset = torchvision.datasets.MNIST('./data', download=True, train=True, transform=transform)
+  testset = torchvision.datasets.MNIST('./data', download=True, train=False, transform=transform)
+
+  # dataloaders
+  trainloader = torch.utils.data.DataLoader(trainset, batch_size=batch_size, shuffle=True, num_workers=2)
+  testloader = torch.utils.data.DataLoader(testset, batch_size=batch_size, shuffle=False, num_workers=2)
+</code></pre>
+<p>Instantiate a MNISTNet and a <a href="https://pytorch.org/docs/stable/generated/torch.optim.SGD.html">SGD optimizer</a> using the learning rate provided in the script arguments.
+Use the train method to train your network and the test method to compute the test accuracy. </p>
+<pre><code class="language-python">  net = ...
+  # setting net on device(GPU if available, else CPU)
+  net = net.to(device)
+  optimizer = optim.SGD(...)
+
+  train(...)
+  test_acc = test(...)
+  print(f'Test accuracy:{test_acc}')
+</code></pre>
+<p>You should now be able to run your python script using the following command in your terminal:</p>
+<pre><code>python train_mnist.py --epochs=5 --lr=1e-3 --batch_size=64
+</code></pre>
+<h2 id="monitoring-and-experiment-management">Monitoring and experiment management</h2>
+<p>Training our model on MNIST is pretty fast.
+Nonetheless, in most cases, training a network may be very long.
+For such cases, it is essential to log partial results during training to ensure that everything is behaving as expected.<br />
+A very famous tool to monitor your experiments in deep learning is Tensorboard.<br />
+The main object used by Tensorboard is a <code>SummaryWriter</code>.<br />
+Add the following import:</p>
+<pre><code class="language-python">from torch.utils.tensorboard import SummaryWriter
+</code></pre>
+<p>and modify the train method to take an additional argument named <code>SummaryWriter</code> and use its <code>add_scalar</code> method to log the training loss for every epoch.</p>
+<pre><code class="language-python">def train(net, optimizer, loader, writer, epochs=10):
+    criterion = nn.CrossEntropyLoss()
+    for epoch in range(epochs):
+        running_loss = []
+        t = tqdm(loader)
+        for x, y in t:
+            x, y = x.to(device), y.to(device)
+            outputs = net(x)
+            loss = criterion(outputs, y)
+            running_loss.append(loss.item())
+            optimizer.zero_grad()
+            loss.backward()
+            optimizer.step()
+            t.set_description(f'training loss: {mean(running_loss)}')
+        writer.add_scalar('training loss', mean(running_loss), epoch)
+</code></pre>
+<p>Instantiate a <code>SummaryWriter</code> with </p>
+<pre><code class="language-python">writer = SummaryWriter(f'runs/MNIST')
+</code></pre>
+<p>in your main and pass it as an argument to the <code>train</code> method.<br />
+Re-run your scipt and check your tensorboard logs using in a separate terminal:</p>
+<pre><code>tensorboard --logdir runs
+</code></pre>
+<p>You can use tensorboard to log many different things such as your network computational graph, images, samples from your dataset, embeddings, or even use it for experiment management.
+Add the following code to the end of your main function.</p>
+<pre><code class="language-python">  #add embeddings to tensorboard
+  perm = torch.randperm(len(trainset.data))
+  images, labels = trainset.data[perm][:256], trainset.targets[perm][:256]
+  images = images.unsqueeze(1).float().to(device)
+  with torch.no_grad():
+    embeddings = net.get_features(images)
+    writer.add_embedding(embeddings,
+                  metadata=labels,
+                  label_img=images, global_step=1)
+
+  # save networks computational graph in tensorboard
+  writer.add_graph(net, images)
+  # save a dataset sample in tensorboard
+  img_grid = torchvision.utils.make_grid(images[:64])
+  writer.add_image('mnist_images', img_grid)
+</code></pre>
+<p>Re-run your script and restart tensorboard. </p>
+<p>Visualize the network computational graph by clicking on <strong>Graph</strong>.
+You should see something similar to this:
+<img alt="" src="img/tensorboard_2.png" /></p>
+<p>Click on the <strong>inactive</strong> button and choose <strong>projector</strong> to look at the embeddings computed by your network
+<img alt="" src="img/tensorboard_3.png" />
+<img alt="" src="img/tensorboard_4.png" />
+<img alt="" src="img/tensorboard_6.png" /></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = ".",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="js/base.js" defer></script>
+        <script src="search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
