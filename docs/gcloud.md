@@ -8,7 +8,7 @@
 
 # Practical Session
 
-In this session you will train a neural network to colorize black and white images using virtual machines on [Google Cloud](https://cloud.google.com/).  
+In this session, you will train a neural network to colorize black and white images using virtual machines on [Google Cloud](https://cloud.google.com/).  
 ![](img/gcloud_b&w.png) ![](img/gcloud_color.png)  
 
 You will have to:
@@ -18,16 +18,16 @@ You will have to:
 * Send your code to your GCloud Instance
 * Run your code on the cloud virtual machine 
 * Monitor your code running on the virtual machine
-* Get you results and send it to your local machine 
+* Get your results and send them to your local machine 
 
 ## Set up your virtual machine
 To be completed
 
 ## The python script
 
-Cloud providers charge you by the hour, so cloud computing can quickly get expensive.
-A good practice consists in doing most of the code developpement on your local hardware before sending it to your cloud instances.  
-That's what you're going to do on this practical session.  
+Cloud providers charge by the hour, so cloud computing can quickly get expensive.
+A good practice consists of doing most of the code development on your local hardware before sending it to your cloud instances.  
+That is what you are going to do in this practical session.  
 You will run one small iteration of your code on your local machine to test your code and then send it to your virtual machine.
 
 We will be working with the [Landscapes dataset](https://github.com/ml5js/ml5-data-and-models/tree/master/datasets/images/landscapes) composed of 4000 images in seven categories of landscapes (city, road, mountain, lake, ocean, field, and forest).
@@ -35,15 +35,15 @@ Instead of using it to train a classifier, we will use it to train a neural netw
 
 The following [script changer le lien du script](../code/download_landscapes.sh) will download and extract the datset for you.
 
-We will use a particular category of neural netwoks to perform the colorization operation: [Unets](https://arxiv.org/abs/1505.04597).
-Originally designed for Biomedical Image Segmentation, Unets offer state of the art performances in many segmenttation task. These performances are mainly due to the skip connections used in UNets architechtures.
+We will use a particular category of neural networks to perform the colorization operation: [Unets](https://arxiv.org/abs/1505.04597).
+Initially designed for Biomedical Image Segmentation, Unets offer state-of-the-art performances in many segmentation tasks. These performances are mainly due to the skip connections used in UNets architectures.
 Indeed, Unets are a particular form of Auto-Encoders using skip connections between corresponding layers of the encoder and the decoder.
 ![](img/AU_UNet.png)  
 
 Create a new file named `unet.py` where you will define the following Unet network:  
 ![](img/Unet.png)
 
-Help yourself with the above image to implement a Unet network using the folowing template:
+Help yourself with the above image to implement a Unet network using the following template:
 
 ```python
 import torch
@@ -140,11 +140,11 @@ The
 You will now implement the training procedure.  
 
 Training a network to colorize images is a supervised regression problem. 
-Consider $x$ a grayscalded image and $y$ its corresponding colored image.
+Consider $x$ a grayscaled image and $y$ its corresponding colored image.
 Training a parametrized network $f_\theta$ to predict colorized images $ŷ$ amounts to minimizing the distance between the prediction $ŷ$ and the actual $y$.  
 That is to say minimizing $MSE(y, f_\theta(x))$.
 
-Create a new file `colorize.py` and fill the train method in the following canvas (you can inspire yourself from the one in the MNIST exemple. Be careful, however, in your criterion choice):  
+Create a new file `colorize.py` and fill the ```train``` method in the following canvas (you can inspire yourself from the one in the MNIST example. Be careful, however, in your criterion choice):  
 
 ```python
 import argparse # to parse script arguments
@@ -225,7 +225,7 @@ You now have everything to run your code on GCloud.
 Fire up your GCloud instance:
 ![](img/gcloud1.png)
 
-On a terminal connect to your instance using the following command (replace the zone and instance name with yours):
+On a terminal, connect to your instance using the following command (replace the zone and instance name with yours):
 ```
 gcloud compute ssh --zone "europe-west1-d" "your_instance_name"
 ```
@@ -244,37 +244,38 @@ Conversly, you can copy a from your virtual machine to your local machine the fo
 gcloud compute scp bsf.pth your_instance_name:Workspace/ --zone "europe-west1-d"
 ```
 
-Add the `--recurse` argument to your command if you want to copy a folder
+Add the `--recurse` argument to your command if you want to copy a folder.
 
-Copy the folder containing all you code into your virtual machine's Workspace folder.
+Copy the folder containing all your code into your virtual machine's Workspace folder.
 Also, copy the `download_landscapes.sh` file into your VM and execute it.
 
 You should now be able to run your python script and thus learn to colorize images.
 Run your script for one entire epoch to check that everything is working fine.
 
-We will now run our script for a few more epochs but before that we will create a ssh tunel between our local machine and the virtual machine.  
+We will now run our script for a few more epochs, but before that, we will create an ssh tunnel between our local machine and the virtual machine.  
 Run the following command on your local machine with the correct name for your virtual machine (use your correct zone).
 ```
 gcloud compute  ssh --ssh-flag="-L 8898:localhost:8898"  --zone "us-central1-b" "example_instance_name"
 ```
-This command connects you toiu your virtual machine and forward its port 8898 to your lochal machine's port 8898 (you can change the port value if needed).
-Thanks to that we will be able to get access to the tensorboard interface running on the virtual machine throught our local machine.
+This command connects you to your virtual machine and forwards its port 8898 to your local machine's port 8898 (you can change the port value if needed).
+Thanks to that, you will get access to the tensorboard interface running on the virtual machine through your local machine.
 
-Now on this terminal window run the following command:
+Now on this terminal window, run the following command:
 ```
 tensorboard --logdir runs --port 8898
 ```
 
 On another terminal, connect to your virtual machine and run your script with a few more epochs (like 10 for instance).
 
-On your web browser go to the following adress: http://localhost:8898/
+On your web browser, go to the following adress: http://localhost:8898/
 
 You should be able to access tensorboard.  
-Check on your network graph, you should se the U shape of your Unet.
+Check on your network graph. You should see the U shape of your Unet.
 ![](img/unet_tb.png)
 
-You can now vizualise the progression of your network while it is training in the images tab.
+You can now visualize the progression of your network while it is training in the images tab.
 ![](img/tb_images.png)
+
 ### Bonus synchronize with Rsync
 An easy way to synchronize your code with your VM is to use rsync
 
@@ -296,21 +297,20 @@ Press `ctrl+x` then `y` then `enter` to save.
 Now to synchronize a folder, find the IP of your virtual machine in the GCloud interface:
 ![](img/IP.png)
 
-To synchronise your folder on your local machine (for instance nammed `test_gcloud`) with a distant folder on the virtual machine (located for exemple in Workspace/test_gcloud):
+To synchronize your folder on your local machine (for instance, named `test_gcloud`) with a distant folder on the virtual machine (located, for example, in Workspace/test_gcloud):
 
 ```
 rsync -r  [VM_IP_ADRESS]:Workspace/test_gcloud/ test_gcloud/
 ```
 
-To synchronise a distant folder on the virtual machine with a folder on your local machine :
+To synchronize a distant folder on the virtual machine with a folder on your local machine :
 
 ```
 rsync -r  test_gcloud/ [VM_IP_ADRESS]:Workspace/test_gcloud/ 
 ```
+You can find more information on the rsync command [here (in french)](https://doc.ubuntu-fr.org/rsync)
 
 You can stop your VM using the GCloud interface or just by running the following command:
-
-You can find more information on the rsync command [here (in french)](https://doc.ubuntu-fr.org/rsync)
 ```
 sudo shutdown -h now
 ```
