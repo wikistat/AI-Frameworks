@@ -1,7 +1,7 @@
 html {
-    /* The nav header is 3.5rem high, plus 20px for the margin-top of the
+    /* The nav header is 3.5rem + 2px high, plus 20px for the margin-top of the
        main container. */
-    scroll-padding-top: calc(3.5rem + 20px);
+    scroll-padding-top: calc(3.5rem + 2px + 20px);
 }
 
 body > .container {
@@ -22,9 +22,10 @@ body > .container {
 }
 
 pre, code {
-    background: #e9ecef;
+    background: #eee;
     color: #000;
     border: 1px solid rgba(0,0,0,0.125);
+    border-radius: 0.25rem;
 }
 
 pre {
@@ -43,11 +44,11 @@ pre code {
 }
 
 a code {
-    color: #007fff;
+    color: #3399f3;
 }
 
 a:hover code {
-    color: #0059b3;
+    color: #0c73cd;
 }
 
 kbd {
@@ -75,14 +76,16 @@ footer {
 
 .admonition {
     margin-bottom: 1rem;
-    border: 1px solid rgba(0, 0, 0, 0.125);
+    border: 1px solid rgba(0,0,0,0.125);
+    border-radius: 0.25rem;
 }
 
 .admonition > .admonition-title {
     margin: 0;
     padding: 0.75rem 1rem;
-    background: rgba(0, 0, 0, 0.03);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    background: rgba(0,0,0,0.03);
+    border-bottom: 1px solid rgba(0,0,0,0.125);
+    border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;
     font-size: 1rem;
 }
 
@@ -103,30 +106,30 @@ footer {
 /* Style each kind of admonition. */
 
 .admonition.note, .admonition.note > .admonition-title {
-    border-color: #7643a8;
+    border-color: #c6e2fc;
 }
 
 .admonition.note > .admonition-title {
-    color: #fff;
-    background-color: #9954bb;
+    background: #d6ebfd;
+    color: #1b507e;
 }
 
 .admonition.warning, .admonition.warning > .admonition-title {
-    border-color: #ff4309;
+    border-color: #f3d8b8;
 }
 
 .admonition.warning > .admonition-title {
-    color: #fff;
-    background-color: #ff7518;
+    background: #f6e3cc;
+    color: #6e3d00;
 }
 
 .admonition.danger, .admonition.danger > .admonition-title {
-    border-color: #f0005e;
+    border-color: #f1b8b8;
 }
 
 .admonition.danger > .admonition-title {
-    color: #fff;
-    background-color: #ff0039;
+    background: #f5cccc;
+    color: #6b0100;
 }
 
 /*
@@ -139,9 +142,9 @@ footer {
 .bs-sidebar.affix {
     position: -webkit-sticky;
     position: sticky;
-    /* The nav header is 3.5rem high, plus 20px for the margin-top of the
+    /* The nav header is 3.5rem + 2px high, plus 20px for the margin-top of the
        main container. */
-    top: calc(3.5rem + 20px);
+    top: calc(3.5rem + 2px + 20px);
 }
 
 .bs-sidebar.card {
@@ -149,7 +152,7 @@ footer {
 }
 
 .bs-sidebar > .card {
-    background-color: #e9ecef !important;
+    background-color: #eee !important;
 }
 
 /* Toggle (vertically flip) sidebar collapse icon */
@@ -220,17 +223,12 @@ h1:hover .headerlink, h2:hover .headerlink, h3:hover .headerlink, h4:hover .head
 @media (max-width: 991.98px) {
     .navbar-collapse.show {
         overflow-y: auto;
-        max-height: calc(100vh - 3.5rem);
+        max-height: calc(100vh - 3.5rem - 2px);
     }
 }
 
-/* display submenu relative to parent*/
-.dropdown-submenu {
-    position: relative;
-}
-
 .dropdown-item.open {
-    color: #16181b;
+    color: #202020;
     background-color: #f8f9fa;
 }
 
@@ -240,12 +238,6 @@ h1:hover .headerlink, h2:hover .headerlink, h3:hover .headerlink, h4:hover .head
     border-width: 0;
 }
 
-/* display sub menu on hover*/
-.dropdown-submenu:hover>.dropdown-menu {
-    display: block;
-}
-
-/* little arrow */
 .dropdown-submenu > a::after {
     display: block;
     content: " ";
@@ -255,7 +247,7 @@ h1:hover .headerlink, h2:hover .headerlink, h3:hover .headerlink, h4:hover .head
     border-color: transparent;
     border-style: solid;
     border-width: 5px 0 5px 5px;
-    border-left-color: #999999;
+    border-left-color: #ccc;
     margin-top: 5px;
     margin-right: -10px;
 }
@@ -267,7 +259,7 @@ h1:hover .headerlink, h2:hover .headerlink, h3:hover .headerlink, h4:hover .head
 @media (min-width: 992px) {
     .dropdown-menu {
         overflow-y: auto;
-        max-height: calc(100vh - 3.5rem);
+        max-height: calc(100vh - 3.5rem - 2px);
     }
 
     .dropdown-submenu {
