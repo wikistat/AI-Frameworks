@@ -41,7 +41,7 @@ At the start of each practical session, approximately 15 minutes will be devoted
 ## Session 0  
 
 *   [Course Introduction](introduction.md) 
-*   [Github Reminder](git_intro.md)
+<!-- *   [Github Reminder](git_intro.md) -->
 
 
 ## Session 1 - 18/10/2021
@@ -50,7 +50,7 @@ At the start of each practical session, approximately 15 minutes will be devoted
    - **Text**: [Words Embedding](text2.md)
    - **Text**: [Recurrent Network](text3.md)
         
-## Session 2 - 15/11/2021
+<!-- ## Session 2 - 15/11/2021
 ###### (8h30-11h45 & 13h00-15h00)
 
    - **Introduction to Pytorch**: comming soon ...
@@ -67,6 +67,28 @@ At the start of each practical session, approximately 15 minutes will be devoted
 ###### (8h30-11h45 & 13h00-15h00)
 
    * **Recommendation Systems** [Recommender systems](rec_sys.md) 
+
+## Session 5 - 13/12/2021
+###### (8h30-11h45 & 13h00-15h00)
+   * **Explainable AI**: comming soon... -->
+
+## Session 2 - 15/11/2021
+###### (8h30-11h45 & 13h00-15h00)
+
+   - **Introduction to Pytorch**: comming soon ...
+   - **Development for Data Scientist**: comming soon ...
+   - **Development for Data Scientist**: comming soon ...
+   - **Development for Data Scientist**: comming soon ...
+
+## Session 3 - 29/11/2021
+###### (8h30-11h45 & 13h00-15h00)
+   * **Introduction to Reinforcement learning:** comming soon ...
+   * **Introduction to Reinforcement learning** : comming soon ...
+   
+## Session 4 - 08/12/2021
+###### (8h30-11h45 & 13h00-15h00)
+
+   * **Recommendation Systems** comming soon ...
 
 ## Session 5 - 13/12/2021
 ###### (8h30-11h45 & 13h00-15h00)
