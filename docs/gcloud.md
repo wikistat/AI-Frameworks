@@ -1,12 +1,13 @@
 # Development for Data Scientist: 
 ## Introduction to Google Cloud Computing
 
+## Course
 <iframe width="560" height="315" src="https://www.youtube.com/embed/FOsGsMrDJE8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 *   [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/CodeDevelopment/TP.pdf)
 <!-- *   [Practical session](https://github.com/wikistat/AI-Frameworks/blob/master/CodeDevelopment/TP.pdf) -->
 
-# Practical Session
+## Practical Session
 
 In this session, you will train a neural network to colorize black and white images using virtual machines on [Google Cloud](https://cloud.google.com/).  
 ![](img/gcloud_b&w.png) ![](img/gcloud_color.png)  
@@ -21,10 +22,9 @@ You will have to:
 * Get your results and send them to your local machine 
 
 ## Set up your virtual machine
-To be completed
+First follow the GCloud setup process described [here](gcloud_set_up.md).
 
 ## The python script
-
 Cloud providers charge by the hour, so cloud computing can quickly get expensive.
 A good practice consists of doing most of the code development on your local hardware before sending it to your cloud instances.  
 That is what you are going to do in this practical session.  
@@ -33,7 +33,16 @@ You will run one small iteration of your code on your local machine to test your
 We will be working with the [Landscapes dataset](https://github.com/ml5js/ml5-data-and-models/tree/master/datasets/images/landscapes) composed of 4000 images in seven categories of landscapes (city, road, mountain, lake, ocean, field, and forest).
 Instead of using it to train a classifier, we will use it to train a neural network to colorize black and white images.
 
-The following [script changer le lien du script](../code/download_landscapes.sh) will download and extract the datset for you.
+Create a script download_landscapes.sh with the following content and execute it to download and extract the dataset.
+```
+cd data
+wget https://github.com/ml5js/ml5-data-and-models/raw/master/datasets/images/landscapes/landscapes_small.zip
+mkdir landscapes
+unzip landscapes_small.zip -d landscapes
+rm landscapes_small.zip
+rm -r landscapes/__MACOSX
+cd ..
+```
 
 We will use a particular category of neural networks to perform the colorization operation: [Unets](https://arxiv.org/abs/1505.04597).
 Initially designed for Biomedical Image Segmentation, Unets offer state-of-the-art performances in many segmentation tasks. These performances are mainly due to the skip connections used in UNets architectures.

@@ -12,8 +12,8 @@ nav:
       - Words embedding: text2.md
       - Recurrent Network: text3.md
     - Development tools for Data Scientist: 
-      #- Virtual environments, Github Repositories and Scripts: dev.md
-      #- Introduction to GCloud: gcloud.md
+      - Python Scripts: dev.md
+      - Introduction to GCloud: gcloud.md
       - Introduction to Docker: docker.md
     #- Introduction to Reinforcement Learning:
       #- From Policy Iteration to Deep Q-learning: q_learning.md
