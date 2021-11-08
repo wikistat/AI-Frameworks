@@ -75,10 +75,9 @@ At the start of each practical session, approximately 15 minutes will be devoted
 ## Session 2 - 15/11/2021
 ###### (8h30-11h45 & 13h00-15h00)
 
-   - **Introduction to Pytorch**: coming soon ...
-   - **Development for Data Scientist**: coming soon ...
-   - **Development for Data Scientist**: coming soon ...
-   - **Development for Data Scientist**: coming soon ...
+   - **Development for Data Scientist**: [Introduction to Pytorch and Python scripts](dev.md)
+   - **Development for Data Scientist**: [Introduction to GCloud](gcloud.md)
+   - **Development for Data Scientist**: [Introduction to Docker](docker.md)
 
 ## Session 3 - 29/11/2021
 ###### (8h30-11h45 & 13h00-15h00)
