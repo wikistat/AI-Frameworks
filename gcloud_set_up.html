@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="img/favicon.ico">
-        <title>Evaluation - AI Frameworks</title>
+        <title>Set up GCoud - AI Frameworks</title>
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/font-awesome.min.css" rel="stylesheet">
         <link href="css/base.css" rel="stylesheet">
@@ -36,7 +36,7 @@
                             <li class="navitem">
                                 <a href="index.html" class="nav-link">Home</a>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Courses <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -71,7 +71,7 @@
 </li>
             
 <li>
-    <a href="gcloud_set_up.html" class="dropdown-item">Set up GCoud</a>
+    <a href="gcloud_set_up.html" class="dropdown-item active">Set up GCoud</a>
 </li>
             
 <li>
@@ -88,7 +88,7 @@
                             <li class="navitem">
                                 <a href="schedule.html" class="nav-link">Schedule</a>
                             </li>
-                            <li class="navitem active">
+                            <li class="navitem">
                                 <a href="evaluation.html" class="nav-link">Evaluation</a>
                             </li>
                             <li class="navitem">
@@ -103,12 +103,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="schedule.html" class="nav-link">
+                                <a rel="prev" href="dev.html" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" class="nav-link disabled">
+                                <a rel="next" href="gcloud.html" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -130,7 +130,7 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#evaluation" class="nav-link">Evaluation</a>
+            <li class="nav-item" data-level="1"><a href="#set-up-gcloud" class="nav-link">Set up GCloud:</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -139,58 +139,85 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="evaluation">Evaluation</h1>
-<p>The evaluation is associated to the <a href="https://defi-ia.insa-toulouse.fr/">DEFI-IA</a></p>
-<h3 id="objective">Objective</h3>
-<p>You will be evaluated on your capacity of acting like a <strong><em>Data Scientist</em></strong>, i.e. </p>
-<ul>
-<li>Handle a new dataset and explore it.</li>
-<li>Find a solution to address the defi's problem with a high score (above baseline).</li>
-<li>Explain the choosen algorithm.</li>
-<li>Write a complete pipeline to easily reproduce the results.</li>
-<li>Justify the choice of the algorithms and the environment (CPU/GPU, Cloud etc..).</li>
-<li>Share it and make your results easily reproducible (Git -  docker, conda environment.).</li>
-</ul>
-<h3 id="notations">Notations</h3>
-<ol>
-<li>
-<p>Project - (<strong>60%</strong>): a Git repository.</p>
-<ul>
-<li>The git should contain a clear markdown Readme, which describes  (<strong>33%</strong>)<ul>
-<li>Which result you achieved? In which computation time? On which engine?</li>
-<li>What do I have to install to be able to reproduce the code? </li>
-<li>Which command do I have to run to reproduce the results?</li>
-</ul>
-</li>
-<li>The code has to be easily reproducible.  (<strong>33%</strong>)<ul>
-<li>Packages required has to be well described.
- (a <strong>requirements.txt</strong> files is the best)</li>
-<li>Conda command or docker command can be furnish </li>
-</ul>
-</li>
-<li>The code should be clear and easily readable. (<strong>33%</strong>)<ul>
-<li>Final results can be run in a script and not a notebook.</li>
-<li>Only final code can be found in this script. 
-<!-- * **Deadline** :  January 29 2021. --></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p>Rapport - (<strong>40%</strong>) 10 pages maximum:</p>
-<ul>
-<li>Quality of the presentation. <strong>25%</strong></li>
-<li>In-Deep explanation of the chosen algorithm. <strong>25%</strong></li>
-<li>Choice of the tools-infrastructure used. <strong>25%</strong></li>
-<li>Results you obtained. <strong>25%</strong>
-<!-- * **Date** : January 29, 2021.  --></li>
-</ul>
-</li>
-</ol>
-<h3 id="other-details">Other details</h3>
-<ul>
-<li>Group of 4 to 5 people (DEFI IA's team).</li>
-</ul></div>
+<h1 id="set-up-gcloud">Set up GCloud:</h1>
+<p>Google sponsors this course with free GCloud credits through the Cloud Higher Education Programs.</p>
+<p>Go to <a href="https://gcp.secure.force.com/GCPEDU?cid=HGfyYSrJnwOmvOkly5FUWbeGvTTyaYsuzI%2BUJ3owt3WKC%2BSJW%2BoIZzdGozvQAzWe/">this link</a> to claim your coupon code for the credits associated with this course.<br />
+Once you have your coupon code go to <a href="https://console.cloud.google.com/education?authuser=4">this link</a> to get your credits (you will need a Google account, if needed, you can create one using your INSA mail address).
+Once you are on the GCloud homepage, start by creating a new project:  </p>
+<p><img alt="" src="img/gcloud/gcloud0.png" />
+<img alt="" src="img/gcloud/gcloud01.png" /><br />
+Once your project is created go to Compute Engine -&gt; VM instances
+<img alt="" src="img/gcloud/gcloud02.png" /> and activate Compute Engine API for your project <img alt="" src="img/gcloud/gcloud03.png" />.<br />
+You now need to add GPU capacity to your project.<br />
+Go to IAM and admin -&gt; Quotas<br />
+<img alt="" src="img/gcloud/gcloud04.png" />.<br />
+On the filter select Quota <img alt="" src="img/gcloud/gcloud05.png" /> and K80 GPUs(all regions) <img alt="" src="img/gcloud/gcloud06.png" /> and click on modify quotas <img alt="" src="img/gcloud/gcloud07.png" />.<br />
+Increase the limit to one and add a short description to your request:</p>
+<p><em>Hi,</em>
+<em>I am a student enrolled at INSA Toulouse.
+The GCloud Higher education program granted us free credits.
+These credits are associated with a course in which the practical sessions will require access to GPU machines.
+Would you please increase my GPU quota so I can participate to the practical sessions?</em></p>
+<p><em>Many thanks,</em></p>
+<p><em>You name</em></p>
+<p><img alt="" src="img/gcloud/quota.png" /><br />
+This process may take some time. Therefore, be sure sure to complete every steps at least a few days before the practical session.</p>
+<p>You will also need to install the Cloud SDK Command-line interface.
+It should already be installed on the INSA's machines.
+If you are using your personal computer, follow the corresponding installation procedure available <a href="https://cloud.google.com/sdk/docs/install">here</a>.</p>
+<p>Once the GCloud SDK is configured on your local machine, go to your GCloud interface and go to Compute engine -&gt;VM instances<br />
+<img alt="" src="img/gcloud/compute_engine.png" />  </p>
+<p>Click on the create new instance button <img alt="" src="img/gcloud/create.png" /> to create your first instance.<br />
+Be sure at this point that your quota request has been approved or you will not be able to attach a GPU to your Virtual Machine.<br />
+Now create a new instance on the same region you asked for your GPU quota.
+You may follow the following parameters settings for the practical session.
+<img alt="" src="img/gcloud/new_instance.png" /><br />
+Select the following hard drive options
+<img alt="" src="img/gcloud/disc.png" /><br />
+Finally, check the two checkboxes at the bottom of the page to allow Http/Https traffic.
+<img alt="" src="img/gcloud/pare_feu.png" />
+After a few minutes your instance should be created.
+It should appear in the VM instance panel:
+<img alt="" src="img/gcloud/instance_panel.png" /><br />
+If its status is in green, the virtual machine is started and consuming your free credit.
+Go to ssh -&gt; show ssh the gcloud command and copy the command on your terminal. <img alt="" src="img/gcloud/command.png" /><br />
+You should now be connected to your virtual machine and see the following output on your terminal:
+<img alt="" src="img/gcloud/terminal0.png" /><br />
+Type 'y' to install the nvidia drivers.
+If the drivers failed to be installed and you botain the following message:
+<img alt="" src="img/gcloud/failed.png" />
+Wait a few minute and type:</p>
+<pre><code class="language-console">~$ cd /opt/deeplearning/
+/opt/deeplearning$ ./install-driver.sh 
+</code></pre>
+<p>To verify that everything is correctly installed type the following command</p>
+<pre><code class="language-console">:/opt/deeplearning$ nvidia-smi
+</code></pre>
+<p>If you see something like </p>
+<pre><code>+-----------------------------------------------------------------------------+
+| NVIDIA-SMI 460.73.01    Driver Version: 460.73.01    CUDA Version: 11.2     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  Tesla K80           Off  | 00000000:00:04.0 Off |                    0 |
+| N/A   36C    P0    69W / 149W |      0MiB / 11441MiB |    100%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|  No running processes found                                                 |
++-----------------------------------------------------------------------------+
+</code></pre>
+<p>then your installation is complete and you can stop your virtual machine until the practical session using the GCloud web interface or typing the following command:</p>
+<pre><code class="language-console">sudo shutdown -h now
+</code></pre>
+<p>Be sur to do all this process before the practical session, it will save you many time and remenber at least to ask for your quotas as soon as possible!</p></div>
             </div>
         </div>
 

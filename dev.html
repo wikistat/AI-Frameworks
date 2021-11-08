@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="img/favicon.ico">
-        <title>Development for Data Scientist: - AI Frameworks</title>
+        <title>Python Scripts - AI Frameworks</title>
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/font-awesome.min.css" rel="stylesheet">
         <link href="css/base.css" rel="stylesheet">
@@ -36,7 +36,7 @@
                             <li class="navitem">
                                 <a href="index.html" class="nav-link">Home</a>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Courses <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -67,6 +67,18 @@
     <ul class="dropdown-menu">
             
 <li>
+    <a href="dev.html" class="dropdown-item active">Python Scripts</a>
+</li>
+            
+<li>
+    <a href="gcloud_set_up.html" class="dropdown-item">Set up GCoud</a>
+</li>
+            
+<li>
+    <a href="gcloud.html" class="dropdown-item">Introduction to GCloud</a>
+</li>
+            
+<li>
     <a href="docker.html" class="dropdown-item">Introduction to Docker</a>
 </li>
     </ul>
@@ -90,6 +102,16 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="text3.html" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="gcloud_set_up.html" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
                     </ul>
                 </div>
             </div>
@@ -110,15 +132,22 @@
             
             <li class="nav-item" data-level="1"><a href="#development-for-data-scientist" class="nav-link">Development for Data Scientist:</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#python-environment-github-repo-and-python-script" class="nav-link">(Python environment, Github Repo and Python Script)</a>
+            <li class="nav-item" data-level="2"><a href="#pytorch-and-python-script" class="nav-link">Pytorch and Python Script</a>
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#course" class="nav-link">Course</a>
+              <ul class="nav flex-column">
               </ul>
             </li>
-            
-            <li class="nav-item" data-level="1"><a href="#practical-session" class="nav-link">Practical session</a>
+            <li class="nav-item" data-level="2"><a href="#course-notebook" class="nav-link">Course notebook:</a>
               <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#practical-session" class="nav-link">Practical session</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-level="2"><a href="#the-network-class" class="nav-link">The network class:</a>
               <ul class="nav flex-column">
               </ul>
@@ -139,15 +168,18 @@
                     <div class="col-md-9" role="main">
 
 <h1 id="development-for-data-scientist">Development for Data Scientist:</h1>
-<h2 id="python-environment-github-repo-and-python-script">(Python environment, Github Repo and Python Script)</h2>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/gZLeTHQzloE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<h2 id="pytorch-and-python-script">Pytorch and Python Script</h2>
+<hr />
+<h2 id="course">Course</h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/RXmabok7Xpg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-<ul>
-<li><a href="https://github.com/wikistat/AI-Frameworks/raw/master/slides/Code_Development_Python.pdf">Slides</a></li>
-</ul>
+<!-- *   [Slides](https://github.com/wikistat/AI-Frameworks/raw/master/slides/Code_Development_Python.pdf) -->
 <!-- *   [Practical session](https://github.com/wikistat/AI-Frameworks/blob/master/CodeDevelopment/TP.pdf) -->
 
-<h1 id="practical-session">Practical session</h1>
+<h2 id="course-notebook">Course notebook:</h2>
+<p><a href="https://github.com/wikistat/AI-Frameworks/blob/master/Text/1_cleaning_vectorization.ipynb">Notebook</a><br />
+<a href="https://colab.research.google.com/github/wikistat/AI-Frameworks/blob/website/code/developpement/intro_pytorch.ipynb"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
+<h2 id="practical-session">Practical session</h2>
 <p>For this session, you will have to write a script to train a small neural network on the MNIST dataset using Pytorch.<br />
 During training, you will use tensorboard to:</p>
 <ul>

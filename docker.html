@@ -67,6 +67,18 @@
     <ul class="dropdown-menu">
             
 <li>
+    <a href="dev.html" class="dropdown-item">Python Scripts</a>
+</li>
+            
+<li>
+    <a href="gcloud_set_up.html" class="dropdown-item">Set up GCoud</a>
+</li>
+            
+<li>
+    <a href="gcloud.html" class="dropdown-item">Introduction to GCloud</a>
+</li>
+            
+<li>
     <a href="docker.html" class="dropdown-item active">Introduction to Docker</a>
 </li>
     </ul>
@@ -91,7 +103,7 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="text3.html" class="nav-link">
+                                <a rel="prev" href="gcloud.html" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
@@ -124,6 +136,14 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#course" class="nav-link">Course</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#practical-session" class="nav-link">Practical Session</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -133,17 +153,20 @@
 
 <h1 id="development-for-data-scientist">Development for Data Scientist:</h1>
 <h2 id="docker">Docker</h2>
+<h2 id="course">Course</h2>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/loMf5bFyzY4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <ul>
 <li><a href="slides/Code_Development_Docker.pdf">Slides</a></li>
-<li><a href="https://github.com/wikistat/AI-Frameworks/blob/master/CodeDevelopment/TP.pdf">Practical session</a></li>
 </ul>
-<p>In this practical session, you will now run your code trough a Docker container.<br />
-Using docker in datascience projects has two advantages:
-*   Improvinng the code and results reproducibility 
-*   Facilitating the protability<br />
-In this session we will try to package the code from the previous session, allowing to train a neural network to colorize images into a Docker image and use this image to instanciate a container on a GCloud instance to run the code.</p>
+<!-- *   [Practical session](https://github.com/wikistat/AI-Frameworks/blob/master/CodeDevelopment/TP.pdf) -->
+
+<h2 id="practical-session">Practical Session</h2>
+<p>In this practical session, you will now run your code through a Docker container.<br />
+Using docker in data science projects has two advantages:
+*   Improving the reproducibility of the results<br />
+*   Facilitating the portability and deployment
+In this session, we will try to package the code from the previous session, allowing us to train a neural network to colorize images into a Docker image and use this image to instantiate a container on a GCloud instance to run the code.</p>
 <p>We will first create the Dockerfile corresponding to our environment.  </p>
 <p>On your local machine, create a new file named <code>Dockerfile</code> containing the following code:</p>
 <pre><code class="language-python"># Base image from pytorch
@@ -154,15 +177,18 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime &amp;&amp; echo $TZ &gt; /etc
 # Additional librairies
 RUN pip install tqdm tensorboard
 </code></pre>
-<p>Take a moment to analyse this dockerfile.
+<p>Take a moment to analyze this dockerfile.
 As you can see, it is built upon an existing image from Pytorch.
-Starting from existing  images allows for fast prototyping. You may find existing images on <a href="https://hub.docker.com/">DockerHub</a>. The Pytorch image we will be using is available <a href="https://hub.docker.com/r/pytorch/pytorch">here</a></p>
+Starting from existing images allows for fast prototyping. You may find existing images on <a href="https://hub.docker.com/">DockerHub</a>. The Pytorch image we will be using is available <a href="https://hub.docker.com/r/pytorch/pytorch">here</a></p>
 <p>Fire up your GCloud instance and send your dockerfile using </p>
-<pre><code class="language-console">gcloud compute scp [your_file_path] your_instance_name:Workspace/ --zone [your_instance_zone]
+<pre><code class="language-console">gcloud compute scp [your_file_path] [your_instance_name]:Workspace/ --zone [your_instance_zone]
+</code></pre>
+<p>Connect to your instance:</p>
+<pre><code class="language-console">gcloud compute ssh --zone [your_instance_zone] [your_instance_name]
 </code></pre>
 <p>If docker is not already installed in your machine, follow <a href="https://docs.docker.com/engine/install/">this guide</a> to install it.
 You will also need the NVIDIA Container Toolkit to be installed to allow docker to communicate with the instance GPU.
-If you created your GCloud instance following the previous session's instruction it should be OK.
+If you created your GCloud instance following the previous session's instructions, it should be OK.
 To verify that it is OK you may run the following command:</p>
 <pre><code class="language-console">sudo docker run --rm --gpus all nvidia/cuda:11.0-base nvidia-smi
 </code></pre>
@@ -187,23 +213,23 @@ To verify that it is OK you may run the following command:</p>
 |  No running processes found                                                 |
 +-----------------------------------------------------------------------------+
 </code></pre>
-<p>then everything is OK. Otherwise you may need to install the NVIDIA Container Toolkit manually, following <a href="https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#docker">this guide</a>.</p>
+<p>then everything is OK. Otherwise, you may need to install the NVIDIA Container Toolkit manually, following <a href="https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#docker">this guide</a>.</p>
 <p>You may now build your first image using the following command:</p>
 <pre><code class="language-console">sudo docker build -t [your_image_name] -f [path_to_your_image]  [build_context_folder]
 </code></pre>
 <p>The image should take a few minutes to build.<br />
-Once this is done use the following command to list the available images on your GCloud instance:</p>
+Once this is done, use the following command to list the available images on your GCloud instance:</p>
 <pre><code class="language-console">sudo docker image ls
 </code></pre>
 <p>How many images can you see? What do they refer to?  </p>
-<p>Now that our images are built, we can now use them to instanciate containers.
-Since a container is an instance of an image, we can instanciate several containers using a single image.</p>
+<p>Now that our images are built, we can now use them to instantiate containers.
+Since a container is an instance of an image, we can instantiate several containers using a single image.</p>
 <p>We will run our first container using the interactive mode.</p>
 <p>Run the following command to run your fist container:</p>
 <pre><code class="language-console">docker run -it --name [your_container_name] [your_image_name]
 </code></pre>
 <p>You should now have access to an interactive terminal from your container.<br />
-On this terminal open a Python console and check that Pytorch is installed and has access to your instance GPU.</p>
+On this terminal, open a Python console and check that Pytorch is installed and has access to your instance GPU.</p>
 <pre><code class="language-python">import torch
 print(torch.cuda.is_available())
 </code></pre>
@@ -212,7 +238,7 @@ You can list all your running containers using the following command:</p>
 <pre><code class="language-console">sudo docker container ls
 </code></pre>
 <p>Your container is closed and does not appear.
-To list all the existing containers add the <code>-a</code> to the previous command.</p>
+To list all the existing containers, add the <code>-a</code> to the previous command.</p>
 <pre><code class="language-console">sudo docker container ls -a
 </code></pre>
 <p>Start your containers using:</p>
@@ -235,11 +261,12 @@ First create a folder containing the files:
 <pre><code class="language-console">docker run -it --name [container_name] -v ~/[your_folder_path]:/workspace/[folder_name] [image_name]
 </code></pre>
 <p>Go to the shared folder and run the <code>download_landscapes.sh</code> script.
-Leave the container and look at you folder in the local. What can you see?</p>
-<p>If you want to run your job using the interactive mode, you need to give access at your container to your host ressources.</p>
-<p>Start a new container using the following command to get access to the GPU and CPU ressources and run the <code>colorize.py</code> script.</p>
+Leave the container and look at your folder in the local. What can you see?</p>
+<p>If you want to run your job using the interactive mode, you need to give access at your container to your host resources.</p>
+<p>Start a new container using the following command to get access to the GPU and CPU resources and run the <code>colorize.py</code> script.</p>
 <pre><code class="language-console">docker run -it --gpus all --ipc=host --name [container_name] -v ~/[your_folder_path]:/workspace/[folder_name] [image_name]
-</code></pre></div>
+</code></pre>
+<p>Now try to send all the results and weights to your local machine and maybe to look at the tensorboard logs.</p></div>
             </div>
         </div>
 
