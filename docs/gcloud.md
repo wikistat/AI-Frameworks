@@ -231,9 +231,7 @@ if __name__=='__main__':
 
 ## Training on GCloud
 You now have everything to run your code on GCloud.  
-Fire up your GCloud instance:
-![](img/gcloud1.png)
-
+Fire up your GCloud instance.
 On a terminal, connect to your instance using the following command (replace the zone and instance name with yours):
 ```
 gcloud compute ssh --zone "europe-west1-d" "your_instance_name"
