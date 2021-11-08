@@ -13,6 +13,7 @@ nav:
       - Recurrent Network: text3.md
     - Development tools for Data Scientist: 
       - Python Scripts: dev.md
+      - Set up GCoud: gcloud_set_up.md
       - Introduction to GCloud: gcloud.md
       - Introduction to Docker: docker.md
     #- Introduction to Reinforcement Learning:
