@@ -56,12 +56,12 @@ If the drivers failed to be installed and you botain the following message:
 ![](img/gcloud/failed.png)
 Wait a few minute and type:
 ```console
-~$ cd /opt/deeplearning/
-/opt/deeplearning$ ./install-driver.sh 
+cd /opt/deeplearning/
+./install-driver.sh 
 ```
 To verify that everything is correctly installed type the following command
 ```console
-:/opt/deeplearning$ nvidia-smi
+nvidia-smi
 ```
 If you see something like 
 ```
