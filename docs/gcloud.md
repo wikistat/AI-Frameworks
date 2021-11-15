@@ -153,7 +153,7 @@ Consider $x$ a grayscaled image and $y$ its corresponding colored image.
 Training a parametrized network $f_\theta$ to predict colorized images $ŷ$ amounts to minimizing the distance between the prediction $ŷ$ and the actual $y$.  
 That is to say minimizing $MSE(y, f_\theta(x))$.
 
-Create a new file `data_utils.py`:
+Create a new file `data_utils.py` that will handle the dataset:
 ```python
 from torchvision.datasets.folder import ImageFolder, default_loader, IMG_EXTENSIONS 
 from torch.utils.data import DataLoader
