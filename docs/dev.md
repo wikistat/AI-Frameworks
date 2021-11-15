@@ -71,7 +71,7 @@ import torch.nn.functional as F
 import torch.optim as optim
 from tqdm import tqdm
 
-from models import Net
+from models import MNISTNet
 
  # setting device on GPU if available, else CPU
   device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -201,7 +201,7 @@ tensorboard --logdir runs
 ```
 
 You can use tensorboard to log many different things such as your network computational graph, images, samples from your dataset, embeddings, or even use it for experiment management.
-Add the following code to the end of your main function.
+Add the following code to the end of your main function. 
 
 ```python
   #add embeddings to tensorboard
@@ -219,6 +219,17 @@ Add the following code to the end of your main function.
   # save a dataset sample in tensorboard
   img_grid = torchvision.utils.make_grid(images[:64])
   writer.add_image('mnist_images', img_grid)
+```
+
+You may have notice the `get_feature()` method in the code above.  
+You have to add this method in the MNISTNet class:
+
+```python
+def get_features(self, x):
+        x = self.pool(F.relu(self.conv1(x)))
+        x = self.pool(F.relu(self.conv2(x)))
+        x = x.view(-1, 16 * 4 * 4)
+        return x
 ```
 
 Re-run your script and restart tensorboard. 
