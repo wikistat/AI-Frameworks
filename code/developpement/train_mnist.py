@@ -10,7 +10,7 @@ import torch.optim as optim
 from torch.utils.tensorboard import SummaryWriter
 from tqdm import tqdm
 
-from models import Net
+from models import MNISTNet
 #use it if you have module 'tensorflow._api.v2.io.gfile' has no attribute 'get_filesystem' error
 # import tensorflow as tf
 # import tensorboard as tb
@@ -75,7 +75,7 @@ if __name__=='__main__':
   trainloader = torch.utils.data.DataLoader(trainset, batch_size=batch_size, shuffle=True, num_workers=2)
   testloader = torch.utils.data.DataLoader(testset, batch_size=batch_size, shuffle=False, num_workers=2)
 
-  net = Net().to(device)
+  net = MNISTNet().to(device)
   # default `log_dir` is "runs" - we'll be more specific here
   writer = SummaryWriter(f'runs/{exp_name}')
     
