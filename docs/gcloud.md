@@ -8,7 +8,6 @@
 <!-- *   [Practical session](https://github.com/wikistat/AI-Frameworks/blob/master/CodeDevelopment/TP.pdf) -->
 
 ## Practical Session
-
 In this session, you will train a neural network to colorize black and white images using virtual machines on [Google Cloud](https://cloud.google.com/).  
 ![](img/gcloud_b&w.png) ![](img/gcloud_color.png)  
 
@@ -20,6 +19,9 @@ You will have to:
 * Run your code on the cloud virtual machine 
 * Monitor your code running on the virtual machine
 * Get your results and send them to your local machine 
+
+The solution is available here.  [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/wikistat/AI-Frameworks/blob/website/code/developpement/Development_for_Data_Scientist_solutions.ipynb)  
+Try to complete the practical session without looking at it!
 
 ## Set up your virtual machine
 First follow the GCloud setup process described [here](gcloud_set_up.md).
