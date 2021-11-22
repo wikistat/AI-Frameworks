@@ -81,13 +81,16 @@ At the start of each practical session, approximately 15 minutes will be devoted
 
 ## Session 3 - 29/11/2021
 ###### (8h30-11h45 & 13h00-15h00)
-   * **Introduction to Reinforcement learning:** coming soon ...
-   * **Introduction to Reinforcement learning** : coming soon ...
    
+   * **Git**: [Introduction to Git](git_intro.md)
+   * **Recommender Systems**: [Introduction to Recommender systems](rec_sys.md)
 ## Session 4 - 08/12/2021
 ###### (8h30-11h45 & 13h00-15h00)
 
-   * **Recommendation Systems** coming soon ...
+   * **Introduction to Reinforcement learning:** coming soon ...
+   * **Introduction to Reinforcement learning** : coming soon ...
+
+   
 
 ## Session 5 - 13/12/2021
 ###### (8h30-11h45 & 13h00-15h00)
