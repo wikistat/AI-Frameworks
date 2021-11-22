@@ -6,7 +6,7 @@ nav:
   - Home: index.md
   - Courses:
     - Course Introduction: introduction.md
-    #- Introduction to Git: git_intro.md
+    - Introduction to Git: git_intro.md
     - Text:
       - Text Cleaning and Vectorization: text1.md
       - Words embedding: text2.md
@@ -19,7 +19,7 @@ nav:
     #- Introduction to Reinforcement Learning:
       #- From Policy Iteration to Deep Q-learning: q_learning.md
       #- Policy Gradient: policy_gradient.md
-    #- Recommender systems: rec_sys.md
+    - Recommender systems: rec_sys.md
   - Schedule: schedule.md
   - Evaluation: evaluation.md
   - Github repository: https://github.com/wikistat/AI-Frameworks
