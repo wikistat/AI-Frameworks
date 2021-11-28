@@ -9,7 +9,8 @@
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/wikistat/AI-Frameworks/blob/master/RecomendationSystem/tensorflow.ipynb) -->
 
 
-
+*   Practical session
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/wikistat/AI-Frameworks/blob/website/code/recommender_systems/INSA_Reco_TP.ipynb)
 
 *   Solution
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/wikistat/AI-Frameworks/blob/website/code/recommender_systems/INSA_Reco_solution.ipynb)
