@@ -84,7 +84,7 @@ At the start of each practical session, approximately 15 minutes will be devoted
    
    * **Git**: [Introduction to Git](git_intro.md)
    * **Recommender Systems**: [Introduction to Recommender systems](rec_sys.md)
-## Session 4 - 08/12/2021
+## Session 4 - 06/12/2021
 ###### (8h30-11h45 & 13h00-15h00)
 
    * **Introduction to Reinforcement learning:** [Introduction to Reinforcement Learning](rl.md)
