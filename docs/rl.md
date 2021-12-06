@@ -24,6 +24,7 @@ Solution: [![Open In Colab](https://colab.research.google.com/assets/colab-badge
 Solution:[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/wikistat/AI-Frameworks/blob/website/code/reinforcement_learning/Taxi_solution.ipynb)
 
 *   [Deep Q-learning](https://github.com/DavidBert/AI-Frameworks/blob/website/code/reinforcement_learning/DQN.ipynb)
+
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/wikistat/AI-Frameworks/blob/website/code/reinforcement_learning/DQN.ipynb)
 Solution:[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/wikistat/AI-Frameworks/blob/website/code/reinforcement_learning/DQN_solution.ipynb)
 
