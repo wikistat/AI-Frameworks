@@ -19,5 +19,8 @@ Optional (last year course on Policy gradients methods):
 *   [Q-learning](https://github.com/DavidBert/AI-Frameworks/blob/website/code/reinforcement_learning/Taxi.ipynb)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/DavidBert/AI-Frameworks/blob/website/code/reinforcement_learning/Taxi.ipynb)
 
+*   [Deep Q-learning](https://github.com/DavidBert/AI-Frameworks/blob/website/code/reinforcement_learning/DQN.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/wikistat/AI-Frameworks/blob/website/code/reinforcement_learning/DQN.ipynb)
+
 <!-- *   [Deep Q-learning](https://github.com/DavidBert/AI-Frameworks/blob/website/code/reinforcement_learning/DQN.ipynb)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/DavidBert/AI-Frameworks/blob/website/code/reinforcement_learning/DQN.ipynb) -->
