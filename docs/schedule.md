@@ -93,4 +93,4 @@ At the start of each practical session, approximately 15 minutes will be devoted
 
 ## Session 5 - 13/12/2021
 ###### (8h30-11h45 & 13h00-15h00)
-   * **Explainable AI**: coming soon...
+   * **Explainable AI**: [Interpretability in Machine Learning](interpretability.md)
