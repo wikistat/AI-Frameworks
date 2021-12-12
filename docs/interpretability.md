@@ -6,5 +6,6 @@
 
 ## Practical session
 
-[Solution](../code/intro_pytorch.ipynb)
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/wikistat/AI-Frameworks/blob/website/code/developpement/intro_pytorch.ipynb)
+[Solution](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/wikistat/AI-Frameworks/blob/website/code/interpretability/INSA_interpretability.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/wikistat/AI-Frameworks/blob/website/code/interpretability/INSA_interpretability.ipynb)
+
