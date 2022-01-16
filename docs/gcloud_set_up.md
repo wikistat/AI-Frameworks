@@ -40,8 +40,8 @@ Be sure at this point that your quota request has been approved or you will not 
 Now create a new instance on the same region you asked for your GPU quota.
 You may follow the following parameters settings for the practical session.
 ![](img/gcloud/new_instance.png)  
-Select the following hard drive options
-![](img/gcloud/disc.png)  
+Select the following hard drive options  
+![](img/gcloud/gcloud_disk.png)  
 Finally, check the two checkboxes at the bottom of the page to allow Http/Https traffic.
 ![](img/gcloud/pare_feu.png)
 After a few minutes your instance should be created.
@@ -57,7 +57,7 @@ If the drivers failed to be installed and you obtain the following message:
 Wait a few minute and type:
 ```console
 cd /opt/deeplearning/
-./install-driver.sh 
+sudo ./install-driver.sh 
 ```
 To verify that everything is correctly installed type the following command
 ```console
