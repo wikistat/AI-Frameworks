@@ -8,11 +8,16 @@ Once you are on the GCloud homepage, start by creating a new project:
 ![](img/gcloud/gcloud0.png)
 ![](img/gcloud/gcloud01.png)  
 Once your project is created go to Compute Engine -> VM instances
-![](img/gcloud/gcloud02.png) and activate Compute Engine API for your project ![](img/gcloud/gcloud03.png).  
+![](img/gcloud/gcloud02.png)  
+and activate Compute Engine API for your project ![](img/gcloud/gcloud03.png).  
 You now need to add GPU capacity to your project.  
 Go to IAM and admin -> Quotas  
 ![](img/gcloud/gcloud04.png).  
-On the filter select Quota ![](img/gcloud/gcloud05.png) and K80 GPUs(all regions) ![](img/gcloud/gcloud06.png) and click on modify quotas ![](img/gcloud/gcloud07.png).  
+On the filter select Quota  
+![](img/gcloud/gcloud05.png) and K80 GPUs(all regions)   
+![](img/gcloud/gcloud06.png)  
+and click on modify quotas  
+![](img/gcloud/gcloud07.png).  
 Increase the limit to one and add a short description to your request:
 
 *Hi,*
@@ -43,7 +48,7 @@ You may follow the following parameters settings for the practical session.
 Select the following hard drive options  
 ![](img/gcloud/gcloud_disk.png)  
 Finally, check the two checkboxes at the bottom of the page to allow Http/Https traffic.
-![](img/gcloud/pare_feu.png)
+![](img/gcloud/pare_feu.png)  
 After a few minutes your instance should be created.
 It should appear in the VM instance panel:
 ![](img/gcloud/instance_panel.png)  
