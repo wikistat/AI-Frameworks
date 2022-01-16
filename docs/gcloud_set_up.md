@@ -54,7 +54,7 @@ You should now be connected to your virtual machine and see the following output
 Type 'y' to install the nvidia drivers.
 If the drivers failed to be installed and you obtain the following message:
 ![](img/gcloud/failed.png)
-Wait a few minute and type:
+Wait a few minutes and type:
 ```console
 cd /opt/deeplearning/
 sudo ./install-driver.sh 
