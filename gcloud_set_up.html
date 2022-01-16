@@ -163,11 +163,16 @@ Once you are on the GCloud homepage, start by creating a new project:  </p>
 <p><img alt="" src="img/gcloud/gcloud0.png" />
 <img alt="" src="img/gcloud/gcloud01.png" /><br />
 Once your project is created go to Compute Engine -&gt; VM instances
-<img alt="" src="img/gcloud/gcloud02.png" /> and activate Compute Engine API for your project <img alt="" src="img/gcloud/gcloud03.png" />.<br />
+<img alt="" src="img/gcloud/gcloud02.png" /><br />
+and activate Compute Engine API for your project <img alt="" src="img/gcloud/gcloud03.png" />.<br />
 You now need to add GPU capacity to your project.<br />
 Go to IAM and admin -&gt; Quotas<br />
 <img alt="" src="img/gcloud/gcloud04.png" />.<br />
-On the filter select Quota <img alt="" src="img/gcloud/gcloud05.png" /> and K80 GPUs(all regions) <img alt="" src="img/gcloud/gcloud06.png" /> and click on modify quotas <img alt="" src="img/gcloud/gcloud07.png" />.<br />
+On the filter select Quota<br />
+<img alt="" src="img/gcloud/gcloud05.png" /> and K80 GPUs(all regions) <br />
+<img alt="" src="img/gcloud/gcloud06.png" /><br />
+and click on modify quotas<br />
+<img alt="" src="img/gcloud/gcloud07.png" />.<br />
 Increase the limit to one and add a short description to your request:</p>
 <p><em>Hi,</em>
 <em>I am a student enrolled at INSA Toulouse.
@@ -188,10 +193,10 @@ Be sure at this point that your quota request has been approved or you will not 
 Now create a new instance on the same region you asked for your GPU quota.
 You may follow the following parameters settings for the practical session.
 <img alt="" src="img/gcloud/new_instance.png" /><br />
-Select the following hard drive options
-<img alt="" src="img/gcloud/disc.png" /><br />
+Select the following hard drive options<br />
+<img alt="" src="img/gcloud/gcloud_disk.png" /><br />
 Finally, check the two checkboxes at the bottom of the page to allow Http/Https traffic.
-<img alt="" src="img/gcloud/pare_feu.png" />
+<img alt="" src="img/gcloud/pare_feu.png" /><br />
 After a few minutes your instance should be created.
 It should appear in the VM instance panel:
 <img alt="" src="img/gcloud/instance_panel.png" /><br />
@@ -200,11 +205,11 @@ Go to ssh -&gt; show ssh the gcloud command and copy the command on your termina
 You should now be connected to your virtual machine and see the following output on your terminal:
 <img alt="" src="img/gcloud/terminal0.png" /><br />
 Type 'y' to install the nvidia drivers.
-If the drivers failed to be installed and you botain the following message:
+If the drivers failed to be installed and you obtain the following message:
 <img alt="" src="img/gcloud/failed.png" />
-Wait a few minute and type:</p>
+Wait a few minutes and type:</p>
 <pre><code class="language-console">cd /opt/deeplearning/
-./install-driver.sh 
+sudo ./install-driver.sh 
 </code></pre>
 <p>To verify that everything is correctly installed type the following command</p>
 <pre><code class="language-console">nvidia-smi
