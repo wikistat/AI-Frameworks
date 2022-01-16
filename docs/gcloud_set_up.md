@@ -52,7 +52,7 @@ Go to ssh -> show ssh the gcloud command and copy the command on your terminal. 
 You should now be connected to your virtual machine and see the following output on your terminal:
 ![](img/gcloud/terminal0.png)  
 Type 'y' to install the nvidia drivers.
-If the drivers failed to be installed and you botain the following message:
+If the drivers failed to be installed and you obtain the following message:
 ![](img/gcloud/failed.png)
 Wait a few minute and type:
 ```console
