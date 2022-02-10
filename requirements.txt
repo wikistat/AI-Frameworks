@@ -1,4 +1,4 @@
-tensorflow==2.5.2
+tensorflow==2.5.3
 pandas==1.0.5
 numpy==1.19.2
 nltk==3.6.5
