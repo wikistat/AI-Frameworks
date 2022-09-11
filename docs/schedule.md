@@ -1,7 +1,7 @@
 # Schedule
 
 * **Lectures** : 10 hours
-* **Practical Sessions** : 25 hours.
+* **Practical Sessions** : 30 hours.
 
 Fives days are dedicated to the practical sessions.  
 All the lectures associated to each sessions are available in video.  You must have seen the corresponding videos before each session.  
