@@ -29,6 +29,7 @@ ENV TZ=Europe/Paris
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 # Additional librairies
 RUN pip install gradio tensorboard
+RUN pip install markupsafe==2.0.1
 ```
 
 Take a moment to analyze this dockerfile.  
@@ -42,7 +43,7 @@ If docker is not already installed in your machine, follow [this guide](https://
 You may now build your first image using the following command:
 
 ```console
-sudo docker build -t [your_image_name] -f [path_to_your_image]  [build_context_folder]
+sudo docker build -t [your_image_name] -f [path_to_your_dockerfile] 
 ```
 
 The image should take a few minutes to build.  
@@ -105,7 +106,11 @@ First create a folder containing the files:
 
 Create a new container, this time mounting a shared volume with the following command:
 ```console
-docker run -it --name [container_name] -v ~/[your_folder_path]:/workspace/[folder_name] [image_name]
+docker run -it --name [container_name] -v ~/[absolute_path_to_your_folder_to_share]:/workspace/[folder_name_in_the_container] [image_name]
+```
+for instance:
+```
+docker run -it --name my_container_name -v ~/workspace/colorize:/workspace/colorize_container my_image_name
 ```
 
 Try to run one of your Gradio applications using the interactive mode.
@@ -122,9 +127,17 @@ Send the `Dockerfile` and the folder containing your applications to your cloud 
 On the cloud instance, build your image and run your container and your app in background mode.
 
 ```bash
-sudo docker exec -t container1 python ./devlop/colorize_app.py --weights_path ./devlop/unet.pth
+sudo docker exec -t my_container_name python ./colorize_container/colorize_app.py --weights_path ./colorize_container/unet.pth
 ```
 
+That's it! You have deployed a machine learning application on a cloud machine it is now accessible from everywhere.  
+Send the url to one of your classmate and ask him/her to test your app.
+
 This is it for this session.  
+Please remember to shutdown your cloud machine with the command:
+```
+sudo shutdown -h now
+```  
+
 Do not hesitate to play a little more with Docker.  
 For instance try to train the MNIST classifier directly in your container and to collect the tensorboard logs and the resulting weights on your local machine.
