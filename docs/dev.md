@@ -18,20 +18,25 @@ During training, you will use tensorboard to:
 
 - monitor your network across epochs
 - manage your experiments and hyper-parameters  
-- provide some vizualisations.
+- provide some visualizations.
 
-The solution is available here.  [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/wikistat/AI-Frameworks/blob/website/code/developpement/Development_for_Data_Scientist_solutions.ipynb)  
+The solution is available here.  [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/DavidBert/N7-techno-IA/blob/master/code/developpement/MNIST_solution.ipynb)  
 Try to complete the practical session without looking at it!
+
+
+## Practical session repository:
+If you haven't already done so, create an account on [Github](https://github.com/).
+Then fork [this repository](https://github.com/DavidBert/ModIA_TP1) and clone it on your computer.  
+![](img/code/fork.png)
+
 
 ## The network class:
 
-First create a file ``models.py`` that will contain our model's classe.  
-
 ![](img/Mnist_net.png)
 
-Using the figure above, fill in the following code to create the network class:  
+Using the figure above, fill in the following code, in the ``mnist_net.py`` file, to create the network class:  
 
-* The method ``__init__()`` should instantiate all the layers that the network will use.
+* The method ``__init__()`` should instantiate all the layers that will be used  by the network.
 * The method ``forward()`` describes the forward graph of your network. All the pooling operations and activation functions are realized in this method. Do not forget to change the shape of your input before the first linear layer using ``torch.flatten(...)`` or ``x.view(...)``.
 
 ```python
@@ -41,7 +46,7 @@ import torch.nn.functional as F
 
 class MNISTNet(nn.Module):
     def __init__(self):
-        super(Net, self).__init__()
+        super(MNNISTNet, self).__init__()
         self.conv1 = nn.Conv2d(...)
         self.conv2 = nn.Conv2d(...)
         self.pool = nn.MaxPool2d(...)
@@ -58,9 +63,9 @@ class MNISTNet(nn.Module):
         return x
 ```
 ## The training script
-You will now create a file ``train_mnist.py``.
+The previous file contained our model class. We will now complete the training script ``train_mnist.py``.
 This file will be used as a python script to train a neural network on the MNIST Dataset.  
-Let's first create the ``train()`` and ``test()`` methods.
+The ``train()`` and ``test()`` methods are already implemented.
 
 ```python
 import argparse
@@ -106,29 +111,58 @@ def test(model, dataloader):
             total += y.size(0)
     return test_corrects / total
 ```
-You will now implement the ``main`` method that will be called every time the python script is executed.  
-First, add a parser to add three possible arguments provided when executing the script:
+We will now implement the ``main`` method that will be called every time the python script is executed.  
+We would like to give the user the possibility to adjust some parameters of the learning process, such as:
 
 * The batch size
 * The learning rate
 * The number of training epochs
+
+To do so we will use Python [argparse module](https://docs.python.org/3/library/argparse.html). This module is used to write user-friendly command-line interfaces.  
+Adding an argument to a python script using __argaparse__ is pretty straightforward.  
+First you need to import the argparse module and instanciate a parser within the ``main`` method:
+
+```python
+import argparse
+
+if __name__=='__main__':
+  parser = argparse.ArgumentParser()
+```
+
+Then, just add a new argument to the parser precising the argument's name, its type, and optionaly a default value and an helping message.
+
+```python
+  parser.add_argument('--exp_name', type=str, default = 'MNIST', help='experiment name')
+```
+
+Finaly, you can use the arguments in the script by using an ``args`` variable.
+
+```python
+  args = parser.parse_args()
+  print(args.exp_name)
+```
+
+Complete the main method to parse the four possible arguments provided when executing the script:
+
 
 ```python
 if __name__=='__main__':
 
   parser = argparse.ArgumentParser()
   
+  parser.add_argument('--exp_name', type=str, default = 'MNIST', help='experiment name')
   parser.add_argument(...)
   parser.add_argument(...)
   parser.add_argument(...)
 
   args = parser.parse_args()
+  exp_name = args.exp_name
   epochs = ...
   batch_size = ...
   lr = ...
 ```
 
-he following code instantiates two [data loaders](https://pytorch.org/tutorials/beginner/basics/data_tutorial.html): one loading data from the training set, the other one from the test set.
+The following code instantiates two [data loaders](https://pytorch.org/tutorials/beginner/basics/data_tutorial.html): one loading data from the training set, the other one from the test set.
 
 ```python
 # transforms
@@ -145,8 +179,7 @@ he following code instantiates two [data loaders](https://pytorch.org/tutorials/
   testloader = torch.utils.data.DataLoader(testset, batch_size=batch_size, shuffle=False, num_workers=2)
 ```
 
-Instantiate a MNISTNet and a [SGD optimizer](https://pytorch.org/docs/stable/generated/torch.optim.SGD.html) using the learning rate provided in the script arguments.
-Use the train method to train your network and the test method to compute the test accuracy. 
+Instantiate a MNISTNet and a [SGD optimizer](https://pytorch.org/docs/stable/generated/torch.optim.SGD.html) using the learning rate provided in the script arguments and use the train method to train your network and the test method to compute the test accuracy. 
 
 ```python
   net = ...
@@ -157,6 +190,12 @@ Use the train method to train your network and the test method to compute the te
   train(...)
   test_acc = test(...)
   print(f'Test accuracy:{test_acc}')
+```
+
+Finally, save your model using the ``torch.save`` method.
+
+```python
+  torch.save(net.state_dict(), 'mnist_net.pth')
 ```
 
 You should now be able to run your python script using the following command in your terminal:
@@ -174,7 +213,7 @@ Add the following import:
 ```python
 from torch.utils.tensorboard import SummaryWriter
 ```
-and modify the train method to take an additional argument named ``SummaryWriter`` and use its ``add_scalar`` method to log the training loss for every epoch.
+and modify the train method to take an additional argument named ``writer``. Use its ``add_scalar`` method to log the training loss for every epoch.
 
 ```python
 def train(net, optimizer, loader, writer, epochs=10):
@@ -193,18 +232,29 @@ def train(net, optimizer, loader, writer, epochs=10):
             t.set_description(f'training loss: {mean(running_loss)}')
         writer.add_scalar('training loss', mean(running_loss), epoch)
 ```
-Instantiate a ``SummaryWriter`` with 
+In the ```main``` method instantiate a ``SummaryWriter`` with 
 ```python
 writer = SummaryWriter(f'runs/MNIST')
 ```
- in your main and pass it as an argument to the ``train`` method.  
-Re-run your scipt and check your tensorboard logs using in a separate terminal:
-```
+and add it as argument to the ``train`` method.  
+Re-run your script and check your tensorboard logs using in a separate terminal:
+```bash
 tensorboard --logdir runs
 ```
 
-You can use tensorboard to log many different things such as your network computational graph, images, samples from your dataset, embeddings, or even use it for experiment management.
-Add the following code to the end of your main function. 
+You can use tensorboard to log many different things such as your network computational graph, images, samples from your dataset, embeddings, or even use it for experiment management.  
+
+Add a new method to the MNISTNet class to get the embeddings computed after the last convolutional layer.
+
+```python
+def get_features(self, x):
+        x = self.pool(F.relu(self.conv1(x)))
+        x = self.pool(F.relu(self.conv2(x)))
+        x = x.view(-1, 16 * 4 * 4)
+        return x
+```
+
+Now these following code to the end of your ```main``` function to log the embeddings and the computational graph in tensorboard. 
 
 ```python
   #add embeddings to tensorboard
@@ -224,20 +274,8 @@ Add the following code to the end of your main function.
   writer.add_image('mnist_images', img_grid)
 ```
 
-You may have notice the `get_feature()` method in the code above.  
-You have to add this method in the MNISTNet class:
-
-```python
-def get_features(self, x):
-        x = self.pool(F.relu(self.conv1(x)))
-        x = self.pool(F.relu(self.conv2(x)))
-        x = x.view(-1, 16 * 4 * 4)
-        return x
-```
-
-Re-run your script and restart tensorboard. 
-
-Visualize the network computational graph by clicking on __Graph__.
+Re-run your script and restart tensorboard.   
+Visualize the network computational graph by clicking on __Graph__.  
 You should see something similar to this:
 ![](img/tensorboard_2.png)
 
@@ -245,5 +283,46 @@ Click on the __inactive__ button and choose __projector__ to look at the embeddi
 ![](img/tensorboard_3.png)
 ![](img/tensorboard_4.png)
 ![](img/tensorboard_6.png)
+
+## Deploying your model with Gradio
+
+We will now create a simple application to guess the numbers drawn by a user from our saved model.  
+We will use the [Gradio](https://gradio.app/) library to quickly prototype machine learning applications and demonstrations with user friendly web interfaces.
+
+Install the library:
+```bash
+pip install gradio
+```
+
+Creating an application with Gradio is done through the use of its Interface class
+The core Interface class is initialized with three required parameters:
+
+* fn: the function to wrap a user interface around
+* inputs: which component(s) to use for the input, e.g. "text" or "image" or "audio"
+* outputs: which component(s) to use for the output, e.g. "text" or "image" "label"
+
+Gradio includes more than [20 different components](https://gradio.app/docs/#components), most of which can be used as inputs or outputs.
+
+In this example, we will use a *sketchpad* (which is an instance of the [*Image* component](https://gradio.app/docs/#image))component for the input and a [*Label* component](https://gradio.app/docs/#label)  for the output.
+
+```python
+gr.Interface(fn=recognize_digit, 
+            inputs="sketchpad", 
+            outputs=gr.outputs.Label(num_top_classes=3),
+            live=True,
+            description="Draw a number on the sketchpad to see the model's prediction.",
+            ).launch(debug=True, share=True);
+```
+
+Complete the ```mnist_app.py``` file so that the weights path is provided by the user and run your application with the following command:
+```bash
+python mnist_app.py --weights_path [path_to_the weights]
+```
+
+Is your model accurate with your drawings?
+Do you know why it is less accurate than on MNIST?
+
+## Git
+Commit all the modifications you have made to the repository as well as the weights and push them to your remote repository.
 
 
