@@ -12,18 +12,18 @@
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/font-awesome.min.css" rel="stylesheet">
         <link href="css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/docco.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/docco.min.css">
 
         <script src="js/jquery-1.10.2.min.js" defer></script>
         <script src="js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script> 
     </head>
 
     <body>
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand" href="index.html">AI Frameworks</a>
+                <a class="navbar-brand" href=".">AI Frameworks</a>
                 <!-- Expander button -->
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
                     <span class="navbar-toggler-icon"></span>
@@ -157,8 +157,8 @@
 
 <h1 id="set-up-gcloud">Set up GCloud:</h1>
 <p>Google sponsors this course with free GCloud credits through the Cloud Higher Education Programs.</p>
-<p>Go to <a href="https://gcp.secure.force.com/GCPEDU?cid=HGfyYSrJnwOmvOkly5FUWbeGvTTyaYsuzI%2BUJ3owt3WKC%2BSJW%2BoIZzdGozvQAzWe/">this link</a> to claim your coupon code for the credits associated with this course.<br />
-Once you have your coupon code go to <a href="https://console.cloud.google.com/education?authuser=4">this link</a> to get your credits (you will need a Google account, if needed, you can create one using your INSA mail address).
+<p>Go to <a href="https://gcp.secure.force.com/GCPEDU?cid=RBFJpKAz0LRJ493ePedMXSBhdpFDdZGnAgAWbn6eDHi1V%2FuYWvVAOwEUlFuSGB8J/">this link</a> to claim your coupon code for the credits associated with this course.<br />
+Once you have your coupon code go to <a href="https://console.cloud.google.com/education?authuser=4">this link</a> to get your credits (you will need a Google account, if needed, you can create one using your INSA mail address).<br />
 Once you are on the GCloud homepage, start by creating a new project:  </p>
 <p><img alt="" src="img/gcloud/gcloud0.png" />
 <img alt="" src="img/gcloud/gcloud01.png" /><br />
@@ -168,10 +168,10 @@ and activate Compute Engine API for your project <img alt="" src="img/gcloud/gcl
 You now need to add GPU capacity to your project.<br />
 Go to IAM and admin -&gt; Quotas<br />
 <img alt="" src="img/gcloud/gcloud04.png" />.<br />
-On the filter select Quota<br />
-<img alt="" src="img/gcloud/gcloud05.png" /> and K80 GPUs(all regions) <br />
+On the filter type the following <code>Quota:GPUs (all regions)</code><br />
+<img alt="" src="img/gcloud/gcloud05.png" /> <br />
 <img alt="" src="img/gcloud/gcloud06.png" /><br />
-and click on modify quotas<br />
+select the resulting service and click on modify quotas<br />
 <img alt="" src="img/gcloud/gcloud07.png" />.<br />
 Increase the limit to one and add a short description to your request:</p>
 <p><em>Hi,</em>
@@ -183,15 +183,15 @@ Would you please increase my GPU quota so I can participate to the practical ses
 <p><em>You name</em></p>
 <p><img alt="" src="img/gcloud/quota.png" /><br />
 This process may take some time. Therefore, be sure sure to complete every steps at least a few days before the practical session.</p>
-<p>You will also need to install the Cloud SDK Command-line interface.
-It should already be installed on the INSA's machines.
+<p>You will also need to install the Cloud SDK Command-line interface.<br />
+It should already be installed on the INSA's machines.<br />
 If you are using your personal computer, follow the corresponding installation procedure available <a href="https://cloud.google.com/sdk/docs/install">here</a>.</p>
 <p>Once the GCloud SDK is configured on your local machine, go to your GCloud interface and go to Compute engine -&gt;VM instances<br />
 <img alt="" src="img/gcloud/compute_engine.png" />  </p>
 <p>Click on the create new instance button <img alt="" src="img/gcloud/create.png" /> to create your first instance.<br />
 Be sure at this point that your quota request has been approved or you will not be able to attach a GPU to your Virtual Machine.<br />
 Now create a new instance on the same region you asked for your GPU quota.
-You may follow the following parameters settings for the practical session.
+You may follow the following parameters settings for the practical session. (click on plate-forme du CPU et GPU and add a K80 GPU)
 <img alt="" src="img/gcloud/new_instance.png" /><br />
 Select the following hard drive options<br />
 <img alt="" src="img/gcloud/gcloud_disk.png" /><br />
@@ -200,20 +200,22 @@ Finally, check the two checkboxes at the bottom of the page to allow Http/Https 
 After a few minutes your instance should be created.
 It should appear in the VM instance panel:
 <img alt="" src="img/gcloud/instance_panel.png" /><br />
-If its status is in green, the virtual machine is started and consuming your free credit.
-Go to ssh -&gt; show ssh the gcloud command and copy the command on your terminal. <img alt="" src="img/gcloud/command.png" /><br />
+If its status is in green, the virtual machine is started and is now consuming your free credit.<br />
+Go to ssh -&gt; show ssh the gcloud command and copy the command on your terminal (you may need to run the <code>gcloud init</code> command before if it does not work at first). <img alt="" src="img/gcloud/command.png" /> <br />
 You should now be connected to your virtual machine and see the following output on your terminal:
 <img alt="" src="img/gcloud/terminal0.png" /><br />
 Type 'y' to install the nvidia drivers.
 If the drivers failed to be installed and you obtain the following message:
 <img alt="" src="img/gcloud/failed.png" />
 Wait a few minutes and type:</p>
-<pre><code class="language-console">cd /opt/deeplearning/
+<pre><code class="console">cd /opt/deeplearning/
 sudo ./install-driver.sh 
 </code></pre>
+
 <p>To verify that everything is correctly installed type the following command</p>
-<pre><code class="language-console">nvidia-smi
+<pre><code class="console">nvidia-smi
 </code></pre>
+
 <p>If you see something like </p>
 <pre><code>+-----------------------------------------------------------------------------+
 | NVIDIA-SMI 460.73.01    Driver Version: 460.73.01    CUDA Version: 11.2     |
@@ -235,10 +237,19 @@ sudo ./install-driver.sh
 |  No running processes found                                                 |
 +-----------------------------------------------------------------------------+
 </code></pre>
-<p>then your installation is complete and you can stop your virtual machine until the practical session using the GCloud web interface or typing the following command:</p>
-<pre><code class="language-console">sudo shutdown -h now
+
+<p>then your installation is almost complete.<br />
+Run the following commands to install the libraries needed for the practical session:</p>
+<pre><code>pip3 install torch torchvision --extra-index-url https://download.pytorch.org/whl/cu113
+pip install tqdm gradio tensorboard
 </code></pre>
-<p>Be sur to do all this process before the practical session, it will save you many time and remenber at least to ask for your quotas as soon as possible!</p></div>
+
+<p>Everything should be OK now.
+ You can stop your virtual machine until the practical session using the GCloud web interface or typing the following command:</p>
+<pre><code class="console">sudo shutdown -h now
+</code></pre>
+
+<p>Be sur to do all this process before the practical session, it will save you many time and remember at least to ask for your quotas as soon as possible!</p></div>
             </div>
         </div>
 
@@ -251,6 +262,9 @@ sudo ./install-driver.sh
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
         <script src="js/base.js" defer></script>
+        <script src="javascripts/mathjax.js" defer></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" defer></script>
         <script src="search/main.js" defer></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
@@ -261,13 +275,16 @@ sudo ./install-driver.sh
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
             </div>
             <div class="modal-body">
-                <p>From here you can search these documents. Enter your search terms below.</p>
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
                 <form>
                     <div class="form-group">
                         <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
                     </div>
                 </form>
-                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+                <div id="mkdocs-search-results"></div>
             </div>
             <div class="modal-footer">
             </div>
