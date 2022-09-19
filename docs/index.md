@@ -14,6 +14,8 @@ During this course you will:
 - Learn about code versioning and containers to share your code and produce reproducible results
 -   Learn to process text data for natural language processing tasks
 -   Learn to train autonomous agents to play video games using Reinforcement Learning
+- Learn how to implement a recommender system
+- Learn how to interpret your machine learning models
 
 
 **NB**: Some contents from previous years are still available on the repository (like **Spark**) but are not treated anymore. 
