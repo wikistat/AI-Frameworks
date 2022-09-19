@@ -12,18 +12,18 @@
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/font-awesome.min.css" rel="stylesheet">
         <link href="css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/docco.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/docco.min.css">
 
         <script src="js/jquery-1.10.2.min.js" defer></script>
         <script src="js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script> 
     </head>
 
     <body>
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand" href=".">AI Frameworks</a>
+                <a class="navbar-brand" href="index.html">AI Frameworks</a>
                 <!-- Expander button -->
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
                     <span class="navbar-toggler-icon"></span>
@@ -199,9 +199,9 @@
 <h2 id="pytorch-and-python-script">Pytorch and Python Script</h2>
 <hr />
 <h2 id="course">Course</h2>
-<p><iframe width="560" height="315" src="https://www.youtube.com/embed/RXmabok7Xpg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
-<!-- *   [Slides](https://github.com/wikistat/AI-Frameworks/raw/master/slides/Code_Development_Python.pdf) -->
+<iframe width="560" height="315" src="https://www.youtube.com/embed/RXmabok7Xpg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+<!-- *   [Slides](https://github.com/wikistat/AI-Frameworks/raw/master/slides/Code_Development_Python.pdf) -->
 <!-- *   [Practical session](https://github.com/wikistat/AI-Frameworks/blob/master/CodeDevelopment/TP.pdf) -->
 
 <h2 id="course-notebook">Course notebook:</h2>
@@ -228,7 +228,7 @@ Then fork <a href="https://github.com/DavidBert/ModIA_TP1">this repository</a> a
 <li>The method <code>__init__()</code> should instantiate all the layers that will be used  by the network.</li>
 <li>The method <code>forward()</code> describes the forward graph of your network. All the pooling operations and activation functions are realized in this method. Do not forget to change the shape of your input before the first linear layer using <code>torch.flatten(...)</code> or <code>x.view(...)</code>.</li>
 </ul>
-<pre><code class="python">import torch
+<pre><code class="language-python">import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
@@ -250,12 +250,11 @@ class MNISTNet(nn.Module):
         x = self.fc3(x)
         return x
 </code></pre>
-
 <h2 id="the-training-script">The training script</h2>
 <p>The previous file contained our model class. We will now complete the training script <code>train_mnist.py</code>.
 This file will be used as a python script to train a neural network on the MNIST Dataset.<br />
 The <code>train()</code> and <code>test()</code> methods are already implemented.</p>
-<pre><code class="python">import argparse
+<pre><code class="language-python">import argparse
 from statistics import mean
 
 import torch
@@ -298,7 +297,6 @@ def test(model, dataloader):
             total += y.size(0)
     return test_corrects / total
 </code></pre>
-
 <p>We will now implement the <code>main</code> method that will be called every time the python script is executed.<br />
 We would like to give the user the possibility to adjust some parameters of the learning process, such as:</p>
 <ul>
@@ -309,23 +307,20 @@ We would like to give the user the possibility to adjust some parameters of the 
 <p>To do so we will use Python <a href="https://docs.python.org/3/library/argparse.html">argparse module</a>. This module is used to write user-friendly command-line interfaces.<br />
 Adding an argument to a python script using <strong>argaparse</strong> is pretty straightforward.<br />
 First you need to import the argparse module and instanciate a parser within the <code>main</code> method:</p>
-<pre><code class="python">import argparse
+<pre><code class="language-python">import argparse
 
 if __name__=='__main__':
   parser = argparse.ArgumentParser()
 </code></pre>
-
 <p>Then, just add a new argument to the parser precising the argument's name, its type, and optionaly a default value and an helping message.</p>
-<pre><code class="python">  parser.add_argument('--exp_name', type=str, default = 'MNIST', help='experiment name')
+<pre><code class="language-python">  parser.add_argument('--exp_name', type=str, default = 'MNIST', help='experiment name')
 </code></pre>
-
 <p>Finaly, you can use the arguments in the script by using an <code>args</code> variable.</p>
-<pre><code class="python">  args = parser.parse_args()
+<pre><code class="language-python">  args = parser.parse_args()
   print(args.exp_name)
 </code></pre>
-
 <p>Complete the main method to parse the four possible arguments provided when executing the script:</p>
-<pre><code class="python">if __name__=='__main__':
+<pre><code class="language-python">if __name__=='__main__':
 
   parser = argparse.ArgumentParser()
 
@@ -340,9 +335,8 @@ if __name__=='__main__':
   batch_size = ...
   lr = ...
 </code></pre>
-
 <p>The following code instantiates two <a href="https://pytorch.org/tutorials/beginner/basics/data_tutorial.html">data loaders</a>: one loading data from the training set, the other one from the test set.</p>
-<pre><code class="python"># transforms
+<pre><code class="language-python"># transforms
   transform = transforms.Compose(
       [transforms.ToTensor(),
       transforms.Normalize((0.5,), (0.5,))])
@@ -355,9 +349,8 @@ if __name__=='__main__':
   trainloader = torch.utils.data.DataLoader(trainset, batch_size=batch_size, shuffle=True, num_workers=2)
   testloader = torch.utils.data.DataLoader(testset, batch_size=batch_size, shuffle=False, num_workers=2)
 </code></pre>
-
 <p>Instantiate a MNISTNet and a <a href="https://pytorch.org/docs/stable/generated/torch.optim.SGD.html">SGD optimizer</a> using the learning rate provided in the script arguments and use the train method to train your network and the test method to compute the test accuracy. </p>
-<pre><code class="python">  net = ...
+<pre><code class="language-python">  net = ...
   # setting net on device(GPU if available, else CPU)
   net = net.to(device)
   optimizer = optim.SGD(...)
@@ -366,15 +359,12 @@ if __name__=='__main__':
   test_acc = test(...)
   print(f'Test accuracy:{test_acc}')
 </code></pre>
-
 <p>Finally, save your model using the <code>torch.save</code> method.</p>
-<pre><code class="python">  torch.save(net.state_dict(), 'mnist_net.pth')
+<pre><code class="language-python">  torch.save(net.state_dict(), 'mnist_net.pth')
 </code></pre>
-
 <p>You should now be able to run your python script using the following command in your terminal:</p>
 <pre><code>python train_mnist.py --epochs=5 --lr=1e-3 --batch_size=64
 </code></pre>
-
 <h2 id="monitoring-and-experiment-management">Monitoring and experiment management</h2>
 <p>Training our model on MNIST is pretty fast.
 Nonetheless, in most cases, training a network may be very long.
@@ -382,11 +372,10 @@ For such cases, it is essential to log partial results during training to ensure
 A very famous tool to monitor your experiments in deep learning is Tensorboard.<br />
 The main object used by Tensorboard is a <code>SummaryWriter</code>.<br />
 Add the following import:</p>
-<pre><code class="python">from torch.utils.tensorboard import SummaryWriter
+<pre><code class="language-python">from torch.utils.tensorboard import SummaryWriter
 </code></pre>
-
 <p>and modify the train method to take an additional argument named <code>writer</code>. Use its <code>add_scalar</code> method to log the training loss for every epoch.</p>
-<pre><code class="python">def train(net, optimizer, loader, writer, epochs=10):
+<pre><code class="language-python">def train(net, optimizer, loader, writer, epochs=10):
     criterion = nn.CrossEntropyLoss()
     for epoch in range(epochs):
         running_loss = []
@@ -402,27 +391,23 @@ Add the following import:</p>
             t.set_description(f'training loss: {mean(running_loss)}')
         writer.add_scalar('training loss', mean(running_loss), epoch)
 </code></pre>
-
 <p>In the <code>main</code> method instantiate a <code>SummaryWriter</code> with </p>
-<pre><code class="python">writer = SummaryWriter(f'runs/MNIST')
+<pre><code class="language-python">writer = SummaryWriter(f'runs/MNIST')
 </code></pre>
-
 <p>and add it as argument to the <code>train</code> method.<br />
 Re-run your script and check your tensorboard logs using in a separate terminal:</p>
-<pre><code class="bash">tensorboard --logdir runs
+<pre><code class="language-bash">tensorboard --logdir runs
 </code></pre>
-
 <p>You can use tensorboard to log many different things such as your network computational graph, images, samples from your dataset, embeddings, or even use it for experiment management.  </p>
 <p>Add a new method to the MNISTNet class to get the embeddings computed after the last convolutional layer.</p>
-<pre><code class="python">def get_features(self, x):
+<pre><code class="language-python">def get_features(self, x):
         x = self.pool(F.relu(self.conv1(x)))
         x = self.pool(F.relu(self.conv2(x)))
         x = x.view(-1, 16 * 4 * 4)
         return x
 </code></pre>
-
 <p>Now these following code to the end of your <code>main</code> function to log the embeddings and the computational graph in tensorboard. </p>
-<pre><code class="python">  #add embeddings to tensorboard
+<pre><code class="language-python">  #add embeddings to tensorboard
   perm = torch.randperm(len(trainset.data))
   images, labels = trainset.data[perm][:256], trainset.targets[perm][:256]
   images = images.unsqueeze(1).float().to(device)
@@ -438,7 +423,6 @@ Re-run your script and check your tensorboard logs using in a separate terminal:
   img_grid = torchvision.utils.make_grid(images[:64])
   writer.add_image('mnist_images', img_grid)
 </code></pre>
-
 <p>Re-run your script and restart tensorboard. <br />
 Visualize the network computational graph by clicking on <strong>Graph</strong>.<br />
 You should see something similar to this:
@@ -451,9 +435,8 @@ You should see something similar to this:
 <p>We will now create a simple application to guess the numbers drawn by a user from our saved model.<br />
 We will use the <a href="https://gradio.app/">Gradio</a> library to quickly prototype machine learning applications and demonstrations with user friendly web interfaces.</p>
 <p>Install the library:</p>
-<pre><code class="bash">pip install gradio
+<pre><code class="language-bash">pip install gradio
 </code></pre>
-
 <p>Creating an application with Gradio is done through the use of its Interface class
 The core Interface class is initialized with three required parameters:</p>
 <ul>
@@ -463,18 +446,16 @@ The core Interface class is initialized with three required parameters:</p>
 </ul>
 <p>Gradio includes more than <a href="https://gradio.app/docs/#components">20 different components</a>, most of which can be used as inputs or outputs.</p>
 <p>In this example, we will use a <em>sketchpad</em> (which is an instance of the <a href="https://gradio.app/docs/#image"><em>Image</em> component</a>)component for the input and a <a href="https://gradio.app/docs/#label"><em>Label</em> component</a>  for the output.</p>
-<pre><code class="python">gr.Interface(fn=recognize_digit, 
+<pre><code class="language-python">gr.Interface(fn=recognize_digit, 
             inputs=&quot;sketchpad&quot;, 
             outputs=gr.outputs.Label(num_top_classes=3),
             live=True,
             description=&quot;Draw a number on the sketchpad to see the model's prediction.&quot;,
             ).launch(debug=True, share=True);
 </code></pre>
-
 <p>Complete the <code>mnist_app.py</code> file so that the weights path is provided by the user and run your application with the following command:</p>
-<pre><code class="bash">python mnist_app.py --weights_path [path_to_the weights]
+<pre><code class="language-bash">python mnist_app.py --weights_path [path_to_the weights]
 </code></pre>
-
 <p>Is your model accurate with your drawings?
 Do you know why it is less accurate than on MNIST?</p>
 <h2 id="git">Git</h2>
@@ -504,16 +485,13 @@ Do you know why it is less accurate than on MNIST?</p>
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
             </div>
             <div class="modal-body">
-                <p>
-                    From here you can search these documents. Enter
-                    your search terms below.
-                </p>
+                <p>From here you can search these documents. Enter your search terms below.</p>
                 <form>
                     <div class="form-group">
                         <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
                     </div>
                 </form>
-                <div id="mkdocs-search-results"></div>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
             </div>
             <div class="modal-footer">
             </div>
