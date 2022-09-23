@@ -16,20 +16,20 @@ nav:
   - Courses:
     - Course Introduction: introduction.md
     - Introduction to Git: git_intro.md
-    - Text:
-      - Text Cleaning and Vectorization: text1.md
-      - Words embedding: text2.md
-      - Recurrent Network: text3.md
+    # - Text:
+    #   - Text Cleaning and Vectorization: text1.md
+    #   - Words embedding: text2.md
+    #   - Recurrent Network: text3.md
     - Development tools for Data Scientist: 
       - Python Scripts: dev.md
       - Set up GCoud: gcloud_set_up.md
       - Introduction to GCloud: gcloud.md
       - Introduction to Docker: docker.md
-    - Introduction to Reinforcement Learning: rl.md
-      #- From Policy Iteration to Deep Q-learning: q_learning.md
-      #- Policy Gradient: policy_gradient.md
-    - Recommender systems: rec_sys.md
-    - Interpretability in Machine Learning: interpretability.md
+    # - Introduction to Reinforcement Learning: rl.md
+    #   #- From Policy Iteration to Deep Q-learning: q_learning.md
+    #   #- Policy Gradient: policy_gradient.md
+    # - Recommender systems: rec_sys.md
+    # - Interpretability in Machine Learning: interpretability.md
   - Schedule: schedule.md
   - Evaluation: evaluation.md
   - Github repository: https://github.com/wikistat/AI-Frameworks
