@@ -12,18 +12,18 @@
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/font-awesome.min.css" rel="stylesheet">
         <link href="css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/docco.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/docco.min.css">
 
         <script src="js/jquery-1.10.2.min.js" defer></script>
         <script src="js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script> 
     </head>
 
     <body>
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand" href="index.html">AI Frameworks</a>
+                <a class="navbar-brand" href=".">AI Frameworks</a>
                 <!-- Expander button -->
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
                     <span class="navbar-toggler-icon"></span>
@@ -49,24 +49,6 @@
 </li>
                                     
   <li class="dropdown-submenu">
-    <a href="#" class="dropdown-item">Text</a>
-    <ul class="dropdown-menu">
-            
-<li>
-    <a href="text1.html" class="dropdown-item">Text Cleaning and Vectorization</a>
-</li>
-            
-<li>
-    <a href="text2.html" class="dropdown-item">Words embedding</a>
-</li>
-            
-<li>
-    <a href="text3.html" class="dropdown-item">Recurrent Network</a>
-</li>
-    </ul>
-  </li>
-                                    
-  <li class="dropdown-submenu">
     <a href="#" class="dropdown-item">Development tools for Data Scientist</a>
     <ul class="dropdown-menu">
             
@@ -87,18 +69,6 @@
 </li>
     </ul>
   </li>
-                                    
-<li>
-    <a href="rl.html" class="dropdown-item">Introduction to Reinforcement Learning</a>
-</li>
-                                    
-<li>
-    <a href="rec_sys.html" class="dropdown-item">Recommender systems</a>
-</li>
-                                    
-<li>
-    <a href="interpretability.html" class="dropdown-item">Interpretability in Machine Learning</a>
-</li>
                                 </ul>
                             </li>
                             <li class="navitem">
@@ -208,12 +178,14 @@ Type 'y' to install the nvidia drivers.
 If the drivers failed to be installed and you obtain the following message:
 <img alt="" src="img/gcloud/failed.png" />
 Wait a few minutes and type:</p>
-<pre><code class="language-console">cd /opt/deeplearning/
+<pre><code class="console">cd /opt/deeplearning/
 sudo ./install-driver.sh 
 </code></pre>
+
 <p>To verify that everything is correctly installed type the following command</p>
-<pre><code class="language-console">nvidia-smi
+<pre><code class="console">nvidia-smi
 </code></pre>
+
 <p>If you see something like </p>
 <pre><code>+-----------------------------------------------------------------------------+
 | NVIDIA-SMI 460.73.01    Driver Version: 460.73.01    CUDA Version: 11.2     |
@@ -235,15 +207,18 @@ sudo ./install-driver.sh
 |  No running processes found                                                 |
 +-----------------------------------------------------------------------------+
 </code></pre>
+
 <p>then your installation is almost complete.<br />
 Run the following commands to install the libraries needed for the practical session:</p>
 <pre><code>pip3 install torch torchvision --extra-index-url https://download.pytorch.org/whl/cu113
 pip install tqdm gradio tensorboard
 </code></pre>
+
 <p>Everything should be OK now.
  You can stop your virtual machine until the practical session using the GCloud web interface or typing the following command:</p>
-<pre><code class="language-console">sudo shutdown -h now
+<pre><code class="console">sudo shutdown -h now
 </code></pre>
+
 <p>Be sur to do all this process before the practical session, it will save you many time and remember at least to ask for your quotas as soon as possible!</p></div>
             </div>
         </div>
@@ -270,13 +245,16 @@ pip install tqdm gradio tensorboard
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
             </div>
             <div class="modal-body">
-                <p>From here you can search these documents. Enter your search terms below.</p>
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
                 <form>
                     <div class="form-group">
                         <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
                     </div>
                 </form>
-                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+                <div id="mkdocs-search-results"></div>
             </div>
             <div class="modal-footer">
             </div>

@@ -8,22 +8,22 @@
         
         
         <link rel="shortcut icon" href="img/favicon.ico">
-        <title>Recurrent Network - AI Frameworks</title>
+        <title>Text Recurrent Network - AI Frameworks</title>
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/font-awesome.min.css" rel="stylesheet">
         <link href="css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/docco.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/docco.min.css">
 
         <script src="js/jquery-1.10.2.min.js" defer></script>
         <script src="js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script> 
     </head>
 
     <body>
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand" href="index.html">AI Frameworks</a>
+                <a class="navbar-brand" href=".">AI Frameworks</a>
                 <!-- Expander button -->
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
                     <span class="navbar-toggler-icon"></span>
@@ -36,7 +36,7 @@
                             <li class="navitem">
                                 <a href="index.html" class="nav-link">Home</a>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Courses <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -47,24 +47,6 @@
 <li>
     <a href="git_intro.html" class="dropdown-item">Introduction to Git</a>
 </li>
-                                    
-  <li class="dropdown-submenu">
-    <a href="#" class="dropdown-item">Text</a>
-    <ul class="dropdown-menu">
-            
-<li>
-    <a href="text1.html" class="dropdown-item">Text Cleaning and Vectorization</a>
-</li>
-            
-<li>
-    <a href="text2.html" class="dropdown-item">Words embedding</a>
-</li>
-            
-<li>
-    <a href="text3.html" class="dropdown-item active">Recurrent Network</a>
-</li>
-    </ul>
-  </li>
                                     
   <li class="dropdown-submenu">
     <a href="#" class="dropdown-item">Development tools for Data Scientist</a>
@@ -87,18 +69,6 @@
 </li>
     </ul>
   </li>
-                                    
-<li>
-    <a href="rl.html" class="dropdown-item">Introduction to Reinforcement Learning</a>
-</li>
-                                    
-<li>
-    <a href="rec_sys.html" class="dropdown-item">Recommender systems</a>
-</li>
-                                    
-<li>
-    <a href="interpretability.html" class="dropdown-item">Interpretability in Machine Learning</a>
-</li>
                                 </ul>
                             </li>
                             <li class="navitem">
@@ -118,16 +88,6 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
-                            <li class="nav-item">
-                                <a rel="prev" href="text2.html" class="nav-link">
-                                    <i class="fa fa-arrow-left"></i> Previous
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a rel="next" href="dev.html" class="nav-link">
-                                    Next <i class="fa fa-arrow-right"></i>
-                                </a>
-                            </li>
                     </ul>
                 </div>
             </div>
@@ -188,13 +148,16 @@
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
             </div>
             <div class="modal-body">
-                <p>From here you can search these documents. Enter your search terms below.</p>
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
                 <form>
                     <div class="form-group">
                         <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
                     </div>
                 </form>
-                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+                <div id="mkdocs-search-results"></div>
             </div>
             <div class="modal-footer">
             </div>

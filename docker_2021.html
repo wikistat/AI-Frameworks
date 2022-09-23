@@ -12,18 +12,18 @@
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/font-awesome.min.css" rel="stylesheet">
         <link href="css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/docco.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/docco.min.css">
 
         <script src="js/jquery-1.10.2.min.js" defer></script>
         <script src="js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script> 
     </head>
 
     <body>
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand" href="index.html">AI Frameworks</a>
+                <a class="navbar-brand" href=".">AI Frameworks</a>
                 <!-- Expander button -->
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
                     <span class="navbar-toggler-icon"></span>
@@ -49,24 +49,6 @@
 </li>
                                     
   <li class="dropdown-submenu">
-    <a href="#" class="dropdown-item">Text</a>
-    <ul class="dropdown-menu">
-            
-<li>
-    <a href="text1.html" class="dropdown-item">Text Cleaning and Vectorization</a>
-</li>
-            
-<li>
-    <a href="text2.html" class="dropdown-item">Words embedding</a>
-</li>
-            
-<li>
-    <a href="text3.html" class="dropdown-item">Recurrent Network</a>
-</li>
-    </ul>
-  </li>
-                                    
-  <li class="dropdown-submenu">
     <a href="#" class="dropdown-item">Development tools for Data Scientist</a>
     <ul class="dropdown-menu">
             
@@ -87,18 +69,6 @@
 </li>
     </ul>
   </li>
-                                    
-<li>
-    <a href="rl.html" class="dropdown-item">Introduction to Reinforcement Learning</a>
-</li>
-                                    
-<li>
-    <a href="rec_sys.html" class="dropdown-item">Recommender systems</a>
-</li>
-                                    
-<li>
-    <a href="interpretability.html" class="dropdown-item">Interpretability in Machine Learning</a>
-</li>
                                 </ul>
                             </li>
                             <li class="navitem">
@@ -160,13 +130,11 @@
 <h1 id="development-for-data-scientist">Development for Data Scientist:</h1>
 <h2 id="docker">Docker</h2>
 <h2 id="course">Course</h2>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/loMf5bFyzY4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
+<p><iframe width="560" height="315" src="https://www.youtube.com/embed/loMf5bFyzY4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
 <ul>
-<li><a href="slides/Code_Development_Docker.pdf">Slides</a></li>
+<li><a href="slides/Code_Development_Docker.pdf">Slides</a>
+<!-- *   <a href="https://github.com/wikistat/AI-Frameworks/blob/master/CodeDevelopment/TP.pdf">Practical session</a> --></li>
 </ul>
-<!-- *   [Practical session](https://github.com/wikistat/AI-Frameworks/blob/master/CodeDevelopment/TP.pdf) -->
-
 <h2 id="practical-session">Practical Session</h2>
 <p>In this practical session, you will now run your code through a Docker container.<br />
 Using docker in data science projects has two advantages:
@@ -175,7 +143,7 @@ Using docker in data science projects has two advantages:
 In this session, we will try to package the code from the previous session, allowing us to train a neural network to colorize images into a Docker image and use this image to instantiate a container on a GCloud instance to run the code.</p>
 <p>We will first create the Dockerfile corresponding to our environment.  </p>
 <p>On your local machine, create a new file named <code>Dockerfile</code> containing the following code:</p>
-<pre><code class="language-python"># Base image from pytorch
+<pre><code class="python"># Base image from pytorch
 FROM pytorch/pytorch:1.7.1-cuda11.0-cudnn8-runtime
 # Set up for your local zone an UTC information
 ENV TZ=Europe/Paris
@@ -183,23 +151,27 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime &amp;&amp; echo $TZ &gt; /etc
 # Additional librairies
 RUN pip install tqdm tensorboard
 </code></pre>
+
 <p>Take a moment to analyze this dockerfile.
 As you can see, it is built upon an existing image from Pytorch.
 Starting from existing images allows for fast prototyping. You may find existing images on <a href="https://hub.docker.com/">DockerHub</a>. The Pytorch image we will be using is available <a href="https://hub.docker.com/r/pytorch/pytorch">here</a></p>
 <p>Fire up your GCloud instance and send your dockerfile using </p>
-<pre><code class="language-console">gcloud compute scp [your_file_path] [your_instance_name]:Workspace/ --zone [your_instance_zone]
+<pre><code class="console">gcloud compute scp [your_file_path] [your_instance_name]:Workspace/ --zone [your_instance_zone]
 </code></pre>
+
 <p>Connect to your instance:</p>
-<pre><code class="language-console">gcloud compute ssh --zone [your_instance_zone] [your_instance_name]
+<pre><code class="console">gcloud compute ssh --zone [your_instance_zone] [your_instance_name]
 </code></pre>
+
 <p>If docker is not already installed in your machine, follow <a href="https://docs.docker.com/engine/install/">this guide</a> to install it.
 You will also need the NVIDIA Container Toolkit to be installed to allow docker to communicate with the instance GPU.
 If you created your GCloud instance following the previous session's instructions, it should be OK.
 To verify that it is OK you may run the following command:</p>
-<pre><code class="language-console">sudo docker run --rm --gpus all nvidia/cuda:11.0-base nvidia-smi
+<pre><code class="console">sudo docker run --rm --gpus all nvidia/cuda:11.0-base nvidia-smi
 </code></pre>
+
 <p>If the command output is in the form of :</p>
-<pre><code class="language-console">+-----------------------------------------------------------------------------+
+<pre><code class="console">+-----------------------------------------------------------------------------+
 | NVIDIA-SMI 450.51.06    Driver Version: 450.51.06    CUDA Version: 11.0     |
 |-------------------------------+----------------------+----------------------+
 | GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
@@ -219,44 +191,54 @@ To verify that it is OK you may run the following command:</p>
 |  No running processes found                                                 |
 +-----------------------------------------------------------------------------+
 </code></pre>
+
 <p>then everything is OK. Otherwise, you may need to install the NVIDIA Container Toolkit manually, following <a href="https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#docker">this guide</a>.</p>
 <p>You may now build your first image using the following command:</p>
-<pre><code class="language-console">sudo docker build -t [your_image_name] -f [path_to_your_image]  [build_context_folder]
+<pre><code class="console">sudo docker build -t [your_image_name] -f [path_to_your_image]  [build_context_folder]
 </code></pre>
+
 <p>The image should take a few minutes to build.<br />
 Once this is done, use the following command to list the available images on your GCloud instance:</p>
-<pre><code class="language-console">sudo docker image ls
+<pre><code class="console">sudo docker image ls
 </code></pre>
+
 <p>How many images can you see? What do they refer to?  </p>
 <p>Now that our images are built, we can now use them to instantiate containers.
 Since a container is an instance of an image, we can instantiate several containers using a single image.</p>
 <p>We will run our first container using the interactive mode.</p>
 <p>Run the following command to run your fist container:</p>
-<pre><code class="language-console">docker run -it --name [your_container_name] [your_image_name]
+<pre><code class="console">docker run -it --name [your_container_name] [your_image_name]
 </code></pre>
+
 <p>You should now have access to an interactive terminal from your container.<br />
 On this terminal, open a Python console and check that Pytorch is installed and has access to your instance GPU.</p>
-<pre><code class="language-python">import torch
+<pre><code class="python">import torch
 print(torch.cuda.is_available())
 </code></pre>
+
 <p>Quit the Python console and quit your container using <code>ctrl+d</code>.<br />
 You can list all your running containers using the following command:</p>
-<pre><code class="language-console">sudo docker container ls
+<pre><code class="console">sudo docker container ls
 </code></pre>
+
 <p>Your container is closed and does not appear.
 To list all the existing containers, add the <code>-a</code> to the previous command.</p>
-<pre><code class="language-console">sudo docker container ls -a
+<pre><code class="console">sudo docker container ls -a
 </code></pre>
+
 <p>Start your containers using:</p>
-<pre><code class="language-console">sudo docker start [container_id_or_name]
+<pre><code class="console">sudo docker start [container_id_or_name]
 </code></pre>
+
 <p>Check that it is now listed as started.
 You can have access to its interactive mode using the <code>attach</code> command:</p>
-<pre><code class="language-console">sudo docker attach [container_id_or_name]
+<pre><code class="console">sudo docker attach [container_id_or_name]
 </code></pre>
+
 <p>You can delete a container using the <code>rm</code> command:</p>
-<pre><code class="language-console">sudo docker rm [container_id_or_name]
+<pre><code class="console">sudo docker rm [container_id_or_name]
 </code></pre>
+
 <p>We will now see how to share data between the container and the machine it is running on.
 First create a folder containing the files:
 *   <code>download_landscapes.sh</code>
@@ -264,14 +246,16 @@ First create a folder containing the files:
 *   <code>colorize.py</code>
 *   <code>data_utils.py</code></p>
 <p>Create a new container using this time mounting a shared volume using the following command:</p>
-<pre><code class="language-console">docker run -it --name [container_name] -v ~/[your_folder_path]:/workspace/[folder_name] [image_name]
+<pre><code class="console">docker run -it --name [container_name] -v ~/[your_folder_path]:/workspace/[folder_name] [image_name]
 </code></pre>
+
 <p>Go to the shared folder and run the <code>download_landscapes.sh</code> script.
 Leave the container and look at your folder in the local. What can you see?</p>
 <p>If you want to run your job using the interactive mode, you need to give access at your container to your host resources.</p>
 <p>Start a new container using the following command to get access to the GPU and CPU resources and run the <code>colorize.py</code> script.</p>
-<pre><code class="language-console">docker run -it --gpus all --ipc=host --name [container_name] -v ~/[your_folder_path]:/workspace/[folder_name] [image_name]
+<pre><code class="console">docker run -it --gpus all --ipc=host --name [container_name] -v ~/[your_folder_path]:/workspace/[folder_name] [image_name]
 </code></pre>
+
 <p>Now try to send all the results and weights to your local machine and maybe to look at the tensorboard logs.</p></div>
             </div>
         </div>
@@ -298,13 +282,16 @@ Leave the container and look at your folder in the local. What can you see?</p>
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
             </div>
             <div class="modal-body">
-                <p>From here you can search these documents. Enter your search terms below.</p>
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
                 <form>
                     <div class="form-group">
                         <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
                     </div>
                 </form>
-                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+                <div id="mkdocs-search-results"></div>
             </div>
             <div class="modal-footer">
             </div>
