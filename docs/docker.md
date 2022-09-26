@@ -43,7 +43,7 @@ If docker is not already installed in your machine, follow [this guide](https://
 You may now build your first image using the following command:
 
 ```console
-sudo docker build -t [your_image_name] -f [path_to_your_dockerfile] 
+sudo docker build -t [your_image_name]  [path_to_your_dockerfile] 
 ```
 
 The image should take a few minutes to build.  
