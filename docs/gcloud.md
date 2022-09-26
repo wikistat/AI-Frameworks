@@ -20,8 +20,8 @@ You will have to:
 * Monitor your code running on the virtual machine
 * Get your results and send them to your local machine 
 
-The solution is available here.  [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/DavidBert/N7-techno-IA/blob/master/code/developpement/colorize_solution.ipynb)  
-Try to complete the practical session without looking at it!
+<!-- The solution is available here.  [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/DavidBert/N7-techno-IA/blob/master/code/developpement/colorize_solution.ipynb)  
+Try to complete the practical session without looking at it! -->
 
 ## Practical session repository:
 If you haven't already done so, fork [this repository](https://github.com/DavidBert/ModIA_TP1) and clone it on your computer.  
