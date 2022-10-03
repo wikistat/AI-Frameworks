@@ -12,18 +12,18 @@
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/font-awesome.min.css" rel="stylesheet">
         <link href="css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/docco.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/docco.min.css">
 
         <script src="js/jquery-1.10.2.min.js" defer></script>
         <script src="js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script> 
     </head>
 
     <body>
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand" href="index.html">AI Frameworks</a>
+                <a class="navbar-brand" href=".">AI Frameworks</a>
                 <!-- Expander button -->
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
                     <span class="navbar-toggler-icon"></span>
@@ -69,6 +69,10 @@
 </li>
     </ul>
   </li>
+                                    
+<li>
+    <a href="rl.html" class="dropdown-item">Introduction to Reinforcement Learning</a>
+</li>
                                 </ul>
                             </li>
                             <li class="navitem">
@@ -167,6 +171,7 @@
 <iframe width="560" height="315" src="https://www.youtube.com/embed/GzYbwCzJ2Bg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 *   [Slides](https://github.com/wikistat/AI-Frameworks/blob/master/CodeDevelopment/TP.pdf) -->
+
 <!-- *   [Practical session](https://github.com/wikistat/AI-Frameworks/blob/master/CodeDevelopment/TP.pdf) -->
 
 <h2 id="practical-session">Practical Session</h2>
@@ -192,8 +197,9 @@ Try to complete the practical session without looking at it! -->
 Instead of using it to train a classifier, we will use it to train a neural network to colorize black and white images.<br />
 <img alt="" src="img/gcloud_b%26w.png" /> <img alt="" src="img/gcloud_color.png" /><br />
 Run the <code>download_landscapes.sh</code> script to download and extract the dataset.</p>
-<pre><code class="language-bash">./download_landscapes.sh
+<pre><code class="bash">./download_landscapes.sh
 </code></pre>
+
 <p>The file <code>data_utils.py</code> contains some useful functions to load the dataset.</p>
 <h2 id="development-in-cloud-computing-environments">Development in cloud computing environments</h2>
 <p>Cloud providers charge by the hour, so cloud computing can quickly get expensive.
@@ -208,7 +214,7 @@ Indeed, Unets are a particular form of Auto-Encoders using skip connections betw
 <p>The network architecture is defined in the <code>unet.py</code> file and need to be completed.  <br />
 <img alt="" src="img/Unet.png" /></p>
 <p>Help yourself with the above image to implement a Unet network using the template located in the <code>unet.py</code> file:</p>
-<pre><code class="language-python">import torch
+<pre><code class="python">import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
@@ -291,9 +297,11 @@ if __name__=='__main__':
     print('Shapes OK')
 
 </code></pre>
+
 <p>Check that your network is producing correct outputs by running your file with:</p>
 <pre><code>python unet.py
 </code></pre>
+
 <h2 id="training-script">Training script</h2>
 <p>You will now implement the training procedure.  </p>
 <p>Training a network to colorize images is a supervised regression problem.<br />
@@ -301,7 +309,7 @@ Consider <span class="arithmatex">\(x\)</span> a grayscaled image and <span clas
 Training a parametrized network <span class="arithmatex">\(f_\theta\)</span> to predict colorized images <span class="arithmatex">\(ŷ\)</span> amounts to minimizing the distance between the prediction <span class="arithmatex">\(ŷ\)</span> and the actual <span class="arithmatex">\(y\)</span>.<br />
 That is to say minimizing <span class="arithmatex">\(MSE(y, f_\theta(x))\)</span>.</p>
 <p>Fill the <code>colorize.py</code> file to train a UNet to colorize images (you can inspire yourself from the one in the MNIST example. However, be careful in your criterion choice):  </p>
-<pre><code class="language-python">import argparse # to parse script arguments
+<pre><code class="python">import argparse # to parse script arguments
 from statistics import mean # to compute the mean of a list
 from tqdm import tqdm #used to generate progress bar during training
 
@@ -390,6 +398,7 @@ if __name__=='__main__':
     # Save model weights
     torch.save(unet.state_dict(), 'unet.pth')
 </code></pre>
+
 <p>Try to run your code on your local machine for one or two minibatches to check that everything is working.</p>
 <h2 id="training-on-gcloud">Training on GCloud</h2>
 <p>You now have everything to run your code on GCloud.<br />
@@ -397,15 +406,19 @@ Fire up your GCloud instance.
 On a terminal, connect to your instance using the following command (replace the zone and instance name with yours):</p>
 <pre><code>gcloud compute ssh --zone &quot;europe-west1-d&quot; &quot;your_instance_name&quot;
 </code></pre>
+
 <p>Create a folder <code>Workspace</code> on your virtual machine:</p>
 <pre><code>mkdir Workspace
 </code></pre>
+
 <p>You can copy a file from your local machine to the virtual machine using the following command on your local terminal:</p>
 <pre><code>gcloud compute scp [your_file_path] your_instance_name:Workspace/ --zone &quot;europe-west1-d&quot;
 </code></pre>
+
 <p>Conversly, you can copy a from your virtual machine to your local machine the following command on your local terminal:</p>
 <pre><code>gcloud compute scp bsf.pth your_instance_name:Workspace/ --zone &quot;europe-west1-d&quot;
 </code></pre>
+
 <p>Add the <code>--recurse</code> argument to your command if you want to copy a folder.</p>
 <p>Copy the folder containing all your code into your virtual machine's Workspace folder.
 Also, copy the <code>download_landscapes.sh</code> file into your VM and execute it.</p>
@@ -415,11 +428,13 @@ Run your script for one entire epoch to check that everything is working fine.</
 Run the following command on your local machine with the correct name for your virtual machine (use your correct zone).</p>
 <pre><code>gcloud compute  ssh --ssh-flag=&quot;-L 8898:localhost:8898&quot;  --zone &quot;us-central1-b&quot; &quot;example_instance_name&quot;
 </code></pre>
+
 <p>This command connects you to your virtual machine and forwards its port 8898 to your local machine's port 8898 (you can change the port value if needed).
 Thanks to that, you will get access to the tensorboard interface running on the virtual machine through your local machine.</p>
 <p>Now on this terminal window, run the following command:</p>
 <pre><code>tensorboard --logdir runs --port 8898
 </code></pre>
+
 <p>On another terminal, connect to your virtual machine and run your script with a few more epochs (like 10 for instance).</p>
 <p>On your web browser, go to the following adress: http://localhost:8898/</p>
 <p>You should be able to access tensorboard.<br />
@@ -431,8 +446,9 @@ Check on your network graph. You should see the U shape of your Unet.
 We will use them to create the web app.</p>
 <h2 id="web-app-with-gradio">Web app with Gradio</h2>
 <p>Complete the <code>colorize_app.py</code> file to create a web app that colorizes black and white images and run your application with the following command:  </p>
-<pre><code class="language-bash">python colorize_app.py --weights_path [path_to_the weights]
+<pre><code class="bash">python colorize_app.py --weights_path [path_to_the weights]
 </code></pre>
+
 <p>You can test your app with random balck and white images from the net. For exemple one of <a href="https://www.google.com/search?q=black+and+white+landscape&amp;client=firefox-b-d&amp;sxsrf=ALiCzsaXksCw7fTscNIIIPlJKrwyMkGK_w:1654093215988&amp;source=lnms&amp;tbm=isch&amp;sa=X&amp;ved=2ahUKEwi-ocG0uYz4AhX7gc4BHU5HCh8Q_AUoAXoECAEQAw&amp;biw=1408&amp;bih=624&amp;dpr=1.36">these</a>.</p>
 <p>Do you have any idea why the colors are so dull?</p>
 <h3 id="bonus-synchronize-with-rsync">Bonus synchronize with Rsync</h3>
@@ -440,11 +456,13 @@ We will use them to create the web app.</p>
 <p>Install rsync <strong>on your virtual machine</strong>:</p>
 <pre><code>sudo apt-get install rsync
 </code></pre>
+
 <p>Add the public key you’re going to use to connect to the VM  to the VM’s ~/.ssh/authorized_keys</p>
 <p>On the virtual machine:</p>
 <pre><code>touch ~/.ssh/authorized_keys
 nano ~/.ssh/authorized_keys
 </code></pre>
+
 <p>Copy the content of your public key (It is usually located in ~/.ssh/id_rsa.pub on your local machine) in the opened file.
 Press <code>ctrl+x</code> then <code>y</code> then <code>enter</code> to save.</p>
 <p>Now to synchronize a folder, find the IP of your virtual machine in the GCloud interface:
@@ -452,9 +470,11 @@ Press <code>ctrl+x</code> then <code>y</code> then <code>enter</code> to save.</
 <p>To synchronize your folder on your local machine (for instance, named <code>test_gcloud</code>) with a distant folder on the virtual machine (located, for example, in Workspace/test_gcloud):</p>
 <pre><code>rsync -r  [VM_IP_ADRESS]:Workspace/test_gcloud/ test_gcloud/
 </code></pre>
+
 <p>To synchronize a distant folder on the virtual machine with a folder on your local machine :</p>
 <pre><code>rsync -r  test_gcloud/ [VM_IP_ADRESS]:Workspace/test_gcloud/ 
 </code></pre>
+
 <p>You can find more information on the rsync command <a href="https://doc.ubuntu-fr.org/rsync">here (in french)</a></p>
 <p>You can stop your VM using the GCloud interface or just by running the following command:</p>
 <pre><code>sudo shutdown -h now
@@ -484,13 +504,16 @@ Press <code>ctrl+x</code> then <code>y</code> then <code>enter</code> to save.</
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
             </div>
             <div class="modal-body">
-                <p>From here you can search these documents. Enter your search terms below.</p>
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
                 <form>
                     <div class="form-group">
                         <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
                     </div>
                 </form>
-                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+                <div id="mkdocs-search-results"></div>
             </div>
             <div class="modal-footer">
             </div>
