@@ -10,7 +10,7 @@
 *   [Slides Policy gradients](https://github.com/wikistat/AI-Frameworks/blob/master/slides/Introduction_DRL_PG.pdf)
 
  -->
-*   [Slides Intro](https://drive.google.com/file/d/1ayuwg9HrAoaIX3RF9B3lDCTSfmVikmOj/view?usp=sharing)
+*   [Slides](https://drive.google.com/file/d/1ayuwg9HrAoaIX3RF9B3lDCTSfmVikmOj/view?usp=sharing)
 
 **Practical sessions:**
 
