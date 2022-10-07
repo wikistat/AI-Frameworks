@@ -1,42 +1,55 @@
 # Evaluation
 
-The evaluation is associated to the [DEFI-IA](https://defi-ia.insa-toulouse.fr/)
-
-### Objective
+The evaluation is associated to the [DEFI-IA](http://www.kaggle.com/competitions/defi-ia-2023)  
+(Introduction video [link](https://cloud.irit.fr/index.php/s/PFOyTUqe2TrbIAf))
+### Objectives
     
 You will be evaluated on your capacity of acting like a ***Data Scientist***, i.e. 
 
-* Handle a new dataset and explore it.
-* Find a solution to address the defi's problem with a high score (above baseline).
-* Explain the choosen algorithm.
-* Write a complete pipeline to easily reproduce the results.
-* Justify the choice of the algorithms and the environment (CPU/GPU, Cloud etc..).
-* Share it and make your results easily reproducible (Git -  docker, conda environment.).
+* Collect the data.
+* Doing some exploratory analysis.
+* Create new features.
+* Write a complete pipeline to train and test your models.
+* Justify your modelisation choices.
+* Interpret your results.
+* Work in group (Git).
+* Share it and make your results easily reproducible (Docker, Gradio).
 
-### Notations
+### Evaluation criteria
 
-1. Project - (**60%**): a Git repository.
-    * The git should contain a clear markdown Readme, which describes  (**33%**)
-        * Which result you achieved? In which computation time? On which engine?
-        * What do I have to install to be able to reproduce the code? 
-        * Which command do I have to run to reproduce the results?
-    * The code has to be easily reproducible.  (**33%**)
-        * Packages required has to be well described.
-         (a **requirements.txt** files is the best)
-        * Conda command or docker command can be furnish 
-    * The code should be clear and easily readable. (**33%**)
-        * Final results can be run in a script and not a notebook.
-        * Only final code can be found in this script. 
+You are expected to produce a code that is easily readable and reproducible.  
+Your code should at leat contain the three following files (but you are ecouraged to add more to make it more readable):  
+    * `train.py` : the training script  
+    * `app.py` : code to launch a gradio application to test your model (see [Gradio](https://gradio.app/))  
+    * `analysis.ipynb` : a notebook containing your exploratory analysis and interpretability results on your model.
+    * `Dockerfile` : a Dockerfile to build a docker image of your application (see [Docker](https://www.docker.com/))
+
+You will be evaluated on the following criteria:
+
+1. Project - (**70%**):  
+You must provide a git repository with a complete history of your commits.  
+Your capacity to work in group will be evaluated, your commit history must contain commits from several users at different dates.  
+You must provide a Dockerfile to build a docker image that can be used to run your code (training and the Gradio application).  
+The git should contain a clear markdown Readme, which describes:  
+    *   the result you achieved  
+    *   the commands to run for training your model or launching the gradio application (from a docker container)  
+        
+The code should be clear and easily readable. 
+No notebooks exept for the exploratory analysis.
+        * 
     <!-- * **Deadline** :  January 29 2021. -->
     
-2. Rapport - (**40%**) 10 pages maximum:
-    * Quality of the presentation. **25%**
-    * In-Deep explanation of the chosen algorithm. **25%**
-    * Choice of the tools-infrastructure used. **25%**
-    * Results you obtained. **25%**
+2. Oral presentation - (**30%**)  
+15 minutes presentation + 10 minutes questions.  
+You will be evaluated on the following criteria:
+    * Quality of the presentation. 
+    * Explanations of the chosen features and algorithm. 
+    * Demonstration of your application. 
+    * Some insights on your model biais and interpretability. 
     <!-- * **Date** : January 29, 2021.  -->
 
 ### Other details
 
- * Group of 4 to 5 people (DEFI IA's team).
+ * Group of 4 people (DEFI IA's team).
+
  
