@@ -21,7 +21,7 @@ You are expected to produce a code that is easily readable and reproducible.
 Your code should at leat contain the three following files (but you are ecouraged to add more to make it more readable):  
     * `train.py` : the training script  
     * `app.py` : code to launch a gradio application to test your model (see [Gradio](https://gradio.app/))  
-    * `analysis.ipynb` : a notebook containing your exploratory analysis and interpretability results on your model.
+    * `analysis.ipynb` : a notebook containing your exploratory analysis and interpretability results on your model.  
     * `Dockerfile` : a Dockerfile to build a docker image of your application (see [Docker](https://www.docker.com/))
 
 You will be evaluated on the following criteria:
