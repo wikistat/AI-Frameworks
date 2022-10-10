@@ -15,13 +15,13 @@
 **Practical sessions:**
 
 *   [![Policy iteration and Value Iteration](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/DavidBert/N7-techno-IA/blob/master/code/reinforcement_learning/frozen_lake.ipynb)
-,  [![[Solution]](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/DavidBert/N7-techno-IA/blob/master/code/reinforcement_learning/frozen_lake_solution.ipynb)
+,  solution:[![[Solution]](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/DavidBert/N7-techno-IA/blob/master/code/reinforcement_learning/frozen_lake_solution.ipynb)
 
 
 *   [![Q-learning](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/DavidBert/N7-techno-IA/blob/master/code/reinforcement_learning/Taxi.ipynb)
-, [![[Solution]](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/DavidBert/N7-techno-IA/blob/master/code/reinforcement_learning/Taxi_solution.ipynb)
+, solution:[![[Solution]](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/DavidBert/N7-techno-IA/blob/master/code/reinforcement_learning/Taxi_solution.ipynb)
 
 
 *   [![Deep Q-learning](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/DavidBert/N7-techno-IA/blob/master/code/reinforcement_learning/DQN.ipynb)
-, [![[Solution]](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/DavidBert/N7-techno-IA/blob/master/code/reinforcement_learning/DQN_solution.ipynb)
+, solution:[![[Solution]](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/DavidBert/N7-techno-IA/blob/master/code/reinforcement_learning/DQN_solution.ipynb)
 
