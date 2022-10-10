@@ -4,11 +4,11 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="None">
+        
         
         
         <link rel="shortcut icon" href="img/favicon.ico">
-        <title>AI Frameworks</title>
+        <title>Reinforcement learning quizz - AI Frameworks</title>
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/font-awesome.min.css" rel="stylesheet">
         <link href="css/base.css" rel="stylesheet">
@@ -20,7 +20,7 @@
         <script>hljs.initHighlightingOnLoad();</script> 
     </head>
 
-    <body class="homepage">
+    <body>
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
                 <a class="navbar-brand" href="index.html">AI Frameworks</a>
@@ -33,10 +33,10 @@
                 <div id="navbar-collapse" class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
-                            <li class="navitem active">
+                            <li class="navitem">
                                 <a href="index.html" class="nav-link">Home</a>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Courses <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -79,7 +79,7 @@
 </li>
             
 <li>
-    <a href="rl_quiz.html" class="dropdown-item">Reinforcement learning quizz</a>
+    <a href="rl_quiz.html" class="dropdown-item active">Reinforcement learning quizz</a>
 </li>
     </ul>
   </li>
@@ -103,12 +103,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" class="nav-link disabled">
+                                <a rel="prev" href="rl.html" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="introduction.html" class="nav-link">
+                                <a rel="next" href="schedule.html" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -130,9 +130,9 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#artificial-intelligence-frameworks" class="nav-link">Artificial Intelligence Frameworks</a>
+            <li class="nav-item" data-level="1"><a href="#reinforcement-learning-quizz" class="nav-link">Reinforcement Learning Quizz</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#knowledge-requirements" class="nav-link">Knowledge requirements</a>
+            <li class="nav-item" data-level="2"><a href="#questions-15-mins" class="nav-link">Questions (15 mins)</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -143,32 +143,20 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<p><a href="https://www.insa-toulouse.fr/fr/index.html"><img alt="INSA" src="img/logo-insa.jpg" /></a>
-<a href="https://www.math.univ-toulouse.fr/"><img src="img/IMT.jpg" alt="drawing" height="120"/></a>
-<a href="https://github.com/wikistat"><img src="img/wikistat.jpg" alt="drawing" height="50"/></a>
-<a href="http://www.math.insa-toulouse.fr/fr/enseignement.html"><code>Data Science</code></a> </p>
-<h1 id="artificial-intelligence-frameworks">Artificial Intelligence Frameworks</h1>
-<p>This course is the continuation of the <a href="https://github.com/wikistat/Apprentissage">Machine Learning</a> and <a href="https://github.com/wikistat/High-Dimensional-Deep-Learning">High Dimensional &amp; Deep Learning</a> courses.<br />
-While these courses focused on machine learning and deep learning theory and methods, this course aims to provide you with the tools to apply these methods in concrete situations.  </p>
-<p>During this course you will:  </p>
-<ul>
-<li>Learn to use cloud computing to train your models efficiently and monitor their trainings</li>
-<li>Learn about code versioning and containers to share your code and produce reproducible results</li>
-<li>Learn to process text data for natural language processing tasks</li>
-<li>Learn to train autonomous agents to play video games using Reinforcement Learning</li>
-<li>Learn how to implement a recommender system</li>
-<li>Learn how to interpret your machine learning models</li>
-</ul>
-<p><strong>NB</strong>: Some contents from previous years are still available on the repository (like <strong>Spark</strong>) but are not treated anymore. </p>
-<h2 id="knowledge-requirements">Knowledge requirements</h2>
-<!-- - [R Tutorial](https://github.com/wikistat/Intro-R) -->
-<ul>
-<li><a href="https://github.com/wikistat/Intro-Python">Python Tutorial</a></li>
-<li><a href="https://github.com/wikistat/StatElem">Elementary statistic tools</a></li>
-<li><a href="https://github.com/wikistat/Exploration">Data Exploration and Clustering</a>. </li>
-<li><a href="https://github.com/wikistat/Apprentissage">Machine Learning</a></li>
-<li><a href="https://github.com/wikistat/High-Dimensional-Deep-Learning">High Dimensional &amp; Deep Learning</a></li>
-</ul></div>
+<h1 id="reinforcement-learning-quizz">Reinforcement Learning Quizz</h1>
+<h2 id="questions-15-mins">Questions (15 mins)</h2>
+<ol>
+<li>What is the difference between supervised learning and reinforcement learning?</li>
+<li>What are the four elements of a Markov Decision Process? (<span class="arithmatex">\(S\)</span>, <span class="arithmatex">\(A\)</span>, <span class="arithmatex">\(P\)</span>, <span class="arithmatex">\(R\)</span>)</li>
+<li>What is a policy?</li>
+<li>What is the return <span class="arithmatex">\(G_t\)</span>?</li>
+<li>What is the discount factor <span class="arithmatex">\(\gamma\)</span>? What is the intuition behind it?</li>
+<li>What does the value function <span class="arithmatex">\(V(s)\)</span> represent?</li>
+<li>What is action-value function <span class="arithmatex">\(Q(s,a)\)</span>?</li>
+<li>What is the difference between Q-learning and DQN?</li>
+<li>What is the target network un DQN?</li>
+<li>What's a replay buffer?</li>
+</ol></div>
             </div>
         </div>
 
@@ -249,8 +237,3 @@ While these courses focused on machine learning and deep learning theory and met
 
     </body>
 </html>
-
-<!--
-MkDocs version : 1.3.0
-Build Date UTC : 2022-10-10 07:20:44.854280+00:00
--->
