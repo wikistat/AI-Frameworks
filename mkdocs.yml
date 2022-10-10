@@ -25,8 +25,10 @@ nav:
       - Set up GCoud: gcloud_set_up.md
       - Introduction to GCloud: gcloud.md
       - Introduction to Docker: docker.md
-    - Introduction to Reinforcement Learning: rl.md
-    #   #- From Policy Iteration to Deep Q-learning: q_learning.md
+    - Reinforcement Learning:
+      - Introduction to Reinforcement Learning: rl.md
+      - Reinforcement learning quizz: rl_quiz.md
+          #   #- From Policy Iteration to Deep Q-learning: q_learning.md
     #   #- Policy Gradient: policy_gradient.md
     # - Recommender systems: rec_sys.md
     # - Interpretability in Machine Learning: interpretability.md
