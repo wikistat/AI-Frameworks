@@ -28,15 +28,16 @@ At the start of each practical session, approximately 15 minutes will be devoted
 ## Session 3 - 24/10/2022
 ###### (9h30-12h15 & 14h00-16h45)
    
-   * **Introduction to Natural language processing**: (comming soon)
+   * **Explainable AI**: [Interpretability in Machine Learning](interpretability.md)
+   
 
-## Session 4 - 14/11/2021
+## Session 4 - 14/11/2022
 ###### (9h30-12h15 & 14h00-16h45)
 
-   * **Introduction to recommender systems:** (comming soon)
+   * **Introduction to Natural language processing**: (comming soon)
 
    
 
-## Session 5 - 12/12/2021
+## Session 5 - 12/12/2022
 ###### (9h30-12h15 & 14h00-16h45)
-   * **Explainable AI**: [Interpretability in Machine Learning](interpretability.md)
+   * **Introduction to recommender systems:** (comming soon)
