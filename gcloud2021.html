@@ -12,18 +12,18 @@
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/font-awesome.min.css" rel="stylesheet">
         <link href="css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/docco.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/docco.min.css">
 
         <script src="js/jquery-1.10.2.min.js" defer></script>
         <script src="js/bootstrap.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script> 
     </head>
 
     <body>
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand" href="index.html">AI Frameworks</a>
+                <a class="navbar-brand" href=".">AI Frameworks</a>
                 <!-- Expander button -->
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
                     <span class="navbar-toggler-icon"></span>
@@ -184,13 +184,11 @@
 <h1 id="development-for-data-scientist">Development for Data Scientist:</h1>
 <h2 id="introduction-to-google-cloud-computing">Introduction to Google Cloud Computing</h2>
 <h2 id="course">Course</h2>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/GzYbwCzJ2Bg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
+<p><iframe width="560" height="315" src="https://www.youtube.com/embed/GzYbwCzJ2Bg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
 <ul>
-<li><a href="https://github.com/wikistat/AI-Frameworks/blob/master/CodeDevelopment/TP.pdf">Slides</a></li>
+<li><a href="https://github.com/wikistat/AI-Frameworks/blob/master/CodeDevelopment/TP.pdf">Slides</a>
+<!-- *   <a href="https://github.com/wikistat/AI-Frameworks/blob/master/CodeDevelopment/TP.pdf">Practical session</a> --></li>
 </ul>
-<!-- *   [Practical session](https://github.com/wikistat/AI-Frameworks/blob/master/CodeDevelopment/TP.pdf) -->
-
 <h2 id="practical-session">Practical Session</h2>
 <p>In this session, you will train a neural network to colorize black and white images using virtual machines on <a href="https://cloud.google.com/">Google Cloud</a>.<br />
 <img alt="" src="img/gcloud_b%26w.png" /> <img alt="" src="img/gcloud_color.png" />  </p>
@@ -223,6 +221,7 @@ rm landscapes_small.zip
 rm -r landscapes/__MACOSX
 cd ..
 </code></pre>
+
 <p>We will use a particular category of neural networks to perform the colorization operation: <a href="https://arxiv.org/abs/1505.04597">Unets</a>.
 Initially designed for Biomedical Image Segmentation, Unets offer state-of-the-art performances in many segmentation tasks. These performances are mainly due to the skip connections used in UNets architectures.
 Indeed, Unets are a particular form of Auto-Encoders using skip connections between corresponding layers of the encoder and the decoder.
@@ -230,7 +229,7 @@ Indeed, Unets are a particular form of Auto-Encoders using skip connections betw
 <p>Create a new file named <code>unet.py</code> where you will define the following Unet network:<br />
 <img alt="" src="img/Unet.png" /></p>
 <p>Help yourself with the above image to implement a Unet network using the following template:</p>
-<pre><code class="language-python">import torch
+<pre><code class="python">import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
@@ -313,9 +312,11 @@ if __name__=='__main__':
     print('Shapes OK')
 
 </code></pre>
+
 <p>Check that your network is producing correct outputs by running your file with:</p>
 <pre><code>python unet.py
 </code></pre>
+
 <p>The</p>
 <h2 id="training-script">Training script</h2>
 <p>You will now implement the training procedure.  </p>
@@ -324,7 +325,7 @@ Consider <span class="arithmatex">\(x\)</span> a grayscaled image and <span clas
 Training a parametrized network <span class="arithmatex">\(f_\theta\)</span> to predict colorized images <span class="arithmatex">\(ŷ\)</span> amounts to minimizing the distance between the prediction <span class="arithmatex">\(ŷ\)</span> and the actual <span class="arithmatex">\(y\)</span>.<br />
 That is to say minimizing <span class="arithmatex">\(MSE(y, f_\theta(x))\)</span>.</p>
 <p>Create a new file <code>data_utils.py</code> that will handle the dataset:</p>
-<pre><code class="language-python">from torchvision.datasets.folder import ImageFolder, default_loader, IMG_EXTENSIONS 
+<pre><code class="python">from torchvision.datasets.folder import ImageFolder, default_loader, IMG_EXTENSIONS 
 from torch.utils.data import DataLoader
 import torchvision.transforms as transforms
 
@@ -369,8 +370,9 @@ def get_colorized_dataset_loader(path, **kwargs):
     dataset = ImageFolderGrayColor(path, source_process, target_process)
     return DataLoader(dataset, **kwargs)
 </code></pre>
+
 <p>Create a new file <code>colorize.py</code> and fill the <code>train</code> method in the following canvas (you can inspire yourself from the one in the MNIST example. Be careful, however, in your criterion choice):  </p>
-<pre><code class="language-python">import argparse # to parse script arguments
+<pre><code class="python">import argparse # to parse script arguments
 from statistics import mean # to compute the mean of a list
 from tqdm import tqdm #used to generate progress bar during training
 
@@ -442,21 +444,26 @@ if __name__=='__main__':
     # Save model weights
     torch.save(unet.state_dict(), 'unet.pth')
 </code></pre>
+
 <h2 id="training-on-gcloud">Training on GCloud</h2>
 <p>You now have everything to run your code on GCloud.<br />
 Fire up your GCloud instance.
 On a terminal, connect to your instance using the following command (replace the zone and instance name with yours):</p>
 <pre><code>gcloud compute ssh --zone &quot;europe-west1-d&quot; &quot;your_instance_name&quot;
 </code></pre>
+
 <p>Create a folder <code>Workspace</code> on your virtual machine:</p>
 <pre><code>mkdir Workspace
 </code></pre>
+
 <p>You can copy a file from your local machine to the virtual machine using the following command on your local terminal:</p>
 <pre><code>gcloud compute scp [your_file_path] your_instance_name:Workspace/ --zone &quot;europe-west1-d&quot;
 </code></pre>
+
 <p>Conversly, you can copy a from your virtual machine to your local machine the following command on your local terminal:</p>
 <pre><code>gcloud compute scp bsf.pth your_instance_name:Workspace/ --zone &quot;europe-west1-d&quot;
 </code></pre>
+
 <p>Add the <code>--recurse</code> argument to your command if you want to copy a folder.</p>
 <p>Copy the folder containing all your code into your virtual machine's Workspace folder.
 Also, copy the <code>download_landscapes.sh</code> file into your VM and execute it.</p>
@@ -466,11 +473,13 @@ Run your script for one entire epoch to check that everything is working fine.</
 Run the following command on your local machine with the correct name for your virtual machine (use your correct zone).</p>
 <pre><code>gcloud compute  ssh --ssh-flag=&quot;-L 8898:localhost:8898&quot;  --zone &quot;us-central1-b&quot; &quot;example_instance_name&quot;
 </code></pre>
+
 <p>This command connects you to your virtual machine and forwards its port 8898 to your local machine's port 8898 (you can change the port value if needed).
 Thanks to that, you will get access to the tensorboard interface running on the virtual machine through your local machine.</p>
 <p>Now on this terminal window, run the following command:</p>
 <pre><code>tensorboard --logdir runs --port 8898
 </code></pre>
+
 <p>On another terminal, connect to your virtual machine and run your script with a few more epochs (like 10 for instance).</p>
 <p>On your web browser, go to the following adress: http://localhost:8898/</p>
 <p>You should be able to access tensorboard.<br />
@@ -483,11 +492,13 @@ Check on your network graph. You should see the U shape of your Unet.
 <p>Install rsync <strong>on your virtual machine</strong>:</p>
 <pre><code>sudo apt-get install rsync
 </code></pre>
+
 <p>Add the public key you’re going to use to connect to the VM  to the VM’s ~/.ssh/authorized_keys</p>
 <p>On the virtual machine:</p>
 <pre><code>touch ~/.ssh/authorized_keys
 nano ~/.ssh/authorized_keys
 </code></pre>
+
 <p>Copy the content of your public key (It is usually located in ~/.ssh/id_rsa.pub on your local machine) in the opened file.
 Press <code>ctrl+x</code> then <code>y</code> then <code>enter</code> to save.</p>
 <p>Now to synchronize a folder, find the IP of your virtual machine in the GCloud interface:
@@ -495,9 +506,11 @@ Press <code>ctrl+x</code> then <code>y</code> then <code>enter</code> to save.</
 <p>To synchronize your folder on your local machine (for instance, named <code>test_gcloud</code>) with a distant folder on the virtual machine (located, for example, in Workspace/test_gcloud):</p>
 <pre><code>rsync -r  [VM_IP_ADRESS]:Workspace/test_gcloud/ test_gcloud/
 </code></pre>
+
 <p>To synchronize a distant folder on the virtual machine with a folder on your local machine :</p>
 <pre><code>rsync -r  test_gcloud/ [VM_IP_ADRESS]:Workspace/test_gcloud/ 
 </code></pre>
+
 <p>You can find more information on the rsync command <a href="https://doc.ubuntu-fr.org/rsync">here (in french)</a></p>
 <p>You can stop your VM using the GCloud interface or just by running the following command:</p>
 <pre><code>sudo shutdown -h now
@@ -527,13 +540,16 @@ Press <code>ctrl+x</code> then <code>y</code> then <code>enter</code> to save.</
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
             </div>
             <div class="modal-body">
-                <p>From here you can search these documents. Enter your search terms below.</p>
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
                 <form>
                     <div class="form-group">
                         <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
                     </div>
                 </form>
-                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+                <div id="mkdocs-search-results"></div>
             </div>
             <div class="modal-footer">
             </div>
