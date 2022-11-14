@@ -10,5 +10,7 @@
 [Practical session](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/wikistat/AI-Frameworks/blob/website/nlp/INSA_NLP_TP.ipynb)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/wikistat/AI-Frameworks/blob/website/code/nlp/INSA_NLP_TP.ipynb)
 
-<!-- [Solution](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/wikistat/AI-Frameworks/blob/website/code/nlp/INSA_NLP_TP_solutions.ipynb)
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/wikistat/AI-Frameworks/blob/website/code/nlp/INSA_NLP_TP_solutions.ipynb) -->
+[Solution](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/wikistat/AI-Frameworks/blob/website/code/nlp/INSA_NLP_TP_solutions.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/wikistat/AI-Frameworks/blob/website/code/nlp/INSA_NLP_TP_solutions.ipynb)
+
+Additional resource: TP on neural translation with PyTorch (taken from Supaero SDD NLP course) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/wikistat/AI-Frameworks/blob/website/code/nlp/Natural_Language_Generation_pyTorch.ipynb)
