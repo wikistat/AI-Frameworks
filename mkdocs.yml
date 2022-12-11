@@ -32,7 +32,7 @@ nav:
       - Interpretability quizz: interpretability_quizz.md
     - Natural language processing:
       - Introduction to Natural Language Processing (NLP): nlp.md
-
+    - Recommender systems: rec_sys.md
   - Schedule: schedule.md
   - Evaluation: evaluation.md
   - Github repository: https://github.com/wikistat/AI-Frameworks

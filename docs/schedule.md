@@ -34,10 +34,10 @@ At the start of each practical session, approximately 15 minutes will be devoted
 ## Session 4 - 14/11/2022
 ###### (9h30-12h15 & 14h00-16h45)
 
-   * **Introduction to Natural language processing**: (comming soon)
+   * **Introduction to Natural language processing**: [Introduction to Natural language processing](nlp.md)
 
    
 
 ## Session 5 - 12/12/2022
 ###### (9h30-12h15 & 14h00-16h45)
-   * **Introduction to recommender systems:** (comming soon)
+   * **Introduction to recommender systems:** : [Introduction to recommender systems](rec_sys.md)
