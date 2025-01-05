@@ -8,7 +8,7 @@ matplotlib==3.3.2
 seaborn==0.10.1
 BeautifulSoup4==4.9.1
 wordcloud
-jupyterlab==2.2.10
+jupyterlab==4.3.4
 gensim==3.8.3
 ipywidgets>=7.5
 gdown==4.0.2
