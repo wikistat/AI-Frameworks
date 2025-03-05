@@ -3,7 +3,7 @@ pandas==1.0.5
 numpy==1.22.0
 nltk==3.9
 plotly==4.12.0
-scikit-learn==0.23.1
+scikit-learn==1.5.0
 matplotlib==3.3.2
 seaborn==0.10.1
 BeautifulSoup4==4.9.1
